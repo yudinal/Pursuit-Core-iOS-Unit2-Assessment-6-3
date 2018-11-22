@@ -8,8 +8,6 @@
 
 import Foundation
 
-import Foundation
-
 class Crayon {
   var name: String
   var red: Double

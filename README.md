@@ -1,23 +1,12 @@
 # Pursuit-Core-iOS-Unit2Final
 
-# Setup
-
-1. Clone **your fork** locally to your laptop.
-2. Work on the assignment.
-3. Upon completion, commit locally.
-
-   ```
-   git add -A
-   git commit -m "<NAME> final submission"
-   ```
-4. Push to your repo.
-
-   ```
-   git push origin master
-   ```
-5. Go to github and make a pull request.
-6. Paste the link from **your fork** into canvas 
-
+# Github Instructions
+- Fork this repository.
+- Clone it to your machine
+- Complete the final
+- Add, commit and push your changes
+- Create a pull request from your fork back to the original repo here
+- Paste the link of your fork into Canvas
 
 # The Assessment
 

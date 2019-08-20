@@ -93,16 +93,5 @@ Do any of the below, or none at all:
 
 # Rubric
 
-Criteria | Points
-:---|:---
-App uses AutoLayout correctly for all iPhones in portrait | 8 Points
-Follows MVC design | 4 Points
-Variable Naming and Readability | 4 Points
-Table View is correctly configured with the correct color names, hex values and background color | 8 Points
-Segue is implemented correctly, and the appropriate crayon is passed to the Detail View Controller| 4 points
-Detail View's ```Sliders``` and ```Labels``` display the correct RGB values | 4 Points
-```Sliders``` and ```Stepper``` update the background color/alpha dynamically | 4 Points
-```Button``` resets all values to their starting values based on the passed in Crayon | 4 points
-
-A total of 40 points, with 4 extra credit.
+![rubric](https://github.com/joinpursuit/Pursuit-Core-iOS-Unit2Final/blob/master/Unit2Rubric.png)
 

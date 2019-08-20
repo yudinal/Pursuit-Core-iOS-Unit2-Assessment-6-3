@@ -81,7 +81,7 @@ The doubles provided for the Crayon values are from 0 from 255.  You will need t
 
 
 #### Extra Credit
-Do any of the below, or none at all, or all of 'em for a total of 4 extra bonus points.
+Do any of the below, or none at all:
 
 1. Create a convenience initializer on the ```Crayon``` model that uses the "hex" field to populate the the red, green, blue properties for your crayons. 
 

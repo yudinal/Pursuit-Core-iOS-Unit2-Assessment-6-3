@@ -48,6 +48,7 @@ class DetailViewController: UIViewController {
         greenTextField.text = ""
         blueTextField.text = ""
         resetValues()
+        
     }
     
     @IBAction func typedInValue(_ sender: UITextField) {
@@ -67,7 +68,18 @@ class DetailViewController: UIViewController {
     
     private func updateViewBackground() {
         let newColor = UIColor(displayP3Red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaStepper.value))
+        updateLabelValues()
         self.view.backgroundColor = newColor
+    }
+    
+    private func updateLabelValues() {
+        redValueLabel.text = "Red: \(redSlider.value)"
+        greenValueLabel.text = "Green: \(greenSlider.value)"
+        blueValueLabel.text = "Blue: \(blueSlider.value)"
+        redTextField.placeholder = "Red: \(redSlider.value)"
+        greenTextField.placeholder = "Green: \(greenSlider.value)"
+        blueTextField.placeholder = "Blue: \(blueSlider.value)"
+        alphaValueLabel.text = "Alpha: \(alphaStepper.value)"
     }
     
     override func viewDidLoad() {

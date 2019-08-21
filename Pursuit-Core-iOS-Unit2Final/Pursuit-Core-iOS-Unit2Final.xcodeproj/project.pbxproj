@@ -13,7 +13,6 @@
 		57AFE735219E136F0024A541 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57AFE734219E136F0024A541 /* Assets.xcassets */; };
 		57AFE738219E136F0024A541 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57AFE736219E136F0024A541 /* LaunchScreen.storyboard */; };
 		57AFE742219E139C0024A541 /* Crayon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AFE741219E139C0024A541 /* Crayon.swift */; };
-		EC042E6B230D8E7D00DCA7B1 /* crayonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC042E6A230D8E7D00DCA7B1 /* crayonTableViewCell.swift */; };
 		EC042E6D230D970100DCA7B1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC042E6C230D970100DCA7B1 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +25,6 @@
 		57AFE737219E136F0024A541 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57AFE739219E136F0024A541 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57AFE741219E139C0024A541 /* Crayon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crayon.swift; sourceTree = "<group>"; };
-		EC042E6A230D8E7D00DCA7B1 /* crayonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = crayonTableViewCell.swift; sourceTree = "<group>"; };
 		EC042E6C230D970100DCA7B1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,7 +90,6 @@
 			isa = PBXGroup;
 			children = (
 				57AFE741219E139C0024A541 /* Crayon.swift */,
-				EC042E6A230D8E7D00DCA7B1 /* crayonTableViewCell.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -180,7 +177,6 @@
 				57AFE730219E136D0024A541 /* ViewController.swift in Sources */,
 				EC042E6D230D970100DCA7B1 /* DetailViewController.swift in Sources */,
 				57AFE72E219E136D0024A541 /* AppDelegate.swift in Sources */,
-				EC042E6B230D8E7D00DCA7B1 /* crayonTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  Pursuit-Core-iOS-Unit2Final
 //
 //  Created by Alex Paul on 11/15/18.
@@ -8,7 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
+    
+    @IBOutlet weak var firstTableView: UITableView!
+    
+    
 
   override func viewDidLoad() {
     super.viewDidLoad()

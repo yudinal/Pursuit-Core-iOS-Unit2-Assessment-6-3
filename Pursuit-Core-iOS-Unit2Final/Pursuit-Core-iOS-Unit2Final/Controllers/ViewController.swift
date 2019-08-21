@@ -18,6 +18,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return color.count
     }
     
+    //loads up tableview with cells with name, hex, and background color of cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableViewOutlet.dequeueReusableCell(withIdentifier: "ourCell", for: indexPath)
         let colorNum = color[indexPath.row]
@@ -47,9 +48,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             guard let selectedIndexPath = tableViewOutlet.indexPathForSelectedRow else {
                 fatalError("No row was selected")
             }
+            //Sends background color and the name depending on row selected
             colorVC.view.backgroundColor = UIColor.init(displayP3Red: CGFloat(color[selectedIndexPath.row].red / 255), green: CGFloat(color[selectedIndexPath.row].green / 255 ), blue: CGFloat(color[selectedIndexPath.row].blue / 255), alpha: 1)
             colorVC.selectedCrayon.text? = color[selectedIndexPath.row].name
-
+            
+            //store value of selected crayon for reset button to reset back to this color
             colorVC.currentColor = UIColor.init(displayP3Red: CGFloat(color[selectedIndexPath.row].red / 255), green: CGFloat(color[selectedIndexPath.row].green / 255 ), blue: CGFloat(color[selectedIndexPath.row].blue / 255), alpha: 1)
         default:
             fatalError("Woops")

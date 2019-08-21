@@ -24,6 +24,7 @@ class ColorViewController: UIViewController{
     var newColor = ColorOption()
     var currentColor = UIColor()
     
+    // Combined all the sliders together and refer to them by tags then change background color
     @IBAction func sliderValues(_ sender: UISlider) {
         switch  sender.tag {
         case 0:
@@ -44,12 +45,14 @@ class ColorViewController: UIViewController{
         }
     }
     
+    //change the alpha of the background
     @IBAction func step(_ sender: UIStepper) {
         newColor.changeAlpha(alpha: CGFloat(sender.value))
         updateBackgroundColor()
         alphaValue.text? = "Alpha: \(alphaStepper.value)"
     }
     
+    //Resets color back to selected crayon
     @IBAction func refresh(_ sender: UIButton) {
         self.view.backgroundColor = currentColor
         redValue.text? = "Red:"
@@ -59,11 +62,10 @@ class ColorViewController: UIViewController{
         greenSlide.value = 0
         blueSlide.value = 0
     }
-
+    //func that updates the background
     func updateBackgroundColor() {
         self.view.backgroundColor = newColor.getColor()
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,12 +73,7 @@ class ColorViewController: UIViewController{
 
         // Do any additional setup after loading the view.
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-    }
-    
-    
-    
+
 
     /*
     // MARK: - Navigation

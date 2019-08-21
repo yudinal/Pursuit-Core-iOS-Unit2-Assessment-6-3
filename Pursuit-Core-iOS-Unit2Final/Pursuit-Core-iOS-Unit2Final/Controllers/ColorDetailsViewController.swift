@@ -10,9 +10,9 @@ import UIKit
 
 class ColorDetailsViewController: UIViewController {
 
-    var currentRed: CGFloat = 0.5
-    var currentGreen: CGFloat = 0.5
-    var currentBlue: CGFloat = 0.5
+    var red: CGFloat = 0.5
+    var green: CGFloat = 0.5
+    var blue: CGFloat = 0.5
     var Alpha: CGFloat = 1
     
     
@@ -46,20 +46,46 @@ class ColorDetailsViewController: UIViewController {
     }
     
     @IBAction func colorRedSlider(_ sender: UISlider) {
-        currentRed = CGFloat(sender.value)
+        red = CGFloat(sender.value)
         
     }
     
     @IBAction func colorGreenSlider(_ sender: UISlider) {
-        currentGreen = CGFloat(sender.value)
+        green = CGFloat(sender.value)
     }
     
     @IBAction func colorBlueSlider(_ sender: UISlider) {
-        currentBlue = CGFloat(sender.value)
+        blue = CGFloat(sender.value)
         
+    }
+
+    func changeRed(red: CGFloat) {
+        self.red = red
     }
     
     
+    func changeBlue(blue: CGFloat) {
+        self.blue = blue
+    }
+    
+    
+    func changeGreen(green: CGFloat) {
+        self.green = green
+    }
+    
+ //   private func updateRedValue() {
+       // redValueLabel.text = UIColor(CGFloat(currentRed.red/255))
+       // redValueLabel.text = currentRed.
+ //           }
+//
+//    private func updateGreenValue() {
+//        greenValueLabel.
+//    }
+//
+//    private func updateBlueValue() {
+//         blueValueLabel.
+//        }
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,5 +111,4 @@ class ColorDetailsViewController: UIViewController {
 
     // Do any additional setup after loading the view.
 }
-
 

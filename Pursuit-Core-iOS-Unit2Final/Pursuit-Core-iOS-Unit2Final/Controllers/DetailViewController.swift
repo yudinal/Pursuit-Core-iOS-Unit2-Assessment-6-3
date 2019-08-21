@@ -90,6 +90,20 @@ class DetailViewController: UIViewController {
         let green = crayon.green/255
         let blue = crayon.blue/255
         
+        
+        // CHANGE FONT COLORS ACCORDING TO BGCOLOR
+        if crayon.hex == "#000000" {
+            crayonName.textColor = .white
+            rval.textColor = .white
+            gval.textColor = .white
+            bval.textColor = .white
+            aval.textColor = .white
+            r.textColor = .white
+            g.textColor = .white
+            b.textColor = .white
+            a.textColor = .white
+        }
+        
         // SETTING SLIDER VALUES
         crayonName.text = crayon.name
         redSlider.value = Float(red)

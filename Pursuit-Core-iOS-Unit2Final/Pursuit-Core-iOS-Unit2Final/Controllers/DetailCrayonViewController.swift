@@ -43,17 +43,22 @@ class DetailCrayonViewController: UIViewController {
         changeLabelTexts()
     }
     
-    
     @IBAction func pressedStepper(_ sender: UIStepper) {
         updateBackgroundColor()
         changeLabelTexts()
     }
     
+    @IBAction func resetButtonPressed(_ sender: UIButton) {
+        setUpViews()
+    }
+    
+    //MARK: -- LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpViews()
     }
-    
+
+    //MARK: -- Custom private functions
     private func setUpViews() {
         //give initial values on loadup
         redSlider.value = Float(crayon.red / 255)
@@ -65,8 +70,7 @@ class DetailCrayonViewController: UIViewController {
         updateBackgroundColor()
         changeLabelTexts()
     }
-    
-    //MARK: -- Custom private functions
+
     private func updateBackgroundColor() {
         self.view.backgroundColor = UIColor(displayP3Red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaStepper.value))
     }
@@ -77,15 +81,5 @@ class DetailCrayonViewController: UIViewController {
         blueValueLabel.text = "Blue Value: \(String(format: "%.2f", blueSlider.value))"
         alphaValueLabel.text = "Alpha Value: \(String(format: "%.2f", alphaStepper.value))"
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

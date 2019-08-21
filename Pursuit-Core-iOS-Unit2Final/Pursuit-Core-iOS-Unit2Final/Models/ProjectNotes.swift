@@ -1,0 +1,28 @@
+//
+//  ProjectNotes.swift
+//  Pursuit-Core-iOS-Unit2Final
+//
+//  Created by Eric Widjaja on 8/21/19.
+//  Copyright © 2019 Alex Paul. All rights reserved.
+//
+
+import Foundation
+
+
+/*
+ 
+ 1. Rename VC to MainViewController.
+ 2. On Main.Storyboard, created Table View with one prototype cell. Added two labels inside the cell, to show CrayonColorName and CrayonHex#
+ 3. Connect IBOutlet firstTableView to MainViewController. Named 'ReuseIdentifier' and MainViewController.
+ 4. Commit and push on gitHub
+ 5. Declare a private variable [as arr of arrs] inside the class MainVC as the main place to look for data
+ 6. Conform the datasource, by making the extension, add the protocols, write the codes, declare two constant vars and put in the correct name for 'reuseable cell identifier'
+ 7. Set the background color, textLabel and detailTextLabel. Change CellType into Subtitle, otherwise the two Labels' AutoLayout went awry.
+ 8. Preparing the segue:
+ 
+ 
+ 
+ 
+ 
+ */
+

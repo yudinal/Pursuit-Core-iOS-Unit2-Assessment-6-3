@@ -15,6 +15,10 @@ class ColorDetailViewController: UIViewController {
     var colorSlider = ColorsForSlider()
     
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var redLabel: UILabel!
+    @IBOutlet weak var greenLabel: UILabel!
+    @IBOutlet weak var blueLabel: UILabel!
+    
     @IBOutlet var background: UIView!
     
     @IBOutlet weak var redSlider: UISlider!
@@ -39,6 +43,18 @@ class ColorDetailViewController: UIViewController {
             updateBackgroundColor()
         default:
             print("How did this happen")
+        }
+        
+        if redSlider.value < Float(0.4) && greenSlider.value < Float(0.4) && blueSlider.value < Float(0.4) {
+            nameLabel.textColor = .white
+            redLabel.textColor = .white
+            greenLabel.textColor = .white
+            blueLabel.textColor = .white
+        } else if redSlider.value > Float(0.4) && greenSlider.value > Float(0.4) && blueSlider.value > Float(0.4) {
+            nameLabel.textColor = .black
+            redLabel.textColor = .black
+            greenLabel.textColor = .black
+            blueLabel.textColor = .black
         }
     }
     

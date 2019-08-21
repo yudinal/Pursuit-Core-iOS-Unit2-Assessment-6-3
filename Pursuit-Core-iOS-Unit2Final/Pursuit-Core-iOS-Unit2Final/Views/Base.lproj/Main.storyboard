@@ -161,9 +161,12 @@
                     <connections>
                         <outlet property="alphaStepper" destination="R8w-HX-0hc" id="ia6-Ad-343"/>
                         <outlet property="background" destination="Uqt-y7-hTY" id="6Fc-fR-kde"/>
+                        <outlet property="blueLabel" destination="RCc-vC-xZu" id="KNA-8l-RCk"/>
                         <outlet property="blueSlider" destination="cGa-uQ-C2p" id="wJs-zg-4n0"/>
+                        <outlet property="greenLabel" destination="NC8-Ia-Xmc" id="rPY-wG-zcV"/>
                         <outlet property="greenSlider" destination="Ctd-dx-nJi" id="ga4-jb-kLy"/>
                         <outlet property="nameLabel" destination="EGZ-YX-CrK" id="w0c-ic-YwD"/>
+                        <outlet property="redLabel" destination="ggg-QS-SIL" id="iPf-ww-n2A"/>
                         <outlet property="redSlider" destination="ktu-XJ-l9I" id="mru-GD-smt"/>
                         <outlet property="resetColorButton" destination="yPq-f5-NRK" id="Q6U-ef-B8Y"/>
                     </connections>

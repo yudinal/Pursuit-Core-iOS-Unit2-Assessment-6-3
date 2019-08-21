@@ -87,6 +87,9 @@
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="gCZ-Tg-awh">
                                 <rect key="frame" x="20" y="191" width="118" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="colorRedSlider:" destination="ABs-5n-1rG" eventType="valueChanged" id="v3l-Ga-5Bg"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="PT0-Ec-zZA">
                                 <rect key="frame" x="18" y="275" width="118" height="30"/>
@@ -128,12 +131,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ckK-wz-KrS">
+                                <rect key="frame" x="184" y="743" width="46" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <state key="normal" title="Reset"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="BWj-uZ-9X4"/>
                     </view>
                     <connections>
+                        <outlet property="alphaStepperOutlet" destination="Z9N-CT-yY6" id="ng7-lu-KU0"/>
+                        <outlet property="blueSlider" destination="NBJ-lc-Ga4" id="ntU-Ky-ruA"/>
+                        <outlet property="blueValueLabel" destination="UNv-TC-GEf" id="5WM-xQ-x1C"/>
                         <outlet property="colorSelected" destination="anH-5d-M6s" id="aW1-z6-zmJ"/>
+                        <outlet property="currentAlpha" destination="euW-Ga-HNh" id="W32-Qp-LW9"/>
+                        <outlet property="greenSlider" destination="PT0-Ec-zZA" id="wYk-gL-leS"/>
+                        <outlet property="greenValueLabel" destination="KSG-s7-cNh" id="Tgi-em-OfB"/>
+                        <outlet property="redSlider" destination="gCZ-Tg-awh" id="yet-8b-sv0"/>
+                        <outlet property="redValueLabel" destination="DnD-Vr-PxG" id="LCS-L8-pca"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pqI-Ey-3Ct" userLabel="First Responder" sceneMemberID="firstResponder"/>

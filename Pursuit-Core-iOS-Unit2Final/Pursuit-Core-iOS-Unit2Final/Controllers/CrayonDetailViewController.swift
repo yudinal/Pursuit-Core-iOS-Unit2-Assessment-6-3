@@ -55,6 +55,7 @@ class CrayonDetailViewController: UIViewController {
         redSlider.value = Float(crayon.red/255)
         greenSlider.value = Float(crayon.green/255)
         blueSlider.value = Float(crayon.blue/255)
+        alphaStepper.value = 1
         updateLabels()
     }
     

@@ -58,9 +58,11 @@ class ColorViewController: UIViewController{
         redValue.text? = "Red:"
         greenValue.text? = "Green:"
         blueValue.text? = "Blue:"
+        alphaValue.text? = "Alpha:"
         redSlide.value = 0
         greenSlide.value = 0
         blueSlide.value = 0
+        alphaStepper.value = 1
     }
     //func that updates the background
     func updateBackgroundColor() {

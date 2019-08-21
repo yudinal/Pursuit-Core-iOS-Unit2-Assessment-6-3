@@ -9,6 +9,8 @@
 import UIKit
 
 class CrayonTableViewController: UITableViewController {
+    
+    let crayons = Crayon.allTheCrayons
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,23 +26,27 @@ class CrayonTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return Crayon.allTheCrayons.count
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Taste the Rainbow"
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let currentCrayon = crayons[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "crayonCell", for: indexPath)
+        cell.textLabel?.text = currentCrayon.name
+        cell.detailTextLabel?.text = currentCrayon.hex
+        cell.backgroundColor = UIColor(displayP3Red: CGFloat(currentCrayon.red / 255), green: CGFloat(currentCrayon.green / 255), blue: CGFloat(currentCrayon.blue / 255), alpha: 1)
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.

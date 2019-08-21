@@ -32,9 +32,10 @@ class ColorChangeViewController: UIViewController {
     //MARK: - Actions
     
     @IBAction func resetButton(_ sender: UIButton) {
-    redLabelOut.text = "Red"
-    greenLabelOut.text = "Green"
-    blueLabelOut.text = "Blue"
+    redLabelOut.text = "Red: \(Float(red))"
+    greenLabelOut.text = "Green: \(Float(green))"
+    blueLabelOut.text = "Blue: \(Float(blue))"
+    alphaLabel.text = "Alpha: 1.0"
     viewOut.backgroundColor = UIColor(displayP3Red: CGFloat(red), green:  CGFloat(green), blue:  CGFloat(blue), alpha: 1.0)
     redSliderOut.value = Float(red)
     greenSliderOut.value = Float(green)
@@ -43,18 +44,20 @@ class ColorChangeViewController: UIViewController {
     
     @IBAction func redSliderAct(_ sender: UISlider) {
         redLabelOut.text = "Red: \(Float(sender.value))"
-   viewOut.backgroundColor = UIColor(displayP3Red: CGFloat(sender.value), green:  CGFloat(greenSliderOut.value), blue:  CGFloat(blueSliderOut.value), alpha: 1.0)
+   viewOut.backgroundColor = UIColor(displayP3Red: CGFloat(sender.value), green:  CGFloat(greenSliderOut.value), blue:  CGFloat(blueSliderOut.value), alpha: CGFloat(stepperOut.value))
     }
     @IBAction func greenSliderAct(_ sender: UISlider) {
         greenLabelOut.text = "Green: \(Float(sender.value))"
-    viewOut.backgroundColor = UIColor(displayP3Red: CGFloat(sender.value), green:  CGFloat(greenSliderOut.value), blue:  CGFloat(blueSliderOut.value), alpha: 1.0)
+    viewOut.backgroundColor = UIColor(displayP3Red: CGFloat(sender.value), green:  CGFloat(greenSliderOut.value), blue:  CGFloat(blueSliderOut.value), alpha: CGFloat(stepperOut.value))
 
     }
     @IBAction func blueSliderAct(_ sender: UISlider) {
         blueLabelOut.text = "Blue: \(Float(sender.value))"
-    viewOut.backgroundColor = UIColor(displayP3Red: CGFloat(sender.value), green:  CGFloat(greenSliderOut.value), blue:  CGFloat(blueSliderOut.value), alpha: 1.0)
+    viewOut.backgroundColor = UIColor(displayP3Red: CGFloat(sender.value), green:  CGFloat(greenSliderOut.value), blue:  CGFloat(blueSliderOut.value), alpha: CGFloat(stepperOut.value))
     }
     @IBAction func stepperAct(_ sender: UIStepper) {
+        alphaLabel.text = "Alpha: \(Float(sender.value))"
+      viewOut.backgroundColor = UIColor(displayP3Red: CGFloat(sender.value), green:  CGFloat(greenSliderOut.value), blue:  CGFloat(blueSliderOut.value), alpha: CGFloat(sender.value))
     }
     
     //MARK: - Outlets
@@ -74,20 +77,11 @@ class ColorChangeViewController: UIViewController {
     redSliderOut.value = Float(red)
     greenSliderOut.value = Float(green)
     blueSliderOut.value = Float(blue)
+    redLabelOut.text = "Red: \(Float(red))"
+    blueLabelOut.text = "Blue: \(Float(blue))"
+    greenLabelOut.text = "Green: \(Float(green))"
+    alphaLabel.text = "Alpha: 1.0"
     super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

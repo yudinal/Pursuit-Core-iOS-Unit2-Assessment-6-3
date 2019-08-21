@@ -18,6 +18,12 @@ class ColorManipulatingViewController: UIViewController {
     @IBOutlet weak var blueSlider: UISlider!
     @IBOutlet weak var alphaStepper: UIStepper!
     @IBOutlet weak var resetColorButton: UIButton!
+    @IBOutlet weak var liveRedSliderValue: UILabel!
+    @IBOutlet weak var liveGreenSliderValue: UILabel!
+    @IBOutlet weak var liveBlueSliderValue: UILabel!
+    @IBOutlet weak var iAmRed: UILabel!
+    @IBOutlet weak var iAmGreen: UILabel!
+    @IBOutlet weak var iAmBlue: UILabel!
     
     
     @IBAction func sliderColorChange(_ sender: UISlider) {
@@ -25,19 +31,19 @@ class ColorManipulatingViewController: UIViewController {
         case 0:
            color.updateRed(red: CGFloat(sender.value))
             updateBackgroundColor()
-            print(sender.value)
+            liveRedSliderValue.text = String(sender.value)
 //            model.changeRed(red: CGFloat(sender.value))
 //            updateBackgroundColor()
         case 1:
             color.updateGreen(green: CGFloat(sender.value))
             updateBackgroundColor()
-            print(sender.value)
+            liveGreenSliderValue.text = String(sender.value)
 //            model.changeGreen(green: CGFloat(sender.value))
 //            updateBackgroundColor()
         case 2:
             color.updateGreen(green: CGFloat(sender.value))
             updateBackgroundColor()
-            print(sender.value)
+            liveBlueSliderValue.text = String(sender.value)
 //            model.changeBlue(blue: CGFloat(sender.value))
 //            updateBackgroundColor()
         default:

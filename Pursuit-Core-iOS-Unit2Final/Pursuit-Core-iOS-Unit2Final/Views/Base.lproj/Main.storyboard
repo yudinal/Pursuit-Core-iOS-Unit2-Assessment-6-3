@@ -97,14 +97,21 @@
                                 <state key="normal" title="RESET ALL VALUES"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Slide Me To Change My Red Value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyN-BJ-958">
-                                <rect key="frame" x="76" y="188" width="263" height="21"/>
+                                <rect key="frame" x="265" y="188" width="74" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Slide Me To Change My Green Value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FhV-PR-txz">
-                                <rect key="frame" x="76" y="315" width="263" height="21"/>
+                                <rect key="frame" x="265" y="315" width="74" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Slide Me To Change My Blue Value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5b-aP-gPz">
+                                <rect key="frame" x="265" y="456" width="74" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -117,8 +124,22 @@
                                     <action selector="sliderColorChange:" destination="GjN-pp-R2M" eventType="valueChanged" id="iG4-9X-Bqm"/>
                                 </connections>
                             </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Slide Me To Change My Blue Value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5b-aP-gPz">
-                                <rect key="frame" x="76" y="456" width="263" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hi! I'm the red value:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8LF-Or-3sG">
+                                <rect key="frame" x="76" y="188" width="178" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hi! I'm the green value:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JM7-Q6-RMM">
+                                <rect key="frame" x="76" y="315" width="178" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hi! I'm the blue value:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0S-1Y-ehi">
+                                <rect key="frame" x="76" y="456" width="178" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -133,6 +154,12 @@
                         <outlet property="blueSlider" destination="kF6-2H-JuM" id="NeK-cd-fdy"/>
                         <outlet property="colorName" destination="Ify-k1-9jd" id="afc-u4-H8Q"/>
                         <outlet property="greenSlider" destination="b1h-4V-Ue2" id="qWp-hD-CrC"/>
+                        <outlet property="iAmBlue" destination="N0S-1Y-ehi" id="oxq-Zc-Ozk"/>
+                        <outlet property="iAmGreen" destination="JM7-Q6-RMM" id="u4v-sW-jcW"/>
+                        <outlet property="iAmRed" destination="8LF-Or-3sG" id="9Td-Eg-j7r"/>
+                        <outlet property="liveBlueSliderValue" destination="y5b-aP-gPz" id="plv-eh-jMJ"/>
+                        <outlet property="liveGreenSliderValue" destination="FhV-PR-txz" id="uoa-V6-3J7"/>
+                        <outlet property="liveRedSliderValue" destination="yyN-BJ-958" id="QF4-Gf-gm3"/>
                         <outlet property="redSlider" destination="FID-XQ-xf8" id="IdF-RM-N6g"/>
                         <outlet property="resetColorButton" destination="bTL-VD-tCB" id="kAF-i3-iAu"/>
                     </connections>

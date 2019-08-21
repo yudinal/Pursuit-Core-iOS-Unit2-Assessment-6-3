@@ -7,14 +7,15 @@
 //
 
 import Foundation
+import UIKit
 
 class Crayon {
   var name: String
-  var red: Double
-  var green: Double
-  var blue: Double
+  var red: CGFloat
+  var green: CGFloat
+  var blue: CGFloat
   var hex: String
-  init(name: String, red: Double, green: Double, blue: Double, hex: String) {
+  init(name: String, red: CGFloat, green: CGFloat, blue: CGFloat, hex: String) {
     self.name = name
     self.red = red
     self.green = green
@@ -22,21 +23,39 @@ class Crayon {
     self.hex = hex
   }
   static let allTheCrayons = [
-    Crayon(name: "Almond", red: 239, green: 222, blue: 205, hex: "#EFDECD"),
-    Crayon(name: "Antique Brass", red: 205, green: 149, blue: 117, hex: "#CD9575"),
-    Crayon(name: "Apricot", red: 253, green: 217, blue: 181, hex: "#FDD9B5"),
-    Crayon(name: "Aquamarine", red: 120, green: 219, blue: 226, hex: "#78DBE2"),
-    Crayon(name: "Asparagus", red: 135, green:  169, blue: 107, hex: "#87A96B"),
-    Crayon(name: "Atomic Tangerine", red: 255, green: 164, blue: 116, hex: "#FFA474"),
-    Crayon(name: "Banana Mania", red: 250, green: 231, blue: 181, hex: "#FAE7B5"),
-    Crayon(name: "Beaver", red: 159, green: 129, blue:  112, hex: "#9F8170"),
-    Crayon(name: "Bittersweet", red: 253, green: 124, blue: 110, hex: "#FD7C6E"),
-    Crayon(name: "Black", red: 0, green: 0, blue: 0, hex: "#000000"),
-    Crayon(name: "Blizzard Blue", red: 172, green: 229, blue: 238, hex: "#ACE5EE"),
-    Crayon(name: "Blue", red: 31, green: 117, blue: 254, hex: "#1F75FE"),
-    Crayon(name: "Blue Bell", red: 162, green: 162, blue: 208, hex: "#A2A2D0"),
-    Crayon(name: "Blue Gray", red: 102, green: 153, blue: 204, hex: "#6699CC"),
-    Crayon(name: "Blue Green", red: 13, green: 152, blue: 186, hex: "#0D98BA"),
-    Crayon(name: "Blue Violet", red: 115, green: 102, blue: 189, hex: "#7366BD")
+    Crayon(name: "Almond", red: 239/255, green: 222/255, blue: 205/255, hex: "#EFDECD"),
+    Crayon(name: "Antique Brass", red: 205/255, green: 149/255, blue: 117/255, hex: "#CD9575"),
+    Crayon(name: "Apricot", red: 253/255, green: 217/255, blue: 181/255, hex: "#FDD9B5"),
+    Crayon(name: "Aquamarine", red: 120/255, green: 219/255, blue: 226/255, hex: "#78DBE2"),
+    Crayon(name: "Asparagus", red: 135/255, green:  169/255, blue: 107/255, hex: "#87A96B"),
+    Crayon(name: "Atomic Tangerine", red: 255/255, green: 164/255, blue: 116/255, hex: "#FFA474"),
+    Crayon(name: "Banana Mania", red: 250/255, green: 231/255, blue: 181/255, hex: "#FAE7B5"),
+    Crayon(name: "Beaver", red: 159/255, green: 129/255, blue:  112/255, hex: "#9F8170"),
+    Crayon(name: "Bittersweet", red: 253/255, green: 124/255, blue: 110/255, hex: "#FD7C6E"),
+    Crayon(name: "Black", red: 0/255, green: 0/255, blue: 0/255, hex: "#000000"),
+    Crayon(name: "Blizzard Blue", red: 172/255, green: 229/255, blue: 238/255, hex: "#ACE5EE"),
+    Crayon(name: "Blue", red: 31/255, green: 117/255, blue: 254/255, hex: "#1F75FE"),
+    Crayon(name: "Blue Bell", red: 162/255, green: 162/255, blue: 208/255, hex: "#A2A2D0"),
+    Crayon(name: "Blue Gray", red: 102/255, green: 153/255, blue: 204/255, hex: "#6699CC"),
+    Crayon(name: "Blue Green", red: 13/255, green: 152/255, blue: 186/255, hex: "#0D98BA"),
+    Crayon(name: "Blue Violet", red: 115/255, green: 102/255, blue: 189/255, hex: "#7366BD")
   ]
+    
+    func getColor() -> UIColor {
+        return UIColor(red: self.red, green: self.green, blue: self.blue, alpha: 1.0)
+    }
+    
+   func changeRed(red: CGFloat) {
+        self.red = red
+    }
+    
+    func changeBlue(blue: CGFloat) {
+        self.blue = blue
+    }
+    
+    func changeGreen(green: CGFloat) {
+        self.green = green
+    }
 }
+    
+

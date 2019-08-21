@@ -41,7 +41,7 @@ class DetailViewController: UIViewController {
     
     @IBAction func redSliderTouched(_ sender: UISlider) {
         backgroundColor.changeRed(red: CGFloat(sender.value))
-        redValueLabel.text = sender.value.roundTo(places: 2).description
+        redValueLabel.text = "Red Value: \(sender.value.roundTo(places: 2))"
         updateBackgroundColor()
         
         
@@ -49,20 +49,20 @@ class DetailViewController: UIViewController {
     
     @IBAction func greenSliderTouched(_ sender: UISlider) {
         backgroundColor.changeGreen(green: CGFloat(sender.value))
-        greenValueLabel.text = sender.value.roundTo(places: 2).description
+        greenValueLabel.text = "Green Value: \(sender.value.roundTo(places: 2))"
         updateBackgroundColor()
     }
     
     @IBAction func blueSliderTouched(_ sender: UISlider) {
         backgroundColor.changeBlue(blue: CGFloat(sender.value))
-        blueValueLabel.text = sender.value.roundTo(places: 2).description
+        blueValueLabel.text = "Blue Value: \(sender.value.roundTo(places: 2))"
         updateBackgroundColor()
     }
     
     
     @IBAction func stepperPressed(_ sender: UIStepper) {
         backgroundColor.changeAlpha(alpha: CGFloat(sender.value))
-        alphaValueLabel.text = sender.value.roundTo(places: 2).description
+        alphaValueLabel.text = "Alpha Value: \(sender.value.roundTo(places: 2))"
         updateBackgroundColor()
         if sender.value < 0.5 {
             changeColor(color: UIColor.white)
@@ -86,9 +86,6 @@ class DetailViewController: UIViewController {
     func updateBackgroundColor() {
         self.view.backgroundColor = backgroundColor.getColor()
         
-       
-        
-        
     }
     
     
@@ -100,16 +97,15 @@ class DetailViewController: UIViewController {
         backgroundColor = Color(red: CGFloat(crayon.red/255)
             , green: CGFloat(crayon.green/255), blue: CGFloat(crayon.blue/255), alpha: 1)
         
-       
-        
         colorNameLabel.text = crayon.name
-        redValueLabel.text = (crayon.red/255).roundTo(places: 2).description
-        blueValueLabel.text = (crayon.red/255).roundTo(places: 2).description
-        greenValueLabel.text = (crayon.red/255).roundTo(places: 2).description
-        alphaValueLabel.text = "1"
+        redValueLabel.text = "Red Value: \((crayon.red/255).roundTo(places: 2))"
+        blueValueLabel.text = "Blue Value: \((crayon.blue/255).roundTo(places: 2))"
+        greenValueLabel.text = "Blue Value: \((crayon.green/255).roundTo(places: 2))"
+        alphaValueLabel.text = "Alpha Value: 1"
         redSlider.value = Float(crayon.red/255).roundTo(places: 2)
-        greenSlider.value = Float(crayon.red/255).roundTo(places: 2)
-        blueSlider.value = Float(crayon.red/255).roundTo(places: 2)
+        greenSlider.value = Float(crayon.green/255).roundTo(places: 2)
+        blueSlider.value = Float(crayon.blue/255).roundTo(places: 2)
+       
         
     }
     

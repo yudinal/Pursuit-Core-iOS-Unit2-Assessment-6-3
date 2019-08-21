@@ -27,6 +27,9 @@ class ColorDetailViewController: UIViewController {
     //MARK: - Functions
     func setUpView() {
         nameLabel.text = color.name
+        redSlider.value = Float(color.red)/255
+        greenSlider.value = Float(color.green)/255
+        blueSlider.value = Float(color.blue)/255
         background.backgroundColor = UIColor(red: CGFloat(color.red)/255, green: CGFloat(color.green)/255, blue: CGFloat(color.blue)/255, alpha: 1.0)
     }
     

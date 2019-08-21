@@ -68,6 +68,9 @@ class ColorManipulatingViewController: UIViewController {
         greenSlider.value = Float(color.convertGreenToCGFloatNumber(green: color.green))
         blueSlider.value = Float(color.convertBlueToCGFloatNumber(blue: color.blue))
         view.backgroundColor = UIColor(displayP3Red: color.convertRedToCGFloatNumber(red: color.red), green: color.convertGreenToCGFloatNumber(green: color.green), blue: color.convertBlueToCGFloatNumber(blue: color.blue), alpha: 1.0)
+        liveRedSliderValue.text = color.convertRedToCGFloatNumber(red: color.red).description
+        liveGreenSliderValue.text = color.convertGreenToCGFloatNumber(green: color.green).description
+        liveBlueSliderValue.text = color.convertBlueToCGFloatNumber(blue: color.blue).description
     }
     
 

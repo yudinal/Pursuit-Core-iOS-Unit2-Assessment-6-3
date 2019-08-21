@@ -10,8 +10,27 @@ import Foundation
 import UIKit
 
 struct ColorObject {
-    let color: UIColor
-    let red: CGFloat
-    let green: CGFloat
-    let blue: CGFloat
+    var alpha : UIColor
+    var red: CGFloat = 0.5
+    var green: CGFloat = 0.5
+    var blue: CGFloat = 0.5
+    
+    func getColor() -> UIColor {
+        return UIColor(red: red, green: green, blue: blue, alpha: 1)
+    }
+    
+    
+    mutating func changeRed(red: CGFloat) {
+        self.red = red
+    }
+    
+    mutating func changeBlue(blue: CGFloat) {
+        self.blue = blue
+    }
+    
+    
+    mutating func changeGreen(green: CGFloat) {
+        self.green = green
+    }
+    
 }

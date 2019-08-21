@@ -70,19 +70,22 @@
             </objects>
             <point key="canvasLocation" x="973.91304347826099" y="89.732142857142847"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="ck9-s8-meG">
             <objects>
-                <viewController id="2o9-V1-bwg" sceneMemberID="viewController">
+                <viewController id="2o9-V1-bwg" customClass="DetailViewController" customModule="Pursuit_Core_iOS_Unit2Final" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q9z-IB-hE5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="47" translatesAutoresizingMaskIntoConstraints="NO" id="idg-Oh-xPV">
-                                <rect key="frame" x="0.0" y="203.5" width="414" height="448"/>
+                                <rect key="frame" x="0.0" y="180" width="414" height="448"/>
                                 <subviews>
                                     <slider opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="cYK-JI-KGz">
-                                        <rect key="frame" x="114" y="0.0" width="186" height="92.5"/>
+                                        <rect key="frame" x="102" y="0.0" width="210" height="92.5"/>
+                                        <connections>
+                                            <action selector="sliderChange:" destination="2o9-V1-bwg" eventType="valueChanged" id="VzT-cS-LEQ"/>
+                                        </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhD-QW-cFr">
                                         <rect key="frame" x="186" y="138.5" width="42" height="20.5"/>
@@ -90,8 +93,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="VFU-Lb-s3Y">
-                                        <rect key="frame" x="114" y="206" width="186" height="31"/>
+                                    <slider opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="VFU-Lb-s3Y">
+                                        <rect key="frame" x="102" y="206" width="210" height="31"/>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PwU-84-wRy">
                                         <rect key="frame" x="186" y="283" width="42" height="20.5"/>
@@ -99,8 +102,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="unH-ie-lf9">
-                                        <rect key="frame" x="114" y="350.5" width="186" height="31"/>
+                                    <slider opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="unH-ie-lf9">
+                                        <rect key="frame" x="102" y="350.5" width="210" height="31"/>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tib-HV-ou5">
                                         <rect key="frame" x="186" y="427.5" width="42" height="20.5"/>
@@ -114,12 +117,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="idg-Oh-xPV" firstAttribute="height" secondItem="q9z-IB-hE5" secondAttribute="height" multiplier="0.5" id="5W5-6Z-lXy"/>
-                            <constraint firstItem="idg-Oh-xPV" firstAttribute="centerY" secondItem="v8C-pg-yYh" secondAttribute="centerY" multiplier="0.9" id="MJ2-dm-6FU"/>
+                            <constraint firstItem="idg-Oh-xPV" firstAttribute="centerY" secondItem="v8C-pg-yYh" secondAttribute="centerY" multiplier="0.85" id="MJ2-dm-6FU"/>
                             <constraint firstItem="idg-Oh-xPV" firstAttribute="centerX" secondItem="v8C-pg-yYh" secondAttribute="centerX" id="NaC-dU-TWf"/>
                             <constraint firstItem="idg-Oh-xPV" firstAttribute="width" secondItem="q9z-IB-hE5" secondAttribute="width" id="SiG-I7-ajm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="v8C-pg-yYh"/>
                     </view>
+                    <connections>
+                        <outlet property="blueSlider" destination="unH-ie-lf9" id="LcM-HO-P58"/>
+                        <outlet property="greenSlider" destination="VFU-Lb-s3Y" id="0HU-Gk-qec"/>
+                        <outlet property="redSlider" destination="cYK-JI-KGz" id="jwZ-Lg-rHr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aXF-7x-M1s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

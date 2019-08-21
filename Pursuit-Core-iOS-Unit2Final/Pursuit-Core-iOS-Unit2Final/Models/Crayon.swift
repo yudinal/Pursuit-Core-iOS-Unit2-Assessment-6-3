@@ -41,17 +41,12 @@ class Crayon {
     Crayon(name: "Blue Green", red: 13, green: 152, blue: 186, hex: "#0D98BA"),
     Crayon(name: "Blue Violet", red: 115, green: 102, blue: 189, hex: "#7366BD")
   ]
-    
-    func generateColor() -> ColorObject {
-        let alpha: CGFloat = 1
-        let red = CGFloat.random(in: 0...1)
-        let green = CGFloat.random(in: 0...1)
-        let blue = CGFloat.random(in: 0...1)
-        let color = UIColor(displayP3Red: red/255, green: green/255, blue: blue/255, alpha: alpha)
-        return ColorObject(color: color, red: red, green: green, blue: blue)
+     func displayAllColors() -> UIColor {
+        return UIColor(displayP3Red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
+
     }
-    
-    
+
+
     
     
 }

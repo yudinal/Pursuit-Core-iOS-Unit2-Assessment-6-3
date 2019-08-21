@@ -24,11 +24,14 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "colorCell", for: indexPath)
        
+        var singleCrayon = allCrayons[indexPath.row]
+        cell.detailTextLabel?.text = singleCrayon.hex
+        cell.textLabel?.text = singleCrayon.name
+        cell.backgroundColor = singleCrayon.displayAllColors()
         
-        
+        return cell
         
        
-        
         
     }
     

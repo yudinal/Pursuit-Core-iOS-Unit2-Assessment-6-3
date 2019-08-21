@@ -12,6 +12,9 @@ class DetailViewController: UIViewController {
     var crayon: Crayon!
     
     @IBOutlet weak var crayonName: UILabel!
+    @IBOutlet weak var redSlider: UISlider!
+    @IBOutlet weak var greenSlider: UISlider!
+    @IBOutlet weak var blueSlider: UISlider!
     
     @IBAction func changeRedFloat(_ sender: UISlider) {
     }

@@ -126,7 +126,10 @@
                         <viewLayoutGuide key="safeArea" id="pxh-Fj-pNo"/>
                     </view>
                     <connections>
+                        <outlet property="blueSlider" destination="5Va-bE-fGr" id="qfQ-Hd-kYS"/>
                         <outlet property="crayonName" destination="TZT-Yp-Cvc" id="eyt-sU-3r8"/>
+                        <outlet property="greenSlider" destination="QyF-re-L2h" id="ReX-8F-2Lm"/>
+                        <outlet property="redSlider" destination="oFQ-Ng-01p" id="rXZ-dq-MWD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mJn-qG-1ES" userLabel="First Responder" sceneMemberID="firstResponder"/>

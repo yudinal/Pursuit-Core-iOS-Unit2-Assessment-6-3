@@ -31,15 +31,15 @@ class CrayonsDetailedViewController: UIViewController {
         switch sender.tag {
         case 0:
             crayon.red = Double(CGFloat(sender.value * 255))
-            currentRedValueLabel.text = String("Current value of red: \(sender.value)")
+            currentRedValueLabel.text = String("Current value of red in RGB: \(sender.value)")
             viewBackgroundColor()
         case 1:
             crayon.green = Double(CGFloat(sender.value * 255))
-            currentGreenValueLabel.text = String("Current value of green: \(sender.value)")
+            currentGreenValueLabel.text = String("Current value of green in RGB: \(sender.value)")
             viewBackgroundColor()
         case 2:
             crayon.blue = Double(CGFloat(sender.value * 255))
-            currentBlueValueLabel.text = String("Current value of blue: \(sender.value)")
+            currentBlueValueLabel.text = String("Current value of blue in RGB: \(sender.value)")
             viewBackgroundColor()
         default:
             print("")
@@ -55,26 +55,28 @@ class CrayonsDetailedViewController: UIViewController {
         self.view.backgroundColor = UIColor(displayP3Red: CGFloat(crayon.red/255), green: CGFloat(crayon.green/255), blue: CGFloat(crayon.blue/255), alpha: 1.0)
     }
  
-    
+
     @IBAction func resetViewToOriginal(_ sender: UIButton) {
         self.view.backgroundColor = UIColor(displayP3Red: CGFloat(originalRed/255), green: CGFloat(originalGreen/255), blue: CGFloat(originalBlue/255), alpha: 1.0)
         resetSliders()
-        resetLabels()
+        setLabels()
     }
     
-    
-    private func resetLabels() {
-       currentRedValueLabel.text = String("Hex: \(originalRed) RGB: \(originalRed/255)")
-        currentGreenValueLabel.text = String("Hex: \(originalGreen) RGB: \(originalGreen/255)")
-        currentBlueValueLabel.text = String("Hex: \(originalBlue) RGB: \(originalBlue/255)")
+
+    private func setLabels() {
+        currentRedValueLabel.text = String("Current value of red: \(originalRed/255)")
+        currentGreenValueLabel.text = String("Current value of green: \(originalGreen/255)")
+        currentBlueValueLabel.text = String("Current value of blue: \(originalBlue/255)")
         currentAlphaValueLabel.text = "Current value of alpha is 1"
     }
     
+
     private func resetSliders() {
-        redSlider.value = 0.5
-        greenSlider.value = 0.5
-        blueSlider.value = 0.5
+        redSlider.value = Float(originalRed)/255
+        greenSlider.value = Float(originalGreen)/255
+        blueSlider.value = Float(originalBlue)/255
     }
+    
     
     override func viewDidLoad() {
         viewBackgroundColor()
@@ -82,7 +84,10 @@ class CrayonsDetailedViewController: UIViewController {
         originalRed = crayon.red
         originalGreen = crayon.green
         originalBlue = crayon.blue
-        resetLabels()
+        redSlider.value = Float(crayon.red/255)
+        greenSlider.value = Float(crayon.green/255)
+        blueSlider.value = Float(crayon.blue/255)
+        setLabels()
     }
 
 }

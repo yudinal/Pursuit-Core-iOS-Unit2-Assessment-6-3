@@ -5,7 +5,6 @@
 //  Created by Mariel Hoepelman on 8/21/19.
 //  Copyright © 2019 Alex Paul. All rights reserved.
 //
-import Foundation
 import UIKit
 
 class CrayonsViewController: UIViewController {
@@ -35,10 +34,12 @@ extension CrayonsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "crayonCell", for: indexPath)
+        
         let crayon = crayons[indexPath.row]
         cell.textLabel?.text = crayon.name
         cell.detailTextLabel?.text = crayon.hex
         cell.backgroundColor = UIColor(displayP3Red: CGFloat(crayon.red/255), green: CGFloat(crayon.green/255), blue: CGFloat(crayon.blue/255), alpha: 1.0)
+        
          return cell
     }
 }

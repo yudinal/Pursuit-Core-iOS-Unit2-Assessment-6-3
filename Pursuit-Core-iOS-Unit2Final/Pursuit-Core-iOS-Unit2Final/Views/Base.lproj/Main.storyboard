@@ -254,6 +254,15 @@
                                     <action selector="alphaSlider:" destination="Kta-34-MAC" eventType="valueChanged" id="gNQ-pL-cqb"/>
                                 </connections>
                             </slider>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" maximumValue="1" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="BJs-mi-hM0">
+                                <rect key="frame" x="159" y="646" width="94" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.99207025766372681" green="0.99221235513687134" blue="0.9920392632484436" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="stepperAction:" destination="Kta-34-MAC" eventType="valueChanged" id="iKb-nH-Wwe"/>
+                                </connections>
+                            </stepper>
                         </subviews>
                         <color key="backgroundColor" red="0.99207025766372681" green="0.99221235513687134" blue="0.9920392632484436" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="oT0-NG-56V"/>
@@ -270,6 +279,7 @@
                         <outlet property="redSlider" destination="tjK-FE-ePo" id="SBx-3h-Rk3"/>
                         <outlet property="redValue" destination="Rzj-Wh-Qzf" id="2V4-nh-b5F"/>
                         <outlet property="resetButton" destination="4Jt-PG-BD2" id="2t4-Qm-O7p"/>
+                        <outlet property="stepperOutlet" destination="BJs-mi-hM0" id="qSY-DD-APX"/>
                         <outlet property="view" destination="mlY-BQ-0Xv" id="Tml-sE-k6e"/>
                     </connections>
                 </viewController>

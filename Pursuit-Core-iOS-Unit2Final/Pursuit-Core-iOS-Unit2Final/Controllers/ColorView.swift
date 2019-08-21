@@ -22,11 +22,24 @@ var crayon: Crayon!
     @IBOutlet weak var alphaSlider: UISlider!
     @IBOutlet weak var resetButton: UIButton!
     
+    @IBOutlet weak var stepperOutlet: UIStepper!
+    
     @IBAction func redSliderFunc(_ sender: UISlider) {
         redValue.text = "Red Value: \(redSlider.value)"
         redValue.textColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(0.0), blue: CGFloat(0.0), alpha: CGFloat(1.0))
         colorView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaSlider.value))
         navigationController?.navigationBar.barTintColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaSlider.value))
+        
+    }
+    @IBAction func stepperAction(_ sender: UIStepper) {
+        alphaSlider.value = Float(sender.value)
+        alphaValue.text = "Alpha Value: \(alphaSlider.value)"
+        colorView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaSlider.value))
+        navigationController?.navigationBar.barTintColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaSlider.value))
+        stepperOutlet.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaSlider.value))
+        
+        
+        
         
     }
     @IBAction func blueSliderFunc(_ sender: UISlider) {
@@ -78,6 +91,7 @@ var crayon: Crayon!
         colorName.shadowColor = UIColor.white
         colorName.shadowOffset = CGSize(width: CGFloat(1.5), height: CGFloat(1.5))
         navigationController?.navigationBar.barTintColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaSlider.value))
+        stepperOutlet.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaSlider.value))
         // Do any additional setup after loading the view.
     }
     

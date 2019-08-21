@@ -66,7 +66,7 @@ class CrayonTableViewController: UITableViewController {
     
     // MARK: -- Custom Methods
     func adjustTextColor(cell: UITableViewCell, red: CGFloat, green: CGFloat, blue: CGFloat) {
-        if red + green + blue < 2 {
+        if red + green + blue < 1 {
             cell.textLabel?.textColor = UIColor(displayP3Red: 1, green: 1, blue: 1, alpha: 1)
             cell.detailTextLabel?.textColor = UIColor(displayP3Red: 1, green: 1, blue: 1, alpha: 1)
         } else {

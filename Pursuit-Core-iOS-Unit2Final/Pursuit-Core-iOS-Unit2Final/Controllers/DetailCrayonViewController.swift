@@ -13,17 +13,17 @@ class DetailCrayonViewController: UIViewController {
     var crayon: Crayon!
     
     //MARK: -- IBOutlets
-        //Label outlets
+    //Label outlets
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var redValueLabel: UILabel!
     @IBOutlet weak var greenValueLabel: UILabel!
     @IBOutlet weak var blueValueLabel: UILabel!
     @IBOutlet weak var alphaValueLabel: UILabel!
-        //slider outlets
+    //slider outlets
     @IBOutlet weak var redSlider: UISlider!
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
-        //stepper outlets
+    //stepper outlets
     @IBOutlet weak var alphaStepper: UIStepper!
     
     //MARK: -- IBActions
@@ -58,7 +58,7 @@ class DetailCrayonViewController: UIViewController {
         nameLabel.text = crayon.name
         setUpViews()
     }
-
+    
     //MARK: -- Custom private functions
     private func setUpViews() {
         //give initial values on loadup
@@ -70,7 +70,7 @@ class DetailCrayonViewController: UIViewController {
         updateBackgroundColor()
         changeLabelTexts()
     }
-
+    
     private func updateBackgroundColor() {
         self.view.backgroundColor = UIColor(displayP3Red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaStepper.value))
     }
@@ -80,6 +80,19 @@ class DetailCrayonViewController: UIViewController {
         greenValueLabel.text = "Green Value: \(String(format: "%.2f", greenSlider.value))"
         blueValueLabel.text = "Blue Value: \(String(format: "%.2f", blueSlider.value))"
         alphaValueLabel.text = "Alpha Value: \(String(format: "%.2f", alphaStepper.value))"
+        adjustLabelsTextColor(labels: [redValueLabel, greenValueLabel, blueValueLabel, alphaValueLabel, nameLabel])
     }
-
+    
+    private func adjustLabelsTextColor(labels: [UILabel]) {
+        if CGFloat(redSlider.value) + CGFloat(greenSlider.value) + CGFloat(blueSlider.value) < 1 || alphaStepper.value <= 0.5 {
+            for label in labels {
+                label.textColor = UIColor(displayP3Red: 1, green: 1, blue: 1, alpha: 1)
+            }
+        } else {
+            for label in labels{
+                label.textColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 1)
+            }
+        }
+    }
+    
 }

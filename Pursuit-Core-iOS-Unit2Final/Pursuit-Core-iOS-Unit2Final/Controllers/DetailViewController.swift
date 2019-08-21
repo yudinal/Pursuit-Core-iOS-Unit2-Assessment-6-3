@@ -9,7 +9,22 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+  
+  //MARK: -- Outlets
+  @IBOutlet weak var crayonNameLabel: UILabel!
+  
+  @IBOutlet weak var redSlider: UISlider!
+  @IBOutlet weak var redValueLabel: UILabel!
+  
+  @IBOutlet weak var greenSlider: UISlider!
+  @IBOutlet weak var greenValueLabel: UILabel!
+  
+  @IBOutlet weak var blueSlider: UISlider!
+  @IBOutlet weak var blueValueLabel: UILabel!
+  
+  @IBOutlet weak var resetButton: UIButton!
+  
+  
     override func viewDidLoad() {
         super.viewDidLoad()
 

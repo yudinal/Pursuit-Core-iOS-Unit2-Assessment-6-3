@@ -185,6 +185,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iyA-7V-Tue"/>
                     </view>
+                    <connections>
+                        <outlet property="blueSlider" destination="qgG-gR-tbB" id="1ra-Ea-HMu"/>
+                        <outlet property="blueValueLabel" destination="TSl-s6-TkH" id="eUs-81-TAt"/>
+                        <outlet property="crayonNameLabel" destination="piw-Kh-QEj" id="tMK-rU-Jpq"/>
+                        <outlet property="greenSlider" destination="2AP-FP-bkV" id="wX3-oM-Byn"/>
+                        <outlet property="greenValueLabel" destination="tk2-E6-cNN" id="Nmr-Cs-gX7"/>
+                        <outlet property="redSlider" destination="v7c-2W-daZ" id="NwM-LH-ZMm"/>
+                        <outlet property="redValueLabel" destination="dbI-Vj-U6T" id="1hy-Zo-ol5"/>
+                        <outlet property="resetButton" destination="hLd-Nx-RJs" id="y9C-4T-t93"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c1M-kB-Vgc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

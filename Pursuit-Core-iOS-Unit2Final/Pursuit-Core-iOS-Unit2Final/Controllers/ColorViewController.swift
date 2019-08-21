@@ -17,31 +17,24 @@ class ColorViewController: UIViewController{
     @IBOutlet weak var greenOut: UISlider!
     @IBOutlet weak var blueOut: UISlider!
     @IBOutlet weak var alphaLabel: UILabel!
+    @IBOutlet weak var stepperOut: UIStepper!
     var crayonColor: Crayon!
     var redColor = Double ()
     var blue = Double ()
-   var green = Double ()
-    @IBOutlet weak var stepperOut: UIStepper!
-    
-    
+    var green = Double ()
+
+
     @IBAction func slidderAction(_ sender: UISlider) {
         switch sender.tag {
         case 1:
             crayonColor.red = Double(sender.value)
-            updateSlidders ()
-            updateBackground ()
         case 2:
             crayonColor.green = Double(sender.value)
-            updateSlidders ()
-            updateBackground ()
-            
         case 3:
             crayonColor.blue = Double(sender.value)
-            updateSlidders ()
-            updateBackground ()
-        default:
-            print("nothing")
-        }
+        default:print("nothing")}
+        updateSlidders ()
+        updateBackground ()
     }
     @IBAction func resetButton(_ sender: UIButton){
         resetColor()
@@ -49,7 +42,6 @@ class ColorViewController: UIViewController{
         updateSlidders()
     }
     @IBAction func stepperAct(_ sender: UIStepper) {
-        
         view.backgroundColor = crayonColor.updateWithAlpha(alpha: CGFloat(sender.value))
         alphaLabel.text = "Alpha: \(sender.value.description)"
     }
@@ -59,11 +51,11 @@ class ColorViewController: UIViewController{
         updateBackground()
         updateSlidders()
     }
-    
+
     private func updateBackground (){
         self.view.backgroundColor = crayonColor.changeValue()
     }
-    
+
     private func updateSlidders (){
         redSlidderOut.value = Float(crayonColor.red)
         greenOut.value = Float(crayonColor.green)
@@ -86,5 +78,3 @@ class ColorViewController: UIViewController{
         blue = crayonColor.green
     }
 }
-
-

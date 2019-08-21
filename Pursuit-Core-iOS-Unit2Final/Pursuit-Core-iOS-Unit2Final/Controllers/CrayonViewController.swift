@@ -30,7 +30,7 @@ extension CrayonViewController: UITableViewDataSource {
         let theCrayon = crayonBox[indexPath.row]
         cell.textLabel?.text = theCrayon.name
         cell.detailTextLabel?.text = theCrayon.hex
-        cell.backgroundColor = UIColor(displayP3Red: CGFloat(theCrayon.red/255), green: CGFloat(theCrayon.green/255), blue: CGFloat(theCrayon.blue/255), alpha: 1)
+        cell.backgroundColor = theCrayon.getUIColor()
         return cell
     }
     

@@ -24,21 +24,24 @@ var crayon: Crayon!
     @IBOutlet weak var alphaSlider: UISlider!
     
     @IBOutlet weak var resetButton: UIButton!
-    
- 
     @IBAction func redSliderFunc(_ sender: UISlider) {
         redValue.text = "Red Value: \(redSlider.value)"
+        colorView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaSlider.value))
+        
     }
     @IBAction func blueSliderFunc(_ sender: UISlider) {
         blueValue.text = "Blue Value: \(blueSlider.value)"
+        colorView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaSlider.value))
     }
     
     @IBAction func greenSliderFunc(_ sender: UISlider) {
         greenValue.text = "Green Value: \(greenSlider.value)"
+        colorView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaSlider.value))
     }
     
     @IBAction func alphaSlider(_ sender: UISlider) {
         alphaValue.text = "Alpha Value: \(alphaSlider.value)"
+        colorView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaSlider.value))
     }
     
     

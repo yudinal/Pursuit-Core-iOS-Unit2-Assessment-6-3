@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ColorTableController: UIViewController, UITableViewDataSource {
+class ColorTableController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var colors = Crayon.allTheCrayons
     @IBOutlet weak var colorTableView: UITableView!
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -31,9 +31,9 @@ class ColorTableController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-//
-        if let viewController = storyBoard.instantiateViewController(withIdentifier: "crayonColor") as? ColorView {
             let color = colors[ indexPath.section]
+if let viewController = storyBoard.instantiateViewController(withIdentifier: "crayonColor") as? ColorView {
+//            let color = colors[ indexPath.section]
            viewController.crayon = color
             self.navigationController?.pushViewController(viewController, animated: true)
         }
@@ -44,16 +44,11 @@ class ColorTableController: UIViewController, UITableViewDataSource {
   override func viewDidLoad() {
     super.viewDidLoad()
     colorTableView.dataSource = self
+    colorTableView.delegate = self
     // Do any additional setup after loading the view, typically from a nib.
   }
 
 
 }
-extension UIImageView {
-    func setImageColor(color: UIColor) {
-        let templateImage = self.image?.withRenderingMode(.alwaysTemplate)
-        self.image = templateImage
-        self.tintColor = color
-    }
-}
+
 

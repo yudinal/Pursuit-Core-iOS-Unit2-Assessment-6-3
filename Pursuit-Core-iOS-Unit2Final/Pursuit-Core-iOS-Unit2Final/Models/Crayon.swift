@@ -40,4 +40,21 @@ class Crayon {
     Crayon(name: "Blue Green", red: 13, green: 152, blue: 186, hex: "#0D98BA"),
     Crayon(name: "Blue Violet", red: 115, green: 102, blue: 189, hex: "#7366BD")
   ]
+    
+    func convertRedToCGFloatNumber(red: Double) -> CGFloat {
+        let cGFloatRed = CGFloat(red) / CGFloat(255)
+        return cGFloatRed
+    }
+    func convertBlueToCGFloatNumber(blue: Double) -> CGFloat {
+        let cGFloatBlue = CGFloat(blue) / CGFloat(255)
+        return cGFloatBlue
+    }
+    func convertGreenToCGFloatNumber(green: Double) -> CGFloat {
+        let cGFloatGreen = CGFloat(green) / CGFloat(255)
+        return cGFloatGreen
+    }
+    func convertAlphaToCGFloatNumber(alpha: Double) -> CGFloat {
+        let cGFloatAlpha = CGFloat(alpha) / CGFloat(255)
+        return cGFloatAlpha
+    }
 }

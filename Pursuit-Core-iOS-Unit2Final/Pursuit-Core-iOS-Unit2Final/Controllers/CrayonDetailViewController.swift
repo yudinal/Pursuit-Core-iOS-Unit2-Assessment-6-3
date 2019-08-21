@@ -42,7 +42,7 @@ class CrayonDetailViewController: UIViewController {
         let blue = CGFloat(blueSlider.value)
         let alpha = CGFloat(alphaStepper.value)
         
-        let color = UIColor(displayP3Red: red, green: green, blue: blue, alpha: 1)
+        let color = UIColor(displayP3Red: red, green: green, blue: blue, alpha: alpha)
         view.backgroundColor = color
         updateLabels()
         
@@ -59,11 +59,20 @@ class CrayonDetailViewController: UIViewController {
     }
     
     @IBAction func sliderChanged(_ sender: UISlider) {
-        updateColor()
-        
+        updateColor()  
     }
 
-  
     
+    @IBAction func stepperPressed(_ sender: UIStepper) {
+    
+        updateColor()
+    }
+    
+    
+    @IBAction func resetButtonPressed(_ sender: UIButton) {
+        sender.backgroundColor = .purple
+        sender.setTitleColor(.white, for: .normal)
+        defaultValues()
+    }
     
 }

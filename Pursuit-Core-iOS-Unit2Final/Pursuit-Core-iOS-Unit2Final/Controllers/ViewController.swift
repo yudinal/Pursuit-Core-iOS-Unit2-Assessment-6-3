@@ -49,7 +49,7 @@ extension CrayonListViewController: UITableViewDataSource, UITableViewDelegate {
         
         cell.textLabel?.text = crayon.name
         cell.detailTextLabel?.text = crayon.hex
-        cell.backgroundColor = UIColor(displayP3Red: CGFloat(redValue), green: CGFloat(greenValue), blue: CGFloat(blueValue), alpha: alphaValue)
+        cell.backgroundColor = UIColor(displayP3Red: redValue, green: greenValue, blue: blueValue, alpha: alphaValue)
         
         return cell
     }

@@ -23,23 +23,31 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var alphaStepper: UIStepper!
     
     var currentCrayon: Crayon?
-    let initialAlpha: CGFloat = 1.0
+    let defaultAlpha = Crayon.defaultAlpha
     var currentAlpha: CGFloat = 1.0
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setInitialDetails()
+    }
+    
+    
+    func setInitialDetails() {
+
         if let currentCrayon = currentCrayon {
+            let currentRedValue = currentCrayon.convertCrayonValue(value: currentCrayon.red)
+            
             self.nameLabel?.text = currentCrayon.name
-            redLabel?.text = "Red Value: \(currentCrayon.red/255)"
+            redLabel?.text = "Red Value: \(currentRedValue)"
             greenLabel?.text = "Green Value: \(currentCrayon.green/255)"
             blueLabel?.text = "Blue Value: \(currentCrayon.blue/255)"
-            alphaLabel?.text = "Alpha Value: \(initialAlpha)"
+            alphaLabel?.text = "Alpha Value: \(defaultAlpha)"
             redSlider.value = Float(currentCrayon.red/255)
             greenSlider.value = Float(currentCrayon.green/255)
             blueSlider.value = Float(currentCrayon.blue/255)
             
-            self.view.backgroundColor = UIColor(red: CGFloat(currentCrayon.red/255), green: CGFloat(currentCrayon.green/255), blue: CGFloat(currentCrayon.blue/255), alpha: initialAlpha)
+            self.view.backgroundColor = UIColor(red: CGFloat(currentCrayon.red/255), green: CGFloat(currentCrayon.green/255), blue: CGFloat(currentCrayon.blue/255), alpha: defaultAlpha)
         }
     }
     

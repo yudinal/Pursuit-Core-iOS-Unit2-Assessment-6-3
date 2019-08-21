@@ -43,8 +43,9 @@ class Crayon {
     
     static let defaultAlpha: CGFloat = 1
 
-    func convertCrayonValue(value: Double) -> Double {
-        let convertedValue = value/255
+    func convertCrayonValue(value: Double) -> CGFloat {
+        let convertedValue = CGFloat(value/255)
         return convertedValue
     }
+    
 }

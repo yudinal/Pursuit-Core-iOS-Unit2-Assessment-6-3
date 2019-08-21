@@ -87,7 +87,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="detCrayonLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWF-KB-2DP">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="detCrayonLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWF-KB-2DP" userLabel="detCrayonLabel">
                                 <rect key="frame" x="40" y="156" width="334" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="30"/>
@@ -136,10 +136,6 @@
                                     <action selector="blueSlider:" destination="A0u-RH-VMk" eventType="valueChanged" id="u41-90-UjQ"/>
                                 </connections>
                             </slider>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ecS-Kd-szv">
-                                <rect key="frame" x="160" y="697" width="94" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </stepper>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7H0-AC-0Nl">
                                 <rect key="frame" x="139" y="761" width="136" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -153,21 +149,25 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="redSlider:" destination="A0u-RH-VMk" eventType="valueChanged" id="mnv-F8-fOG"/>
-                                    <action selector="sliderChanged:" destination="A0u-RH-VMk" eventType="valueChanged" id="YwC-hX-OMJ"/>
                                 </connections>
                             </slider>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="F2P-Td-cxR" userLabel="AlphaStepper">
+                                <rect key="frame" x="160" y="706" width="94" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stepper>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="WYQ-dH-Pp2"/>
                     </view>
                     <connections>
+                        <outlet property="AlphaStepper" destination="F2P-Td-cxR" id="byj-hI-z00"/>
                         <outlet property="blueLabel" destination="8M2-0s-Sep" id="DGd-g5-Zcs"/>
                         <outlet property="blueSlider" destination="TwH-0Z-noR" id="vbz-cY-8iH"/>
+                        <outlet property="detCrayonLabel" destination="KWF-KB-2DP" id="hKo-Vu-eoc"/>
                         <outlet property="greenLabel" destination="OrF-Y8-N9e" id="Vj3-TK-weJ"/>
                         <outlet property="greenSlider" destination="dPj-SH-IPP" id="6mg-q6-t0r"/>
                         <outlet property="redLabel" destination="IG6-Mh-heF" id="yVz-6h-Zgw"/>
                         <outlet property="redSlider" destination="ort-Tz-HI6" id="LBi-Zy-jc2"/>
-                        <outlet property="slider" destination="TwH-0Z-noR" id="Wns-jr-03v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lWr-YE-8lo" userLabel="First Responder" sceneMemberID="firstResponder"/>

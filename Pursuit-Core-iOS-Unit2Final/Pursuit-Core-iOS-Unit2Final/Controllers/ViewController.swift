@@ -37,9 +37,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if segue.identifier == "detailSegue" {
             guard let indexPath = tableView.indexPathForSelectedRow else {return}
             let crayon = Crayon.allTheCrayons[indexPath.row]
-//            destination.detCrayonLabel = crayon
-        }
+            destination.daCrayons = crayon
+
     }
+
+    //let crayon = theCrayons[indexPath.row]
+    
+        }
+    
     
     
     
@@ -81,6 +86,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
+
 
 
 }

@@ -131,11 +131,13 @@ class DetailsViewController: UIViewController {
     // Func to change label text color if background is too dark
     func changeLabelTextColor() {
         if currentRedValue < 0.4 || currentGreenValue < 0.4 || currentBlueForText < 0.4 || currentAlphaValue < 0.4 {
+            nameLabel?.textColor = UIColor.white
             redLabel?.textColor = UIColor.white
             greenLabel?.textColor = UIColor.white
             blueLabel?.textColor = UIColor.white
             alphaLabel?.textColor = UIColor.white
         } else {
+            nameLabel?.textColor = UIColor.black
             redLabel?.textColor = UIColor.black
             greenLabel?.textColor = UIColor.black
             blueLabel?.textColor = UIColor.black

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Crayon {
   var name: String
@@ -14,6 +15,7 @@ class Crayon {
   var green: Double
   var blue: Double
   var hex: String
+    
   init(name: String, red: Double, green: Double, blue: Double, hex: String) {
     self.name = name
     self.red = red
@@ -40,7 +42,14 @@ class Crayon {
     Crayon(name: "Blue Violet", red: 115, green: 102, blue: 189, hex: "#7366BD")
   ]
     
-    
+    func generateColor() -> ColorObject {
+        let alpha: CGFloat = 1
+        let red = CGFloat.random(in: 0...1)
+        let green = CGFloat.random(in: 0...1)
+        let blue = CGFloat.random(in: 0...1)
+        let color = UIColor(displayP3Red: red/255, green: green/255, blue: blue/255, alpha: alpha)
+        return ColorObject(color: color, red: red, green: green, blue: blue)
+    }
     
     
     

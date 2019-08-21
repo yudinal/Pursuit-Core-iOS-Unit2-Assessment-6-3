@@ -9,17 +9,27 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    
+    // MODEL INSTANCES
     var crayon: Crayon!
     var model = ColorsModel()
     
+    // OUTLETS
     @IBOutlet weak var crayonName: UILabel!
     @IBOutlet weak var redSlider: UISlider!
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
+    @IBOutlet weak var alphaStepper: UIStepper!
     @IBOutlet weak var rval: UILabel!
     @IBOutlet weak var gval: UILabel!
     @IBOutlet weak var bval: UILabel!
+    @IBOutlet weak var aval: UILabel!
+    @IBOutlet weak var r: UILabel!
+    @IBOutlet weak var g: UILabel!
+    @IBOutlet weak var b: UILabel!
+    @IBOutlet weak var a: UILabel!
     
+    // CHANGE RGB VALUES
     @IBAction func sliderChanged(_ sender: UISlider) {
         switch sender.tag {
         case 0:

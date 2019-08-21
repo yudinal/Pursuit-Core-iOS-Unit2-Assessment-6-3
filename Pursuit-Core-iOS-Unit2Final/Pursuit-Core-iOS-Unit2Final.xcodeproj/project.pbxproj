@@ -56,9 +56,9 @@
 		57AFE72C219E136D0024A541 /* Pursuit-Core-iOS-Unit2Final */ = {
 			isa = PBXGroup;
 			children = (
+				57AFE744219E13B90024A541 /* Controllers */,
 				57AFE745219E13C00024A541 /* Models */,
 				57AFE746219E13CC0024A541 /* Views */,
-				57AFE744219E13B90024A541 /* Controllers */,
 				57AFE743219E13AD0024A541 /* Supporting Files */,
 				57AFE739219E136F0024A541 /* Info.plist */,
 			);

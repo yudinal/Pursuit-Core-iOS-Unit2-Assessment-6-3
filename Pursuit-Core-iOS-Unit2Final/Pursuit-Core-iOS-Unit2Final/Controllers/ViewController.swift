@@ -23,7 +23,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let colorNum = color[indexPath.row]
         cell.textLabel?.text = colorNum.name
         cell.detailTextLabel?.text = colorNum.hex
-        cell.contentView.backgroundColor = UIColor.init(displayP3Red: CGFloat(colorNum.red), green: CGFloat(colorNum.green), blue: CGFloat(colorNum.blue), alpha: 1)
+        cell.contentView.backgroundColor = UIColor.init(displayP3Red: CGFloat(colorNum.red / 255), green: CGFloat(colorNum.green / 255 ), blue: CGFloat(colorNum.blue / 255), alpha: 1)
         return cell
     }
     

@@ -13,10 +13,10 @@ struct ColorsModel {
     var red: CGFloat = 0.0
     var green: CGFloat = 0.0
     var blue: CGFloat = 0.0
-    var alpha: CGFloat = 0.0
+    var alpha: CGFloat = 1.0
     
     func getColor() -> UIColor {
-        return UIColor(red: red, green: green, blue: blue, alpha: 1)
+        return UIColor(red: red, green: green, blue: blue, alpha: alpha)
     }
     
     mutating func changeRed(red: CGFloat) {

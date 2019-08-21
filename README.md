@@ -1,11 +1,10 @@
 # Pursuit-Core-iOS-Unit2-Assessment
 
 # Github Instructions
-- Fork this repository.
-- Clone it to your machine
+- Clone this repository to your machine
+- Add, commit and push your changes as you work on the assessment
 - Complete the assessment
-- Add, commit and push your changes
-- Create a pull request from your fork back to the original repo here
+- Create a pull request to the repo here
 - Paste the link of your fork into Canvas
 
 # The Assessment

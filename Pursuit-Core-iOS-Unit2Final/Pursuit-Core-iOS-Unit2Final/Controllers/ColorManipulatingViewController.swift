@@ -19,11 +19,41 @@ class ColorManipulatingViewController: UIViewController {
     @IBOutlet weak var alphaStepper: UIStepper!
     @IBOutlet weak var resetColorButton: UIButton!
     
+    
+    @IBAction func sliderColorChange(_ sender: UISlider) {
+        switch sender.tag {
+        case 0:
+           color.updateRed(red: CGFloat(sender.value))
+            updateBackgroundColor()
+            print(sender.value)
+//            model.changeRed(red: CGFloat(sender.value))
+//            updateBackgroundColor()
+        case 1:
+            color.updateGreen(green: CGFloat(sender.value))
+            updateBackgroundColor()
+            print(sender.value)
+//            model.changeGreen(green: CGFloat(sender.value))
+//            updateBackgroundColor()
+        case 2:
+            color.updateGreen(green: CGFloat(sender.value))
+            updateBackgroundColor()
+            print(sender.value)
+//            model.changeBlue(blue: CGFloat(sender.value))
+//            updateBackgroundColor()
+        default:
+            print("Never gonna happen")
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpViews()
 
         // Do any additional setup after loading the view.
+    }
+    
+    func updateBackgroundColor() {
+        self.view.backgroundColor = color.getColor()
     }
     
     func setUpViews() {

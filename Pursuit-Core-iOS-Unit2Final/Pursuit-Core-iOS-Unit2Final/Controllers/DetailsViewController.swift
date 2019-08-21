@@ -30,6 +30,15 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if let currentCrayon = currentCrayon {
+            self.nameLabel?.text = currentCrayon.name
+            redLabel?.text = "Red Value: \(currentCrayon.red/255)"
+            greenLabel?.text = "Green Value: \(currentCrayon.green/255)"
+            blueLabel?.text = "Blue Value: \(currentCrayon.blue/255)"
+            alphaLabel?.text = "Alpha Value: \(initialAlpha)"
+            redSlider.value = Float(currentCrayon.red/255)
+            greenSlider.value = Float(currentCrayon.green/255)
+            blueSlider.value = Float(currentCrayon.blue/255)
+            
             self.view.backgroundColor = UIColor(red: CGFloat(currentCrayon.red/255), green: CGFloat(currentCrayon.green/255), blue: CGFloat(currentCrayon.blue/255), alpha: initialAlpha)
         }
     }

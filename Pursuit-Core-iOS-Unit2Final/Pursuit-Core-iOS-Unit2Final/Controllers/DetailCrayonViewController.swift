@@ -9,11 +9,12 @@
 import UIKit
 
 class DetailCrayonViewController: UIViewController {
+    
+    var crayon: Crayon!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
     
 

@@ -29,10 +29,19 @@ class DetailCrayonViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpViews()
+    }
+    
+    private func setUpViews() {
         self.view.backgroundColor = UIColor(displayP3Red: CGFloat(crayon.red / 255), green: CGFloat(crayon.green / 255), blue: CGFloat(crayon.blue / 255), alpha: 1)
         redSlider.value = Float(crayon.red / 255)
         greenSlider.value = Float(crayon.green / 255)
         blueSlider.value = Float(crayon.blue / 255)
+        nameLabel.text = crayon.name
+        redValueLabel.text = "Red Value: \(String(format: "%.2f", redSlider.value))"
+        greenValueLabel.text = "Green Value: \(String(format: "%.2f", greenSlider.value))"
+        blueValueLabel.text = "Blue Value: \(String(format: "%.2f", blueSlider.value))"
+        alphaValueLabel.text = "Alpha Value: \(String(alphaStepper.value))"
     }
     
 

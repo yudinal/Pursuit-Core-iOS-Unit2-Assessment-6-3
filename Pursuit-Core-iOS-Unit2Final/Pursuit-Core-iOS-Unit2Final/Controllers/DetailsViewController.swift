@@ -54,11 +54,13 @@ class DetailsViewController: UIViewController {
             greenSlider.value = Float(currentGreenValue)
             blueSlider.value = Float(currentBlueValue)
             
-            self.view.backgroundColor = UIColor(red: currentRedValue, green: currentGreenValue, blue: currentBlueValue, alpha: currentAlpha)
+            setBackgroundColor()
         }
     }
     
-    
+    func setBackgroundColor() {
+        self.view.backgroundColor = UIColor(red: currentRedValue, green: currentGreenValue, blue: currentBlueValue, alpha: currentAlpha)
+    }
     
     @IBAction func sliderChangeValue(_ sender: UISlider) {
 
@@ -66,15 +68,15 @@ class DetailsViewController: UIViewController {
             case 0:
                 currentRedValue = CGFloat(sender.value)
                 redLabel?.text = "Red Value: \(sender.value)"
-                self.view.backgroundColor = UIColor(red: currentRedValue, green: currentGreenValue, blue: currentBlueValue, alpha: currentAlpha)
+                setBackgroundColor()
             case 1:
                 currentGreenValue = CGFloat(sender.value)
                 greenLabel?.text = "Green Value: \(sender.value)"
-                self.view.backgroundColor = UIColor(red: currentRedValue, green: currentGreenValue, blue: currentBlueValue, alpha: currentAlpha)
+                setBackgroundColor()
             case 2:
                 currentBlueValue = CGFloat(sender.value)
                 blueLabel?.text = "Blue Value: \(sender.value)"
-                self.view.backgroundColor = UIColor(red: currentRedValue, green: currentGreenValue, blue: currentBlueValue, alpha: currentAlpha)
+                setBackgroundColor()
             default:
                 fatalError("No slider was used")
         }
@@ -83,9 +85,8 @@ class DetailsViewController: UIViewController {
   
     @IBAction func stepperChangeValue(_ sender: UIStepper) {
         currentAlpha = CGFloat(sender.value)
-            
-        self.view.backgroundColor = UIColor(red: currentRedValue, green: currentGreenValue, blue: currentBlueValue, alpha: currentAlpha)
         alphaLabel?.text = "Alpha Value: \(currentAlpha)"
+        setBackgroundColor()
     }
 
 }

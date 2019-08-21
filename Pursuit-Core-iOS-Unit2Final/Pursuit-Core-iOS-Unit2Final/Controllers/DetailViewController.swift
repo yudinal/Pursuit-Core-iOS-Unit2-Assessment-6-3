@@ -74,8 +74,11 @@ class DetailViewController: UIViewController {
         // SETTING SLIDER VALUES
         crayonName.text = crayon.name
         redSlider.value = Float(red)
+        rval.text = "\(Float(red))"
         greenSlider.value = Float(green)
+        gval.text = "\(Float(green))"
         blueSlider.value = Float(blue)
+        bval.text = "\(Float(blue))"
         
         // SETTING BACKGROUND COLOR
         self.view.backgroundColor = UIColor(red: CGFloat(red), green: CGFloat(green), blue: CGFloat(blue), alpha: 1.0)

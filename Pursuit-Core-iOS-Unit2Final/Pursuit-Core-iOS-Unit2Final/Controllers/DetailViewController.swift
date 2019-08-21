@@ -34,7 +34,8 @@ class DetailViewController: UIViewController {
         }
     }
     
-    @IBAction func changeAlpha(_ sender: UIStepper) {
+    func updateBackgroundColor() {
+        self.view.backgroundColor = model.getColor()
     }
     
     @IBAction func resetPressed(_ sender: UIButton) {

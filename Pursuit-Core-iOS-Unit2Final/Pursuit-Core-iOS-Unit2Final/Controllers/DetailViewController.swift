@@ -21,18 +21,18 @@ class DetailViewController: UIViewController {
     var currentCrayon: Crayon!
     
     @IBAction func redSliderChanged(_ sender: UISlider) {
-        redValueLabel.text = "Red: \(sender.value)"
-        view.backgroundColor = UIColor(displayP3Red: CGFloat(sender.value), green: CGFloat(greenSlider.value) , blue: CGFloat(blueSlider.value), alpha: 1)
+        setLabelTextValues()
+        setBackgroundColor()
     }
     
     @IBAction func greenSliderChanged(_ sender: UISlider) {
-        greenValueLabel.text = "Green: \(sender.value)"
-         view.backgroundColor = UIColor(displayP3Red: CGFloat(redSlider.value), green: CGFloat(sender.value) , blue: CGFloat(blueSlider.value), alpha: 1)
+        setLabelTextValues()
+        setBackgroundColor()
     }
     
     @IBAction func blueSliderChanged(_ sender: UISlider) {
-        blueValueLabel.text = "Blue: \(sender.value)"
-         view.backgroundColor = UIColor(displayP3Red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value) , blue: CGFloat(sender.value), alpha: 1)
+        setLabelTextValues()
+        setBackgroundColor()
     }
     
     private func setMinMaxColorValues() {
@@ -44,17 +44,18 @@ class DetailViewController: UIViewController {
         greenSlider.maximumValue = 1.0
     }
     
-    private func setUpCurrentColorStats(){
+    private func setLabelTextValues(){
         colorNameLabel.text = currentCrayon.name
-        
-        redSlider.value = Float(currentCrayon.red/255)
         redValueLabel.text = "Red: \(redSlider.value)"
-        
-        greenSlider.value = Float(currentCrayon.green/255)
         greenValueLabel.text = "Green: \(greenSlider.value)"
-        
-        blueSlider.value = Float(currentCrayon.blue/255)
         blueValueLabel.text = "Blue: \(blueSlider.value)"
+    }
+    
+    
+    private func setDefaultColorValues() {
+    redSlider.value = Float(currentCrayon.red/255)
+    greenSlider.value = Float(currentCrayon.green/255)
+    blueSlider.value = Float(currentCrayon.blue/255)
     }
     
     private func setBackgroundColor() {
@@ -69,7 +70,8 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setMinMaxColorValues()
-        setUpCurrentColorStats()
+        setDefaultColorValues()
+        setLabelTextValues()
         setBackgroundColor()
     }
     

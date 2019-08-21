@@ -41,6 +41,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         crayon.delegate = self
+        crayon.delegate?.resetValues()
         self.view.backgroundColor = crayon.getUIColor()
 
         // Do any additional setup after loading the view.

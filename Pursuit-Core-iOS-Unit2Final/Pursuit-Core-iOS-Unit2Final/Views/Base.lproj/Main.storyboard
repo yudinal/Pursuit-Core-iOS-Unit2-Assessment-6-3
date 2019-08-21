@@ -111,14 +111,23 @@
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="qf3-sv-tlZ">
                                 <rect key="frame" x="86" y="258" width="243" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="sliderSlides:" destination="k9X-n9-PxD" eventType="valueChanged" id="vNi-Af-jdE"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="3w5-40-bDt">
                                 <rect key="frame" x="86" y="380" width="243" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="sliderSlides:" destination="k9X-n9-PxD" eventType="valueChanged" id="g7q-4S-rW0"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZJ7-or-p8f">
                                 <rect key="frame" x="86" y="517" width="243" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="sliderSlides:" destination="k9X-n9-PxD" eventType="valueChanged" id="XWW-hJ-LM8"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Alpha" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmu-4t-j9b">
                                 <rect key="frame" x="116" y="602" width="183" height="27"/>
@@ -130,11 +139,25 @@
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="1" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="8dA-8W-hmc">
                                 <rect key="frame" x="160" y="658" width="94" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="stepperTapped:" destination="k9X-n9-PxD" eventType="valueChanged" id="kiD-ML-T02"/>
+                                </connections>
                             </stepper>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="HCV-aw-ybb"/>
                     </view>
+                    <connections>
+                        <outlet property="alphaStepper" destination="8dA-8W-hmc" id="FPC-H8-G6d"/>
+                        <outlet property="alphaValueLabel" destination="tmu-4t-j9b" id="IbO-ij-g0Z"/>
+                        <outlet property="blueSlider" destination="ZJ7-or-p8f" id="Kzk-A3-hJV"/>
+                        <outlet property="blueValueLabel" destination="Ln8-2B-iL6" id="yoJ-VS-RC9"/>
+                        <outlet property="greenSlider" destination="3w5-40-bDt" id="CCb-gH-M8a"/>
+                        <outlet property="greenValueLabel" destination="2wI-Eq-inB" id="4Ru-5l-8nv"/>
+                        <outlet property="nameLabel" destination="1Er-I5-c2H" id="0L7-8W-wZ9"/>
+                        <outlet property="redSlider" destination="qf3-sv-tlZ" id="ba8-MK-MUI"/>
+                        <outlet property="redValueLabel" destination="K9q-SA-Foi" id="hOZ-Uo-gco"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xk8-Fq-fzS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

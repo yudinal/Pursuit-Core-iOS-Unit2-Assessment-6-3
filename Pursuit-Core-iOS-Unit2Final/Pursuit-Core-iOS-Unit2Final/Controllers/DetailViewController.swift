@@ -9,7 +9,22 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var redValueLabel: UILabel!
+    @IBOutlet weak var greenValueLabel: UILabel!
+    @IBOutlet weak var blueValueLabel: UILabel!
+    @IBOutlet weak var alphaValueLabel: UILabel!
+    
+    @IBOutlet weak var redSlider: UISlider!
+    @IBOutlet weak var greenSlider: UISlider!
+    @IBOutlet weak var blueSlider: UISlider!
+    @IBOutlet weak var alphaStepper: UIStepper!
+    
+    @IBAction func sliderSlides(_ sender: UISlider) {
+    }
+    @IBAction func stepperTapped(_ sender: UIStepper) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

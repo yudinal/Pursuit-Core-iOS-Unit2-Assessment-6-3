@@ -52,6 +52,9 @@ class ColorViewController: UIViewController{
     
     @IBAction func refresh(_ sender: UIButton) {
         self.view.backgroundColor = currentColor
+        redValue.text? = "Red:"
+        greenValue.text? = "Green:"
+        blueValue.text? = "Blue:"
     }
 
     func updateBackgroundColor() {

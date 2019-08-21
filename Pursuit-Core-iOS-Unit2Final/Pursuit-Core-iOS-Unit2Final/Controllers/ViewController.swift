@@ -19,15 +19,25 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = tableOutlet.dequeueReusableCell(withIdentifier: "colors", for: indexPath)
         
         cell.textLabel?.text = Crayon.allTheCrayons[indexPath.row].name
+        cell.textLabel?.textColor = UIColor.white
         cell.detailTextLabel?.text = Crayon.allTheCrayons[indexPath.row].hex
-        cell.backgroundColor = UIColor(displayP3Red: CGFloat((Crayon.allTheCrayons[indexPath.row].red/255)), green: CGFloat((Crayon.allTheCrayons[indexPath.row].green/255)), blue: CGFloat((Crayon.allTheCrayons[indexPath.row].blue/255)), alpha: CGFloat(0.5))
+        cell.detailTextLabel?.textColor = UIColor.white
+        cell.backgroundColor = UIColor(displayP3Red: CGFloat((Crayon.allTheCrayons[indexPath.row].red/255)), green: CGFloat((Crayon.allTheCrayons[indexPath.row].green/255)), blue: CGFloat((Crayon.allTheCrayons[indexPath.row].blue/255)), alpha: CGFloat(1.0))
         
         return cell
     }
     
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let colorDetailVC = segue.destination as? ColorDetailViewController else { fatalError() }
+        let selectedIndexPath = tableOutlet.indexPathForSelectedRow!
+        
+        colorDetailVC.color = Crayon.allTheCrayons[selectedIndexPath.row]
+    }
 
     @IBOutlet weak var tableOutlet: UITableView!
     

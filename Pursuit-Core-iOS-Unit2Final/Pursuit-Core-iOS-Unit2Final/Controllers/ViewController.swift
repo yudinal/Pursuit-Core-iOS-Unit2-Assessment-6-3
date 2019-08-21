@@ -16,24 +16,35 @@ class ViewController: UIViewController {
         tableCellOut.delegate = self
         tableCellOut.dataSource = self
     }
-    
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let segueIdentifier = segue.identifier else { fatalError("No identifier in segue") }
+        switch segueIdentifier {
+        case "toDesign":
+            guard let crayon = segue.destination as? ColorViewController else {
+                fatalError("Unexpected segue VC")
+            }
+            guard let selectedIndexPath = tableCellOut.indexPathForSelectedRow else {
+                fatalError("No row was selected")
+            }
+            let color = crayonTable[selectedIndexPath.row]
+            crayon.crayonColor = color
+        default:
+            fatalError("Unexpected segue identifier")
+        }
+    }
 }
-
-extension ViewController: UITableViewDelegate, UITableViewDataSource{
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return crayonTable.count
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableCellOut.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath)
         let selected = crayonTable[indexPath.row]
         cell.textLabel?.text = selected.name
         cell.detailTextLabel?.text =  selected.hex
-        cell.backgroundColor = UIColor.init(displayP3Red: CGFloat(selected.red/255), green: CGFloat(selected.green/255),
-            blue: CGFloat(selected.blue/255),
-            alpha: CGFloat(1.0))
+        cell.backgroundColor = selected.changeValue()
         return cell
     }
+    
 }
 

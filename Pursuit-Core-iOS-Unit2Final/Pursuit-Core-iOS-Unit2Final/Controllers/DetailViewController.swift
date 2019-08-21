@@ -61,17 +61,27 @@ class DetailViewController: UIViewController {
         aval.text = "\(sender.value)"
     }
     
+    // RESET BUTTON
     @IBAction func resetPressed(_ sender: UIButton) {
         model.changeRed(red: CGFloat(crayon.red/255))
         model.changeGreen(green: CGFloat(crayon.green/255))
         model.changeBlue(blue: CGFloat(crayon.blue/255))
+        model.changeAlpha(alpha: 1.0)
         updateBackgroundColor()
         
         redSlider.value = Float(crayon.red/255)
         greenSlider.value = Float(crayon.green/255)
         blueSlider.value = Float(crayon.blue/255)
+        alphaStepper.value = Double(model.alpha)
+        
+        
+        rval.text = "\(CGFloat(crayon.red/255))"
+        gval.text = "\(CGFloat(crayon.green/255))"
+        bval.text = "\(CGFloat(crayon.blue/255))"
+        aval.text = "1.0"
     }
     
+    // DO ALL THIS STUFF BEFORE LOADING
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -34,14 +34,14 @@ class DetailsViewController: UIViewController {
     var currentRedValue: CGFloat = 1.0
     var currentGreenValue: CGFloat = 1.0
     var currentBlueValue: CGFloat = 1.0
-    var currentAlpha: CGFloat = 1.0
-    let defaultAlpha = Crayon.defaultAlpha
+    var currentAlphaValue: CGFloat = 1.0
+    let defaultAlphaValue = Crayon.defaultAlpha
     
     // Color value variables to be displayed on labels
-    var currentRedText: CGFloat = 1.0
-    var currentGreenText: CGFloat = 1.0
-    var currentBlueText: CGFloat = 1.0
-    var currentAlphaText: CGFloat = 1.0
+    var currentRedForText: CGFloat = 1.0
+    var currentGreenForText: CGFloat = 1.0
+    var currentBlueForText: CGFloat = 1.0
+    var currentAlphaForText: CGFloat = 1.0
     
     
     // MARK: - Life cycle functions
@@ -58,16 +58,16 @@ class DetailsViewController: UIViewController {
             switch sender.tag {
                 case 0:
                     currentRedValue = CGFloat(sender.value)
-                    currentRedText = currentCrayon.roundValuesForLabel(value: currentRedValue)
-                    redLabel?.text = "Red Value: \(currentRedText)"
+                    currentRedForText = currentCrayon.roundValuesForLabel(value: currentRedValue)
+                    redLabel?.text = "Red Value: \(currentRedForText)"
                 case 1:
                     currentGreenValue = CGFloat(sender.value)
-                    currentGreenText = currentCrayon.roundValuesForLabel(value: currentGreenValue)
-                    greenLabel?.text = "Green Value: \(currentGreenText)"
+                    currentGreenForText = currentCrayon.roundValuesForLabel(value: currentGreenValue)
+                    greenLabel?.text = "Green Value: \(currentGreenForText)"
                 case 2:
                     currentBlueValue = CGFloat(sender.value)
-                    currentBlueText = currentCrayon.roundValuesForLabel(value: currentBlueValue)
-                    blueLabel?.text = "Blue Value: \(currentBlueText)"
+                    currentBlueForText = currentCrayon.roundValuesForLabel(value: currentBlueValue)
+                    blueLabel?.text = "Blue Value: \(currentBlueForText)"
                 default:
                     fatalError("No slider was used")
             }
@@ -78,15 +78,15 @@ class DetailsViewController: UIViewController {
     // Func to change alpha value based on stepper
     @IBAction func stepperChangeValue(_ sender: UIStepper) {
         if let currentCrayon = currentCrayon {
-            currentAlpha = CGFloat(sender.value)
-            currentAlphaText = currentCrayon.roundValuesForLabel(value: currentAlpha)
-            alphaLabel?.text = "Alpha Value: \(currentAlphaText)"
+            currentAlphaValue = CGFloat(sender.value)
+            currentAlphaForText = currentCrayon.roundValuesForLabel(value: currentAlphaValue)
+            alphaLabel?.text = "Alpha Value: \(currentAlphaForText)"
             
             setBackgroundColor()
         }
     }
     
-    
+    // Func to reset RGBa values to original details
     @IBAction func pressButtonReset(_ sender: UIButton) {
         setInitialDetails()
     }
@@ -101,22 +101,22 @@ class DetailsViewController: UIViewController {
             
             currentRedValue = currentCrayon.convertCrayonValue(value: currentCrayon.red)
             redSlider.value = Float(currentRedValue)
-            currentRedText = currentCrayon.roundValuesForLabel(value: currentRedValue)
-            redLabel?.text = "Red Value: \(currentRedText)"
+            currentRedForText = currentCrayon.roundValuesForLabel(value: currentRedValue)
+            redLabel?.text = "Red Value: \(currentRedForText)"
             
             currentGreenValue = currentCrayon.convertCrayonValue(value: currentCrayon.green)
             greenSlider.value = Float(currentGreenValue)
-            currentGreenText = currentCrayon.roundValuesForLabel(value: currentGreenValue)
-            greenLabel?.text = "Green Value: \(currentGreenText)"
+            currentGreenForText = currentCrayon.roundValuesForLabel(value: currentGreenValue)
+            greenLabel?.text = "Green Value: \(currentGreenForText)"
             
             currentBlueValue = currentCrayon.convertCrayonValue(value: currentCrayon.blue)
             blueSlider.value = Float(currentBlueValue)
-            currentBlueText = currentCrayon.roundValuesForLabel(value: currentBlueValue)
-            blueLabel?.text = "Blue Value: \(currentBlueText)"
+            currentBlueForText = currentCrayon.roundValuesForLabel(value: currentBlueValue)
+            blueLabel?.text = "Blue Value: \(currentBlueForText)"
             
-            currentAlpha = defaultAlpha
-            currentAlphaText = currentCrayon.roundValuesForLabel(value: currentAlpha)
-            alphaLabel?.text = "Alpha Value: \(currentAlphaText)"
+            currentAlphaValue = defaultAlphaValue
+            currentAlphaForText = currentCrayon.roundValuesForLabel(value: currentAlphaValue)
+            alphaLabel?.text = "Alpha Value: \(currentAlphaForText)"
             
             setBackgroundColor()
         }
@@ -124,6 +124,6 @@ class DetailsViewController: UIViewController {
     
     // Func to set the background color based on current RGB values
     func setBackgroundColor() {
-        self.view.backgroundColor = UIColor(red: currentRedValue, green: currentGreenValue, blue: currentBlueValue, alpha: currentAlpha)
+        self.view.backgroundColor = UIColor(red: currentRedValue, green: currentGreenValue, blue: currentBlueValue, alpha: currentAlphaValue)
     }
 }

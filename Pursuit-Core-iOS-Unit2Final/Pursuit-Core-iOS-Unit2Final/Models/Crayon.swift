@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Crayon {
   var name: String
@@ -39,4 +40,11 @@ class Crayon {
     Crayon(name: "Blue Green", red: 13, green: 152, blue: 186, hex: "#0D98BA"),
     Crayon(name: "Blue Violet", red: 115, green: 102, blue: 189, hex: "#7366BD")
   ]
+    
+    static let defaultAlpha: CGFloat = 1
+
+    func convertCrayonValue(value: Double) -> Double {
+        let convertedValue = value/255
+        return convertedValue
+    }
 }

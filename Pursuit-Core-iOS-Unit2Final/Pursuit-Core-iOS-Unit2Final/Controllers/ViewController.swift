@@ -9,10 +9,11 @@
 import UIKit
 
 class CrayonListViewController: UIViewController {
-
-    let crayons = Crayon.allTheCrayons
     
     @IBOutlet weak var crayonTableView: UITableView!
+    
+    let crayons = Crayon.allTheCrayons
+    let defaultAlpha = Crayon.defaultAlpha
     
     override func viewDidLoad() {
     super.viewDidLoad()
@@ -38,10 +39,17 @@ extension CrayonListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let crayon = crayons[indexPath.row]
+        
+        let redValue = crayon.convertCrayonValue(value: crayon.red)
+        let greenValue = crayon.convertCrayonValue(value: crayon.green)
+        let blueValue = crayon.convertCrayonValue(value: crayon.blue)
+        let alphaValue = defaultAlpha
+
         let cell = crayonTableView.dequeueReusableCell(withIdentifier: "crayonCell", for: indexPath)
+        
         cell.textLabel?.text = crayon.name
         cell.detailTextLabel?.text = crayon.hex
-        cell.backgroundColor = UIColor(displayP3Red: CGFloat(crayon.red/255), green: CGFloat(crayon.green/255), blue: CGFloat(crayon.blue/255), alpha: 1)
+        cell.backgroundColor = UIColor(displayP3Red: CGFloat(redValue), green: CGFloat(greenValue), blue: CGFloat(blueValue), alpha: alphaValue)
         
         return cell
     }

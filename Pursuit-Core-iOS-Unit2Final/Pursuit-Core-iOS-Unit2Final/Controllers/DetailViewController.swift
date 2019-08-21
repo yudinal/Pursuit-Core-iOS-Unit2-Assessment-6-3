@@ -16,14 +16,17 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
     @IBOutlet weak var alphaStepper: UIStepper!
-    
     @IBOutlet weak var alphaValueLabel: UILabel!
-    @IBOutlet weak var resetButton: UIButton!
-    
+  
     @IBOutlet weak var redTextField: UITextField!
     @IBOutlet weak var greenTextField: UITextField!
     @IBOutlet weak var blueTextField: UITextField!
     
+    @IBOutlet weak var redLabel: UILabel!
+    @IBOutlet weak var greenLabel: UILabel!
+    @IBOutlet weak var blueLabel: UILabel!
+    
+    @IBOutlet weak var resetButton: UIButton!
     //MARK: -- Properties
     var currentCrayon: Crayon!
     
@@ -71,14 +74,14 @@ class DetailViewController: UIViewController {
     
     private func setLabelTextValues(){
         colorNameLabel.text = currentCrayon.name
-        redTextField.text = "Red: \(redSlider.value.roundTo(places: 2))"
-        blueTextField.text = "Blue: \(blueSlider.value.roundTo(places: 2))"
-        greenTextField.text = "Green: \(greenSlider.value.roundTo(places: 2))"
+        redTextField.text = "\(redSlider.value.roundTo(places: 2))"
+        blueTextField.text = "\(blueSlider.value.roundTo(places: 2))"
+        greenTextField.text = "\(greenSlider.value.roundTo(places: 2))"
         alphaValueLabel.text = "Alpha: \(alphaStepper.value.roundTo(places: 2))"
     }
     
     private func darkMode() {
-        [colorNameLabel, alphaValueLabel].forEach({$0?.textColor = .white})
+        [colorNameLabel, alphaValueLabel, redLabel, greenLabel, blueLabel].forEach({$0?.textColor = .white})
         [alphaStepper, resetButton, redSlider, greenSlider, blueSlider].forEach({$0?.tintColor = .white})
         resetButton.layer.cornerRadius = resetButton.frame.height / 2
         resetButton.layer.borderColor = UIColor.white.cgColor
@@ -86,7 +89,7 @@ class DetailViewController: UIViewController {
     }
     
     private func lightMode() {
-        [colorNameLabel, alphaValueLabel].forEach({$0?.textColor = .black})
+        [colorNameLabel, alphaValueLabel, redLabel, greenLabel, blueLabel].forEach({$0?.textColor = .black})
         [alphaStepper, resetButton, redSlider, greenSlider, blueSlider].forEach({$0?.tintColor = .black})
         resetButton.layer.cornerRadius = resetButton.frame.height / 2
         resetButton.layer.borderColor = UIColor.black.cgColor
@@ -193,12 +196,12 @@ extension DetailViewController: UITextFieldDelegate {
             
         default: ()
         }
-        
         return true
     }
     
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let aSet = NSCharacterSet(charactersIn:"0123456789").inverted
+        let aSet = NSCharacterSet(charactersIn:".0123456789").inverted
         let compSepByCharInSet = string.components(separatedBy: aSet)
         let numberFiltered = compSepByCharInSet.joined(separator: "")
         
@@ -206,7 +209,7 @@ extension DetailViewController: UITextFieldDelegate {
             let currentText = textField.text ?? ""
             guard let stringRange = Range(range, in: currentText) else { return false }
             let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
-            return updatedText.count <= 10
+            return updatedText.count <= 4
         } else {
             return false
         }

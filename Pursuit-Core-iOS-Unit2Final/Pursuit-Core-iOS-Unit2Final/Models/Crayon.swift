@@ -5,7 +5,7 @@
 //  Created by Alex Paul on 11/15/18.
 //  Copyright © 2018 Alex Paul. All rights reserved.
 //
-
+import UIKit
 import Foundation
 
 class Crayon {
@@ -14,6 +14,7 @@ class Crayon {
   var green: Double
   var blue: Double
   var hex: String
+    
   init(name: String, red: Double, green: Double, blue: Double, hex: String) {
     self.name = name
     self.red = red
@@ -39,4 +40,9 @@ class Crayon {
     Crayon(name: "Blue Green", red: 13, green: 152, blue: 186, hex: "#0D98BA"),
     Crayon(name: "Blue Violet", red: 115, green: 102, blue: 189, hex: "#7366BD")
   ]
+    
+    public func color() -> UIColor {
+        return UIColor (displayP3Red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1.0)
+    }
 }
+

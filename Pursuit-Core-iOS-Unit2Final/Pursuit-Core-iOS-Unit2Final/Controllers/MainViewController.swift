@@ -14,16 +14,20 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var firstTableView: UITableView!
     
-    
-
-  override func viewDidLoad() {
+    override func viewDidLoad() {
     super.viewDidLoad()
     firstTableView.dataSource = self
+    }
     
-  }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let indexPath = firstTableView.indexPathForSelectedRow, let CrayonsDetailViewController = segue.destination as? CrayonsDetailViewController else {return}
+        
+        let crayonToDetail = crayonPalettes[indexPath.row]
+        CrayonsDetailViewController.crayons = crayonToDetail
+    }
 }
-extension MainViewController: UITableViewDataSource
-{
+
+extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return crayonPalettes.count
     }
@@ -37,7 +41,7 @@ extension MainViewController: UITableViewDataSource
         cell.textLabel?.text = crayonInCell.name
         cell.detailTextLabel?.text = crayonInCell.hex
         cell.backgroundColor = UIColor (displayP3Red: CGFloat(crayonInCell.red/255), green: CGFloat(crayonInCell.green/255), blue: CGFloat(crayonInCell.blue/255), alpha: 1)
-    return cell
+        return cell
     }
     
     

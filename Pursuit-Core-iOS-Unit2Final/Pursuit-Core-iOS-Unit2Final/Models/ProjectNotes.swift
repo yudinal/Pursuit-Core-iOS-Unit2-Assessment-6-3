@@ -19,6 +19,8 @@ import Foundation
  6. Conform the datasource, by making the extension, add the protocols, write the codes, declare two constant vars and put in the correct name for 'reuseable cell identifier'
  7. Set the background color, textLabel and detailTextLabel. Change CellType into Subtitle, otherwise the two Labels' AutoLayout went awry.
  8. Preparing the segue:
+ a. Create Detailed VC with: RGB Sliders, RGB Labels, Alpha Slider & Label, Reset Button and CrayonColorName Label.
+ b. Change the name of Detail VC to CrayonsDetailVC and its folder too when you connect the segue.
  
  
  

@@ -102,7 +102,7 @@
                                     <action selector="blueSliderTouched:" destination="u8Q-8J-9T2" eventType="valueChanged" id="pw9-3m-3ll"/>
                                 </connections>
                             </slider>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" value="1" maximumValue="1" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="EyI-A4-OEw">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" maximumValue="1" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="EyI-A4-OEw">
                                 <rect key="frame" x="160" y="532" width="94" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="h90-M1-sH9"/>

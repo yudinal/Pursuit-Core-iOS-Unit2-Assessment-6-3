@@ -17,7 +17,6 @@ class DetailViewController: UIViewController {
     }
 
     var crayon: Crayon!
-    
 
     
     @IBOutlet weak var colorNameLabel: UILabel!
@@ -43,6 +42,11 @@ class DetailViewController: UIViewController {
         backgroundColor.changeRed(red: CGFloat(sender.value))
         redValueLabel.text = "Red Value: \(sender.value.roundTo(places: 2))"
         updateBackgroundColor()
+        if istooDark() == true {
+            changeColor(color: UIColor.white)
+        } else {
+            changeColor(color: UIColor.black)
+        }
         
         
     }
@@ -51,12 +55,22 @@ class DetailViewController: UIViewController {
         backgroundColor.changeGreen(green: CGFloat(sender.value))
         greenValueLabel.text = "Green Value: \(sender.value.roundTo(places: 2))"
         updateBackgroundColor()
+        if istooDark() == true {
+            changeColor(color: UIColor.white)
+        } else {
+            changeColor(color: UIColor.black)
+        }
     }
     
     @IBAction func blueSliderTouched(_ sender: UISlider) {
         backgroundColor.changeBlue(blue: CGFloat(sender.value))
         blueValueLabel.text = "Blue Value: \(sender.value.roundTo(places: 2))"
         updateBackgroundColor()
+        if istooDark() == true {
+            changeColor(color: UIColor.white)
+        } else {
+            changeColor(color: UIColor.black)
+        }
     }
     
     
@@ -64,12 +78,11 @@ class DetailViewController: UIViewController {
         backgroundColor.changeAlpha(alpha: CGFloat(sender.value))
         alphaValueLabel.text = "Alpha Value: \(sender.value.roundTo(places: 2))"
         updateBackgroundColor()
-        if sender.value < 0.5 {
+        if istooDark() == true {
             changeColor(color: UIColor.white)
         } else {
             changeColor(color: UIColor.black)
         }
-        
     }
     
     
@@ -78,14 +91,10 @@ class DetailViewController: UIViewController {
         setInitialValues()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        
-        
-    }
+
     
     func updateBackgroundColor() {
         self.view.backgroundColor = backgroundColor.getColor()
-        
     }
     
     
@@ -95,7 +104,11 @@ class DetailViewController: UIViewController {
     
     func setInitialValues() {
         backgroundColor = Color(red: CGFloat(crayon.red/255)
-            , green: CGFloat(crayon.green/255), blue: CGFloat(crayon.blue/255), alpha: 1)
+        , green: CGFloat(crayon.green/255), blue: CGFloat(crayon.blue/255), alpha: 1)
+        
+        if self.view.backgroundColor == UIColor(red: 0, green: 0, blue: 0, alpha: 1) {
+            changeColor(color: UIColor.white)
+        }
         
         colorNameLabel.text = crayon.name
         redValueLabel.text = "Red Value: \((crayon.red/255).roundTo(places: 2))"
@@ -115,6 +128,16 @@ class DetailViewController: UIViewController {
         blueValueLabel.textColor = color
         greenValueLabel.textColor = color
         alphaValueLabel.textColor = color
+    }
+    
+    func istooDark() -> Bool {
+        if alphaStepper.value < 0.5 {
+            return true
+        } else if redSlider.value < 0.3 && blueSlider.value < 0.3 && greenSlider.value < 0.3 {
+            return true
+        }
+        
+        return false
     }
     
 

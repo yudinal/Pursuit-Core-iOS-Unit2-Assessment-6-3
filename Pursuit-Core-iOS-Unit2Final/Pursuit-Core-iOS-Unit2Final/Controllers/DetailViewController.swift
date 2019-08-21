@@ -9,6 +9,9 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    
+    var crayon: Crayon!
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var redValueLabel: UILabel!
     @IBOutlet weak var greenValueLabel: UILabel!
@@ -34,9 +37,7 @@ class DetailViewController: UIViewController {
         let newColor = UIColor(displayP3Red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaStepper.value))
         self.view.backgroundColor = newColor
     }
-//    func changeToValuesToDefaultColor() {
-//        redSlider.value = 
-//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         crayon.delegate = self

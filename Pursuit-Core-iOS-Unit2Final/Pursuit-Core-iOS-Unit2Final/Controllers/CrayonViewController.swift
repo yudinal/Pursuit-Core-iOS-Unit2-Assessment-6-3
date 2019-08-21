@@ -18,6 +18,11 @@ class CrayonViewController: UIViewController {
     crayonTableView.dataSource = self
     // Do any additional setup after loading the view, typically from a nib.
   }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destination = segue.destination as? DetailViewController,let indexPath = crayonTableView.indexPathForSelectedRow else {return}
+        destination.crayon = crayonBox[indexPath.row]
+    }
 }
 
 extension CrayonViewController: UITableViewDataSource {
@@ -33,6 +38,4 @@ extension CrayonViewController: UITableViewDataSource {
         cell.backgroundColor = theCrayon.getUIColor()
         return cell
     }
-    
-    
 }

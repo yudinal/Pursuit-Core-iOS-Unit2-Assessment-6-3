@@ -44,12 +44,24 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        crayonName.text = crayon.name
-        redSlider.value = Float(crayon.red/255)
-        greenSlider.value = Float(crayon.green/255)
-        blueSlider.value = Float(crayon.blue/255)
+        // STORING RGB VALUES
+        let red = crayon.red/255
+        let green = crayon.green/255
+        let blue = crayon.blue/255
         
-        view.backgroundColor = UIColor(red: CGFloat(crayon.red/255), green: CGFloat(crayon.green/255), blue: CGFloat(crayon.blue/255), alpha: 1.0)
+        // SETTING SLIDER VALUES
+        crayonName.text = crayon.name
+        redSlider.value = Float(red)
+        greenSlider.value = Float(green)
+        blueSlider.value = Float(blue)
+        
+        // SETTING BACKGROUND COLOR
+        self.view.backgroundColor = UIColor(red: CGFloat(red), green: CGFloat(green), blue: CGFloat(blue), alpha: 1.0)
+        
+        // UPDATING THE VALUES THE MODEL INSTANCE
+        model.changeRed(red: CGFloat(red))
+        model.changeGreen(green: CGFloat(green))
+        model.changeBlue(blue: CGFloat(blue))
         
     }
     

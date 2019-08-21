@@ -12,7 +12,7 @@ class DetailCrayonViewController: UIViewController {
     
     var crayon: Crayon!
     
-    //MARK -- IBOutlets
+    //MARK: -- IBOutlets
         //Label outlets
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var redValueLabel: UILabel!
@@ -26,7 +26,7 @@ class DetailCrayonViewController: UIViewController {
         //stepper outlets
     @IBOutlet weak var alphaStepper: UIStepper!
     
-    //MARK -- IBActions
+    //MARK: -- IBActions
     
     @IBAction func movedRedSlider(_ sender: UISlider) {
     }
@@ -47,11 +47,23 @@ class DetailCrayonViewController: UIViewController {
     }
     
     private func setUpViews() {
-        self.view.backgroundColor = UIColor(displayP3Red: CGFloat(crayon.red / 255), green: CGFloat(crayon.green / 255), blue: CGFloat(crayon.blue / 255), alpha: 1)
+        //give initial values on loadup
         redSlider.value = Float(crayon.red / 255)
         greenSlider.value = Float(crayon.green / 255)
         blueSlider.value = Float(crayon.blue / 255)
+        alphaStepper.value = 1
         nameLabel.text = crayon.name
+        //call custom private functions
+        updateBackgroundColor()
+        changeLabelTexts()
+    }
+    
+    //MARK: -- Custom private functions
+    private func updateBackgroundColor() {
+        self.view.backgroundColor = UIColor(displayP3Red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaStepper.value))
+    }
+    
+    private func changeLabelTexts() {
         redValueLabel.text = "Red Value: \(String(format: "%.2f", redSlider.value))"
         greenValueLabel.text = "Green Value: \(String(format: "%.2f", greenSlider.value))"
         blueValueLabel.text = "Blue Value: \(String(format: "%.2f", blueSlider.value))"

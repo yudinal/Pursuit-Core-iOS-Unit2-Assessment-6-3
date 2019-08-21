@@ -35,9 +35,12 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         crayonName.text = crayon.name
+        redSlider.value = Float(crayon.red/255)
+        greenSlider.value = Float(crayon.green/255)
+        blueSlider.value = Float(crayon.blue/255)
         
         view.backgroundColor = UIColor(red: CGFloat(crayon.red/255), green: CGFloat(crayon.green/255), blue: CGFloat(crayon.blue/255), alpha: 1.0)
         
     }
-
+    
 }

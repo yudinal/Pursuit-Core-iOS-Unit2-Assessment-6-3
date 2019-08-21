@@ -80,29 +80,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uz2-Ph-aql">
+                                <rect key="frame" x="166" y="769" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Reset All"/>
+                                <connections>
+                                    <action selector="resetButton:" destination="qZm-1j-YuE" eventType="touchUpInside" id="aIQ-L9-D1L"/>
+                                </connections>
+                            </button>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="4J4-LQ-af3" userLabel="redSlider">
-                                <rect key="frame" x="80" y="295" width="255" height="30"/>
+                                <rect key="frame" x="80" y="210" width="255" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="redSliderAct:" destination="qZm-1j-YuE" eventType="valueChanged" id="atS-og-LHc"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="QRR-uO-9N5" userLabel="greenSlider">
-                                <rect key="frame" x="80" y="434" width="255" height="30"/>
+                                <rect key="frame" x="80" y="340" width="255" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="greenSliderAct:" destination="qZm-1j-YuE" eventType="valueChanged" id="pEa-Yl-2T2"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="iZq-pY-QEy" userLabel="blueSlider">
-                                <rect key="frame" x="80" y="558" width="255" height="30"/>
+                                <rect key="frame" x="80" y="464" width="255" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="blueSliderAct:" destination="qZm-1j-YuE" eventType="valueChanged" id="8n4-ez-5kf"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Red" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CMs-Fi-dxH" userLabel="redLabel">
-                                <rect key="frame" x="134" y="238" width="146" height="49"/>
+                                <rect key="frame" x="134" y="247" width="146" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -133,35 +141,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Alpha" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61B-yR-WNM" userLabel="alphaLabel">
-                                <rect key="frame" x="134" y="638" width="146" height="49"/>
+                                <rect key="frame" x="134" y="672" width="146" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wqp-s5-9G5">
-                                <rect key="frame" x="134" y="695" width="146" height="67"/>
+                            <stepper contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" maximumValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fdB-QW-eAx" userLabel="alphaStepper">
+                                <rect key="frame" x="160" y="635" width="94" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <stepper contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" maximumValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fdB-QW-eAx" userLabel="alphaStepper">
-                                        <rect key="frame" x="26" y="19" width="94" height="29"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <connections>
-                                            <action selector="stepperAct:" destination="qZm-1j-YuE" eventType="valueChanged" id="Boh-dz-WjK"/>
-                                        </connections>
-                                    </stepper>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uz2-Ph-aql">
-                                <rect key="frame" x="166" y="807" width="83" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Reset All"/>
                                 <connections>
-                                    <action selector="resetButton:" destination="qZm-1j-YuE" eventType="touchUpInside" id="aIQ-L9-D1L"/>
+                                    <action selector="stepperAct:" destination="qZm-1j-YuE" eventType="valueChanged" id="Boh-dz-WjK"/>
                                 </connections>
-                            </button>
+                            </stepper>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="0Pj-QT-vjy"/>

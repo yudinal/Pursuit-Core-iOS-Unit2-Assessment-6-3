@@ -32,6 +32,9 @@ class ColorChangeViewController: UIViewController {
     //MARK: - Actions
     
     @IBAction func resetButton(_ sender: UIButton) {
+    redLabelOut.text = "Red"
+    greenLabelOut.text = "Green"
+    blueLabelOut.text = "Blue"
     viewOut.backgroundColor = UIColor(displayP3Red: CGFloat(red), green:  CGFloat(green), blue:  CGFloat(blue), alpha: 1.0)
     redSliderOut.value = Float(red)
     greenSliderOut.value = Float(green)
@@ -39,13 +42,16 @@ class ColorChangeViewController: UIViewController {
     }
     
     @IBAction func redSliderAct(_ sender: UISlider) {
+        redLabelOut.text = "Red: \(Float(sender.value))"
    viewOut.backgroundColor = UIColor(displayP3Red: CGFloat(sender.value), green:  CGFloat(greenSliderOut.value), blue:  CGFloat(blueSliderOut.value), alpha: 1.0)
     }
     @IBAction func greenSliderAct(_ sender: UISlider) {
+        greenLabelOut.text = "Green: \(Float(sender.value))"
     viewOut.backgroundColor = UIColor(displayP3Red: CGFloat(sender.value), green:  CGFloat(greenSliderOut.value), blue:  CGFloat(blueSliderOut.value), alpha: 1.0)
 
     }
     @IBAction func blueSliderAct(_ sender: UISlider) {
+        blueLabelOut.text = "Blue: \(Float(sender.value))"
     viewOut.backgroundColor = UIColor(displayP3Red: CGFloat(sender.value), green:  CGFloat(greenSliderOut.value), blue:  CGFloat(blueSliderOut.value), alpha: 1.0)
     }
     @IBAction func stepperAct(_ sender: UIStepper) {

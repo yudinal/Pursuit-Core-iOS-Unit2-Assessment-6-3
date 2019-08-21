@@ -40,28 +40,42 @@ class DetailsViewController: UIViewController {
         setInitialDetails()
     }
     
+    func formatValues() {
+        if let currentCrayon = currentCrayon {
+
+        currentRedValue = currentCrayon.convertCrayonValue(value: currentCrayon.red)
+        currentGreenValue = currentCrayon.convertCrayonValue(value: currentCrayon.green)
+        currentBlueValue = currentCrayon.convertCrayonValue(value: currentCrayon.blue)
+            
+        currentRedText = currentCrayon.roundValuesForLabel(value: currentRedValue)
+        currentGreenText = currentCrayon.roundValuesForLabel(value: currentGreenValue)
+        currentBlueText = currentCrayon.roundValuesForLabel(value: currentBlueValue)
+        currentAlphaText = currentCrayon.roundValuesForLabel(value: currentAlpha)
+        }
+    }
     
     func setInitialDetails() {
 
         if let currentCrayon = currentCrayon {
+            self.nameLabel?.text = currentCrayon.name
             
             currentRedValue = currentCrayon.convertCrayonValue(value: currentCrayon.red)
-            currentGreenValue = currentCrayon.convertCrayonValue(value: currentCrayon.green)
-            currentBlueValue = currentCrayon.convertCrayonValue(value: currentCrayon.blue)
-            
-            currentRedText = currentCrayon.roundValuesForLabel(value: currentRedValue)
-            currentGreenText = currentCrayon.roundValuesForLabel(value: currentGreenValue)
-            currentBlueText = currentCrayon.roundValuesForLabel(value: currentBlueValue)
-            currentAlphaText = currentCrayon.roundValuesForLabel(value: currentAlpha)
-            
-            self.nameLabel?.text = currentCrayon.name
-            redLabel?.text = "Red Value: \(currentRedText)"
-            greenLabel?.text = "Green Value: \(currentGreenText)"
-            blueLabel?.text = "Blue Value: \(currentBlueText)"
-            alphaLabel?.text = "Alpha Value: \(currentAlphaText)"
             redSlider.value = Float(currentRedValue)
+            currentRedText = currentCrayon.roundValuesForLabel(value: currentRedValue)
+            redLabel?.text = "Red Value: \(currentRedText)"
+            
+            currentGreenValue = currentCrayon.convertCrayonValue(value: currentCrayon.green)
             greenSlider.value = Float(currentGreenValue)
+            currentGreenText = currentCrayon.roundValuesForLabel(value: currentGreenValue)
+            greenLabel?.text = "Green Value: \(currentGreenText)"
+            
+            currentBlueValue = currentCrayon.convertCrayonValue(value: currentCrayon.blue)
             blueSlider.value = Float(currentBlueValue)
+            currentBlueText = currentCrayon.roundValuesForLabel(value: currentBlueValue)
+            blueLabel?.text = "Blue Value: \(currentBlueText)"
+            
+            currentAlphaText = currentCrayon.roundValuesForLabel(value: currentAlpha)
+            alphaLabel?.text = "Alpha Value: \(currentAlphaText)"
             
             setBackgroundColor()
         }
@@ -73,25 +87,24 @@ class DetailsViewController: UIViewController {
     
     @IBAction func sliderChangeValue(_ sender: UISlider) {
         if let currentCrayon = currentCrayon {
-        switch sender.tag {
-            case 0:
-                currentRedValue = CGFloat(sender.value)
-                redLabel?.text = "Red Value: \(currentRedText)"
-            case 1:
-                currentGreenValue = CGFloat(sender.value)
-                greenLabel?.text = "Green Value: \(currentGreenText)"
-            case 2:
-                currentBlueValue = CGFloat(sender.value)
-                blueLabel?.text = "Blue Value: \(currentBlueText)"
-            default:
-                fatalError("No slider was used")
+            switch sender.tag {
+                case 0:
+                    currentRedValue = CGFloat(sender.value)
+                    currentRedText = currentCrayon.roundValuesForLabel(value: currentRedValue)
+                    redLabel?.text = "Red Value: \(currentRedText)"
+                case 1:
+                    currentGreenValue = CGFloat(sender.value)
+                    currentGreenText = currentCrayon.roundValuesForLabel(value: currentGreenValue)
+                    greenLabel?.text = "Green Value: \(currentGreenText)"
+                case 2:
+                    currentBlueValue = CGFloat(sender.value)
+                    currentBlueText = currentCrayon.roundValuesForLabel(value: currentBlueValue)
+                    blueLabel?.text = "Blue Value: \(currentBlueText)"
+                default:
+                    fatalError("No slider was used")
+            }
+            setBackgroundColor()
         }
-        currentRedText = currentCrayon.roundValuesForLabel(value: currentRedValue)
-        currentGreenText = currentCrayon.roundValuesForLabel(value: currentGreenValue)
-        currentBlueText = currentCrayon.roundValuesForLabel(value: currentBlueValue)
-        
-        setBackgroundColor()
-    }
     }
     
   
@@ -101,7 +114,7 @@ class DetailsViewController: UIViewController {
         currentAlphaText = currentCrayon.roundValuesForLabel(value: currentAlpha)
         alphaLabel?.text = "Alpha Value: \(currentAlphaText)"
         setBackgroundColor()
+        }
     }
-    }
-
+    
 }

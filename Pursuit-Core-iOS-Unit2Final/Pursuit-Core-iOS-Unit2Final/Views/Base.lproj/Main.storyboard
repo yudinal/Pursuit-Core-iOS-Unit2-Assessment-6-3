@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Crayon View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Pursuit_Core_iOS_Unit2Final" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CrayonViewController" customModule="Pursuit_Core_iOS_Unit2Final" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,10 +72,10 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="99.776785714285708"/>
         </scene>
-        <!--View Controller-->
+        <!--Crayon Detail View Controller-->
         <scene sceneID="80Q-1z-wRI">
             <objects>
-                <viewController id="ohf-2G-2E3" sceneMemberID="viewController">
+                <viewController id="ohf-2G-2E3" customClass="CrayonDetailViewController" customModule="Pursuit_Core_iOS_Unit2Final" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="STJ-Yx-Zm7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -142,6 +142,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="AX3-Ex-LKJ"/>
                     </view>
+                    <connections>
+                        <outlet property="alphaStepper" destination="Ti4-Ki-jqr" id="9m2-wJ-Ocs"/>
+                        <outlet property="alphaValueLabel" destination="uDo-jq-tdP" id="amX-hP-TSH"/>
+                        <outlet property="blueSlider" destination="ibw-JN-2ON" id="xhn-xa-rKh"/>
+                        <outlet property="blueValueLabel" destination="HwI-gY-fe7" id="Ah1-cb-m3j"/>
+                        <outlet property="colorNameLabel" destination="rf6-1q-FK9" id="ujs-BO-nvc"/>
+                        <outlet property="greenSlider" destination="ZzB-Is-IKk" id="oPe-5n-mjL"/>
+                        <outlet property="greenValueLabel" destination="noK-lF-CTd" id="utb-fx-woV"/>
+                        <outlet property="redSlider" destination="J0E-5B-nQB" id="nSg-1C-dsJ"/>
+                        <outlet property="redValueLabel" destination="pvE-8r-srW" id="lGt-dK-ff7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IMs-Aa-dqf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

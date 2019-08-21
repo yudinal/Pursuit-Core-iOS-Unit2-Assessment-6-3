@@ -21,7 +21,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         crayonTableView.dataSource = self
     }
     
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return crayonValue.count
     }

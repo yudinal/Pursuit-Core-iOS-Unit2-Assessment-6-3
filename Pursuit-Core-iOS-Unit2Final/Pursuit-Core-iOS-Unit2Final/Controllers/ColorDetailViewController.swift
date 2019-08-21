@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ColorDetailViewController: UIViewController {
+class ColorDetailViewController: UIViewController{
     
     
     
@@ -28,6 +28,7 @@ class ColorDetailViewController: UIViewController {
     @IBOutlet var colorName: UILabel!
     @IBOutlet var alphaLabel: UILabel!
     @IBOutlet var alphaStepper: UIStepper!
+   
     
     
     func changeLabelColor(){
@@ -44,6 +45,10 @@ class ColorDetailViewController: UIViewController {
          newGreenValue = CGFloat(greenSlider.value)
          newBlueValue = CGFloat(blueSlider.value)
          newAlphaValue = 1
+        redLabel.text = "Red Value: \(redSlider.value)"
+        greenLabel.text = "Green Value: \(greenSlider.value)"
+        blueLabel.text = "Blue Value: \(blueSlider.value)"
+        alphaLabel.text = "Alpha Value: \(1)"
     }
     func setSlidersValue(){
         redSlider.value =  Float(detailColor.red/255.0)
@@ -74,7 +79,7 @@ class ColorDetailViewController: UIViewController {
     @IBAction func redSliderAction(_ sender: UISlider) {
         newRedValue = CGFloat(sender.value)
         changeBackGroundColor()
-        redLabel.text = "Red Hex Value: (\(sender.value))"
+        redLabel.text = "Red Value: (\(sender.value))"
     }
     
     @IBAction func greenSliderAction(_ sender: UISlider) {
@@ -100,6 +105,6 @@ class ColorDetailViewController: UIViewController {
        populateView()
         setSlidersValue()
        resetVariableValue()
-        
+        labelArray.forEach({$0.textColor = .black})
     }
 }

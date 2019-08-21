@@ -125,5 +125,22 @@ class DetailsViewController: UIViewController {
     // Func to set the background color based on current RGB values
     func setBackgroundColor() {
         self.view.backgroundColor = UIColor(red: currentRedValue, green: currentGreenValue, blue: currentBlueValue, alpha: currentAlphaValue)
+        changeLabelTextColor()
     }
+    
+    // Func to change label text color if background is too dark
+    func changeLabelTextColor() {
+        if currentRedValue < 0.4 || currentGreenValue < 0.4 || currentBlueForText < 0.4 || currentAlphaValue < 0.4 {
+            redLabel?.textColor = UIColor.white
+            greenLabel?.textColor = UIColor.white
+            blueLabel?.textColor = UIColor.white
+            alphaLabel?.textColor = UIColor.white
+        } else {
+            redLabel?.textColor = UIColor.black
+            greenLabel?.textColor = UIColor.black
+            blueLabel?.textColor = UIColor.black
+            alphaLabel?.textColor = UIColor.black
+        }
+    }
+    
 }

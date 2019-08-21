@@ -10,6 +10,7 @@ import UIKit
 
 class DetailViewController: UIViewController {
     var crayon: Crayon!
+    var model = ColorsModel()
     
     @IBOutlet weak var crayonName: UILabel!
     @IBOutlet weak var redSlider: UISlider!

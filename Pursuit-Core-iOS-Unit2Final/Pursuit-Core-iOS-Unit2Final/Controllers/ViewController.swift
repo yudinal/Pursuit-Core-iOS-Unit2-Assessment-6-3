@@ -25,8 +25,17 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let crayon = crayons[indexPath.row]
         
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "crayonCell") {
+            
+            cell.textLabel?.text = crayon.name
+            cell.detailTextLabel?.text = "Hex Value: \(crayon.hex)"
+            
+            return cell
+        }
         
+        return UITableViewCell()
     }
     
     

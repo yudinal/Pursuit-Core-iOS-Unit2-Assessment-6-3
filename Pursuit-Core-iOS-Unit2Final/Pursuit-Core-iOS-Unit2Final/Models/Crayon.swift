@@ -57,4 +57,20 @@ class Crayon {
         let cGFloatAlpha = CGFloat(alpha) / CGFloat(255)
         return cGFloatAlpha
     }
+    
+    func updateRed(red: CGFloat) {
+        self.red = Double(red)
+    }
+    
+    func updateGreen(green: CGFloat) {
+        self.green = Double(green)
+    }
+    
+    func updateBlue(blue: CGFloat) {
+        self.blue = Double(blue)
+    }
+    
+    func getColor() -> UIColor {
+        return UIColor(red: CGFloat(red), green: CGFloat(green), blue: CGFloat(blue), alpha: 1)
+    }
 }

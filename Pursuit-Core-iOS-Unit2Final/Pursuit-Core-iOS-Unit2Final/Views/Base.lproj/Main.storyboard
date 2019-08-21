@@ -66,7 +66,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="zd2-4c-zRj">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" maximumValue="1" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="zd2-4c-zRj">
                                 <rect key="frame" x="160" y="523" width="94" height="29"/>
                                 <connections>
                                     <action selector="alphaStepper:" destination="8dw-ha-FTs" eventType="valueChanged" id="hVv-Vz-wx6"/>
@@ -132,6 +132,7 @@
                     </view>
                     <connections>
                         <outlet property="alphaLabel" destination="bIH-7s-8Zh" id="qIA-bK-f1r"/>
+                        <outlet property="alphaStepperOutlet" destination="zd2-4c-zRj" id="P3F-6x-Glh"/>
                         <outlet property="blueLabel" destination="aSp-ur-sM2" id="ubu-Jx-pAO"/>
                         <outlet property="blueSliderOutlet" destination="nbw-wF-b4w" id="zEq-lk-faq"/>
                         <outlet property="crayonName" destination="KK4-rk-PaA" id="hKm-hW-bjQ"/>

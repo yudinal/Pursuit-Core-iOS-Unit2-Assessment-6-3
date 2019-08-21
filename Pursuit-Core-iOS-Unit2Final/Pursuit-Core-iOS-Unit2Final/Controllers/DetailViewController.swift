@@ -28,11 +28,10 @@ class DetailViewController: UIViewController {
     @IBAction func resetPressed(_ sender: UIButton) {
     }
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        crayonName.text = crayon.name
         
     }
 

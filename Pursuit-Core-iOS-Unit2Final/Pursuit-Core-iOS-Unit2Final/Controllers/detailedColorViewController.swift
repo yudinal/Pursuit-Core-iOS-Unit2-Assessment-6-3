@@ -15,8 +15,6 @@ class detailedColorViewController: UIViewController {
     @IBOutlet weak var crayonColorNameOutlet: UILabel!
     
     @IBOutlet weak var redValueSlider: UISlider!
-    @IBAction func redvalueSliderAction(_ sender: UISlider) {
-    }
     @IBOutlet weak var redValueLabel: UILabel!
     
     
@@ -34,13 +32,43 @@ class detailedColorViewController: UIViewController {
     
     
     @IBAction func resetButton(_ sender: Any) {
+        view.backgroundColor = UIColor(red: CGFloat(detailedCrayon.red)/255, green: CGFloat(detailedCrayon.green)/255, blue: CGFloat(detailedCrayon.blue)/255, alpha: 1)
+//        reloadInputViews()
+
     }
     
 //    MARK -- Variables
     var detailedCrayon: Crayon!
+    var slide = ColorsModel()
     
+//    MARK -- Actions
     
+  
+    @IBAction func colorSliderChanged(_ sender: UISlider) {
+        
+        switch sender.tag {
+        case 0:
+            slide.changeRed(red: CGFloat(sender.value))
+            redValueLabel.text = "\(redValueSlider.value)"
+            updateBackgroundColor()
+        case 1:
+            slide.changeBlue(blue: CGFloat(sender.value))
+            blueValueLabel.text = "\(blueValueSlider.value)"
+            updateBackgroundColor()
+        case 2:
+            slide.changeGreen(green: CGFloat(sender.value))
+            greenValueLabel.text = "\(greenValueSlider.value)"
+            updateBackgroundColor()
+        default:
+            fatalError("Unexpected Error")
+        }
+        
+        
+    }
     
+    func updateBackgroundColor() {
+        self.view.backgroundColor = slide.getColor()
+    }
     
     
 //    var detailedBackground = back
@@ -52,11 +80,14 @@ class detailedColorViewController: UIViewController {
         
         view.backgroundColor = UIColor(displayP3Red: CGFloat(detailedCrayon.red)/255, green: CGFloat(detailedCrayon.green)/255, blue: CGFloat(detailedCrayon.blue)/255, alpha: 1)
         
+//        view.backgroundColor = UIColor(red: CGFloat(redValueSliderAction.value), green: CGFloat(UISlider(greenValueSliderAction.value)), blue: CGFloat(blueValueSlider.value), alpha: 1)
+        
+//        var myBackground = redValueSliderAction(UISlider)
+//        redValueSlider.self
         
         
-//        var blue = UIColor(displayP3Red: 0, green: 0, blue: 1, alpha: 1)
-//        blueValueSlider = UIColor(displayP3Red: 0, green: 0, blue: 1, alpha: 1)
-//        view.backgroundColor = blue
+//        , blueValueSliderAction;(UISlider)();, greenValueSliderAction(UISlider)
+        reloadInputViews()
 
 //         Do any additional setup after loading the view.
     }
@@ -73,3 +104,4 @@ class detailedColorViewController: UIViewController {
     */
 
 }
+

@@ -76,14 +76,20 @@
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZVK-wr-c1A">
                                 <rect key="frame" x="23" y="368" width="243.5" height="31"/>
                                 <connections>
-                                    <action selector="redvalueSliderAction:" destination="MHp-H7-5sc" eventType="valueChanged" id="kuS-iH-64P"/>
+                                    <action selector="colorSliderChanged:" destination="MHp-H7-5sc" eventType="valueChanged" id="swO-Ph-BU0"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="cm0-F6-V72">
+                            <slider opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="cm0-F6-V72">
                                 <rect key="frame" x="25" y="432" width="241.5" height="31"/>
+                                <connections>
+                                    <action selector="colorSliderChanged:" destination="MHp-H7-5sc" eventType="valueChanged" id="Jtg-tc-FW1"/>
+                                </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Rpx-0l-QsK">
+                            <slider opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Rpx-0l-QsK">
                                 <rect key="frame" x="25" y="499" width="241.5" height="31"/>
+                                <connections>
+                                    <action selector="colorSliderChanged:" destination="MHp-H7-5sc" eventType="valueChanged" id="kEe-OW-xpi"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" text="redValue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fR-82-WE0">
                                 <rect key="frame" x="302" y="375" width="67.5" height="21"/>
@@ -131,7 +137,7 @@
                             <constraint firstItem="TO4-XP-GQ6" firstAttribute="top" secondItem="8fR-82-WE0" secondAttribute="bottom" constant="43" id="XuS-3J-1iy"/>
                             <constraint firstItem="cm0-F6-V72" firstAttribute="trailing" secondItem="Rpx-0l-QsK" secondAttribute="trailing" id="b7J-am-8wq"/>
                             <constraint firstItem="s1H-Um-Hfv" firstAttribute="bottom" secondItem="Rpx-0l-QsK" secondAttribute="bottom" constant="333" id="c2f-yj-LPR"/>
-                            <constraint firstItem="TO4-XP-GQ6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cm0-F6-V72" secondAttribute="trailing" symbolic="YES" id="co8-di-IIG"/>
+                            <constraint firstItem="TO4-XP-GQ6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cm0-F6-V72" secondAttribute="trailing" constant="8" symbolic="YES" id="co8-di-IIG"/>
                             <constraint firstItem="ZVK-wr-c1A" firstAttribute="leading" secondItem="s1H-Um-Hfv" secondAttribute="leading" constant="25" id="dsg-x4-gFR"/>
                             <constraint firstItem="YxC-tR-AH8" firstAttribute="centerX" secondItem="Mbo-hb-OBR" secondAttribute="centerX" id="huy-nf-lOm"/>
                             <constraint firstItem="Mbo-hb-OBR" firstAttribute="top" secondItem="s1H-Um-Hfv" secondAttribute="top" constant="100" id="kMn-Eu-jGr"/>
@@ -152,7 +158,6 @@
                         <outlet property="redValueLabel" destination="8fR-82-WE0" id="aSz-uO-inA"/>
                         <outlet property="redValueSlider" destination="ZVK-wr-c1A" id="hiP-5s-hed"/>
                         <outlet property="resetButtonOutlet" destination="YxC-tR-AH8" id="sWN-GI-SmF"/>
-                        <outlet property="viewColorOutlet" destination="vko-KW-4Lb" id="e8q-qn-A36"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZLY-S1-Xda" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -10,11 +10,31 @@ import UIKit
 
 class ViewController: UIViewController {
 
-  override func viewDidLoad() {
+    @IBOutlet weak var crayonTableView: UITableView!
+    
+    let crayons = Crayon.allTheCrayons
+    
+    override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    crayonTableView.delegate = self
+        crayonTableView.dataSource = self
   }
 
 
+}
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return crayons.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let crayon = crayons[indexPath.row]
+        let cell = crayonTableView.dequeueReusableCell(withIdentifier: "crayonCell", for: indexPath)
+        cell.textLabel?.text = crayon.name
+        cell.detailTextLabel?.text = String(crayon.hex)
+        return cell
+    }
+    
+    
 }
 

@@ -9,36 +9,53 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
     
-    
-    var crayons: [Crayon]!
+    //MARK: Outlets & Variables
     
     @IBOutlet weak var tableViewOut: UITableView!
+    var crayons: [Crayon]!
     
     
+    //MARK: TableView Methods
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return crayons.count
-    }
+        return crayons.count }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        let cell = tableView.dequeueReusableCell(withIdentifier: "crayonCell", for: indexPath)
         cell.textLabel?.text = crayons[indexPath.row].name
+        cell.detailTextLabel?.text = crayons[indexPath.row].hex
         cell.backgroundColor = UIColor(displayP3Red: CGFloat(crayons[indexPath.row].red), green: CGFloat(crayons[indexPath.row].green), blue: CGFloat(crayons[indexPath.row].blue), alpha: 1.0)
-        return cell
-        
-    }
+        return cell }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
+        return 90 }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1 }
+    
+    
+    
+    //MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier != nil else { fatalError("No identifier in segue") }
+        guard let ColorChangeVC = segue.destination as? ColorChangeViewController
+            else { fatalError("Unexpected segue")}
+        guard let selectedIndexPath = tableViewOut.indexPathForSelectedRow
+            else { fatalError("No row selected") }
+        ColorChangeVC.blue = crayons[selectedIndexPath.row].blue
+        ColorChangeVC.green = crayons[selectedIndexPath.row].green
+        ColorChangeVC.red = crayons[selectedIndexPath.row].red
+        ColorChangeVC.currentColorName = crayons[selectedIndexPath.row].name
+
     }
-    
-    
     
     
 
     
     
+    //MARK: Lifecycle Methods
     
   override func viewDidLoad() {
     tableViewOut.delegate = self

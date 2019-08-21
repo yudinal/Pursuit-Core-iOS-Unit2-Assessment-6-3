@@ -13,7 +13,7 @@ class CrayonBoxViewController: UIViewController {
   //MARK: -- Outlet
  
   @IBOutlet weak var crayonBoxTableView: UITableView!
-  
+  var crayonColorArr = Crayon.allTheCrayons
   
   
   override func viewDidLoad() {
@@ -23,11 +23,8 @@ class CrayonBoxViewController: UIViewController {
     // Do any additional setup after loading the view, typically from a nib.
   }
 
-
 }
-
-  var crayonColorArr = Crayon.allTheCrayons
-
+  
 extension CrayonBoxViewController: UITableViewDataSource {
 
   
@@ -44,11 +41,18 @@ extension CrayonBoxViewController: UITableViewDataSource {
     crayonCell.backgroundColor = UIColor(displayP3Red: CGFloat(crayonBox.red / 255), green: CGFloat(crayonBox.green / 255), blue: CGFloat(crayonBox.blue / 255), alpha: 1.0)
     return crayonCell
   }
+  
+
 }
 
 extension CrayonBoxViewController: UITableViewDelegate {
   
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+  guard let indexPath = crayonBoxTableView.indexPathForSelectedRow,
+    let detailVC = segue.destination as? DetailViewController else { return }
   
+      let colorDataToSendTOverToDVC = crayonColorArr[indexPath.row]
+      detailVC.TheCurrentColor = [colorDataToSendTOverToDVC]
 }
-
+}
 

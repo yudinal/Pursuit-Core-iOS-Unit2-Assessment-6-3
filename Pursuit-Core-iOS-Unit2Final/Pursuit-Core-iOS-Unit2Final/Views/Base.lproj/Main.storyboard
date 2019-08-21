@@ -48,6 +48,7 @@
                                         <connections>
                                             <outlet property="crayonHexValue" destination="dEg-lT-HUX" id="iHv-U0-HpJ"/>
                                             <outlet property="crayonName" destination="5WR-ij-9fU" id="vL2-XI-EWB"/>
+                                            <segue destination="9AJ-KK-yrq" kind="show" identifier="detailSegue" id="ZI1-1J-cZa"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -65,7 +66,6 @@
                     <navigationItem key="navigationItem" id="bav-zy-cRS"/>
                     <connections>
                         <outlet property="crayonBoxTableView" destination="l2Z-Ri-iId" id="fjH-x3-xQj"/>
-                        <segue destination="9AJ-KK-yrq" kind="show" identifier="detailSegue" id="wla-WJ-JdK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -89,8 +89,11 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="VWW-C5-ALa">
                                 <rect key="frame" x="8" y="371" width="398" height="58.5"/>
                                 <subviews>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="2AP-FP-bkV">
+                                    <slider opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="2AP-FP-bkV">
                                         <rect key="frame" x="-2" y="0.0" width="402" height="31"/>
+                                        <connections>
+                                            <action selector="adjustCurrentColor:" destination="9AJ-KK-yrq" eventType="valueChanged" id="n1i-4V-pBh"/>
+                                        </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="current green value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tk2-E6-cNN">
                                         <rect key="frame" x="8" y="38" width="382" height="20.5"/>
@@ -107,8 +110,11 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="oNR-o6-UDa">
                                 <rect key="frame" x="8" y="509.5" width="398" height="53.5"/>
                                 <subviews>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="qgG-gR-tbB">
+                                    <slider opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="qgG-gR-tbB">
                                         <rect key="frame" x="-2" y="0.0" width="402" height="31"/>
+                                        <connections>
+                                            <action selector="adjustCurrentColor:" destination="9AJ-KK-yrq" eventType="valueChanged" id="U67-X6-Mok"/>
+                                        </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="current blue value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TSl-s6-TkH">
                                         <rect key="frame" x="8" y="33" width="382" height="20.5"/>
@@ -125,8 +131,11 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="flG-Vl-hBd">
                                 <rect key="frame" x="8" y="237.5" width="398" height="53.5"/>
                                 <subviews>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="v7c-2W-daZ">
+                                    <slider opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="v7c-2W-daZ">
                                         <rect key="frame" x="-2" y="0.0" width="402" height="31"/>
+                                        <connections>
+                                            <action selector="adjustCurrentColor:" destination="9AJ-KK-yrq" eventType="valueChanged" id="gkj-IL-ewd"/>
+                                        </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="current red value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbI-Vj-U6T">
                                         <rect key="frame" x="8" y="33" width="382" height="20.5"/>
@@ -186,12 +195,12 @@
                         <viewLayoutGuide key="safeArea" id="iyA-7V-Tue"/>
                     </view>
                     <connections>
-                        <outlet property="blueSlider" destination="qgG-gR-tbB" id="1ra-Ea-HMu"/>
+                        <outlet property="blueSlider" destination="qgG-gR-tbB" id="8y9-8N-jIw"/>
                         <outlet property="blueValueLabel" destination="TSl-s6-TkH" id="eUs-81-TAt"/>
                         <outlet property="crayonNameLabel" destination="piw-Kh-QEj" id="tMK-rU-Jpq"/>
-                        <outlet property="greenSlider" destination="2AP-FP-bkV" id="wX3-oM-Byn"/>
+                        <outlet property="greenSlider" destination="2AP-FP-bkV" id="FI3-DZ-B5w"/>
                         <outlet property="greenValueLabel" destination="tk2-E6-cNN" id="Nmr-Cs-gX7"/>
-                        <outlet property="redSlider" destination="v7c-2W-daZ" id="NwM-LH-ZMm"/>
+                        <outlet property="redSlider" destination="v7c-2W-daZ" id="cPw-XF-HrG"/>
                         <outlet property="redValueLabel" destination="dbI-Vj-U6T" id="1hy-Zo-ol5"/>
                         <outlet property="resetButton" destination="hLd-Nx-RJs" id="y9C-4T-t93"/>
                     </connections>

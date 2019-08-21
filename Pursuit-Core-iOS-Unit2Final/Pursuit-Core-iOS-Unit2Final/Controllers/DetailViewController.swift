@@ -10,36 +10,43 @@ import UIKit
 
 class DetailViewController: UIViewController {
   
-  //MARK: -- Outlets
+  
+  //MARK: -- Internal Properties
+  var TheCurrentColor = Crayon.allTheCrayons
+  
+  //MARK: -- IBOutlets
   @IBOutlet weak var crayonNameLabel: UILabel!
+  @IBOutlet weak var redValueLabel: UILabel!
+  @IBOutlet weak var greenValueLabel: UILabel!
+  @IBOutlet weak var blueValueLabel: UILabel!
   
   @IBOutlet weak var redSlider: UISlider!
-  @IBOutlet weak var redValueLabel: UILabel!
-  
   @IBOutlet weak var greenSlider: UISlider!
-  @IBOutlet weak var greenValueLabel: UILabel!
-  
   @IBOutlet weak var blueSlider: UISlider!
-  @IBOutlet weak var blueValueLabel: UILabel!
+  
   
   @IBOutlet weak var resetButton: UIButton!
   
-  
+  //MARK: -- Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+//        populateOutlet()
 
-        // Do any additional setup after loading the view.
     }
-    
+ 
 
-    /*
-    // MARK: - Navigation
+//  @IBAction func adjustCurrentColor(_ sender: UISlider) {
+//  }
+ 
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+  //MARK: -- Private methods
+  func populateOutlet() {
+//    crayonNameLabel.text = 
+//    redValueLabel.text = "Current Red Value\()"
+//    greenValueLabel.text = "Current Green Value \()"
+//    blueValueLabel.text = "Current Blue Value \()"
+  }
+
 
 }

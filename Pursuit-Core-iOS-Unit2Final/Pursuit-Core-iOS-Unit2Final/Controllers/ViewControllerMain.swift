@@ -27,11 +27,11 @@ class ViewControllerMain: UIViewController {
             tableView.dataSource = self
         }
 
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        guard let indexPath = tableView.indexPathForSelectedRow,
-//            let detailVC = segue.destination as? DetailViewController else { return }
-//        let fellowToSendOverToDVC = person[indexPath.row]
-//        detailVC.theFellow = fellowToSendOverToDVC
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let indexPath = tableView.indexPathForSelectedRow,
+            let detailVC = segue.destination as? DetailViewController else { return }
+        let crayonsToSendOverToDVC = crayon[indexPath.row]
+        detailVC.crayon = crayonsToSendOverToDVC
 
     
     
@@ -41,6 +41,10 @@ class ViewControllerMain: UIViewController {
 //func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 //    return 120
 
+
+
+}
+
 extension ViewControllerMain: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return crayon.count
@@ -48,18 +52,12 @@ extension ViewControllerMain: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        var eachCrayon = crayon[indexPath.row]
-//        let settingCells = crayon[indexPath.row]
+        let eachCrayon = crayon[indexPath.row]
+        //        let settingCells = crayon[indexPath.row]
         cell.textLabel?.text = eachCrayon.name
         cell.detailTextLabel?.text = eachCrayon.hex
         cell.backgroundColor = eachCrayon.displayColors()
         return cell
-        }
-    
-       
-        
-
 }
 
-    
-
+}

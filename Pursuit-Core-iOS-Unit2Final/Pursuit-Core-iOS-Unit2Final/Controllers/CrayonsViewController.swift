@@ -11,11 +11,7 @@ import UIKit
 class CrayonsViewController: UIViewController {
     
     var crayons = Crayon.allTheCrayons
-    @IBOutlet weak var crayonNameLabel: UILabel!
-    @IBOutlet weak var crayonHexValueLabel: UILabel!
-
     @IBOutlet weak var CrayonsTableVIew: UITableView!
-    @IBOutlet weak var crayonCell: UITableViewCell!
     
     
     override func viewDidLoad() {

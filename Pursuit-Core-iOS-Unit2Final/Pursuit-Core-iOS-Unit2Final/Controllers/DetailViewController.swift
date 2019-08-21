@@ -26,24 +26,22 @@ class DetailViewController: UIViewController {
     var currentCrayon: Crayon!
     
     //MARK: --IBActions
-    @IBAction func redSliderChanged(_ sender: UISlider) {
-        setLabelTextValues()
-        setBackgroundColor()
-        checkColorReadability()
-        
-    }
-    
-    @IBAction func greenSliderChanged(_ sender: UISlider) {
-        setLabelTextValues()
-        setBackgroundColor()
-        checkColorReadability()
-        
-    }
-    
-    @IBAction func blueSliderChanged(_ sender: UISlider) {
-        setLabelTextValues()
-        setBackgroundColor()
-        checkColorReadability()
+    @IBAction func slidersAdjusted(_ sender: UISlider) {
+        switch sender.tag {
+        case 0: //Red Slider
+            setLabelTextValues()
+            setBackgroundColor()
+            checkColorReadability()
+        case 1: //Green Slider
+            setLabelTextValues()
+            setBackgroundColor()
+            checkColorReadability()
+        case 2: //Blue Slider
+            setLabelTextValues()
+            setBackgroundColor()
+            checkColorReadability()
+        default: ()
+        }
     }
     
     @IBAction func alphaStepperPressed(_ sender: UIStepper) {
@@ -57,7 +55,6 @@ class DetailViewController: UIViewController {
     }
     
     //MARK: -- Methods
-    
     private func setBackgroundColor() {
         let currentCrayonBackgroundColor = UIColor(displayP3Red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value) , blue: CGFloat(blueSlider.value), alpha: CGFloat(Float(alphaStepper.value)))
         view.backgroundColor = currentCrayonBackgroundColor

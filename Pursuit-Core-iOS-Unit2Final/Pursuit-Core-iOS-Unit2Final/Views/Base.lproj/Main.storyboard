@@ -43,7 +43,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="u8Q-8J-9T2" kind="show" id="MiH-kH-svK"/>
+                                    <segue destination="u8Q-8J-9T2" kind="show" identifier="colorSegue" id="MiH-kH-svK"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

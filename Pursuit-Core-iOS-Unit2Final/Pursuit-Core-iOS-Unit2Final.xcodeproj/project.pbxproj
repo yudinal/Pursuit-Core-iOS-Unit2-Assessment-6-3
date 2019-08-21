@@ -83,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				28D149B1230D8FE0001E4619 /* CrayonTableViewController.swift */,
+				28D149B3230DAAD5001E4619 /* DetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -100,7 +101,6 @@
 			isa = PBXGroup;
 			children = (
 				57AFE731219E136D0024A541 /* Main.storyboard */,
-				28D149B3230DAAD5001E4619 /* DetailViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

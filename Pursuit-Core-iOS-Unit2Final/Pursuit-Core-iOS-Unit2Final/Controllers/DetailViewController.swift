@@ -10,6 +10,14 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+//    var backgroundColor: UIColor {
+//        didSet {
+//            self.view.backgroundColor? =
+//        }
+//    }
+    
+    var crayon: Crayon!
+
     
     @IBOutlet weak var colorNameLabel: UILabel!
     
@@ -40,8 +48,14 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.view.backgroundColor = UIColor.init(displayP3Red: CGFloat(crayon.red/255), green: CGFloat(crayon.green/255), blue: CGFloat(crayon.blue/255), alpha: 1)
+        
+        colorNameLabel.text = crayon.name
+        redValueLabel.text = (crayon.red/255).description
+        blueValueLabel.text = (crayon.red/255).description
+        greenValueLabel.text = (crayon.red/255).description
+        alphaValueLabel.text = "1"
     }
     
     

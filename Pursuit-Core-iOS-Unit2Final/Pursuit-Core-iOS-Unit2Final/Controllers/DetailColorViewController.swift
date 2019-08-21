@@ -38,7 +38,7 @@ class DetailColorViewController: UIViewController {
         redSliderLabel.text = "\(arrayOfNamesForViewControllerLabels()[0]) : \(redSlider.value)"
         blueSliderLabel.text = "\(arrayOfNamesForViewControllerLabels()[2]) : \(blueSlider.value)"
         greenSliderLabel.text = "\(arrayOfNamesForViewControllerLabels()[1]) : \(greenSlider.value)"
-        alphaSliderLabel.text = "\(arrayOfNamesForViewControllerLabels()[3]) : \(alphaStepper.value)"
+        alphaSliderLabel.text = "\(arrayOfNamesForViewControllerLabels()[3]) : \(String(format: "%.1f", alphaStepper.value))"
         resetButton.setTitle(arrayOfNamesForViewControllerLabels()[4], for: .normal)
         colorName.text = passingInfo.name
     }
@@ -93,10 +93,11 @@ class DetailColorViewController: UIViewController {
             
             arrayOfLabels.forEach({$0?.textColor = .white})
             
+
         }
         
     }
-    
 }
+
 
 

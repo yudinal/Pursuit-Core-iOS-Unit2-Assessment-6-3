@@ -75,3 +75,4 @@ func arrayOfNamesForViewControllerLabels() -> [String] {
 func edgeCaseColors() -> [String] {
     return ["Black"]
 }
+

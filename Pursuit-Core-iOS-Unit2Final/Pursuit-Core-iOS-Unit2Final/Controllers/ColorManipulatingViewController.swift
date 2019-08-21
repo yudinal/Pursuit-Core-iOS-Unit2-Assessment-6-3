@@ -25,6 +25,8 @@ class ColorManipulatingViewController: UIViewController {
     @IBOutlet weak var iAmGreen: UILabel!
     @IBOutlet weak var iAmBlue: UILabel!
     
+    @IBAction func resetColorsButton(_ sender: Any) {
+    }
     
     @IBAction func sliderColorChange(_ sender: UISlider) {
         switch sender.tag {

@@ -95,6 +95,9 @@
                                 <rect key="frame" x="128" y="735" width="158" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="RESET ALL VALUES"/>
+                                <connections>
+                                    <action selector="resetColorsButton:" destination="GjN-pp-R2M" eventType="touchUpInside" id="dDl-iO-Rsx"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Slide Me To Change My Red Value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyN-BJ-958">
                                 <rect key="frame" x="265" y="188" width="74" height="21"/>

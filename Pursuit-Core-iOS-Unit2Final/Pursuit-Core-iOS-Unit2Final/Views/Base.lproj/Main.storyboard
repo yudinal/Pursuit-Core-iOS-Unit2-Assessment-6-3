@@ -30,14 +30,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8J9-rN-D1K">
-                                                    <rect key="frame" x="20" y="5" width="33.5" height="20.5"/>
+                                                    <rect key="frame" x="20" y="3" width="37.5" height="23.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4Or-7w-zF3">
-                                                    <rect key="frame" x="20" y="25.5" width="44" height="14.5"/>
+                                                    <rect key="frame" x="20" y="26.5" width="44" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -138,11 +138,12 @@
                                     <action selector="alphaStepperPressed:" destination="TZr-cY-CmY" eventType="valueChanged" id="KNp-vJ-wKE"/>
                                 </connections>
                             </stepper>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t2U-0U-oBU">
-                                <rect key="frame" x="169" y="744" width="72" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RoM-Re-9H1">
+                                <rect key="frame" x="164" y="753" width="86" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Reset"/>
                                 <connections>
-                                    <action selector="resetButtonPressed:" destination="TZr-cY-CmY" eventType="touchUpInside" id="ymk-y4-TWG"/>
+                                    <action selector="resetButtonPressed:" destination="TZr-cY-CmY" eventType="touchUpInside" id="NC2-mo-lGX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -156,10 +157,8 @@
                             <constraint firstItem="uqu-Db-pr9" firstAttribute="leading" secondItem="OL4-zV-ENH" secondAttribute="leading" constant="45" id="gkZ-mi-Ay2"/>
                             <constraint firstItem="yog-jS-qfz" firstAttribute="top" secondItem="3bs-D1-X9q" secondAttribute="bottom" constant="27.5" id="gtp-DQ-M5O"/>
                             <constraint firstItem="3bs-D1-X9q" firstAttribute="centerX" secondItem="w04-X8-4eA" secondAttribute="centerX" id="kOX-Vc-PoV"/>
-                            <constraint firstItem="t2U-0U-oBU" firstAttribute="top" secondItem="yog-jS-qfz" secondAttribute="bottom" constant="23" id="oMw-eC-xY0"/>
                             <constraint firstItem="3bs-D1-X9q" firstAttribute="top" secondItem="uqu-Db-pr9" secondAttribute="bottom" constant="23" id="pPP-2r-Gew"/>
                             <constraint firstItem="uqu-Db-pr9" firstAttribute="centerX" secondItem="OL4-zV-ENH" secondAttribute="centerX" id="qvy-ze-7rx"/>
-                            <constraint firstItem="t2U-0U-oBU" firstAttribute="centerX" secondItem="OL4-zV-ENH" secondAttribute="centerX" id="vCU-s8-hk5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OL4-zV-ENH"/>
                     </view>
@@ -173,7 +172,7 @@
                         <outlet property="greenValueLabel" destination="sHV-dx-sjP" id="FCr-Qm-Hfq"/>
                         <outlet property="redSlider" destination="x1d-wD-6pW" id="0Il-HD-I3d"/>
                         <outlet property="redValueLabel" destination="gZS-T5-Z5Y" id="HOS-ma-xKr"/>
-                        <outlet property="resetButtonOutlet" destination="t2U-0U-oBU" id="y3G-Sh-pW5"/>
+                        <outlet property="resetButton" destination="RoM-Re-9H1" id="RF8-n6-6k4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ITB-Zh-LmK" userLabel="First Responder" sceneMemberID="firstResponder"/>

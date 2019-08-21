@@ -9,7 +9,17 @@
 import UIKit
 
 class ColorViewController: UIViewController {
-
+    @IBOutlet weak var selectedCrayon: UILabel!
+    @IBOutlet weak var redValue: UILabel!
+    @IBOutlet weak var greenValue: UILabel!
+    @IBOutlet weak var blueValue: UILabel!
+    @IBOutlet weak var alphaValue: UILabel!
+    @IBOutlet weak var redSlide: UISlider!
+    @IBOutlet weak var greenSlide: UISlider!
+    @IBOutlet weak var blueSlide: UISlider!
+    @IBOutlet weak var alphaStepper: UIStepper!
+    @IBOutlet weak var reset: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

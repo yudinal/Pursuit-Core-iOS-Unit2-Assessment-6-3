@@ -20,6 +20,15 @@ class CrayonViewController: UIViewController {
     crayonTableView.delegate = self
         crayonTableView.dataSource = self
   }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destination = segue.destination as? CrayonDetailViewController,
+            let indexPath = crayonTableView.indexPathForSelectedRow else {return}
+        let selectedCrayon = crayons[indexPath.row]//cellSelected is indexPath
+        
+        
+        destination.crayon = selectedCrayon
+    }
 }
 
 

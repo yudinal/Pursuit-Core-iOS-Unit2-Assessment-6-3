@@ -35,7 +35,7 @@ class DetailColorViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     func setUpNamesOfLabels() {
-      redSliderLabel.text = arrayOfNamesForViewControllerLabels()[0]
+        redSliderLabel.text = "\(arrayOfNamesForViewControllerLabels()[0]) : \(redSlider.value)"
         blueSliderLabel.text = "\(arrayOfNamesForViewControllerLabels()[2]) : \(blueSlider.value)"
         greenSliderLabel.text = "\(arrayOfNamesForViewControllerLabels()[1]) : \(greenSlider.value)"
         alphaSliderLabel.text = "\(arrayOfNamesForViewControllerLabels()[3]) : \(alphaStepper.value)"
@@ -59,17 +59,21 @@ class DetailColorViewController: UIViewController {
     @IBAction func blueSliderAction(_ sender: UISlider) {
         blueSlider.value = sender.value
         changeUIColorWithSlider()
+        setUpNamesOfLabels()
     }
     @IBAction func greenSliderAction(_ sender: UISlider) {
         greenSlider.value = sender.value
         changeUIColorWithSlider()
+        setUpNamesOfLabels()
     }
     @IBAction func alphaStepperAction(_ sender: UIStepper) {
         alphaStepper.value = sender.value
         changeUIColorWithSlider()
+        setUpNamesOfLabels()
     }
     @IBAction func resetButton(_ sender: UIButton) {
         setUpInitialValues()
+        setUpNamesOfLabels()
     }
     func changeUIColorWithSlider() {
         view.backgroundColor = UIColor(red: CGFloat(redSlider!.value), green: CGFloat(greenSlider!.value), blue: CGFloat(blueSlider!.value), alpha: CGFloat(alphaStepper!.value))

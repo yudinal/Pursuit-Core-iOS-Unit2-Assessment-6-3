@@ -32,6 +32,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = crayonTableView.dequeueReusableCell(withIdentifier: "crayonCell", for: indexPath)
         cell.textLabel?.text = crayon.name
         cell.detailTextLabel?.text = String(crayon.hex)
+        cell.backgroundColor = UIColor(red: CGFloat(crayon.red)/255, green: CGFloat(crayon.green)/255, blue: CGFloat(crayon.blue)/255, alpha: 1)
         return cell
     }
     

@@ -9,12 +9,30 @@
 import UIKit
 
 class CrayonViewController: UIViewController {
-
+    @IBOutlet weak var crayonTableView: UITableView!
+    
+    let crayonBox = Crayon.allTheCrayons
+    
   override func viewDidLoad() {
     super.viewDidLoad()
+    crayonTableView.dataSource = self
     // Do any additional setup after loading the view, typically from a nib.
   }
-
-
 }
 
+extension CrayonViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return crayonBox.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = crayonTableView.dequeueReusableCell(withIdentifier: "crayonCell", for: indexPath)
+        let theCrayon = crayonBox[indexPath.row]
+        cell.textLabel?.text = theCrayon.name
+        cell.detailTextLabel?.text = theCrayon.hex
+        cell.backgroundColor = UIColor(displayP3Red: CGFloat(theCrayon.red/255), green: CGFloat(theCrayon.green/255), blue: CGFloat(theCrayon.blue/255), alpha: 1)
+        return cell
+    }
+    
+    
+}

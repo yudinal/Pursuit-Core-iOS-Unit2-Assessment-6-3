@@ -42,6 +42,8 @@ class Crayon {
   ]
 }
 
+//var RGBValues: Array = 
+//UIColor(displayP3Red:green:blue:alpha:)
 
 //func displayColor() -> UIColor {
 //    return UIColor(red: red, green: green, blue: blue, alpha: 1)

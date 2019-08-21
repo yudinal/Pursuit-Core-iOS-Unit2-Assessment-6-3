@@ -29,16 +29,24 @@ class DetailCrayonViewController: UIViewController {
     //MARK: -- IBActions
     
     @IBAction func movedRedSlider(_ sender: UISlider) {
+        updateBackgroundColor()
+        changeLabelTexts()
     }
     
     @IBAction func movedGreenSlider(_ sender: UISlider) {
+        updateBackgroundColor()
+        changeLabelTexts()
     }
     
     @IBAction func movedBlueSlider(_ sender: UISlider) {
+        updateBackgroundColor()
+        changeLabelTexts()
     }
     
     
     @IBAction func pressedStepper(_ sender: UIStepper) {
+        updateBackgroundColor()
+        changeLabelTexts()
     }
     
     override func viewDidLoad() {
@@ -67,7 +75,7 @@ class DetailCrayonViewController: UIViewController {
         redValueLabel.text = "Red Value: \(String(format: "%.2f", redSlider.value))"
         greenValueLabel.text = "Green Value: \(String(format: "%.2f", greenSlider.value))"
         blueValueLabel.text = "Blue Value: \(String(format: "%.2f", blueSlider.value))"
-        alphaValueLabel.text = "Alpha Value: \(String(alphaStepper.value))"
+        alphaValueLabel.text = "Alpha Value: \(String(format: "%.2f", alphaStepper.value))"
     }
     
     /*

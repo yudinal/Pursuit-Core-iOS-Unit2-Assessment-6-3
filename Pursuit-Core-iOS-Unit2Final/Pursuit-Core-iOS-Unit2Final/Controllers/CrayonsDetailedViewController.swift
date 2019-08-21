@@ -32,22 +32,11 @@ class CrayonsDetailedViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(displayP3Red: CGFloat(crayon.red/255), green: CGFloat(crayon.green/255), blue: CGFloat(crayon.blue/255), alpha: 1.0)
         selectedCrayonNameLabel.text = crayon.name
-        currentRedValueLabel.text = String(crayon.red/255)
-        currentGreenValueLabel.text = String(crayon.green/255)
-        currentBlueValueLabel.text = String(crayon.blue/255)
-//        currentAlphaValueLabel.text = String(1.0)
+        currentRedValueLabel.text = String("Hex: \(crayon.red) RGB: \(crayon.red/255)")
+        currentGreenValueLabel.text = String("Hex: \(crayon.green) RGB: \(crayon.green/255)")
+        currentBlueValueLabel.text = ("Hex: \(crayon.blue) RGB: \(crayon.blue/255)")
+//        currentAlphaValueLabel.text = steppervalue
           
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

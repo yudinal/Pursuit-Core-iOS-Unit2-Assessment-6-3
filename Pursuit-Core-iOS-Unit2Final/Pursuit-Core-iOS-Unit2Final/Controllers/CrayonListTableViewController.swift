@@ -9,9 +9,9 @@
 import UIKit
 
 class CrayonListTableViewController: UITableViewController {
-    
     let crayonList = Crayon.allTheCrayons
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,6 +40,19 @@ class CrayonListTableViewController: UITableViewController {
         cell.detailTextLabel?.text = crayonList[indexPath.row].hex
         cell.contentView.backgroundColor = UIColor(displayP3Red: crayonList[indexPath.row].convertRedToCGFloatNumber(red: crayonList[indexPath.row].red), green: crayonList[indexPath.row].convertGreenToCGFloatNumber(green: crayonList[indexPath.row].green), blue: crayonList[indexPath.row].convertBlueToCGFloatNumber(blue: crayonList[indexPath.row].blue), alpha: 1.0)
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueToColorManipulator" {
+            guard let colorChangeVC = segue.destination as? ColorManipulatingViewController else {
+                fatalError()
+            }
+            guard let selectedIndexPath = tableView.indexPathForSelectedRow else {
+                fatalError()
+            }
+          colorChangeVC.color = crayonList[selectedIndexPath.row]
+        }
+        
     }
     
     /*

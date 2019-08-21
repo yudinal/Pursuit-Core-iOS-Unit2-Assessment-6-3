@@ -9,9 +9,14 @@
 import UIKit
 
 class ColorManipulatingViewController: UIViewController {
-
+    
+    var color: Crayon!
+    
+    @IBOutlet weak var colorName: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        colorName.text = color.name
 
         // Do any additional setup after loading the view.
     }

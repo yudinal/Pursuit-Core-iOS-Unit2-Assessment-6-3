@@ -106,13 +106,6 @@
                                     <action selector="sliderChanged:" destination="XT5-HI-FRE" eventType="valueChanged" id="0DW-1G-QyA"/>
                                 </connections>
                             </slider>
-                            <stepper opaque="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" continuous="NO" value="1" maximumValue="1" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="x8o-7j-laf">
-                                <rect key="frame" x="160" y="442" width="94" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="alphaStepper:" destination="XT5-HI-FRE" eventType="valueChanged" id="uB8-Cp-vau"/>
-                                </connections>
-                            </stepper>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M8U-5t-l5V">
                                 <rect key="frame" x="188" y="556" width="39" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -163,16 +156,43 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="a" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BXS-4M-CfQ">
+                                <rect key="frame" x="202" y="394" width="16" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="aval" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PgL-nS-DYP">
+                                <rect key="frame" x="154" y="495" width="114" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stepper opaque="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" continuous="NO" value="1" maximumValue="1" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="x8o-7j-laf">
+                                <rect key="frame" x="164" y="442" width="94" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="alphaStepper:" destination="XT5-HI-FRE" eventType="valueChanged" id="uB8-Cp-vau"/>
+                                </connections>
+                            </stepper>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="pxh-Fj-pNo"/>
                     </view>
                     <connections>
+                        <outlet property="a" destination="BXS-4M-CfQ" id="CGt-k4-Ab6"/>
+                        <outlet property="alphaStepper" destination="x8o-7j-laf" id="sCw-ki-KQJ"/>
+                        <outlet property="aval" destination="PgL-nS-DYP" id="RCy-a4-YFz"/>
+                        <outlet property="b" destination="Z6B-lD-2oM" id="s7z-uq-krW"/>
                         <outlet property="blueSlider" destination="5Va-bE-fGr" id="qfQ-Hd-kYS"/>
                         <outlet property="bval" destination="Qgz-bX-u03" id="wZS-80-hqN"/>
                         <outlet property="crayonName" destination="TZT-Yp-Cvc" id="eyt-sU-3r8"/>
+                        <outlet property="g" destination="Ai8-Lt-6yL" id="WrN-Zo-2Uw"/>
                         <outlet property="greenSlider" destination="QyF-re-L2h" id="ReX-8F-2Lm"/>
                         <outlet property="gval" destination="CEh-4H-OOr" id="a8B-Eh-Nn1"/>
+                        <outlet property="r" destination="mcZ-7i-BNp" id="3ir-Oe-eQZ"/>
                         <outlet property="redSlider" destination="oFQ-Ng-01p" id="rXZ-dq-MWD"/>
                         <outlet property="rval" destination="KvA-iY-eOc" id="1aa-5W-GfO"/>
                     </connections>

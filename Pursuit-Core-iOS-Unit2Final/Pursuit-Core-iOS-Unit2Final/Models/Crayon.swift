@@ -48,4 +48,9 @@ class Crayon {
         return convertedValue
     }
     
+    func roundValuesForLabel(value: CGFloat) -> CGFloat {
+        let roundedValue = round(value*10)/10
+        return roundedValue
+    }
+    
 }

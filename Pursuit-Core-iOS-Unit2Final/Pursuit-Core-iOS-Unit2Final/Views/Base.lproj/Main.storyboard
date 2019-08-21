@@ -49,7 +49,7 @@
                                                     </subviews>
                                                 </tableViewCellContentView>
                                                 <connections>
-                                                    <segue destination="4Zv-kv-HP0" kind="show" id="SXY-uP-7Cc"/>
+                                                    <segue destination="4Zv-kv-HP0" kind="show" identifier="colorSegway" id="SXY-uP-7Cc"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>

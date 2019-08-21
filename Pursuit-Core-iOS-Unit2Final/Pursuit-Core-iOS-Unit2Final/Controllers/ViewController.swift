@@ -29,14 +29,17 @@ class ColorTableController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        print("In function")
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-            let color = colors[ indexPath.section]
+            let color = colors[ indexPath.row]
 if let viewController = storyBoard.instantiateViewController(withIdentifier: "crayonColor") as? ColorView {
+    print("Optional binding working")
 //            let color = colors[ indexPath.section]
            viewController.crayon = color
-            self.navigationController?.pushViewController(viewController, animated: true)
+    print("Assignment to view controller")
+self.navigationController?.pushViewController(viewController, animated: true)
         }
+        print("pushing view controller")
     }
     
     @IBOutlet weak var crayonTableView: UITableView!

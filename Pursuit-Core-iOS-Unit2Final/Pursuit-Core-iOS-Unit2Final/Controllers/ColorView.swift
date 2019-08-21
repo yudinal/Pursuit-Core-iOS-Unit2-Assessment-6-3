@@ -17,12 +17,9 @@ var crayon: Crayon!
     @IBOutlet weak var blueSlider: UISlider!
     @IBOutlet weak var greenValue: UILabel!
     @IBOutlet weak var greenSlider: UISlider!
-    
     @IBOutlet weak var alphaValue: UILabel!
     @IBOutlet var colorView: UIView!
-    
     @IBOutlet weak var alphaSlider: UISlider!
-    
     @IBOutlet weak var resetButton: UIButton!
     @IBAction func redSliderFunc(_ sender: UISlider) {
         redValue.text = "Red Value: \(redSlider.value)"
@@ -53,7 +50,7 @@ var crayon: Crayon!
         redSlider.value = Float(crayon.red / 255)
         blueSlider.value = Float(crayon.blue / 255)
         greenSlider.value = Float(crayon.green / 255)
-        alphaSlider.value = Float(1.0)
+        alphaSlider.value = Float(0.5)
         colorView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaSlider.value))
         
     }
@@ -63,9 +60,11 @@ var crayon: Crayon!
         colorName.text = crayon.name
         redValue.text = "Red Value: \(crayon.red / 255)"
         redSlider.value = Float(crayon.red / 255)
+        blueValue.text = "Blue Value: \(crayon.blue / 255)"
         blueSlider.value = Float(crayon.blue / 255)
+        greenValue.text = "Green Value: \(crayon.green / 255)"
         greenSlider.value = Float(crayon.green / 255)
-        alphaSlider.value = Float(1.0)
+        alphaSlider.value = Float(0.5)
        colorView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaSlider.value))
         // Do any additional setup after loading the view.
     }

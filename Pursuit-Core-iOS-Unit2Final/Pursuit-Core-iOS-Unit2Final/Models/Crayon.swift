@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Crayon {
   var name: String
@@ -40,3 +41,29 @@ class Crayon {
     Crayon(name: "Blue Violet", red: 115, green: 102, blue: 189, hex: "#7366BD")
   ]
 }
+func newColorArray() -> [Crayon] {
+    var newColorArray = [Crayon]()
+    for color in Crayon.allTheCrayons {
+        let newColor = Crayon(name: "", red: 0, green: 0, blue: 0, hex: "")
+        newColor.blue = color.blue / 255
+        newColor.red = color.red / 255
+        newColor.green = color.green / 255
+        newColor.name = color.name
+        newColor.hex = color.hex
+        newColorArray.append(newColor)
+        
+    }
+    return newColorArray
+}
+
+
+func grabColor() -> [UIColor] {
+    var colorArray1:[UIColor] = []
+    
+    for color in newColorArray() {
+        let receiveColors = UIColor(red: CGFloat(color.red), green: CGFloat(color.green), blue: CGFloat(color.blue), alpha: 1.0)
+        colorArray1.append(receiveColors)
+    }
+    return colorArray1
+}
+

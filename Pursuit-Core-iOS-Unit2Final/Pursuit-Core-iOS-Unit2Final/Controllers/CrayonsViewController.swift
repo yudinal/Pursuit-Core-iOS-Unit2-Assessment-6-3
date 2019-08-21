@@ -11,6 +11,7 @@ import UIKit
 class CrayonsViewController: UIViewController {
     
     var crayons = Crayon.allTheCrayons
+    
     @IBOutlet weak var CrayonsTableVIew: UITableView!
     
     override func viewDidLoad() {
@@ -19,20 +20,9 @@ class CrayonsViewController: UIViewController {
         CrayonsTableVIew.dataSource = self
     }
     
-    func showNotFoundAlert(titleType: String) -> Void {
-        let alert = UIAlertController(title: "\(titleType) not found!", message: "Please try again", preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-        alert.addAction(alertAction)
-        self.present(alert, animated: true)
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let crayonDetailedViewController = segue.destination as? CrayonsDetailedViewController else {
-            return showNotFoundAlert(titleType: "row")
-        }
-        guard let selectedIndexPath = CrayonsTableVIew.indexPathForSelectedRow else {
-            return showNotFoundAlert(titleType: "row")
-        }
+        guard let crayonDetailedViewController = segue.destination as? CrayonsDetailedViewController else {fatalError()}
+        guard let selectedIndexPath = CrayonsTableVIew.indexPathForSelectedRow else {fatalError()}
         let crayon = Crayon.allTheCrayons
         crayonDetailedViewController.crayon = crayon[selectedIndexPath.row]
         print(crayonDetailedViewController.crayon.name)

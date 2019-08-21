@@ -26,7 +26,6 @@ class CrayonsDetailedViewController: UIViewController {
     @IBOutlet weak var currentGreenValueLabel: UILabel!
     @IBOutlet weak var currentBlueValueLabel: UILabel!
     @IBOutlet weak var currentAlphaValueLabel: UILabel!
-    
     @IBOutlet weak var stepper: UIStepper!
     
     
@@ -35,15 +34,15 @@ class CrayonsDetailedViewController: UIViewController {
         case 0:
             crayon.red = Double(CGFloat(sender.value * 255))
             currentRedValueLabel.text = String("Current value of red: \(sender.value)")
-            updateViewBackgroundColor()
+            viewBackgroundColor()
         case 1:
             crayon.green = Double(CGFloat(sender.value * 255))
             currentGreenValueLabel.text = String("Current value of green: \(sender.value)")
-            updateViewBackgroundColor()
+            viewBackgroundColor()
         case 2:
             crayon.blue = Double(CGFloat(sender.value * 255))
             currentBlueValueLabel.text = String("Current value of blue: \(sender.value)")
-            updateViewBackgroundColor()
+            viewBackgroundColor()
         default:
             print("")
         }
@@ -54,19 +53,21 @@ class CrayonsDetailedViewController: UIViewController {
         currentAlphaValueLabel.text = String("Current value of alpha: \(sender.value)")
     }
     
-    func updateViewBackgroundColor() -> Void {
+    func viewBackgroundColor() -> Void {
         self.view.backgroundColor = UIColor(displayP3Red: CGFloat(crayon.red/255), green: CGFloat(crayon.green/255), blue: CGFloat(crayon.blue/255), alpha: 1.0)
     }
  
+    
+    @IBAction func resetViewToOriginal(_ sender: UIButton) {
+    }
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-        self.view.backgroundColor = UIColor(displayP3Red: CGFloat(crayon.red/255), green: CGFloat(crayon.green/255), blue: CGFloat(crayon.blue/255), alpha: 1.0)
+        viewBackgroundColor()
         selectedCrayonNameLabel.text = crayon.name
         currentRedValueLabel.text = String("Hex: \(crayon.red) RGB: \(crayon.red/255)")
         currentGreenValueLabel.text = String("Hex: \(crayon.green) RGB: \(crayon.green/255)")
         currentBlueValueLabel.text = ("Hex: \(crayon.blue) RGB: \(crayon.blue/255)")
         currentAlphaValueLabel.text = ""
-
     }
 
 }

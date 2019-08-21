@@ -7,6 +7,16 @@
 //
 
 import Foundation
+import UIKit
+
+protocol UIColorable {
+    var defaultRed: Float {get}
+    var defaultGreen: Float {get}
+    var defaultBlue: Float {get}
+    var defaultAlpha: Double {get}
+    func resetValues()
+    
+}
 
 class Crayon {
   var name: String
@@ -14,6 +24,8 @@ class Crayon {
   var green: Double
   var blue: Double
   var hex: String
+  var delegate: UIColorable?
+
   init(name: String, red: Double, green: Double, blue: Double, hex: String) {
     self.name = name
     self.red = red

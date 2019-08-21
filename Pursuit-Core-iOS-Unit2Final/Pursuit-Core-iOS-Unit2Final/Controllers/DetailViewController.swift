@@ -34,21 +34,29 @@ class DetailViewController: UIViewController {
         let newColor = UIColor(displayP3Red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaStepper.value))
         self.view.backgroundColor = newColor
     }
+//    func changeToValuesToDefaultColor() {
+//        redSlider.value = 
+//    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        crayon.delegate = self
+        self.view.backgroundColor = crayon.getUIColor()
 
         // Do any additional setup after loading the view.
     }
-    
+}
 
-    /*
-    // MARK: - Navigation
+extension DetailViewController: UIColorable {
+    var defaultRed: Float {return Float(crayon.red/255)}
+    var defaultGreen: Float {return Float(crayon.green/255)}
+    var defaultBlue: Float {return Float(crayon.blue/255)}
+    var defaultAlpha: Double {return 1}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func resetValues() {
+        redSlider.value = defaultRed
+        greenSlider.value = defaultGreen
+        blueSlider.value = defaultBlue
+        alphaStepper.value = 1
+        updateViewBackground()
     }
-    */
-
 }

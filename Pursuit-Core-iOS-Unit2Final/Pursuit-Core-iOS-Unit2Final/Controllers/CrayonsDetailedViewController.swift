@@ -21,21 +21,22 @@ class CrayonsDetailedViewController: UIViewController {
     
     var crayon: Crayon!
     
+//    var originalSelectedRed =
     @IBOutlet weak var selectedCrayonNameLabel: UILabel!
     @IBOutlet weak var currentRedValueLabel: UILabel!
     @IBOutlet weak var currentGreenValueLabel: UILabel!
     @IBOutlet weak var currentBlueValueLabel: UILabel!
     @IBOutlet weak var currentAlphaValueLabel: UILabel!
-    
-    
  
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(displayP3Red: CGFloat(crayon.red/255), green: CGFloat(crayon.green/255), blue: CGFloat(crayon.blue/255), alpha: 1.0)
         selectedCrayonNameLabel.text = crayon.name
-        currentRedValueLabel.text = String(crayon.red)
-        currentGreenValueLabel.text = String(crayon.green)
-        currentBlueValueLabel.text = String(crayon.blue)
+        currentRedValueLabel.text = String(crayon.red/255)
+        currentGreenValueLabel.text = String(crayon.green/255)
+        currentBlueValueLabel.text = String(crayon.blue/255)
 //        currentAlphaValueLabel.text = String(1.0)
+          
     }
     
 

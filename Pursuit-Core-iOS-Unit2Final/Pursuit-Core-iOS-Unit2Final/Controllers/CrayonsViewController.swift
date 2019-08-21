@@ -35,6 +35,7 @@ class CrayonsViewController: UIViewController {
         }
         let crayon = Crayon.allTheCrayons
         crayonDetailedViewController.crayon = crayon[selectedIndexPath.row]
+        print(crayonDetailedViewController.crayon.name)
     }
 }
 

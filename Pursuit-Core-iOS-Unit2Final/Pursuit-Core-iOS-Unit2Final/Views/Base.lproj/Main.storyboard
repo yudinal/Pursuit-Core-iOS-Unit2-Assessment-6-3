@@ -116,12 +116,21 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="98k-0a-i6K">
                                 <rect key="frame" x="136" y="215" width="260" height="31"/>
+                                <connections>
+                                    <action selector="movedRedSlider:" destination="cr0-4e-9O1" eventType="valueChanged" id="x9b-lA-GG6"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="lac-xt-dON">
                                 <rect key="frame" x="136" y="269" width="260" height="31"/>
+                                <connections>
+                                    <action selector="movedGreenSlider:" destination="cr0-4e-9O1" eventType="valueChanged" id="hA0-D6-p75"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="VOC-en-W5f">
                                 <rect key="frame" x="136" y="320" width="260" height="31"/>
+                                <connections>
+                                    <action selector="movedBlueSlider:" destination="cr0-4e-9O1" eventType="valueChanged" id="7S2-IW-nIG"/>
+                                </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v1C-nT-YGi">
                                 <rect key="frame" x="324" y="129" width="39" height="30"/>
@@ -129,6 +138,9 @@
                             </button>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" maximumValue="1" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="3xY-T5-tTn">
                                 <rect key="frame" x="219" y="375" width="94" height="29"/>
+                                <connections>
+                                    <action selector="pressedStepper:" destination="cr0-4e-9O1" eventType="valueChanged" id="yhL-q9-7tR"/>
+                                </connections>
                             </stepper>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

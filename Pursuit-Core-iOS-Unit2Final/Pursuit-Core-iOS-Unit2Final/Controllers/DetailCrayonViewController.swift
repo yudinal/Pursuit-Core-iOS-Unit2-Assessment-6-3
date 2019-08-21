@@ -25,7 +25,21 @@ class DetailCrayonViewController: UIViewController {
     @IBOutlet weak var blueSlider: UISlider!
         //stepper outlets
     @IBOutlet weak var alphaStepper: UIStepper!
+    
     //MARK -- IBActions
+    
+    @IBAction func movedRedSlider(_ sender: UISlider) {
+    }
+    
+    @IBAction func movedGreenSlider(_ sender: UISlider) {
+    }
+    
+    @IBAction func movedBlueSlider(_ sender: UISlider) {
+    }
+    
+    
+    @IBAction func pressedStepper(_ sender: UIStepper) {
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +58,6 @@ class DetailCrayonViewController: UIViewController {
         alphaValueLabel.text = "Alpha Value: \(String(alphaStepper.value))"
     }
     
-
     /*
     // MARK: - Navigation
 

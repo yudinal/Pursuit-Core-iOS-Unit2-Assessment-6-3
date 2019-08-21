@@ -10,6 +10,8 @@
 		28D149B0230D8E8D001E4619 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D149AF230D8E8D001E4619 /* Color.swift */; };
 		28D149B2230D8FE0001E4619 /* CrayonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D149B1230D8FE0001E4619 /* CrayonTableViewController.swift */; };
 		28D149B4230DAAD5001E4619 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D149B3230DAAD5001E4619 /* DetailViewController.swift */; };
+		28D149B6230DD5AC001E4619 /* RoundDoubleNUmbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D149B5230DD5AC001E4619 /* RoundDoubleNUmbers.swift */; };
+		28D149B9230DD69F001E4619 /* RoundFloatNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D149B8230DD69F001E4619 /* RoundFloatNumbers.swift */; };
 		57AFE72E219E136D0024A541 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AFE72D219E136D0024A541 /* AppDelegate.swift */; };
 		57AFE733219E136D0024A541 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57AFE731219E136D0024A541 /* Main.storyboard */; };
 		57AFE735219E136F0024A541 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57AFE734219E136F0024A541 /* Assets.xcassets */; };
@@ -21,6 +23,8 @@
 		28D149AF230D8E8D001E4619 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		28D149B1230D8FE0001E4619 /* CrayonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrayonTableViewController.swift; sourceTree = "<group>"; };
 		28D149B3230DAAD5001E4619 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		28D149B5230DD5AC001E4619 /* RoundDoubleNUmbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundDoubleNUmbers.swift; sourceTree = "<group>"; };
+		28D149B8230DD69F001E4619 /* RoundFloatNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundFloatNumbers.swift; sourceTree = "<group>"; };
 		57AFE72A219E136D0024A541 /* Pursuit-Core-iOS-Unit2Final.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pursuit-Core-iOS-Unit2Final.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57AFE72D219E136D0024A541 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57AFE732219E136D0024A541 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -41,6 +45,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28D149B7230DD674001E4619 /* Extentions  */ = {
+			isa = PBXGroup;
+			children = (
+				28D149B5230DD5AC001E4619 /* RoundDoubleNUmbers.swift */,
+				28D149B8230DD69F001E4619 /* RoundFloatNumbers.swift */,
+			);
+			path = "Extentions ";
+			sourceTree = "<group>";
+		};
 		57AFE721219E136D0024A541 = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +97,7 @@
 			children = (
 				28D149B1230D8FE0001E4619 /* CrayonTableViewController.swift */,
 				28D149B3230DAAD5001E4619 /* DetailViewController.swift */,
+				28D149B7230DD674001E4619 /* Extentions  */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -177,6 +191,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				57AFE742219E139C0024A541 /* Crayon.swift in Sources */,
+				28D149B9230DD69F001E4619 /* RoundFloatNumbers.swift in Sources */,
+				28D149B6230DD5AC001E4619 /* RoundDoubleNUmbers.swift in Sources */,
 				28D149B2230D8FE0001E4619 /* CrayonTableViewController.swift in Sources */,
 				28D149B4230DAAD5001E4619 /* DetailViewController.swift in Sources */,
 				28D149B0230D8E8D001E4619 /* Color.swift in Sources */,

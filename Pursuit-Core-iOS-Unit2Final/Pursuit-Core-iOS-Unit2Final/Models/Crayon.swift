@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Crayon {
   var name: String
@@ -40,3 +41,10 @@ class Crayon {
     Crayon(name: "Blue Violet", red: 115, green: 102, blue: 189, hex: "#7366BD")
   ]
 }
+
+
+func displayColor() -> UIColor {
+    return UIColor(red: red, green: green, blue: blue, alpha: 1)
+}
+
+

@@ -9,34 +9,49 @@
 import UIKit
 
 class CrayonListViewController: UIViewController {
+    // MARK: - Constants and Variables
     
+    // Outlets
     @IBOutlet weak var crayonTableView: UITableView!
     
     let crayons = Crayon.allTheCrayons
     let defaultAlpha = Crayon.defaultAlpha
     
+    
+    // MARK: - Life Cycle functions
     override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
         self.crayonTableView.delegate = self
         self.crayonTableView.dataSource = self
-  }
+    }
 
+    
+    // MARK: - Navigation functions
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // Guards for cell
         guard let selectedIndex = crayonTableView.indexPathForSelectedRow else { fatalError("No cell was selected") }
+        // Guards for segue
         guard segue.identifier == "cellToDetailsSegue" else { fatalError("Unidentified segue") }
+        // Guards for destination view controller
         guard let detailsVC = segue.destination as? DetailsViewController else { fatalError("No destination View Controller") }
         
+        // Passes Crayon at selected cell to destination view controller
         detailsVC.currentCrayon = crayons[selectedIndex.row]
     }
 
 }
 
+
+// MARK: - Tableview extensions
 extension CrayonListViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    // Sets number of rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return crayons.count
     }
     
+    // Sets cell details
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let crayon = crayons[indexPath.row]
         

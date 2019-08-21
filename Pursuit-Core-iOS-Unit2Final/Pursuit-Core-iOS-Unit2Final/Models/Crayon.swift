@@ -41,13 +41,16 @@ class Crayon {
     Crayon(name: "Blue Violet", red: 115, green: 102, blue: 189, hex: "#7366BD")
   ]
     
+    // Sets default alpha value
     static let defaultAlpha: CGFloat = 1
 
+    // Func to convert RGB value to CGFloat
     func convertCrayonValue(value: Double) -> CGFloat {
         let convertedValue = CGFloat(value/255)
         return convertedValue
     }
     
+    // Func to round RBG value to be displayed in labels
     func roundValuesForLabel(value: CGFloat) -> CGFloat {
         let roundedValue = round(value*10)/10
         return roundedValue

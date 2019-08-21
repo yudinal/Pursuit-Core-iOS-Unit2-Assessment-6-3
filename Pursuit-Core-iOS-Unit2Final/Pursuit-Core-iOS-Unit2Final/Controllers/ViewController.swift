@@ -66,7 +66,8 @@ extension CrayonListViewController: UITableViewDataSource, UITableViewDelegate {
         cell.detailTextLabel?.text = crayon.hex
         cell.backgroundColor = UIColor(displayP3Red: redValue, green: greenValue, blue: blueValue, alpha: alphaValue)
         
-        if redValue < 0.4 || greenValue < 0.4 || blueValue < 0.4 || alphaValue < 0.4 {
+        let averageOfValues = (redValue + greenValue + blueValue + alphaValue)/4
+        if Double(averageOfValues) < 0.5 {
             cell.textLabel?.textColor = UIColor.white
             cell.detailTextLabel?.textColor = UIColor.white
         } else {

@@ -10,37 +10,37 @@ import UIKit
 
 class ColorsTableViewController: UITableViewController {
 
+    
+    //MARK: - Properties
+    var crayons = CrayonData.allTheCrayons
+    
+    //MARK: - Life Cycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return crayons.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let colors = crayons[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "crayonColorCell", for: indexPath)
+        cell.textLabel?.text = colors.name
+        cell.detailTextLabel?.text = colors.hex
+        cell.backgroundColor = UIColor(red: CGFloat(colors.red)/255, green: CGFloat(colors.green)/255, blue: CGFloat(colors.blue)/255, alpha: 1.0)
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

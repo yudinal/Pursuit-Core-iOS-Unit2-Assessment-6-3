@@ -43,8 +43,8 @@ class Crayon {
 }
 
 
-func displayColor() -> UIColor {
-    return UIColor(red: red, green: green, blue: blue, alpha: 1)
-}
+//func displayColor() -> UIColor {
+//    return UIColor(red: red, green: green, blue: blue, alpha: 1)
+//}
 
 

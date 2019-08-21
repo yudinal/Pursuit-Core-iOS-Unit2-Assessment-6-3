@@ -21,7 +21,8 @@ class MainColorViewController: UIViewController, UITableViewDataSource {
         let color = crayons[indexPath.row]
         cell.textLabel?.text = color.name
         cell.detailTextLabel?.text = color.hex
-        self.view.backgroundColor == UIColor(red: <#T##CGFloat#>, green: <#T##CGFloat#>, blue: <#T##CGFloat#>, alpha: <#T##CGFloat#>)
+        cell.backgroundColor = UIColor(red: 239/255, green: 222/255, blue: 205/255, alpha: 1)
+       //find a way to do it individually for each cell ...
         return cell
     }
     

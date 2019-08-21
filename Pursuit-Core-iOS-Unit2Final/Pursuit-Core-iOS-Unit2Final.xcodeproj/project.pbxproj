@@ -13,6 +13,7 @@
 		57AFE738219E136F0024A541 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57AFE736219E136F0024A541 /* LaunchScreen.storyboard */; };
 		57AFE742219E139C0024A541 /* Crayon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AFE741219E139C0024A541 /* Crayon.swift */; };
 		A5FA3510230D906400302BB2 /* CrayonListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FA350F230D906400302BB2 /* CrayonListTableViewController.swift */; };
+		A5FA3512230DA0DC00302BB2 /* ColorManipulatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FA3511230DA0DC00302BB2 /* ColorManipulatingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		57AFE739219E136F0024A541 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57AFE741219E139C0024A541 /* Crayon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crayon.swift; sourceTree = "<group>"; };
 		A5FA350F230D906400302BB2 /* CrayonListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrayonListTableViewController.swift; sourceTree = "<group>"; };
+		A5FA3511230DA0DC00302BB2 /* ColorManipulatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManipulatingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 		57AFE744219E13B90024A541 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A5FA3511230DA0DC00302BB2 /* ColorManipulatingViewController.swift */,
 				A5FA350F230D906400302BB2 /* CrayonListTableViewController.swift */,
 			);
 			path = Controllers;
@@ -173,6 +176,7 @@
 				57AFE742219E139C0024A541 /* Crayon.swift in Sources */,
 				57AFE72E219E136D0024A541 /* AppDelegate.swift in Sources */,
 				A5FA3510230D906400302BB2 /* CrayonListTableViewController.swift in Sources */,
+				A5FA3512230DA0DC00302BB2 /* ColorManipulatingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

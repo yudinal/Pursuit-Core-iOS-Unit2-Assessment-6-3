@@ -47,7 +47,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="dW2-ac-PQ3" kind="show" id="Tag-I5-6dW"/>
+                                            <segue destination="dW2-ac-PQ3" kind="show" identifier="segueToDetailVC" id="Tag-I5-6dW"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -38,7 +38,55 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     boxTableView.dataSource = self
   }
 
+  
+  
+  
+  
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    guard let segueIdentifier = segue.identifier else { fatalError("No identifier on segue") }
+    switch segueIdentifier {
+    case "segueToDetailVC":
+      guard let destinationVC = segue.destination as? DetailViewController else {
+        fatalError("Unexpected segue VC")
+      }
+      guard let selectedIndexPath = boxTableView.indexPathForSelectedRow else {
+        fatalError("No row was selected")
+      }
+      destinationVC.originalColor = crayons[selectedIndexPath.row]
+    default:
+      fatalError("Unexpected segue identifier")
+    }
+  }
+  
+  
+  
+  
+//  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//    if segue.identifier == "segueToDetailVC",
+//      let destinationVC = segue.destination as? DetailViewController {
+//      destinationVC.colorName.text = boxColors[selectedIndexPath.row]
+//    }
+//  }
+  
+  
+  
+//  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//    guard segue.identifier == "segueToDetailVC",
+//      let cell = sender as? UITableViewCell,
+//      let indexPath = tableView.indexPath(for: crayonCell) else {
+//        return
+//    }
+//
+//    let index = indexPath.row
+//    colorName.text = cell.textLabel.text
+//  }
+  
 
+  
+  
+  
 }
 
 func hexToRGB (hex:String) -> UIColor {
@@ -48,9 +96,9 @@ func hexToRGB (hex:String) -> UIColor {
     hexString.remove(at: hexString.startIndex)
   }
   
-//  if ((hexString.count) != 6) {
-//    return UIColor.gray
-//  }
+  //  if ((hexString.count) != 6) {
+  //    return UIColor.gray
+  //  }
   
   var rgbValue:UInt64 = 0
   Scanner(string: hexString).scanHexInt64(&rgbValue)
@@ -62,3 +110,7 @@ func hexToRGB (hex:String) -> UIColor {
     alpha: CGFloat(1.0)
   )
 }
+
+
+
+

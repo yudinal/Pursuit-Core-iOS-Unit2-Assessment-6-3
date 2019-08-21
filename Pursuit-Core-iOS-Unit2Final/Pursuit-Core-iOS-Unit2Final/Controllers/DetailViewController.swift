@@ -42,7 +42,7 @@ class DetailViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = slideColor.getColor()
+        view.backgroundColor = eachColor.displayAllColors()
 
     }
     

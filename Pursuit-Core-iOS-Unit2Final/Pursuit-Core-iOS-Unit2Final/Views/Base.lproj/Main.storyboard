@@ -129,7 +129,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="MtH-Fb-8VA">
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" maximumValue="1" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="MtH-Fb-8VA">
                                         <rect key="frame" x="0.0" y="608" width="94" height="29"/>
                                         <connections>
                                             <action selector="stepperChangeValue:" destination="aR8-2H-Iha" eventType="valueChanged" id="MK1-qj-Uu2"/>

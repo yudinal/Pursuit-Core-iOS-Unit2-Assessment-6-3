@@ -78,7 +78,6 @@ class DetailViewController: UIViewController {
         model.changeRed(red: CGFloat(red))
         model.changeGreen(green: CGFloat(green))
         model.changeBlue(blue: CGFloat(blue))
-        
     }
     
 }

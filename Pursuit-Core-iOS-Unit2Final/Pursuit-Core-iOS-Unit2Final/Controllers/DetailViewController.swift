@@ -17,13 +17,21 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
     
-    @IBAction func changeRedFloat(_ sender: UISlider) {
-    }
-    
-    @IBAction func changeGreenFloat(_ sender: UISlider) {
-    }
-    
-    @IBAction func changeBlueFloat(_ sender: UISlider) {
+    @IBAction func sliderChanged(_ sender: UISlider) {
+        
+        switch sender.tag {
+        case 0:
+            model.changeRed(red: CGFloat(sender.value))
+            updateBackgroundColor()
+        case 1:
+            model.changeGreen(green: CGFloat(sender.value))
+            updateBackgroundColor()
+        case 2:
+            model.changeBlue(blue: CGFloat(sender.value))
+            updateBackgroundColor()
+        default:
+            print("Never gonna happen")
+        }
     }
     
     @IBAction func changeAlpha(_ sender: UIStepper) {

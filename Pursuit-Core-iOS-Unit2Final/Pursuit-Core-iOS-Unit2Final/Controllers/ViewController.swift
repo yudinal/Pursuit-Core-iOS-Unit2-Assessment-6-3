@@ -23,10 +23,13 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    // NUMBER OF ROWS
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return crayons.count
     }
     
+    // CELL FOR ROW AT
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let crayon = crayons[indexPath.row]
         
@@ -46,8 +49,29 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return UITableViewCell()
     }
     
+    
+    // PREPARE FOR SEGUE
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        <#code#>
+        
+        guard let segueIdentifier = segue.identifier else {
+            fatalError("No identifier on segue")
+        }
+        
+        switch segueIdentifier {
+            
+        case "ColorDetail":
+            
+            guard let crayonDetail = segue.destination as? DetailViewController else {
+                fatalError("Unexpected segue VC")
+            }
+            guard let selectedIndexPath = tableView.indexPathForSelectedRow else {
+                fatalError("No row was selected")
+            }
+            crayonDetail.crayon = crayons[selectedIndexPath.row]
+       
+        default:
+            fatalError("Unexpected segue identifier")
+        }
     }
     
 }

@@ -50,11 +50,10 @@ class CrayonsDetailedViewController: UIViewController {
     }
     
     @IBAction func stepperChanged(_ sender: UIStepper) {
-        sender.value = 1.0
-        
-        
+        self.view.backgroundColor = UIColor(displayP3Red: CGFloat(crayon.red/255), green: CGFloat(crayon.green/255), blue: CGFloat(crayon.blue/255), alpha: CGFloat(sender.value))
         currentAlphaValueLabel.text = String("Current value of alpha: \(sender.value)")
     }
+    
     func updateViewBackgroundColor() -> Void {
         self.view.backgroundColor = UIColor(displayP3Red: CGFloat(crayon.red/255), green: CGFloat(crayon.green/255), blue: CGFloat(crayon.blue/255), alpha: 1.0)
     }

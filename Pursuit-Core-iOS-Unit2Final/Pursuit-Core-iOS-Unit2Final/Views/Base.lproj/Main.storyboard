@@ -138,6 +138,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="kfF-tR-pIy"/>
                     </view>
+                    <connections>
+                        <outlet property="currentAlphaValueLabel" destination="D4b-W5-EIp" id="psl-Vg-lzp"/>
+                        <outlet property="currentBlueValueLabel" destination="4p5-7H-6C3" id="7e2-v8-16l"/>
+                        <outlet property="currentGreenValueLabel" destination="fMV-EU-EoH" id="AHt-e6-amc"/>
+                        <outlet property="currentRedValueLabel" destination="3VO-9L-qN7" id="pYb-NS-5Wu"/>
+                        <outlet property="selectedCrayonNameLabel" destination="yIV-Od-0Yc" id="sKe-PN-McR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tN3-bl-WHN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

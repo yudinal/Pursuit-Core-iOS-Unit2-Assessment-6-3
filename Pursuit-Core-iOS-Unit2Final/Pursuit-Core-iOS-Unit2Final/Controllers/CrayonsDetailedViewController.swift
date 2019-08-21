@@ -19,12 +19,23 @@ import UIKit
 
 class CrayonsDetailedViewController: UIViewController {
     
-    //A UILabel to show the name of the selected Crayon
-
+    var crayon: Crayon!
+    
+    @IBOutlet weak var selectedCrayonNameLabel: UILabel!
+    @IBOutlet weak var currentRedValueLabel: UILabel!
+    @IBOutlet weak var currentGreenValueLabel: UILabel!
+    @IBOutlet weak var currentBlueValueLabel: UILabel!
+    @IBOutlet weak var currentAlphaValueLabel: UILabel!
+    
+    
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //A background color that starts as the same color as the selected Crayon.
-        
+        selectedCrayonNameLabel.text = crayon.name
+        currentRedValueLabel.text = String(crayon.red)
+        currentGreenValueLabel.text = String(crayon.green)
+        currentBlueValueLabel.text = String(crayon.blue)
+//        currentAlphaValueLabel.text = String(1.0)
     }
     
 

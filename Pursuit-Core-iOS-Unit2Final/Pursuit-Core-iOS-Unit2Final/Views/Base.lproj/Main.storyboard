@@ -95,6 +95,7 @@
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="1Rk-aS-j1M">
                                         <rect key="frame" x="-2" y="137" width="318" height="59"/>
+                                        <color key="tintColor" red="1" green="0.38445058180000002" blue="0.10775252070000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <action selector="sliderChangeValue:" destination="aR8-2H-Iha" eventType="valueChanged" id="StE-oN-YcX"/>
                                         </connections>
@@ -107,6 +108,7 @@
                                     </label>
                                     <slider opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="CjH-zC-mjv">
                                         <rect key="frame" x="-2" y="273.5" width="318" height="59.5"/>
+                                        <color key="tintColor" red="0.059087293280000001" green="0.52018559639999995" blue="0.1031346989" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <action selector="sliderChangeValue:" destination="aR8-2H-Iha" eventType="valueChanged" id="kh5-bV-nBC"/>
                                         </connections>
@@ -131,12 +133,14 @@
                                     </label>
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" maximumValue="1" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="MtH-Fb-8VA">
                                         <rect key="frame" x="0.0" y="547" width="94" height="29"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <action selector="stepperChangeValue:" destination="aR8-2H-Iha" eventType="valueChanged" id="MK1-qj-Uu2"/>
                                         </connections>
                                     </stepper>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkW-4v-Qxx">
                                         <rect key="frame" x="0.0" y="615.5" width="314" height="58.5"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Reset"/>
                                         <connections>
                                             <action selector="pressButtonReset:" destination="aR8-2H-Iha" eventType="touchUpInside" id="WP3-fB-QAi"/>

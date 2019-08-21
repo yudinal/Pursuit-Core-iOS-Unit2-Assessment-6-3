@@ -23,8 +23,12 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var alphaStepper: UIStepper!
     
     var currentCrayon: Crayon?
-    let defaultAlpha = Crayon.defaultAlpha
+    
+    var currentRedValue: CGFloat = 1.0
+    var currentGreenValue: CGFloat = 1.0
+    var currentBlueValue: CGFloat = 1.0
     var currentAlpha: CGFloat = 1.0 //Change this? didset?
+    let defaultAlpha = Crayon.defaultAlpha
     
     
     override func viewDidLoad() {
@@ -37,9 +41,9 @@ class DetailsViewController: UIViewController {
 
         if let currentCrayon = currentCrayon {
             
-            let currentRedValue = currentCrayon.convertCrayonValue(value: currentCrayon.red)
-            let currentGreenValue = currentCrayon.convertCrayonValue(value: currentCrayon.green)
-            let currentBlueValue = currentCrayon.convertCrayonValue(value: currentCrayon.blue)
+            currentRedValue = currentCrayon.convertCrayonValue(value: currentCrayon.red)
+            currentGreenValue = currentCrayon.convertCrayonValue(value: currentCrayon.green)
+            currentBlueValue = currentCrayon.convertCrayonValue(value: currentCrayon.blue)
             
             self.nameLabel?.text = currentCrayon.name
             redLabel?.text = "Red Value: \(currentRedValue)"
@@ -57,13 +61,8 @@ class DetailsViewController: UIViewController {
     
     
     @IBAction func sliderChangeValue(_ sender: UISlider) {
-        if let currentCrayon = currentCrayon {
-            
-            var currentRedValue = currentCrayon.convertCrayonValue(value: currentCrayon.red)
-            var currentGreenValue = currentCrayon.convertCrayonValue(value: currentCrayon.green)
-            var currentBlueValue = currentCrayon.convertCrayonValue(value: currentCrayon.blue)
-            
-            switch sender.tag {
+
+        switch sender.tag {
             case 0:
                 currentRedValue = CGFloat(sender.value)
                 redLabel?.text = "Red Value: \(sender.value)"
@@ -78,22 +77,15 @@ class DetailsViewController: UIViewController {
                 self.view.backgroundColor = UIColor(red: currentRedValue, green: currentGreenValue, blue: currentBlueValue, alpha: currentAlpha)
             default:
                 fatalError("No slider was used")
-            }
         }
     }
     
   
     @IBAction func stepperChangeValue(_ sender: UIStepper) {
-        if let currentCrayon = currentCrayon {
-            currentAlpha = CGFloat(sender.value)
+        currentAlpha = CGFloat(sender.value)
             
-            let currentRedValue = currentCrayon.convertCrayonValue(value: currentCrayon.red)
-            let currentGreenValue = currentCrayon.convertCrayonValue(value: currentCrayon.green)
-            let currentBlueValue = currentCrayon.convertCrayonValue(value: currentCrayon.blue)
-            
-            self.view.backgroundColor = UIColor(red: currentRedValue, green: currentGreenValue, blue: currentBlueValue, alpha: currentAlpha)
+        self.view.backgroundColor = UIColor(red: currentRedValue, green: currentGreenValue, blue: currentBlueValue, alpha: currentAlpha)
         alphaLabel?.text = "Alpha Value: \(currentAlpha)"
-        }
     }
 
 }

@@ -11,14 +11,14 @@ import UIKit
 class ColorCellViewController: UIViewController, ColorChangeDelegate {
     
     let crayonBox = Crayon.allTheCrayons
-    
+    var newColor = UIColor()
     
     
     
     @IBOutlet weak var crayonTableView: UITableView!
     
     func getNewColor(red: CGFloat, blue: CGFloat, green: CGFloat) {
-        <#code#>
+        newColor = UIColor(red: red, green: green, blue: blue, alpha: 1.0)
     }
     
     override func viewDidLoad() {
@@ -27,6 +27,17 @@ class ColorCellViewController: UIViewController, ColorChangeDelegate {
         crayonTableView.dataSource = self
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let crayonVC = segue.destination as? ColorDetailViewController {
+            guard let indexPath = crayonTableView.indexPathForSelectedRow,
+                let detailVC = segue.destination as? ColorDetailViewController else {return}
+            let crayon = crayonBox[indexPath.row]
+            crayonVC.delegate = self
+            crayonVC.crayon = crayon
+            detailVC.crayon = crayon
+        }
     }
     
 
@@ -59,11 +70,4 @@ extension ColorCellViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let crayonVC = segue.destination as? ColorDetailViewController {
-            crayonVC.delegate = self
-        }
-    }
-    
 }
-

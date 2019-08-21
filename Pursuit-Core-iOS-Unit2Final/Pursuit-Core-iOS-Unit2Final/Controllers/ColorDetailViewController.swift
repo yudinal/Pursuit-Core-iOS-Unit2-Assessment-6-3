@@ -10,12 +10,14 @@ import UIKit
 
 
 class ColorDetailViewController: UIViewController {
-    var crayonBox = Crayon.allTheCrayons
+    var crayon: Crayon!
     var delegate: ColorChangeDelegate?
     
     @IBOutlet weak var crayonColorLabel: UILabel!
     
+    
     @IBAction func redSlider(_ sender: UISlider) {
+        
     }
     
     @IBAction func greenSlider(_ sender: UISlider) {
@@ -29,6 +31,8 @@ class ColorDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        crayonColorLabel.text = crayon.name
+        view.backgroundColor = UIColor(red: crayon.red, green: crayon.green, blue: crayon.blue, alpha: 1.0)
 
         // Do any additional setup after loading the view.
     }

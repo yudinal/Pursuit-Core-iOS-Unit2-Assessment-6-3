@@ -70,7 +70,7 @@
         <!--Color Detail View Controller-->
         <scene sceneID="0FY-rD-g83">
             <objects>
-                <viewController id="U2L-pZ-MKi" customClass="ColorDetailViewController" customModule="Pursuit_Core_iOS_Unit2Final" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="colorStoryBoard" id="U2L-pZ-MKi" customClass="ColorDetailViewController" customModule="Pursuit_Core_iOS_Unit2Final" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AMo-gf-OW3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -78,10 +78,23 @@
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="SAO-16-Iz3" userLabel="RED Horizontal Slider">
                                 <rect key="frame" x="148" y="221" width="118" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="redSliderAction:" destination="U2L-pZ-MKi" eventType="valueChanged" id="HgB-D2-FVT"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="543-4L-HH8" userLabel="GREEN Horizontal Slider">
+                                <rect key="frame" x="148" y="388" width="118" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="greenSliderAction:" destination="U2L-pZ-MKi" eventType="valueChanged" id="Jx7-Fj-Xqa"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="t3g-2e-5yU" userLabel="BLUE Horizontal Slider">
                                 <rect key="frame" x="148" y="538" width="118" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="blueSliderAction:" destination="U2L-pZ-MKi" eventType="valueChanged" id="n5m-Xt-tiL"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQE-uv-9EB">
                                 <rect key="frame" x="186" y="275" width="33" height="21"/>
@@ -104,10 +117,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="543-4L-HH8" userLabel="GREEN Horizontal Slider">
-                                <rect key="frame" x="148" y="388" width="118" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="colorName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcU-bG-6V0">
+                                <rect key="frame" x="20" y="106" width="382" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </slider>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="PGY-U8-2IJ"/>
@@ -115,10 +131,11 @@
                     <connections>
                         <outlet property="blueLabel" destination="mwW-a4-8Mz" id="Wzb-gH-occ"/>
                         <outlet property="blueSlider" destination="t3g-2e-5yU" id="qO0-fJ-nsg"/>
+                        <outlet property="colorName" destination="bcU-bG-6V0" id="EEK-v7-K21"/>
                         <outlet property="greenLabel" destination="tn5-Xs-f40" id="zn0-3q-gc6"/>
                         <outlet property="greenSlider" destination="543-4L-HH8" id="kSP-uZ-gNi"/>
                         <outlet property="redLabel" destination="rQE-uv-9EB" id="GlF-Pd-njh"/>
-                        <outlet property="redSlider" destination="SAO-16-Iz3" id="R4R-C7-Eu7"/>
+                        <outlet property="redSlider" destination="SAO-16-Iz3" id="RMz-bI-R1I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QHl-hq-Rld" userLabel="First Responder" sceneMemberID="firstResponder"/>

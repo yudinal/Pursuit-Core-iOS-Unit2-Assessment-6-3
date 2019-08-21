@@ -32,6 +32,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell?.backgroundColor = UIColor(red: CGFloat(info.red/255.0), green: CGFloat(info.green/255.0), blue: CGFloat(info.blue/255.0), alpha: 1)
         return cell!
     }
-
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Color Box"
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       if let storyBoard = storyboard?.instantiateViewController(withIdentifier: "colorStoryBoard") as? ColorDetailViewController{
+        
+        let info = crayonValue[indexPath.row]
+            storyBoard.detailColor = info
+        
+            self.navigationController?.pushViewController(storyBoard, animated: true)
+    }
+    }
 }
 

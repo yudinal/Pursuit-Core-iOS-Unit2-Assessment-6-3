@@ -46,7 +46,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="aR8-2H-Iha" kind="show" identifier="cellToDetailSegue" id="kAO-nU-UzZ"/>
+                                            <segue destination="aR8-2H-Iha" kind="show" identifier="cellToDetailsSegue" id="kAO-nU-UzZ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

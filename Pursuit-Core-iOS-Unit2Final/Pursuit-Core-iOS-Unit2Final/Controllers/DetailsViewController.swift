@@ -20,13 +20,17 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
     
+    var currentCrayon: Crayon?
+    
+    
     @IBOutlet weak var alphaStepper: UIStepper!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
+    
+    
     
     @IBAction func sliderChangeValue(_ sender: UISlider) {
     }

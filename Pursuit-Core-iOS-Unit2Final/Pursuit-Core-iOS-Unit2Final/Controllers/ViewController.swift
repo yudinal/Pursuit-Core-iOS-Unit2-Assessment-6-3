@@ -10,9 +10,15 @@ import UIKit
 
 class CrayonListViewController: UIViewController {
 
-  override func viewDidLoad() {
+    let crayons = Crayon.allTheCrayons
+    
+    @IBOutlet weak var crayonTableView: UITableView!
+    
+    override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+        self.crayonTableView.delegate = self
+        self.crayonTableView.dataSource = self
   }
 
 
@@ -20,11 +26,17 @@ class CrayonListViewController: UIViewController {
 
 extension CrayonListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return crayons.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let crayon = crayons[indexPath.row]
+        let cell = crayonTableView.dequeueReusableCell(withIdentifier: "crayonCell", for: indexPath)
+        cell.textLabel?.text = crayon.name
+        cell.detailTextLabel?.text = crayon.hex
+        cell.backgroundColor = UIColor(displayP3Red: CGFloat(crayon.red/255), green: CGFloat(crayon.green/255), blue: CGFloat(crayon.blue/255), alpha: 1)
+        
+        return cell
     }
     
 }

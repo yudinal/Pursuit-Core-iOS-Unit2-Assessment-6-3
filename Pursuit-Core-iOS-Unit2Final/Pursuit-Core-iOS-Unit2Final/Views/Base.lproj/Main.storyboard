@@ -73,7 +73,7 @@
         <!--Detail View Controller-->
         <scene sceneID="NMo-cp-soS">
             <objects>
-                <viewController id="XT5-HI-FRE" userLabel="Detail View Controller" sceneMemberID="viewController">
+                <viewController id="XT5-HI-FRE" userLabel="Detail View Controller" customClass="DetailViewController" customModule="Pursuit_Core_iOS_Unit2Final" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kU9-2b-Cm4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

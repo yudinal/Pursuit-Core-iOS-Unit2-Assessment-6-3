@@ -16,12 +16,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
     super.viewDidLoad()
+        view.backgroundColor = .black
     crayonTableView.delegate = self
         crayonTableView.dataSource = self
   }
-
-
 }
+
+
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return crayons.count
@@ -36,6 +37,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Crayon Colors"
+    }
     
 }
 

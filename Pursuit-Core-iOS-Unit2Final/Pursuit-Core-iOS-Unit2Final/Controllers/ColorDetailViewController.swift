@@ -11,13 +11,18 @@ import UIKit
 
 class ColorDetailViewController : UIViewController {
     
+    var color: Crayon!
     
+    @IBOutlet weak var colorNameLabel: UILabel!
     
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        colorNameLabel.text = color.name
+        colorNameLabel.textColor = UIColor.white
+        view.backgroundColor = UIColor(displayP3Red: CGFloat((color.red/255)), green: CGFloat((color.green/255)), blue: CGFloat((color.blue/255)), alpha: CGFloat(1.0))
     }
 }

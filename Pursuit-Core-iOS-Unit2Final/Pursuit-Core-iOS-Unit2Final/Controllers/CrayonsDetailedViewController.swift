@@ -21,12 +21,34 @@ class CrayonsDetailedViewController: UIViewController {
     
     var crayon: Crayon!
     
-//    var originalSelectedRed =
     @IBOutlet weak var selectedCrayonNameLabel: UILabel!
     @IBOutlet weak var currentRedValueLabel: UILabel!
     @IBOutlet weak var currentGreenValueLabel: UILabel!
     @IBOutlet weak var currentBlueValueLabel: UILabel!
     @IBOutlet weak var currentAlphaValueLabel: UILabel!
+    
+    @IBAction func sliderChanged(_ sender: UISlider) {
+        switch sender.tag {
+        case 0:
+            crayon.red = Double(CGFloat(sender.value * 255))
+            currentRedValueLabel.text = String("Current value of red: \(sender.value)")
+            updateViewBackgroundColor()
+        case 1:
+            crayon.green = Double(CGFloat(sender.value * 255))
+            currentGreenValueLabel.text = String("Current value of green: \(sender.value)")
+            updateViewBackgroundColor()
+        case 2:
+            crayon.blue = Double(CGFloat(sender.value * 255))
+            currentBlueValueLabel.text = String("Current value of blue: \(sender.value)")
+            updateViewBackgroundColor()
+        default:
+            print("")
+        }
+    }
+    
+    func updateViewBackgroundColor() -> Void {
+        self.view.backgroundColor = UIColor(displayP3Red: CGFloat(crayon.red/255), green: CGFloat(crayon.green/255), blue: CGFloat(crayon.blue/255), alpha: 1.0)
+    }
  
     override func viewDidLoad() {
         super.viewDidLoad()

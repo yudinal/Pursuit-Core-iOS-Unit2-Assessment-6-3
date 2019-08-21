@@ -33,6 +33,10 @@ class MainColorViewController: UIViewController,UITableViewDataSource,UITableVie
         cell?.backgroundColor = grabColor1[indexPath.row]
         return cell!
     }
+    func edgeCaseColors() -> [String] {
+        return ["Black"]
+    }
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         if let viewController = storyBoard.instantiateViewController(withIdentifier: "DetailedColorViewController") as? DetailColorViewController {

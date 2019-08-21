@@ -114,7 +114,7 @@
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="bOm-rf-cvt">
-                                <rect key="frame" x="47" y="672" width="320" height="31"/>
+                                <rect key="frame" x="40" y="672" width="334" height="31"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="greenSliderAction:" destination="kl0-5h-bNq" eventType="valueChanged" id="unT-Yg-q2Y"/>
@@ -122,7 +122,7 @@
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Wk-d5-raC">
                                 <rect key="frame" x="184" y="812" width="46" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="resetButton:" destination="kl0-5h-bNq" eventType="touchUpInside" id="I4P-0C-Heb"/>
@@ -135,6 +135,13 @@
                                     <action selector="alphaStepperAction:" destination="kl0-5h-bNq" eventType="valueChanged" id="fdD-hD-59q"/>
                                 </connections>
                             </stepper>
+                            <textField opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Red Text Field" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aHm-jg-noJ">
+                                <rect key="frame" x="159" y="411" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hjL-kT-Z07">
                                 <rect key="frame" x="93" y="202" width="228" height="174"/>
                                 <constraints>
@@ -170,9 +177,9 @@
                             <constraint firstItem="SIJ-kb-Hx4" firstAttribute="top" secondItem="2bU-EO-Opd" secondAttribute="bottom" constant="20" id="hY6-56-HyW"/>
                             <constraint firstItem="eZc-45-J6R" firstAttribute="top" secondItem="SIJ-kb-Hx4" secondAttribute="bottom" constant="20" id="noy-eV-GzX"/>
                             <constraint firstItem="bOm-rf-cvt" firstAttribute="centerX" secondItem="3P5-q4-Lfn" secondAttribute="centerX" id="oZp-7g-gDF"/>
-                            <constraint firstItem="3P5-q4-Lfn" firstAttribute="trailing" secondItem="bOm-rf-cvt" secondAttribute="trailing" constant="49" id="p6o-rc-24n"/>
+                            <constraint firstItem="3P5-q4-Lfn" firstAttribute="trailing" secondItem="bOm-rf-cvt" secondAttribute="trailing" constant="42" id="p6o-rc-24n"/>
                             <constraint firstItem="vnx-3x-gBd" firstAttribute="centerX" secondItem="3P5-q4-Lfn" secondAttribute="centerX" id="tFU-a7-1g5"/>
-                            <constraint firstItem="bOm-rf-cvt" firstAttribute="leading" secondItem="3P5-q4-Lfn" secondAttribute="leading" constant="49" id="xFB-xI-qiJ"/>
+                            <constraint firstItem="bOm-rf-cvt" firstAttribute="leading" secondItem="3P5-q4-Lfn" secondAttribute="leading" constant="42" id="xFB-xI-qiJ"/>
                             <constraint firstItem="YEG-O4-Efy" firstAttribute="centerX" secondItem="3P5-q4-Lfn" secondAttribute="centerX" id="zGa-Ir-JJ0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3P5-q4-Lfn"/>
@@ -187,6 +194,7 @@
                         <outlet property="greenSliderLabel" destination="sYR-sh-0FP" id="ImJ-L0-Dym"/>
                         <outlet property="redSlider" destination="SIJ-kb-Hx4" id="PKJ-Aj-Bqe"/>
                         <outlet property="redSliderLabel" destination="2bU-EO-Opd" id="SVi-zy-1tG"/>
+                        <outlet property="redTextFieldOutlet" destination="aHm-jg-noJ" id="uJv-pJ-tGq"/>
                         <outlet property="resetButton" destination="6Wk-d5-raC" id="404-h2-vyu"/>
                     </connections>
                 </viewController>

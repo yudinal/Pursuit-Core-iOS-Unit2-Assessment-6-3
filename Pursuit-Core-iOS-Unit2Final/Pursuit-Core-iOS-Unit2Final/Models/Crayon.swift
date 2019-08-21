@@ -69,10 +69,6 @@ func grabColor() -> [UIColor] {
 func defaultAlpha() -> CGFloat {
     return 1.0
 }
-func arrayOfNamesForViewControllerLabels() -> [String] {
-    return ["Red","Green","Blue","Alpha","Reset Button"]
-}
-func edgeCaseColors() -> [String] {
-    return ["Black"]
-}
+
+
 

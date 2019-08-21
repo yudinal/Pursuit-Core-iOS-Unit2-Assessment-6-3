@@ -19,6 +19,7 @@ class DetailColorViewController: UIViewController {
     @IBOutlet weak var blueSliderLabel: UILabel!
     @IBOutlet weak var greenSliderLabel: UILabel!
     @IBOutlet weak var alphaSliderLabel: UILabel!
+    @IBOutlet weak var redTextFieldOutlet: UITextField!
     
     @IBOutlet weak var redSliderLabel: UILabel!
     var passingInfo:Crayon!
@@ -27,9 +28,10 @@ class DetailColorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpNamesOfLabels()
+        
        edgeCase()
         setUpInitialValues()
+        setUpNamesOfLabels()
      
        // changeView()
         // Do any additional setup after loading the view, typically from a nib.
@@ -41,6 +43,7 @@ class DetailColorViewController: UIViewController {
         alphaSliderLabel.text = "\(arrayOfNamesForViewControllerLabels()[3]) : \(String(format: "%.1f", alphaStepper.value))"
         resetButton.setTitle(arrayOfNamesForViewControllerLabels()[4], for: .normal)
         colorName.text = passingInfo.name
+//        redTextFieldOutlet.text = "\(arrayOfNamesForViewControllerLabels()[0]) : \(redSlider.value)"
     }
     func setUpInitialValues() {
         
@@ -55,6 +58,7 @@ class DetailColorViewController: UIViewController {
     @IBAction func redSliderAction(_ sender: UISlider) {
          redSlider.value = sender.value
         changeUIColorWithSlider()
+        setUpNamesOfLabels()
         }
     @IBAction func blueSliderAction(_ sender: UISlider) {
         blueSlider.value = sender.value
@@ -75,6 +79,7 @@ class DetailColorViewController: UIViewController {
         setUpInitialValues()
         setUpNamesOfLabels()
     }
+    
     func changeUIColorWithSlider() {
         view.backgroundColor = UIColor(red: CGFloat(redSlider!.value), green: CGFloat(greenSlider!.value), blue: CGFloat(blueSlider!.value), alpha: CGFloat(alphaStepper!.value))
         let arrayOfLabels = [redSliderLabel,blueSliderLabel,greenSliderLabel,alphaSliderLabel,colorName]
@@ -97,6 +102,14 @@ class DetailColorViewController: UIViewController {
         }
         
     }
+    func arrayOfNamesForViewControllerLabels() -> [String] {
+        return ["Red","Green","Blue","Alpha","Reset Button"]
+    }
+    func edgeCaseColors() -> [String] {
+        return ["Black"]
+    }
+   
+
 }
 
 

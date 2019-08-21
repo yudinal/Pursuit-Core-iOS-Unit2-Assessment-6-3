@@ -89,21 +89,21 @@
                                 <rect key="frame" x="148" y="183" width="118" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="changeRedFloat:" destination="XT5-HI-FRE" eventType="valueChanged" id="XRp-ee-5hd"/>
+                                    <action selector="sliderChanged:" destination="XT5-HI-FRE" eventType="valueChanged" id="o1E-aT-NoM"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="QyF-re-L2h">
+                            <slider opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="QyF-re-L2h">
                                 <rect key="frame" x="148" y="265" width="118" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="changeGreenFloat:" destination="XT5-HI-FRE" eventType="valueChanged" id="kTB-tc-yVu"/>
+                                    <action selector="sliderChanged:" destination="XT5-HI-FRE" eventType="valueChanged" id="Ymc-fy-Igm"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="5Va-bE-fGr">
+                            <slider opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="5Va-bE-fGr">
                                 <rect key="frame" x="148" y="341" width="118" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="changeBlueFloat:" destination="XT5-HI-FRE" eventType="valueChanged" id="iG9-WR-mwM"/>
+                                    <action selector="sliderChanged:" destination="XT5-HI-FRE" eventType="valueChanged" id="0DW-1G-QyA"/>
                                 </connections>
                             </slider>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="x8o-7j-laf">

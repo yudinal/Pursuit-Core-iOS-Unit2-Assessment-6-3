@@ -42,18 +42,12 @@ class ColorViewController: UIViewController{
         default:
             print("Nice Try")
         }
-        //redValue.val = Double((sender.value))
-        //delegate?.textFont(fontSize: CGFloat(sender.value))
-        //fontSize.text = "Font Size: \(sender.value)"
     }
     
     @IBAction func step(_ sender: UIStepper) {
         newColor.changeAlpha(alpha: CGFloat(sender.value))
         updateBackgroundColor()
         alphaValue.text? = "Alpha: \(alphaStepper.value)"
-        //slide.value = Float(sender.value)
-        //delegate?.textFont(fontSize: CGFloat(sender.value))
-        //fontSize.text = "Font Size: \(sender.value)"
     }
     
     @IBAction func refresh(_ sender: UIButton) {

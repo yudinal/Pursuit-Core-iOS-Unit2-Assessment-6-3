@@ -28,14 +28,31 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableViewOutlet.delegate = self
+        tableViewOutlet.dataSource = self
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let segueIdentifier = segue.identifier else { fatalError("No identifier in segue") }
+        
+        switch segueIdentifier {
+        case "colorSegway" :
+            guard let colorVC = segue.destination as? ColorViewController else {
+                fatalError("Unexpected segue VC")
+            }
+            guard let selectedIndexPath = tableViewOutlet.indexPathForSelectedRow else {
+                fatalError("No row was selected")
+            }
+            colorVC.view.backgroundColor = UIColor.init(displayP3Red: CGFloat(color[selectedIndexPath.row].red / 255), green: CGFloat(color[selectedIndexPath.row].green / 255 ), blue: CGFloat(color[selectedIndexPath.row].blue / 255), alpha: 1)
+            colorVC.selectedCrayon.text? = color[selectedIndexPath.row].name
 
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    tableViewOutlet.delegate = self
-    tableViewOutlet.dataSource = self
-    // Do any additional setup after loading the view, typically from a nib.
-  }
-
-
+            colorVC.currentColor = UIColor.init(displayP3Red: CGFloat(color[selectedIndexPath.row].red / 255), green: CGFloat(color[selectedIndexPath.row].green / 255 ), blue: CGFloat(color[selectedIndexPath.row].blue / 255), alpha: 1)
+        default:
+            fatalError("Woops")
+        }
+    }
 }
-

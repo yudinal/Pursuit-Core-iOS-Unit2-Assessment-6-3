@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ColorViewController: UIViewController {
+class ColorViewController: UIViewController{
+    
     @IBOutlet weak var selectedCrayon: UILabel!
     @IBOutlet weak var redValue: UILabel!
     @IBOutlet weak var greenValue: UILabel!
@@ -21,6 +22,7 @@ class ColorViewController: UIViewController {
     @IBOutlet weak var reset: UIButton!
     
     var newColor = ColorOption()
+    var currentColor = UIColor()
     
     @IBAction func sliderValues(_ sender: UISlider) {
         switch  sender.tag {
@@ -55,12 +57,13 @@ class ColorViewController: UIViewController {
     }
     
     @IBAction func refresh(_ sender: UIButton) {
+        self.view.backgroundColor = currentColor
     }
-    
-    
+
     func updateBackgroundColor() {
         self.view.backgroundColor = newColor.getColor()
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,8 +73,9 @@ class ColorViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        selectedCrayon.text? = "test"
     }
+    
+    
     
 
     /*

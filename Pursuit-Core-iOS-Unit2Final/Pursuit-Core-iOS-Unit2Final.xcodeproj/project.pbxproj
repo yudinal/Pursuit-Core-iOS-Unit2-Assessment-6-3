@@ -13,6 +13,8 @@
 		57AFE735219E136F0024A541 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57AFE734219E136F0024A541 /* Assets.xcassets */; };
 		57AFE738219E136F0024A541 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57AFE736219E136F0024A541 /* LaunchScreen.storyboard */; };
 		57AFE742219E139C0024A541 /* Crayon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AFE741219E139C0024A541 /* Crayon.swift */; };
+		8587DBFB230D9EBD00C56F0E /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8587DBFA230D9EBD00C56F0E /* ColorViewController.swift */; };
+		8587DBFD230DA6DD00C56F0E /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8587DBFC230DA6DD00C56F0E /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		57AFE737219E136F0024A541 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57AFE739219E136F0024A541 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57AFE741219E139C0024A541 /* Crayon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crayon.swift; sourceTree = "<group>"; };
+		8587DBFA230D9EBD00C56F0E /* ColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
+		8587DBFC230DA6DD00C56F0E /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				57AFE72F219E136D0024A541 /* ViewController.swift */,
+				8587DBFA230D9EBD00C56F0E /* ColorViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -87,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				57AFE741219E139C0024A541 /* Crayon.swift */,
+				8587DBFC230DA6DD00C56F0E /* Color.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -172,6 +178,8 @@
 			files = (
 				57AFE742219E139C0024A541 /* Crayon.swift in Sources */,
 				57AFE730219E136D0024A541 /* ViewController.swift in Sources */,
+				8587DBFB230D9EBD00C56F0E /* ColorViewController.swift in Sources */,
+				8587DBFD230DA6DD00C56F0E /* Color.swift in Sources */,
 				57AFE72E219E136D0024A541 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

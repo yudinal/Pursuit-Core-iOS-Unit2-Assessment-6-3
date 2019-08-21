@@ -154,10 +154,13 @@
                         <viewLayoutGuide key="safeArea" id="kfF-tR-pIy"/>
                     </view>
                     <connections>
+                        <outlet property="blueSlider" destination="BXj-cJ-GHi" id="zSK-up-U8v"/>
                         <outlet property="currentAlphaValueLabel" destination="D4b-W5-EIp" id="psl-Vg-lzp"/>
                         <outlet property="currentBlueValueLabel" destination="4p5-7H-6C3" id="7e2-v8-16l"/>
                         <outlet property="currentGreenValueLabel" destination="fMV-EU-EoH" id="AHt-e6-amc"/>
                         <outlet property="currentRedValueLabel" destination="3VO-9L-qN7" id="pYb-NS-5Wu"/>
+                        <outlet property="greenSlider" destination="TVm-iy-HOQ" id="e20-Tc-ayP"/>
+                        <outlet property="redSlider" destination="kKY-qA-Aqr" id="ktx-kK-wUa"/>
                         <outlet property="selectedCrayonNameLabel" destination="yIV-Od-0Yc" id="sKe-PN-McR"/>
                         <outlet property="stepper" destination="7hW-vV-r55" id="RwL-nt-ZYS"/>
                     </connections>

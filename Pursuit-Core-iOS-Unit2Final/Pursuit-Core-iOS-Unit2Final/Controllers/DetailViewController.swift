@@ -17,6 +17,7 @@ class DetailViewController: UIViewController {
     }
 
     var crayon: Crayon!
+    
 
     
     @IBOutlet weak var colorNameLabel: UILabel!
@@ -63,6 +64,11 @@ class DetailViewController: UIViewController {
         backgroundColor.changeAlpha(alpha: CGFloat(sender.value))
         alphaValueLabel.text = sender.value.roundTo(places: 2).description
         updateBackgroundColor()
+        if sender.value < 0.5 {
+            changeColor(color: UIColor.white)
+        } else {
+            changeColor(color: UIColor.black)
+        }
         
     }
     
@@ -72,8 +78,17 @@ class DetailViewController: UIViewController {
         setInitialValues()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        
+    }
+    
     func updateBackgroundColor() {
         self.view.backgroundColor = backgroundColor.getColor()
+        
+       
+        
+        
     }
     
     
@@ -85,6 +100,8 @@ class DetailViewController: UIViewController {
         backgroundColor = Color(red: CGFloat(crayon.red/255)
             , green: CGFloat(crayon.green/255), blue: CGFloat(crayon.blue/255), alpha: 1)
         
+       
+        
         colorNameLabel.text = crayon.name
         redValueLabel.text = (crayon.red/255).roundTo(places: 2).description
         blueValueLabel.text = (crayon.red/255).roundTo(places: 2).description
@@ -93,6 +110,15 @@ class DetailViewController: UIViewController {
         redSlider.value = Float(crayon.red/255).roundTo(places: 2)
         greenSlider.value = Float(crayon.red/255).roundTo(places: 2)
         blueSlider.value = Float(crayon.red/255).roundTo(places: 2)
+        
+    }
+    
+    func changeColor(color: UIColor) {
+        colorNameLabel.textColor = color
+        redValueLabel.textColor = color
+        blueValueLabel.textColor = color
+        greenValueLabel.textColor = color
+        alphaValueLabel.textColor = color
     }
     
 

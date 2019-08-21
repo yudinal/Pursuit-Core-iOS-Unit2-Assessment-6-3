@@ -50,6 +50,10 @@ class CrayonTableViewController: UITableViewController {
         cell.textLabel?.text = crayon.name
         cell.detailTextLabel?.text = crayon.hex
         cell.backgroundColor = UIColor.init(displayP3Red: CGFloat(crayon.red/255), green: CGFloat(crayon.green/255), blue: CGFloat(crayon.blue/255), alpha: 1)
+        if cell.backgroundColor == UIColor(red: 0, green: 0, blue: 0, alpha: 1) {
+            cell.textLabel?.textColor = UIColor.white
+            cell.detailTextLabel?.textColor = UIColor.white
+        }
 
         return cell
     }

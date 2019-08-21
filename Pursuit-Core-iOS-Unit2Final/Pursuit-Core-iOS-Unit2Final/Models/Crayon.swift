@@ -34,11 +34,12 @@ class Crayon {
     self.hex = hex
   }
     convenience init(name:String,hex:String) {
-        self.init(name: name, red: 0, green: 0, blue: 0, hex: hex)
         let hexDict = makeHexIntoDict(hex: hex)
-        self.red = getValueFromHex(dict: hexDict, first: 1, second: 2)
-        self.green = getValueFromHex(dict: hexDict, first: 3, second: 4)
-        self.blue = getValueFromHex(dict: hexDict, first: 5, second: 6)
+        let r = getValueFromHex(dict: hexDict, first: 1, second: 2)
+        let g = getValueFromHex(dict: hexDict, first: 3, second: 4)
+        let b = getValueFromHex(dict: hexDict, first: 5, second: 6)
+        self.init(name: name, red: r, green: g, blue: b, hex: hex)
+        
     }
   static let allTheCrayons = [
     Crayon(name: "Almond", hex: "#EFDECD"),
@@ -61,50 +62,5 @@ class Crayon {
     func getUIColor() -> UIColor {
        return UIColor(displayP3Red: CGFloat(self.red/255), green: CGFloat(self.green/255), blue: CGFloat(self.blue/255), alpha: 1)
     }
-    func makeHexIntoDict(hex: String) -> [Int:Character] {
-        var dict: [Int:Character] = [:]
-        for (index,i) in hex.enumerated() {
-            dict[index] = i
-        }
-        return dict
-    }
-    func getValueFromHex(dict: [Int:Character], first: Int, second: Int) -> Double {
-        guard let firstDigit = dict[first], let secondDigit = dict[second] else {
-            return Double()
-        }
-        if let firstNum = Int("\(firstDigit)") {
-            if let secondNum = Int("\(secondDigit)") {
-                return Double((firstNum * 16) + secondNum)
-            } else {
-                let secondLetterValue = getValue(from: secondDigit)
-                return Double(firstNum * 16) + secondLetterValue
-            }
-        } else {
-            let firstLetterValue = getValue(from: firstDigit)
-            if let secondNum = Int("\(secondDigit)") {
-                return (firstLetterValue * 16) + Double(secondNum)
-            } else {
-                let secondLetterValue = getValue(from: secondDigit)
-                return (firstLetterValue * 16) + secondLetterValue
-            }
-        }
-    }
-    func getValue(from letter: Character) -> Double {
-        switch letter {
-        case "A":
-            return 10
-        case "B":
-            return 11
-        case "C":
-            return 12
-        case "D":
-            return 13
-        case "E":
-            return 14
-        case "F":
-            return 15
-        default:
-            return Double()
-        }
-    }
+    
 }

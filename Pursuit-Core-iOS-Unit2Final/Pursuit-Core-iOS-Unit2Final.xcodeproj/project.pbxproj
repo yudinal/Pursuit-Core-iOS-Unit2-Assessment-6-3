@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4D902D08230D916500CAD2D5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D902D07230D916500CAD2D5 /* DetailViewController.swift */; };
+		4D902D0A230DDB7500CAD2D5 /* hexCalculationFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D902D09230DDB7500CAD2D5 /* hexCalculationFunc.swift */; };
 		57AFE72E219E136D0024A541 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AFE72D219E136D0024A541 /* AppDelegate.swift */; };
 		57AFE730219E136D0024A541 /* CrayonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AFE72F219E136D0024A541 /* CrayonViewController.swift */; };
 		57AFE733219E136D0024A541 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57AFE731219E136D0024A541 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		4D902D07230D916500CAD2D5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		4D902D09230DDB7500CAD2D5 /* hexCalculationFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hexCalculationFunc.swift; sourceTree = "<group>"; };
 		57AFE72A219E136D0024A541 /* Pursuit-Core-iOS-Unit2Final.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pursuit-Core-iOS-Unit2Final.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57AFE72D219E136D0024A541 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57AFE72F219E136D0024A541 /* CrayonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrayonViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				57AFE741219E139C0024A541 /* Crayon.swift */,
+				4D902D09230DDB7500CAD2D5 /* hexCalculationFunc.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D902D0A230DDB7500CAD2D5 /* hexCalculationFunc.swift in Sources */,
 				57AFE742219E139C0024A541 /* Crayon.swift in Sources */,
 				57AFE730219E136D0024A541 /* CrayonViewController.swift in Sources */,
 				57AFE72E219E136D0024A541 /* AppDelegate.swift in Sources */,

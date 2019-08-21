@@ -19,6 +19,13 @@ class CrayonListViewController: UIViewController {
         super.viewDidLoad()
 
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "MasterToDetail" {
+            let destVC = segue.destination as! DetailViewController
+            destVC.crayon = sender as? Crayon
+        }
+    }
 
 }
 
@@ -86,4 +93,9 @@ extension CrayonListViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let crayon = crayons[indexPath.row]
+        performSegue(withIdentifier: "MasterToDetail", sender: crayon)
+    }
 }

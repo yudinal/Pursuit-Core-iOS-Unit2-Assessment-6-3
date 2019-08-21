@@ -10,6 +10,7 @@
 		1D037091230D8F07000476E6 /* CrayonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D037090230D8F07000476E6 /* CrayonData.swift */; };
 		1D037093230D902A000476E6 /* ColorsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D037092230D902A000476E6 /* ColorsTableViewController.swift */; };
 		1D037097230D953E000476E6 /* ColorDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D037096230D953E000476E6 /* ColorDetailViewController.swift */; };
+		1D037099230DAB4B000476E6 /* ColorsForSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D037098230DAB4B000476E6 /* ColorsForSlider.swift */; };
 		57AFE72E219E136D0024A541 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AFE72D219E136D0024A541 /* AppDelegate.swift */; };
 		57AFE733219E136D0024A541 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57AFE731219E136D0024A541 /* Main.storyboard */; };
 		57AFE735219E136F0024A541 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57AFE734219E136F0024A541 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 		1D037090230D8F07000476E6 /* CrayonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrayonData.swift; sourceTree = "<group>"; };
 		1D037092230D902A000476E6 /* ColorsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsTableViewController.swift; sourceTree = "<group>"; };
 		1D037096230D953E000476E6 /* ColorDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDetailViewController.swift; sourceTree = "<group>"; };
+		1D037098230DAB4B000476E6 /* ColorsForSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsForSlider.swift; sourceTree = "<group>"; };
 		57AFE72A219E136D0024A541 /* Pursuit-Core-iOS-Unit2Final.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pursuit-Core-iOS-Unit2Final.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57AFE72D219E136D0024A541 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57AFE732219E136D0024A541 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			children = (
 				57AFE741219E139C0024A541 /* Crayon.swift */,
 				1D037090230D8F07000476E6 /* CrayonData.swift */,
+				1D037098230DAB4B000476E6 /* ColorsForSlider.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D037099230DAB4B000476E6 /* ColorsForSlider.swift in Sources */,
 				57AFE742219E139C0024A541 /* Crayon.swift in Sources */,
 				1D037091230D8F07000476E6 /* CrayonData.swift in Sources */,
 				57AFE72E219E136D0024A541 /* AppDelegate.swift in Sources */,

@@ -45,6 +45,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="XT5-HI-FRE" kind="show" id="LPB-rq-qzW"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

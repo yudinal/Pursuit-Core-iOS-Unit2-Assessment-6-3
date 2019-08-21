@@ -43,10 +43,9 @@ class Crayon {
   ]
      func displayAllColors() -> UIColor {
         return UIColor(displayP3Red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
-
+        
     }
 
 
-    
     
 }

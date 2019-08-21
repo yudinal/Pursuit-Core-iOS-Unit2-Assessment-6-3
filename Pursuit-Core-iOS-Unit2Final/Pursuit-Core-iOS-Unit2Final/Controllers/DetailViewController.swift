@@ -10,6 +10,9 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    var eachColor : Crayon!
+    var slideColor = ColorObject()
+    
     
     @IBOutlet weak var redSlider: UISlider!
     
@@ -18,25 +21,32 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var blueSlider: UISlider!
     
     @IBAction func sliderChange(_ sender: UISlider) {
+        switch sender.tag {
+        case 0:
+            slideColor.changeRed(red: CGFloat(sender.value))
+            updateBackgroundColor()
+
+        case 1:
+            slideColor.changeGreen(green: CGFloat(sender.value))
+            updateBackgroundColor()
+        case 2:
+            slideColor.changeBlue(blue: CGFloat(sender.value))
+            updateBackgroundColor()
+        default:
+            print("This won't work")
+        }
     }
-    
-    
-    
+
+    func updateBackgroundColor() {
+        self.view.backgroundColor = slideColor.getColor()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = slideColor.getColor()
 
-        // Do any additional setup after loading the view.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+

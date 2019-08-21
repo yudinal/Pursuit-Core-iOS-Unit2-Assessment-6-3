@@ -46,5 +46,15 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let indexPath = displayColorView.indexPathForSelectedRow,
+            let detailVC = segue.destination as? DetailViewController else{return }
+        let colorToSendToVC = allCrayons[indexPath.row]
+        detailVC.eachColor = colorToSendToVC
+        
+        
+        
+        
+    }
    
 }

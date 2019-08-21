@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 struct ColorObject {
-    var alpha : UIColor
+
     var red: CGFloat = 0.5
     var green: CGFloat = 0.5
     var blue: CGFloat = 0.5

@@ -27,6 +27,9 @@ class CrayonsDetailedViewController: UIViewController {
     @IBOutlet weak var currentBlueValueLabel: UILabel!
     @IBOutlet weak var currentAlphaValueLabel: UILabel!
     
+    @IBOutlet weak var stepper: UIStepper!
+    
+    
     @IBAction func sliderChanged(_ sender: UISlider) {
         switch sender.tag {
         case 0:
@@ -46,6 +49,12 @@ class CrayonsDetailedViewController: UIViewController {
         }
     }
     
+    @IBAction func stepperChanged(_ sender: UIStepper) {
+        sender.value = 1.0
+        
+        
+        currentAlphaValueLabel.text = String("Current value of alpha: \(sender.value)")
+    }
     func updateViewBackgroundColor() -> Void {
         self.view.backgroundColor = UIColor(displayP3Red: CGFloat(crayon.red/255), green: CGFloat(crayon.green/255), blue: CGFloat(crayon.blue/255), alpha: 1.0)
     }
@@ -57,8 +66,8 @@ class CrayonsDetailedViewController: UIViewController {
         currentRedValueLabel.text = String("Hex: \(crayon.red) RGB: \(crayon.red/255)")
         currentGreenValueLabel.text = String("Hex: \(crayon.green) RGB: \(crayon.green/255)")
         currentBlueValueLabel.text = ("Hex: \(crayon.blue) RGB: \(crayon.blue/255)")
-//        currentAlphaValueLabel.text = steppervalue
-          
+        currentAlphaValueLabel.text = ""
+
     }
 
 }

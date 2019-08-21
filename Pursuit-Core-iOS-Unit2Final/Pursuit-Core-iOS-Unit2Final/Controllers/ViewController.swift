@@ -13,9 +13,8 @@ class MainColorViewController: UIViewController,UITableViewDataSource,UITableVie
     @IBOutlet weak var mainTableView: UITableView!
     var colorArray = newColorArray()
     var grabColor1 = grabColor()
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+
+   
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return newColorArray().count
@@ -26,19 +25,22 @@ class MainColorViewController: UIViewController,UITableViewDataSource,UITableVie
         let cell = mainTableView.dequeueReusableCell(withIdentifier: "colors")
         
         cell?.textLabel?.text = newColorArray.name
-        if cell?.textLabel?.text == "Black" {
+        if cell?.textLabel?.text == edgeCaseColors()[0] {
             cell?.textLabel?.textColor = .white
             cell?.detailTextLabel?.textColor = .white
         }
         cell?.detailTextLabel?.text = newColorArray.hex
-        cell?.backgroundColor = grabColor()[indexPath.row]
+        cell?.backgroundColor = grabColor1[indexPath.row]
         return cell!
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         if let viewController = storyBoard.instantiateViewController(withIdentifier: "DetailedColorViewController") as? DetailColorViewController {
-            viewController.view.backgroundColor = grabColor()[indexPath.row]
-           viewController.colorName.text = colorArray[indexPath.row].name
+          
+           
+           viewController.passingInfo = colorArray[indexPath.row]
+            viewController.changingColors = grabColor1[indexPath.row]
+
             navigationController?.pushViewController(viewController, animated: true)
         }
     }

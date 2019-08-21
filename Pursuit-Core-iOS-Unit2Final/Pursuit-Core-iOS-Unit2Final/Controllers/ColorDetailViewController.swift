@@ -22,12 +22,10 @@ class ColorDetailViewController: UIViewController {
     @IBOutlet weak var blueSlider: UISlider!
     
     @IBOutlet weak var alphaStepper: UIStepper!
-    
     @IBOutlet weak var resetColorButton: UIButton!
     
+    
     //MARK: - Functions
-    
-    
     @IBAction func sliderChanged(_ sender: UISlider) {
         switch sender.tag {
         case 0:
@@ -42,6 +40,12 @@ class ColorDetailViewController: UIViewController {
         default:
             print("How did this happen")
         }
+    }
+    
+    
+    @IBAction func alphaChanged(_ sender: UIStepper) {
+        colorSlider.changeAlpha(alpha: CGFloat(sender.value))
+        updateBackgroundColor()
     }
     
     func updateBackgroundColor() {

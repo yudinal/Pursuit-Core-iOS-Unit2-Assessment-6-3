@@ -17,7 +17,7 @@ struct ColorsForSlider {
     
     
     func getColor() -> UIColor {
-        return UIColor(red: red, green: green, blue: blue, alpha: 1)
+        return UIColor(red: red, green: green, blue: blue, alpha: alpha)
     }
     
     

@@ -113,6 +113,9 @@
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" maximumValue="1" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="R8w-HX-0hc">
                                 <rect key="frame" x="160" y="660" width="94" height="29"/>
+                                <connections>
+                                    <action selector="alphaChanged:" destination="1Zs-NY-WOD" eventType="valueChanged" id="VnA-rA-fMI"/>
+                                </connections>
                             </stepper>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yPq-f5-NRK">
                                 <rect key="frame" x="167" y="722" width="80" height="30"/>

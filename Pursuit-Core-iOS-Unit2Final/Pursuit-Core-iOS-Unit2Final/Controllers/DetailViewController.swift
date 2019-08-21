@@ -9,18 +9,20 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    
     //MARK: -- IBOutlets
     @IBOutlet weak var colorNameLabel: UILabel!
     @IBOutlet weak var redSlider: UISlider!
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
     @IBOutlet weak var alphaStepper: UIStepper!
-    @IBOutlet weak var redValueLabel: UILabel!
-    @IBOutlet weak var greenValueLabel: UILabel!
-    @IBOutlet weak var blueValueLabel: UILabel!
+    
     @IBOutlet weak var alphaValueLabel: UILabel!
     @IBOutlet weak var resetButton: UIButton!
     
+    @IBOutlet weak var redTextField: UITextField!
+    @IBOutlet weak var greenTextField: UITextField!
+    @IBOutlet weak var blueTextField: UITextField!
     
     //MARK: -- Properties
     var currentCrayon: Crayon!
@@ -69,14 +71,14 @@ class DetailViewController: UIViewController {
     
     private func setLabelTextValues(){
         colorNameLabel.text = currentCrayon.name
-        redValueLabel.text = "Red: \(redSlider.value.roundTo(places: 2))"
-        greenValueLabel.text = "Green: \(greenSlider.value.roundTo(places: 2))"
-        blueValueLabel.text = "Blue: \(blueSlider.value.roundTo(places: 2))"
+        redTextField.text = "Red: \(redSlider.value.roundTo(places: 2))"
+        blueTextField.text = "Blue: \(blueSlider.value.roundTo(places: 2))"
+        greenTextField.text = "Green: \(greenSlider.value.roundTo(places: 2))"
         alphaValueLabel.text = "Alpha: \(alphaStepper.value.roundTo(places: 2))"
     }
     
     private func darkMode() {
-        [colorNameLabel, redValueLabel, greenValueLabel, blueValueLabel, alphaValueLabel].forEach({$0?.textColor = .white})
+        [colorNameLabel, alphaValueLabel].forEach({$0?.textColor = .white})
         [alphaStepper, resetButton, redSlider, greenSlider, blueSlider].forEach({$0?.tintColor = .white})
         resetButton.layer.cornerRadius = resetButton.frame.height / 2
         resetButton.layer.borderColor = UIColor.white.cgColor
@@ -84,7 +86,7 @@ class DetailViewController: UIViewController {
     }
     
     private func lightMode() {
-        [colorNameLabel, redValueLabel, greenValueLabel, blueValueLabel, alphaValueLabel].forEach({$0?.textColor = .black})
+        [colorNameLabel, alphaValueLabel].forEach({$0?.textColor = .black})
         [alphaStepper, resetButton, redSlider, greenSlider, blueSlider].forEach({$0?.tintColor = .black})
         resetButton.layer.cornerRadius = resetButton.frame.height / 2
         resetButton.layer.borderColor = UIColor.black.cgColor
@@ -138,7 +140,6 @@ class DetailViewController: UIViewController {
         resetButton.layer.borderWidth = 2.0
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setMinMaxColorValues()
@@ -147,5 +148,68 @@ class DetailViewController: UIViewController {
         setBackgroundColor()
         setResetButtonColor()
         checkColorReadability()
+        redTextField.delegate = self
+        blueTextField.delegate = self
+        greenTextField.delegate = self
     }
+}
+
+//MARK: -- Textfield Delegate Methods
+extension DetailViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField.tag {
+        case 0:
+            if let redTextFieldString = textField.text {
+                let redTextFieldDouble = redTextFieldString.toDouble()
+                if let redTextFieldDouble = redTextFieldDouble {
+                    let currentCrayonBackgroundColor = UIColor(displayP3Red: CGFloat(redTextFieldDouble), green: CGFloat(greenSlider.value) , blue: CGFloat(blueSlider.value), alpha: CGFloat(Float(alphaStepper.value)))
+                    view.backgroundColor = currentCrayonBackgroundColor
+                    redSlider.value = Float(redTextFieldDouble)
+                    checkColorReadability()
+                }
+            }
+            
+        case 1:
+            if let greenTextFieldString = textField.text {
+                let greenTextFieldDouble = greenTextFieldString.toDouble()
+                if let greenTextFieldDouble = greenTextFieldDouble {
+                    let currentCrayonBackgroundColor = UIColor(displayP3Red: CGFloat(redSlider.value), green: CGFloat(greenTextFieldDouble) , blue: CGFloat(blueSlider.value), alpha: CGFloat(Float(alphaStepper.value)))
+                    view.backgroundColor = currentCrayonBackgroundColor
+                    greenSlider.value = Float(greenTextFieldDouble)
+                    checkColorReadability()
+                }
+            }
+            
+        case 2:
+            if let blueTextFieldString = textField.text {
+                let blueTextFieldDouble = blueTextFieldString.toDouble()
+                if let blueTextFieldDouble = blueTextFieldDouble {
+                    let currentCrayonBackgroundColor = UIColor(displayP3Red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value) , blue: CGFloat(blueTextFieldDouble), alpha: CGFloat(Float(alphaStepper.value)))
+                    view.backgroundColor = currentCrayonBackgroundColor
+                    blueSlider.value = Float(blueTextFieldDouble)
+                    checkColorReadability()
+                }
+            }
+            
+        default: ()
+        }
+        
+        return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let aSet = NSCharacterSet(charactersIn:"0123456789").inverted
+        let compSepByCharInSet = string.components(separatedBy: aSet)
+        let numberFiltered = compSepByCharInSet.joined(separator: "")
+        
+        if string == numberFiltered {
+            let currentText = textField.text ?? ""
+            guard let stringRange = Range(range, in: currentText) else { return false }
+            let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+            return updatedText.count <= 10
+        } else {
+            return false
+        }
+    }
+    
 }

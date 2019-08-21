@@ -34,3 +34,9 @@ extension Float {
         return (self * divisor).rounded() / divisor
     }
 }
+
+extension String {
+    func toDouble() -> Double? {
+        return NumberFormatter().number(from: self)?.doubleValue
+    }
+}

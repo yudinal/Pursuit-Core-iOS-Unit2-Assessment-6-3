@@ -79,7 +79,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="uqu-Db-pr9">
-                                <rect key="frame" x="45" y="385.5" width="324" height="231.5"/>
+                                <rect key="frame" x="45" y="371" width="324" height="260"/>
                                 <subviews>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="x1d-wD-6pW">
                                         <rect key="frame" x="-2" y="0.0" width="328" height="31"/>
@@ -87,36 +87,36 @@
                                             <action selector="slidersAdjusted:" destination="TZr-cY-CmY" eventType="valueChanged" id="W5g-gn-TL8"/>
                                         </connections>
                                     </slider>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZS-T5-Z5Y">
-                                        <rect key="frame" x="0.0" y="46" width="324" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Red Value:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1tK-ln-oFQ">
+                                        <rect key="frame" x="0.0" y="46" width="324" height="30"/>
                                         <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                    </textField>
                                     <slider opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="bLs-eg-4OE">
-                                        <rect key="frame" x="-2" y="82.5" width="328" height="31"/>
+                                        <rect key="frame" x="-2" y="92" width="328" height="31"/>
                                         <connections>
                                             <action selector="slidersAdjusted:" destination="TZr-cY-CmY" eventType="valueChanged" id="hFd-AA-Oen"/>
                                         </connections>
                                     </slider>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHV-dx-sjP">
-                                        <rect key="frame" x="0.0" y="128.5" width="324" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Green Value:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yyO-j2-aqA">
+                                        <rect key="frame" x="0.0" y="138" width="324" height="30"/>
                                         <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                     <slider opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Mb3-zy-HQu">
-                                        <rect key="frame" x="-2" y="165" width="328" height="31"/>
+                                        <rect key="frame" x="-2" y="184" width="328" height="31"/>
                                         <connections>
                                             <action selector="slidersAdjusted:" destination="TZr-cY-CmY" eventType="valueChanged" id="1vf-UO-y38"/>
                                         </connections>
                                     </slider>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKW-y6-Bs4">
-                                        <rect key="frame" x="0.0" y="211" width="324" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Blue Value:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BD2-ax-slX">
+                                        <rect key="frame" x="0.0" y="230" width="324" height="30"/>
                                         <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l05-eq-YVZ">
@@ -126,13 +126,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alpha" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bs-D1-X9q">
-                                <rect key="frame" x="185" y="640" width="44" height="20.5"/>
+                                <rect key="frame" x="185" y="654" width="44" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" maximumValue="1" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="yog-jS-qfz">
-                                <rect key="frame" x="160" y="688" width="94" height="29"/>
+                                <rect key="frame" x="160" y="702" width="94" height="29"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="alphaStepperPressed:" destination="TZr-cY-CmY" eventType="valueChanged" id="KNp-vJ-wKE"/>
@@ -166,12 +166,12 @@
                         <outlet property="alphaStepper" destination="yog-jS-qfz" id="QO7-qW-lDK"/>
                         <outlet property="alphaValueLabel" destination="3bs-D1-X9q" id="2Yh-b1-DoZ"/>
                         <outlet property="blueSlider" destination="Mb3-zy-HQu" id="Nn5-LA-yVe"/>
-                        <outlet property="blueValueLabel" destination="aKW-y6-Bs4" id="7ps-GO-3Zf"/>
+                        <outlet property="blueTextField" destination="BD2-ax-slX" id="1ae-j1-XDJ"/>
                         <outlet property="colorNameLabel" destination="l05-eq-YVZ" id="fog-Yh-J8l"/>
                         <outlet property="greenSlider" destination="bLs-eg-4OE" id="pBj-12-rP6"/>
-                        <outlet property="greenValueLabel" destination="sHV-dx-sjP" id="FCr-Qm-Hfq"/>
+                        <outlet property="greenTextField" destination="yyO-j2-aqA" id="kH4-ts-z9N"/>
                         <outlet property="redSlider" destination="x1d-wD-6pW" id="0Il-HD-I3d"/>
-                        <outlet property="redValueLabel" destination="gZS-T5-Z5Y" id="HOS-ma-xKr"/>
+                        <outlet property="redTextField" destination="1tK-ln-oFQ" id="RRJ-oF-REf"/>
                         <outlet property="resetButton" destination="RoM-Re-9H1" id="RF8-n6-6k4"/>
                     </connections>
                 </viewController>

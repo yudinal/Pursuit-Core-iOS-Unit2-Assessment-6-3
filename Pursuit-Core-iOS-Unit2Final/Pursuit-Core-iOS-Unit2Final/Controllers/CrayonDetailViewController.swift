@@ -12,16 +12,9 @@ class CrayonDetailViewController: UIViewController {
 
     
     @IBOutlet weak var colorNameLabel: UILabel!
-    
     @IBOutlet weak var redValueLabel: UILabel!
-    @IBOutlet weak var redSlider: UISlider!
-    
     @IBOutlet weak var greenValueLabel: UILabel!
-    @IBOutlet weak var greenSlider: UISlider!
-    
     @IBOutlet weak var blueValueLabel: UILabel!
-    @IBOutlet weak var blueSlider: UISlider!
-    
     @IBOutlet weak var alphaValueLabel: UILabel!
     @IBOutlet weak var alphaStepper: UIStepper!
     
@@ -38,4 +31,19 @@ class CrayonDetailViewController: UIViewController {
         colorNameLabel.text = crayon.name
         view.backgroundColor = UIColor(red: CGFloat(crayon.red/255), green: CGFloat(crayon.green/255), blue: CGFloat(crayon.blue/255), alpha: 1)
     }
+    
+    
+    @IBAction func redSlider(_ sender: UISlider) {
+        redValueLabel.text = "Red: \(sender.value)"
+    }
+    
+    @IBAction func greenSlider(_ sender: UISlider) {
+        greenValueLabel.text = "Green: \(sender.value)"
+    }
+    
+    @IBAction func blueSlider(_ sender: UISlider) {
+        blueValueLabel.text = "Blue: \(sender.value)"
+    }
+    
+    
 }

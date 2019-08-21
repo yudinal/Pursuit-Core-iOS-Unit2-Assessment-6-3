@@ -8,11 +8,32 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+  
+  let crayons = Crayon.allTheCrayons
+  
+  @IBOutlet weak var boxTableView: UITableView!
+  
+  
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return crayons.count
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "crayonCell", for: indexPath)
+      let boxColors = crayons[indexPath.row]
+      cell.textLabel?.text = boxColors.name
+      cell.detailTextLabel?.text = boxColors.hex
+      cell.backgroundColor = UIColor(
+    return cell
+  }
+
+  
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    boxTableView.delegate = self
+    boxTableView.dataSource = self
   }
 
 

@@ -13,13 +13,13 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-  override func viewDidLoad() {
-    super.viewDidLoad()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
     
-    tableView.delegate = self
-    tableView.dataSource = self
-  }
-
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -31,7 +31,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let crayon = crayons[indexPath.row]
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "crayonColor") {
-            
             cell.textLabel?.text = crayon.name
             cell.detailTextLabel?.text = "Hex Value: \(crayon.hex)"
             
@@ -42,12 +41,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             } else {
                 cell.backgroundColor = UIColor(red: CGFloat(crayon.red/255), green: CGFloat(crayon.green/255), blue: CGFloat(crayon.blue/255), alpha: 1.0)
             }
-            
             return cell
         }
-        
         return UITableViewCell()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        <#code#>
+    }
     
 }

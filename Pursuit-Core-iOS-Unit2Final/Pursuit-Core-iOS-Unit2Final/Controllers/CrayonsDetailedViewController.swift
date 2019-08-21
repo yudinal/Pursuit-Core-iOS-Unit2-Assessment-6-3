@@ -31,15 +31,15 @@ class CrayonsDetailedViewController: UIViewController {
         switch sender.tag {
         case 0:
             crayon.red = Double(CGFloat(sender.value * 255))
-            currentRedValueLabel.text = String("Current value of red in RGB: \(sender.value)")
+            currentRedValueLabel.text = String("Current value of red: \(sender.value)")
             viewBackgroundColor()
         case 1:
             crayon.green = Double(CGFloat(sender.value * 255))
-            currentGreenValueLabel.text = String("Current value of green in RGB: \(sender.value)")
+            currentGreenValueLabel.text = String("Current value of green: \(sender.value)")
             viewBackgroundColor()
         case 2:
             crayon.blue = Double(CGFloat(sender.value * 255))
-            currentBlueValueLabel.text = String("Current value of blue in RGB: \(sender.value)")
+            currentBlueValueLabel.text = String("Current value of blue: \(sender.value)")
             viewBackgroundColor()
         default:
             print("")

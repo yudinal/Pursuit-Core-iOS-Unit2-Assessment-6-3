@@ -1,9 +1,9 @@
-# Pursuit-Core-iOS-Unit2Final
+# Pursuit-Core-iOS-Unit2-Assessment
 
 # Github Instructions
 - Fork this repository.
 - Clone it to your machine
-- Complete the final
+- Complete the assessment
 - Add, commit and push your changes
 - Create a pull request from your fork back to the original repo here
 - Paste the link of your fork into Canvas
@@ -93,5 +93,5 @@ Do any of the below, or none at all:
 
 # Rubric
 
-![rubric](https://github.com/joinpursuit/Pursuit-Core-iOS-Unit2Final/blob/master/Unit2Rubric.png)
+![rubric](https://github.com/joinpursuit/Pursuit-Core-iOS-Unit2-Assessment/blob/master/Unit2Rubric.png)
 

@@ -8,25 +8,16 @@
 
 import UIKit
 
-class ColorCellViewController: UIViewController, ColorChangeDelegate {
+class ColorCellViewController: UIViewController {
     
     let crayonBox = Crayon.allTheCrayons
-    var newColor = UIColor()
-    
-    
     
     @IBOutlet weak var crayonTableView: UITableView!
-    
-    func getNewColor(red: CGFloat, blue: CGFloat, green: CGFloat, alpha: CGFloat) {
-        newColor = UIColor(red: red, green: green, blue: blue, alpha: alpha)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         crayonTableView.delegate = self
         crayonTableView.dataSource = self
-        
-        // Do any additional setup after loading the view.
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -34,22 +25,10 @@ class ColorCellViewController: UIViewController, ColorChangeDelegate {
             guard let indexPath = crayonTableView.indexPathForSelectedRow,
                 let detailVC = segue.destination as? ColorDetailViewController else {return}
             let crayon = crayonBox[indexPath.row]
-            crayonVC.delegate = self
             crayonVC.crayon = crayon
             detailVC.crayon = crayon
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
@@ -65,7 +44,6 @@ extension ColorCellViewController: UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.text = oneCrayon.name
         cell.detailTextLabel?.text = oneCrayon.hex
         cell.backgroundColor = UIColor(red: oneCrayon.red, green: oneCrayon.green, blue: oneCrayon.blue, alpha: oneCrayon.alpha)
-        
         
         return cell
     }

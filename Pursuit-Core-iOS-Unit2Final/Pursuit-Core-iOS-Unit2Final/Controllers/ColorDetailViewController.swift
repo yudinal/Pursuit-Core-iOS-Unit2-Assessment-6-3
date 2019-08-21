@@ -11,8 +11,6 @@ import UIKit
 
 class ColorDetailViewController: UIViewController {
     var crayon: Crayon!
-    var delegate: ColorChangeDelegate?
-    
     
     @IBOutlet weak var crayonColorLabel: UILabel!
     @IBOutlet weak var redSliderLabel: UILabel!
@@ -20,33 +18,29 @@ class ColorDetailViewController: UIViewController {
     @IBOutlet weak var blueSliderLabel: UILabel!
     @IBOutlet weak var alphaStepperLabel: UILabel!
     
-    
-    
-    
+    @IBOutlet weak var redSliderOutlet: UISlider!
+    @IBOutlet weak var greenSliderOutlet: UISlider!
+    @IBOutlet weak var blueSliderOutlet: UISlider!
+    @IBOutlet weak var alphaStepperOutlet: UIStepper!
     
     @IBAction func redSlider(_ sender: UISlider) {
-        
-        crayon.changeRed(red: CGFloat(sender.value))
+        view.backgroundColor = UIColor(red: CGFloat(sender.value), green: crayon.green, blue: crayon.blue, alpha: crayon.alpha)
         updateColor()
-        
-        
     }
     
     @IBAction func greenSlider(_ sender: UISlider) {
-        crayon.changeGreen(green: CGFloat(sender.value))
+        view.backgroundColor = UIColor(red: crayon.red, green: CGFloat(sender.value), blue: crayon.blue, alpha: crayon.alpha)
         updateColor()
-        
     }
     
     @IBAction func blueSlider(_ sender: UISlider) {
-        crayon.changeBlue(blue: CGFloat(sender.value))
+        view.backgroundColor = UIColor(red: crayon.red, green: crayon.green, blue: CGFloat(sender.value), alpha: crayon.alpha)
         updateColor()
     }
     
     @IBAction func alphaStepper(_ sender: UIStepper) {
-        crayon.changeAlpha(alpha: CGFloat(sender.value))
+        view.backgroundColor = UIColor(red: crayon.red, green: crayon.green, blue: crayon.blue, alpha: CGFloat(sender.value))
         updateColor()
-        
     }
     
     @IBAction func resetButton(_ sender: UIButton) {
@@ -56,21 +50,26 @@ class ColorDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setLabelTextColor()
+        setInitalSliderPositions()
+        setColorLabel()
+        setInitialColor()
+    }
+    
+    private func setInitialColor() {
+        view.backgroundColor = UIColor(red: crayon.red, green: crayon.green, blue: crayon.blue, alpha: crayon.alpha)
+    }
+    
+    private func setColorLabel() {
         crayonColorLabel.text = crayon.name
-        view.backgroundColor = UIColor(red: crayon.red, green: crayon.green, blue: crayon.blue, alpha: 1.0)
-        
-
-        // Do any additional setup after loading the view.
     }
     
     private func updateColor() {
-        delegate?.getNewColor(red: crayon.red, blue: crayon.blue, green: crayon.green, alpha: crayon.alpha)
-        view.backgroundColor = crayon.getColor()
+    view.backgroundColor = UIColor(red: CGFloat(redSliderOutlet.value), green: CGFloat(greenSliderOutlet.value), blue: CGFloat(blueSliderOutlet.value), alpha: CGFloat(alphaStepperOutlet.value))
     }
     
     private func resetSettings() {
-        view.backgroundColor = UIColor(red: crayon.red, green: crayon.green, blue: crayon.blue, alpha: crayon.alpha)
-        
+        setInitialColor()
+        setInitalSliderPositions()
     }
     
     private func setLabelTextColor() {
@@ -86,15 +85,12 @@ class ColorDetailViewController: UIViewController {
             alphaStepperLabel.textColor = .black
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    private func setInitalSliderPositions() {
+        redSliderOutlet.value = Float(crayon.red)
+        greenSliderOutlet.value = Float(crayon.green)
+        blueSliderOutlet.value = Float(crayon.blue)
+        alphaStepperOutlet.value = Double(crayon.alpha)
     }
-    */
-
+    
 }

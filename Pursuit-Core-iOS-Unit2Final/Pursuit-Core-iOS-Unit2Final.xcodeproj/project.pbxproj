@@ -14,7 +14,6 @@
 		57AFE742219E139C0024A541 /* Crayon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AFE741219E139C0024A541 /* Crayon.swift */; };
 		FCAB1D80230D92C000E496B6 /* ColorCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB1D7F230D92C000E496B6 /* ColorCellViewController.swift */; };
 		FCAB1D82230D9A6400E496B6 /* ColorDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB1D81230D9A6400E496B6 /* ColorDetailViewController.swift */; };
-		FCAB1D84230D9BE100E496B6 /* ColorChangeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB1D83230D9BE100E496B6 /* ColorChangeDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +26,6 @@
 		57AFE741219E139C0024A541 /* Crayon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crayon.swift; sourceTree = "<group>"; };
 		FCAB1D7F230D92C000E496B6 /* ColorCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCellViewController.swift; sourceTree = "<group>"; };
 		FCAB1D81230D9A6400E496B6 /* ColorDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDetailViewController.swift; sourceTree = "<group>"; };
-		FCAB1D83230D9BE100E496B6 /* ColorChangeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChangeDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +90,6 @@
 			isa = PBXGroup;
 			children = (
 				57AFE741219E139C0024A541 /* Crayon.swift */,
-				FCAB1D83230D9BE100E496B6 /* ColorChangeDelegate.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -180,7 +177,6 @@
 				57AFE742219E139C0024A541 /* Crayon.swift in Sources */,
 				57AFE72E219E136D0024A541 /* AppDelegate.swift in Sources */,
 				FCAB1D82230D9A6400E496B6 /* ColorDetailViewController.swift in Sources */,
-				FCAB1D84230D9BE100E496B6 /* ColorChangeDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -42,26 +42,7 @@ class Crayon {
     Crayon(name: "Blue Green", red: 13/255, green: 152/255, blue: 186/255, alpha: 255/255, hex: "#0D98BA"),
     Crayon(name: "Blue Violet", red: 115/255, green: 102/255, blue: 189/255, alpha: 255/255, hex: "#7366BD")
   ]
-    
-    func getColor() -> UIColor {
-        return UIColor(red: self.red, green: self.green, blue: self.blue, alpha: self.alpha)
-    }
-    
-   func changeRed(red: CGFloat) {
-        self.red = red
-    }
-    
-    func changeBlue(blue: CGFloat) {
-        self.blue = blue
-    }
-    
-    func changeGreen(green: CGFloat) {
-        self.green = green
-    }
-    
-    func changeAlpha(alpha: CGFloat) {
-        self.alpha = alpha
-    }
+
 }
     
 

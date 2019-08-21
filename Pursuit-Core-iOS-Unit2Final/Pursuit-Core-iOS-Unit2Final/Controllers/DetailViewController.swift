@@ -25,12 +25,15 @@ class DetailViewController: UIViewController {
         case 0:
             model.changeRed(red: CGFloat(sender.value))
             updateBackgroundColor()
+            rval.text = "\(sender.value)"
         case 1:
             model.changeGreen(green: CGFloat(sender.value))
             updateBackgroundColor()
+            gval.text = "\(sender.value)"
         case 2:
             model.changeBlue(blue: CGFloat(sender.value))
             updateBackgroundColor()
+            bval.text = "\(sender.value)"
         default:
             print("Never gonna happen")
         }

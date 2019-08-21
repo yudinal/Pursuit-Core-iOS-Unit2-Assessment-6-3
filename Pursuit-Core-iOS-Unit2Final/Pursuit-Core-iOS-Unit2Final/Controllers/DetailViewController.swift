@@ -16,6 +16,9 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var redSlider: UISlider!
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
+    @IBOutlet weak var rval: UILabel!
+    @IBOutlet weak var gval: UILabel!
+    @IBOutlet weak var bval: UILabel!
     
     @IBAction func sliderChanged(_ sender: UISlider) {
         switch sender.tag {

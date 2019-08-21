@@ -120,7 +120,12 @@
                         <viewLayoutGuide key="safeArea" id="VrL-Tn-Sqq"/>
                     </view>
                     <connections>
+                        <outlet property="alphaStepper" destination="yWg-Pt-wZI" id="tP7-Yx-6dx"/>
+                        <outlet property="blueSlider" destination="kF6-2H-JuM" id="NeK-cd-fdy"/>
                         <outlet property="colorName" destination="Ify-k1-9jd" id="afc-u4-H8Q"/>
+                        <outlet property="greenSlider" destination="b1h-4V-Ue2" id="qWp-hD-CrC"/>
+                        <outlet property="redSlider" destination="FID-XQ-xf8" id="IdF-RM-N6g"/>
+                        <outlet property="resetColorButton" destination="bTL-VD-tCB" id="kAF-i3-iAu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dp2-XU-nPa" userLabel="First Responder" sceneMemberID="firstResponder"/>

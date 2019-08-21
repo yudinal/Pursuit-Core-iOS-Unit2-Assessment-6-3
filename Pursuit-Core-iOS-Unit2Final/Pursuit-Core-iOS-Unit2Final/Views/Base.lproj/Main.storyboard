@@ -125,21 +125,21 @@
                                 <rect key="frame" x="159" y="309" width="237" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="redSlider:" destination="ohf-2G-2E3" eventType="valueChanged" id="vTm-UW-Uoz"/>
+                                    <action selector="sliderChanged:" destination="ohf-2G-2E3" eventType="valueChanged" id="SS6-yR-heV"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZzB-Is-IKk">
                                 <rect key="frame" x="159" y="382" width="237" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="greenSlider:" destination="ohf-2G-2E3" eventType="valueChanged" id="d6k-0o-pSp"/>
+                                    <action selector="sliderChanged:" destination="ohf-2G-2E3" eventType="valueChanged" id="SNS-kh-g7D"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ibw-JN-2ON">
                                 <rect key="frame" x="159" y="455" width="237" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="blueSlider:" destination="ohf-2G-2E3" eventType="valueChanged" id="7bt-Rx-CgA"/>
+                                    <action selector="sliderChanged:" destination="ohf-2G-2E3" eventType="valueChanged" id="Fjq-kM-O4C"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="alpha" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uDo-jq-tdP">
@@ -156,9 +156,12 @@
                     <connections>
                         <outlet property="alphaStepper" destination="Ti4-Ki-jqr" id="9m2-wJ-Ocs"/>
                         <outlet property="alphaValueLabel" destination="uDo-jq-tdP" id="amX-hP-TSH"/>
+                        <outlet property="blueSlider" destination="ibw-JN-2ON" id="XQ8-7p-jYq"/>
                         <outlet property="blueValueLabel" destination="HwI-gY-fe7" id="Ah1-cb-m3j"/>
                         <outlet property="colorNameLabel" destination="rf6-1q-FK9" id="ujs-BO-nvc"/>
+                        <outlet property="greenSlider" destination="ZzB-Is-IKk" id="QII-bf-fqK"/>
                         <outlet property="greenValueLabel" destination="noK-lF-CTd" id="utb-fx-woV"/>
+                        <outlet property="redSlider" destination="J0E-5B-nQB" id="OvU-in-Ocy"/>
                         <outlet property="redValueLabel" destination="pvE-8r-srW" id="lGt-dK-ff7"/>
                     </connections>
                 </viewController>

@@ -17,8 +17,8 @@ class ColorCellViewController: UIViewController, ColorChangeDelegate {
     
     @IBOutlet weak var crayonTableView: UITableView!
     
-    func getNewColor(red: CGFloat, blue: CGFloat, green: CGFloat) {
-        newColor = UIColor(red: red, green: green, blue: blue, alpha: 1.0)
+    func getNewColor(red: CGFloat, blue: CGFloat, green: CGFloat, alpha: CGFloat) {
+        newColor = UIColor(red: red, green: green, blue: blue, alpha: alpha)
     }
     
     override func viewDidLoad() {
@@ -64,7 +64,7 @@ extension ColorCellViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.textLabel?.text = oneCrayon.name
         cell.detailTextLabel?.text = oneCrayon.hex
-        cell.backgroundColor = UIColor(red: oneCrayon.red, green: oneCrayon.green, blue: oneCrayon.blue, alpha: 1.0)
+        cell.backgroundColor = UIColor(red: oneCrayon.red, green: oneCrayon.green, blue: oneCrayon.blue, alpha: oneCrayon.alpha)
         
         
         return cell

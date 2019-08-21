@@ -17,16 +17,27 @@ class ColorDetailViewController: UIViewController {
     
     
     @IBAction func redSlider(_ sender: UISlider) {
+        crayon.changeRed(red: CGFloat(sender.value))
+        updateColor()
+        
         
     }
     
     @IBAction func greenSlider(_ sender: UISlider) {
+        crayon.changeGreen(green: CGFloat(sender.value))
+        updateColor()
+        
     }
     
     @IBAction func blueSlider(_ sender: UISlider) {
+        crayon.changeBlue(blue: CGFloat(sender.value))
+        updateColor()
     }
     
     @IBAction func alphaStepper(_ sender: UIStepper) {
+        crayon.changeAlpha(alpha: CGFloat(sender.value))
+        updateColor()
+        
     }
     
     override func viewDidLoad() {
@@ -35,6 +46,11 @@ class ColorDetailViewController: UIViewController {
         view.backgroundColor = UIColor(red: crayon.red, green: crayon.green, blue: crayon.blue, alpha: 1.0)
 
         // Do any additional setup after loading the view.
+    }
+    
+    private func updateColor() {
+        delegate?.getNewColor(red: crayon.red, blue: crayon.blue, green: crayon.green, alpha: crayon.alpha)
+        view.backgroundColor = crayon.getColor()
     }
     
 

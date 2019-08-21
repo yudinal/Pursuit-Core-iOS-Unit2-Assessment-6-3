@@ -10,5 +10,5 @@ import Foundation
 import UIKit
 
 protocol ColorChangeDelegate {
-    func getNewColor(red: CGFloat, blue: CGFloat, green: CGFloat)
+    func getNewColor(red: CGFloat, blue: CGFloat, green: CGFloat, alpha: CGFloat)
 }

@@ -85,6 +85,10 @@
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="SIJ-kb-Hx4">
                                 <rect key="frame" x="47" y="255" width="327" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="redSliderAction:" destination="kl0-5h-bNq" eventType="valueChanged" id="YrT-bT-lVO"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Red" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bU-EO-Opd">
                                 <rect key="frame" x="118" y="209" width="203" height="21"/>
@@ -117,29 +121,49 @@
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="3ac-zl-XeP">
                                 <rect key="frame" x="47" y="368" width="327" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="blueSliderAction:" destination="kl0-5h-bNq" eventType="valueChanged" id="4Hj-5s-WFB"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="bOm-rf-cvt">
                                 <rect key="frame" x="47" y="508" width="327" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="8TN-ue-LSk">
-                                <rect key="frame" x="47" y="684" width="327" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="greenSliderAction:" destination="kl0-5h-bNq" eventType="valueChanged" id="unT-Yg-q2Y"/>
+                                </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Wk-d5-raC">
                                 <rect key="frame" x="118" y="789" width="203" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="resetButton:" destination="kl0-5h-bNq" eventType="touchUpInside" id="I4P-0C-Heb"/>
+                                </connections>
                             </button>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" maximumValue="1" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="YEG-O4-Efy">
+                                <rect key="frame" x="163" y="722" width="94" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="alphaStepperAction:" destination="kl0-5h-bNq" eventType="valueChanged" id="fdD-hD-59q"/>
+                                </connections>
+                            </stepper>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="3P5-q4-Lfn"/>
                     </view>
                     <connections>
                         <outlet property="alphaSliderLabel" destination="vnx-3x-gBd" id="NVx-aC-UHr"/>
+                        <outlet property="alphaStepper" destination="YEG-O4-Efy" id="lrD-Nu-ORm"/>
+                        <outlet property="blueSlider" destination="3ac-zl-XeP" id="nJJ-8Q-Vdh"/>
                         <outlet property="blueSliderLabel" destination="eZc-45-J6R" id="yI3-lX-ZuD"/>
                         <outlet property="colorName" destination="hjL-kT-Z07" id="qsP-Ek-kn4"/>
+                        <outlet property="greenSlider" destination="bOm-rf-cvt" id="brT-vi-JZg"/>
                         <outlet property="greenSliderLabel" destination="sYR-sh-0FP" id="ImJ-L0-Dym"/>
+                        <outlet property="redSlider" destination="SIJ-kb-Hx4" id="PKJ-Aj-Bqe"/>
                         <outlet property="redSliderLabel" destination="2bU-EO-Opd" id="SVi-zy-1tG"/>
                         <outlet property="resetButton" destination="6Wk-d5-raC" id="404-h2-vyu"/>
                     </connections>

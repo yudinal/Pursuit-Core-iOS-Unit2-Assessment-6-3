@@ -21,6 +21,13 @@ class CrayonListViewController: UIViewController {
         self.crayonTableView.dataSource = self
   }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let selectedIndex = crayonTableView.indexPathForSelectedRow else { fatalError("No cell was selected") }
+        guard segue.identifier == "cellToDetailsSegue" else { fatalError("Unidentified segue") }
+        guard let detailsVC = segue.destination as? DetailsViewController else { fatalError("No destination View Controller") }
+        
+        detailsVC.currentCrayon = crayons[selectedIndex.row]
+    }
 
 }
 

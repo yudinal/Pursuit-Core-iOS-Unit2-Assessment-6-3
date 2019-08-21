@@ -20,14 +20,16 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
     
+    @IBOutlet weak var alphaStepper: UIStepper!
+    
     var currentCrayon: Crayon?
     
     
-    @IBOutlet weak var alphaStepper: UIStepper!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if let currentCrayon = currentCrayon {
+            self.view.backgroundColor = UIColor(red: CGFloat(currentCrayon.red/255), green: CGFloat(currentCrayon.green/255), blue: CGFloat(currentCrayon.blue/255), alpha: 1)
+        }
     }
     
     

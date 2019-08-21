@@ -19,12 +19,10 @@ class CrayonTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return Crayon.allTheCrayons.count
     }
     
@@ -46,13 +44,8 @@ class CrayonTableViewController: UITableViewController {
         cell.backgroundColor = UIColor(displayP3Red: red, green: green, blue: blue, alpha: 1)
         
         //changes color of labels' texts
-        if red + green + blue < 2 {
-            cell.textLabel?.textColor = UIColor(displayP3Red: 1, green: 1, blue: 1, alpha: 1)
-            cell.detailTextLabel?.textColor = UIColor(displayP3Red: 1, green: 1, blue: 1, alpha: 1)
-        } else {
-            cell.textLabel?.textColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 1)
-            cell.detailTextLabel?.textColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 1)
-        }
+        adjustTextColor(cell: cell, red: red, green: green, blue: blue)
+        
         return cell
     }
     
@@ -68,6 +61,17 @@ class CrayonTableViewController: UITableViewController {
             }
         default:
             break
+        }
+    }
+    
+    // MARK: -- Custom Methods
+    func adjustTextColor(cell: UITableViewCell, red: CGFloat, green: CGFloat, blue: CGFloat) {
+        if red + green + blue < 2 {
+            cell.textLabel?.textColor = UIColor(displayP3Red: 1, green: 1, blue: 1, alpha: 1)
+            cell.detailTextLabel?.textColor = UIColor(displayP3Red: 1, green: 1, blue: 1, alpha: 1)
+        } else {
+            cell.textLabel?.textColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 1)
+            cell.detailTextLabel?.textColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 1)
         }
     }
     

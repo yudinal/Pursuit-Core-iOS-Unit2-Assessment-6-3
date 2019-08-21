@@ -18,7 +18,6 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var blueSlider: UISlider!
     
     @IBAction func sliderChanged(_ sender: UISlider) {
-        
         switch sender.tag {
         case 0:
             model.changeRed(red: CGFloat(sender.value))

@@ -26,6 +26,12 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func resetButtonTapped(_ sender: UIButton) {
+        resetValues()
+    }
+    
+    private func updateViewBackground() {
+        let newColor = UIColor(displayP3Red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaStepper.value))
+        self.view.backgroundColor = newColor
     }
     override func viewDidLoad() {
         super.viewDidLoad()

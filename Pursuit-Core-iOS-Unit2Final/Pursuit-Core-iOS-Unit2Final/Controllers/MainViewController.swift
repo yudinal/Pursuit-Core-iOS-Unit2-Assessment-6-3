@@ -16,20 +16,20 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var displayColorView: UITableView!
     
     
-    @IBOutlet weak var nameLabel: UILabel!
-    
-    @IBOutlet weak var hexLabel: UILabel!
-    
-    
-    
-    
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        allCrayons.count
+       return allCrayons.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "redCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "colorCell", for: indexPath)
+       
+        
+        
+        
+       
+        
+        
     }
     
 

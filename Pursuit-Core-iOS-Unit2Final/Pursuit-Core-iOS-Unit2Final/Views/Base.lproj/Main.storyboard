@@ -133,9 +133,12 @@
                     <connections>
                         <outlet property="alphaLabel" destination="bIH-7s-8Zh" id="qIA-bK-f1r"/>
                         <outlet property="blueLabel" destination="aSp-ur-sM2" id="ubu-Jx-pAO"/>
+                        <outlet property="blueSliderOutlet" destination="nbw-wF-b4w" id="zEq-lk-faq"/>
                         <outlet property="crayonName" destination="KK4-rk-PaA" id="hKm-hW-bjQ"/>
                         <outlet property="greenLabel" destination="gfz-8M-2p4" id="74n-6I-cXs"/>
+                        <outlet property="greenSliderOutlet" destination="2eM-qX-ACe" id="2Bn-fg-p5M"/>
                         <outlet property="redLabel" destination="EWK-ip-r9l" id="aV1-um-YXS"/>
+                        <outlet property="redSliderOutlet" destination="ce4-6q-LoL" id="8cC-KE-joJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IQ3-qk-0w3" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -20,10 +20,12 @@ import Foundation
  7. Set the background color, textLabel and detailTextLabel. Change CellType into Subtitle, otherwise the two Labels' AutoLayout went awry.
  8. Preparing the segue:
  a. Create Detailed VC with: RGB Sliders, RGB Labels, Alpha Slider & Label, Reset Button and CrayonColorName Label.
- b. Change the name of Detail VC to CrayonsDetailVC and its folder too when you connect the segue.
+ b. Create two constant variabels, to receive the segue, and to be used in the Detail VC.
+ c. Change the name of Detail VC to CrayonsDetailVC and its folder too when you connect the segue.
+ d. Create private functions for defaultValue, updateLabels, updateColors, and connected them to their apropiate buttons/stepper.
  
- 
- 
+ 9. Run the and debugged.
+ 10. Adjust the Auto Layout on all the buttons, labels.
  
  
  */

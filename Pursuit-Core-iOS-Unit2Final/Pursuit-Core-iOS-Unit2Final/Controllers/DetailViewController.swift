@@ -112,6 +112,7 @@ class DetailViewController: UIViewController {
         gval.text = "\(Float(green))"
         blueSlider.value = Float(blue)
         bval.text = "\(Float(blue))"
+        aval.text = "1.0"
         
         // SETTING BACKGROUND COLOR
         self.view.backgroundColor = UIColor(red: CGFloat(red), green: CGFloat(green), blue: CGFloat(blue), alpha: 1.0)

@@ -85,7 +85,7 @@
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="x1d-wD-6pW">
                                         <rect key="frame" x="-2" y="0.0" width="366" height="31"/>
                                         <connections>
-                                            <action selector="sliderChanged:" destination="TZr-cY-CmY" eventType="valueChanged" id="ke9-Nj-3vF"/>
+                                            <action selector="redSliderChanged:" destination="TZr-cY-CmY" eventType="valueChanged" id="W5g-gn-TL8"/>
                                         </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZS-T5-Z5Y">
@@ -96,6 +96,9 @@
                                     </label>
                                     <slider opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="bLs-eg-4OE">
                                         <rect key="frame" x="-2" y="84.5" width="366" height="31"/>
+                                        <connections>
+                                            <action selector="greenSliderChanged:" destination="TZr-cY-CmY" eventType="valueChanged" id="EVS-ca-Tan"/>
+                                        </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHV-dx-sjP">
                                         <rect key="frame" x="0.0" y="131.5" width="362" height="20.5"/>
@@ -105,6 +108,9 @@
                                     </label>
                                     <slider opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Mb3-zy-HQu">
                                         <rect key="frame" x="-2" y="169" width="366" height="31"/>
+                                        <connections>
+                                            <action selector="blueSliderChanged:" destination="TZr-cY-CmY" eventType="valueChanged" id="H0b-ur-Dte"/>
+                                        </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKW-y6-Bs4">
                                         <rect key="frame" x="0.0" y="216" width="362" height="20.5"/>
@@ -118,6 +124,9 @@
                                 <rect key="frame" x="187.98788097086299" y="646" width="39" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetButtonPressed:" destination="TZr-cY-CmY" eventType="touchUpInside" id="a9u-Qf-PTY"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l05-eq-YVZ">
                                 <rect key="frame" x="112" y="181" width="191.99999999999977" height="90.000000000000014"/>

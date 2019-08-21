@@ -20,10 +20,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableViewOutlet.dequeueReusableCell(withIdentifier: "ourCell", for: indexPath)
-        
-        cell.textLabel?.text = color[indexPath.row].name
-        cell.detailTextLabel?.text = color[indexPath.row].hex
-        cell.contentView.backgroundColor = UIColor.init(red: CGFloat(color[indexPath.row].red), green: CGFloat(color[indexPath.row].green), blue: CGFloat(color[indexPath.row].blue), alpha: 10)
+        let colorNum = color[indexPath.row]
+        cell.textLabel?.text = colorNum.name
+        cell.detailTextLabel?.text = colorNum.hex
+        cell.contentView.backgroundColor = UIColor.init(displayP3Red: CGFloat(colorNum.red), green: CGFloat(colorNum.green), blue: CGFloat(colorNum.blue), alpha: 1)
         return cell
     }
     

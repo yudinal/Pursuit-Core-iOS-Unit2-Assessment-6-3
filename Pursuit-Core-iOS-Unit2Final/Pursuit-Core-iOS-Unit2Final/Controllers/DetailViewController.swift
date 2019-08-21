@@ -25,6 +25,8 @@ class DetailViewController: UIViewController {
     @IBAction func stepperTapped(_ sender: UIStepper) {
     }
     
+    @IBAction func resetButtonTapped(_ sender: UIButton) {
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

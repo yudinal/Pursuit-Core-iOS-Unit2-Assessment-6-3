@@ -76,14 +76,23 @@
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="YO5-cd-0s3">
                                 <rect key="frame" x="50" y="194" width="315" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="redSliderTouched:" destination="u8Q-8J-9T2" eventType="valueChanged" id="Tht-a5-pTL"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="kBp-ew-urd">
                                 <rect key="frame" x="50" y="301" width="315" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="greenSliderTouched:" destination="u8Q-8J-9T2" eventType="valueChanged" id="v8x-9F-jSR"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="OEa-mJ-17M">
                                 <rect key="frame" x="51" y="409" width="315" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="blueSliderTouched:" destination="u8Q-8J-9T2" eventType="valueChanged" id="pw9-3m-3ll"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Red Value:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xux-MX-J56">
                                 <rect key="frame" x="86" y="231" width="81" height="21"/>
@@ -155,6 +164,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="P8t-6q-rQo"/>
                     </view>
+                    <connections>
+                        <outlet property="alphaStepper" destination="EyI-A4-OEw" id="N0J-jP-8sd"/>
+                        <outlet property="alphaValueLabel" destination="XJf-M2-mFg" id="lVC-W8-bnu"/>
+                        <outlet property="blueSlider" destination="OEa-mJ-17M" id="Om4-I0-3xS"/>
+                        <outlet property="blueValueLabel" destination="8cJ-gU-Cnn" id="Umh-VX-DcR"/>
+                        <outlet property="colorNameLabel" destination="F95-Zl-dmv" id="0TU-rR-O6c"/>
+                        <outlet property="greenSlider" destination="kBp-ew-urd" id="cTc-xJ-67r"/>
+                        <outlet property="greenValueLabel" destination="Tuc-nq-4W3" id="W8W-bf-eiB"/>
+                        <outlet property="redSlider" destination="YO5-cd-0s3" id="7vD-FU-5NY"/>
+                        <outlet property="redValueLabel" destination="T98-dh-aJA" id="F2n-6A-dOG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bCd-04-wvz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

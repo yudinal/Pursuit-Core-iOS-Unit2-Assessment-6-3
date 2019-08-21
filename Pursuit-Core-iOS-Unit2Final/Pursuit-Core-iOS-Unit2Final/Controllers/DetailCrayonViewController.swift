@@ -11,10 +11,28 @@ import UIKit
 class DetailCrayonViewController: UIViewController {
     
     var crayon: Crayon!
-
+    
+    //MARK -- IBOutlets
+        //Label outlets
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var redValueLabel: UILabel!
+    @IBOutlet weak var greenValueLabel: UILabel!
+    @IBOutlet weak var blueValueLabel: UILabel!
+    @IBOutlet weak var alphaValueLabel: UILabel!
+        //slider outlets
+    @IBOutlet weak var redSlider: UISlider!
+    @IBOutlet weak var greenSlider: UISlider!
+    @IBOutlet weak var blueSlider: UISlider!
+        //stepper outlets
+    @IBOutlet weak var alphaStepper: UIStepper!
+    //MARK -- IBActions
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(displayP3Red: CGFloat(crayon.red / 255), green: CGFloat(crayon.green / 255), blue: CGFloat(crayon.blue / 255), alpha: 1)
+        redSlider.value = Float(crayon.red / 255)
+        greenSlider.value = Float(crayon.green / 255)
+        blueSlider.value = Float(crayon.blue / 255)
     }
     
 

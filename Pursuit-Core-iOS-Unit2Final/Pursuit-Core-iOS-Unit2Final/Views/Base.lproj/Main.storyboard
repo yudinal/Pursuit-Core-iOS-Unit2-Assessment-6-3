@@ -127,7 +127,7 @@
                                 <rect key="frame" x="324" y="129" width="39" height="30"/>
                                 <state key="normal" title="Reset"/>
                             </button>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="3xY-T5-tTn">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" maximumValue="1" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="3xY-T5-tTn">
                                 <rect key="frame" x="219" y="375" width="94" height="29"/>
                             </stepper>
                         </subviews>
@@ -162,6 +162,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iPu-JO-yD7"/>
                     </view>
+                    <connections>
+                        <outlet property="alphaStepper" destination="3xY-T5-tTn" id="uAt-Dd-SCb"/>
+                        <outlet property="alphaValueLabel" destination="kIh-4Y-6DM" id="YBz-EZ-J9w"/>
+                        <outlet property="blueSlider" destination="VOC-en-W5f" id="uF9-yQ-aw3"/>
+                        <outlet property="blueValueLabel" destination="6qd-RF-pAA" id="Lqz-Pd-p7W"/>
+                        <outlet property="greenSlider" destination="lac-xt-dON" id="hZ8-Ht-9oi"/>
+                        <outlet property="greenValueLabel" destination="J0b-CF-fqJ" id="WTP-UR-E1v"/>
+                        <outlet property="nameLabel" destination="NRh-3k-Syj" id="bfp-Lk-rf7"/>
+                        <outlet property="redSlider" destination="98k-0a-i6K" id="nEB-C4-rDA"/>
+                        <outlet property="redValueLabel" destination="eX7-NM-u9L" id="2TX-xN-gVt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BVq-mp-2H5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

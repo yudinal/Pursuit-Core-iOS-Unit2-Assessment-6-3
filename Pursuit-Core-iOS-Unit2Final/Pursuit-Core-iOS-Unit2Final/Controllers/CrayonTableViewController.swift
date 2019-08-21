@@ -11,6 +11,8 @@ import UIKit
 class CrayonTableViewController: UITableViewController {
     
     var allCrayons:[Crayon]!
+    
+//    var cellColor: startingColor!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +46,8 @@ class CrayonTableViewController: UITableViewController {
         let crayon = allCrayons[indexPath.row]
         cell.textLabel?.text = crayon.name
         cell.detailTextLabel?.text = crayon.hex
+        cell.backgroundColor = UIColor.init(displayP3Red: CGFloat(crayon.red/255), green: CGFloat(crayon.green/255), blue: CGFloat(crayon.blue/255), alpha: 1)
+
         return cell
     }
  

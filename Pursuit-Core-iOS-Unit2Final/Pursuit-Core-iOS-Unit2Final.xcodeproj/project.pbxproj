@@ -14,6 +14,7 @@
 		57AFE738219E136F0024A541 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57AFE736219E136F0024A541 /* LaunchScreen.storyboard */; };
 		57AFE742219E139C0024A541 /* Crayon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AFE741219E139C0024A541 /* Crayon.swift */; };
 		D800C2A7230D993500B4BE8E /* CrayonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D800C2A6230D993500B4BE8E /* CrayonCell.swift */; };
+		D800C2AB230DAA8100B4BE8E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D800C2AA230DAA8100B4BE8E /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		57AFE739219E136F0024A541 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57AFE741219E139C0024A541 /* Crayon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crayon.swift; sourceTree = "<group>"; };
 		D800C2A6230D993500B4BE8E /* CrayonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrayonCell.swift; sourceTree = "<group>"; };
+		D800C2AA230DAA8100B4BE8E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		57AFE72C219E136D0024A541 /* Pursuit-Core-iOS-Unit2Final */ = {
 			isa = PBXGroup;
 			children = (
+				D800C2A6230D993500B4BE8E /* CrayonCell.swift */,
 				57AFE745219E13C00024A541 /* Models */,
 				57AFE746219E13CC0024A541 /* Views */,
 				57AFE744219E13B90024A541 /* Controllers */,
@@ -80,8 +83,8 @@
 		57AFE744219E13B90024A541 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D800C2A6230D993500B4BE8E /* CrayonCell.swift */,
 				57AFE72F219E136D0024A541 /* ViewController.swift */,
+				D800C2AA230DAA8100B4BE8E /* DetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 			files = (
 				57AFE742219E139C0024A541 /* Crayon.swift in Sources */,
 				57AFE730219E136D0024A541 /* ViewController.swift in Sources */,
+				D800C2AB230DAA8100B4BE8E /* DetailViewController.swift in Sources */,
 				57AFE72E219E136D0024A541 /* AppDelegate.swift in Sources */,
 				D800C2A7230D993500B4BE8E /* CrayonCell.swift in Sources */,
 			);

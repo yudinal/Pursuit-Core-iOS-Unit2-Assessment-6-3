@@ -42,6 +42,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="1Zs-NY-WOD" kind="show" id="gfl-Bm-sxP"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

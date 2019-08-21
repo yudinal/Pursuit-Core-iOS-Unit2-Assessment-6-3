@@ -21,24 +21,32 @@ var crayon: Crayon!
     @IBOutlet var colorView: UIView!
     @IBOutlet weak var alphaSlider: UISlider!
     @IBOutlet weak var resetButton: UIButton!
+    
     @IBAction func redSliderFunc(_ sender: UISlider) {
         redValue.text = "Red Value: \(redSlider.value)"
+        redValue.textColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(0.0), blue: CGFloat(0.0), alpha: CGFloat(1.0))
         colorView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaSlider.value))
+        navigationController?.navigationBar.barTintColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaSlider.value))
         
     }
     @IBAction func blueSliderFunc(_ sender: UISlider) {
         blueValue.text = "Blue Value: \(blueSlider.value)"
+        blueValue.textColor = UIColor(red: CGFloat(0.0), green: CGFloat(0.0), blue: CGFloat(blueSlider.value), alpha: CGFloat(1.0))
         colorView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaSlider.value))
+        navigationController?.navigationBar.barTintColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaSlider.value))
     }
     
     @IBAction func greenSliderFunc(_ sender: UISlider) {
         greenValue.text = "Green Value: \(greenSlider.value)"
+        greenValue.textColor = UIColor(red: CGFloat(0.0), green: CGFloat(greenSlider.value), blue: CGFloat(0.0), alpha: 1.0)
         colorView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaSlider.value))
+        navigationController?.navigationBar.barTintColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaSlider.value))
     }
     
     @IBAction func alphaSlider(_ sender: UISlider) {
         alphaValue.text = "Alpha Value: \(alphaSlider.value)"
         colorView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaSlider.value))
+        navigationController?.navigationBar.barTintColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaSlider.value))
     }
     
     
@@ -50,7 +58,7 @@ var crayon: Crayon!
         redSlider.value = Float(crayon.red / 255)
         blueSlider.value = Float(crayon.blue / 255)
         greenSlider.value = Float(crayon.green / 255)
-        alphaSlider.value = Float(0.5)
+        alphaSlider.value = Float(1.0)
         colorView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaSlider.value))
         
     }
@@ -64,8 +72,12 @@ var crayon: Crayon!
         blueSlider.value = Float(crayon.blue / 255)
         greenValue.text = "Green Value: \(crayon.green / 255)"
         greenSlider.value = Float(crayon.green / 255)
-        alphaSlider.value = Float(0.5)
+        alphaSlider.value = Float(1.0)
        colorView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaSlider.value))
+        colorName.textColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaSlider.value))
+        colorName.shadowColor = UIColor.white
+        colorName.shadowOffset = CGSize(width: CGFloat(1.5), height: CGFloat(1.5))
+        navigationController?.navigationBar.barTintColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaSlider.value))
         // Do any additional setup after loading the view.
     }
     

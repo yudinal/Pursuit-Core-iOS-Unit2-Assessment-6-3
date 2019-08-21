@@ -16,14 +16,22 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var redLabel: UILabel!
     @IBAction func redSlider(_ sender: UISlider) {
         redLabel.text = String(sender.value)
+       
+        self.view.backgroundColor = UIColor(displayP3Red: CGFloat(sender.value), green: CGFloat(crayon!.blue), blue: CGFloat(crayon!.blue), alpha: 0.5)
     }
     
     @IBOutlet weak var greenLabel: UILabel!
-    @IBAction func greenSlider(_ sender: Any) {
+    @IBAction func greenSlider(_ sender: UISlider) {
+        greenLabel.text = String(sender.value)
+        
+        self.view.backgroundColor = UIColor(displayP3Red: CGFloat(crayon!.red), green: CGFloat(sender.value), blue: CGFloat(crayon!.blue), alpha: 0.5)
     }
     
     @IBOutlet weak var blueLabel: UILabel!
-    @IBAction func blueSlider(_ sender: Any) {
+    @IBAction func blueSlider(_ sender: UISlider) {
+        blueLabel.text = String(sender.value)
+        
+        self.view.backgroundColor = UIColor(displayP3Red: CGFloat(crayon!.red), green: CGFloat(crayon!.green), blue: CGFloat(sender.value), alpha: 0.5)
     }
     
     @IBOutlet weak var alphaLabel: UILabel!
@@ -52,7 +60,7 @@ class DetailViewController: UIViewController {
         
         blueLabel.text = String(crayon!.blue/255)
         
-        self.view.backgroundColor = UIColor(displayP3Red: CGFloat(crayon!.red/255), green: CGFloat(crayon!.green/255), blue: CGFloat(crayon!.blue/255), alpha: 1.0)
+        self.view.backgroundColor = UIColor(displayP3Red: CGFloat(crayon!.red/255), green: CGFloat(crayon!.green/255), blue: CGFloat(crayon!.blue/255), alpha: 0.5)
         
     }
     

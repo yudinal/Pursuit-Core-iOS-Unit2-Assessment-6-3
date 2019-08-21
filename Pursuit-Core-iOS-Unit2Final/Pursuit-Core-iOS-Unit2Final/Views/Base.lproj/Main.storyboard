@@ -122,8 +122,8 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Alpha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w88-Pw-xqw">
-                                <rect key="frame" x="186" y="517" width="44" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Alpha: 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w88-Pw-xqw">
+                                <rect key="frame" x="164" y="517" width="94" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -133,16 +133,23 @@
                                 <rect key="frame" x="133" y="730" width="149" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetButton:" destination="6Xm-0h-tUa" eventType="touchUpInside" id="xfb-vS-Yem"/>
+                                </connections>
                             </button>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="1" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="VLm-FQ-xPN">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" value="1" maximumValue="1" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="VLm-FQ-xPN">
                                 <rect key="frame" x="164" y="572" width="94" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="stepperAct:" destination="6Xm-0h-tUa" eventType="valueChanged" id="dVZ-D6-9bo"/>
+                                </connections>
                             </stepper>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="mCK-aS-P6i"/>
                     </view>
                     <connections>
+                        <outlet property="alphaLabel" destination="w88-Pw-xqw" id="2Rg-2c-9Ek"/>
                         <outlet property="blueLabel" destination="RFD-Dm-fc6" id="CB0-aM-Y9e"/>
                         <outlet property="blueOut" destination="6DP-p0-qr1" id="ELO-ho-xl8"/>
                         <outlet property="colorName" destination="UT2-qg-HiR" id="9iL-Lz-7ip"/>
@@ -150,6 +157,7 @@
                         <outlet property="greenOut" destination="CPc-kS-NfM" id="rmL-aG-gl4"/>
                         <outlet property="red" destination="tux-iC-dFy" id="2kt-Lj-jCt"/>
                         <outlet property="redSlidderOut" destination="I1q-9D-Cnp" id="XkT-SE-DHe"/>
+                        <outlet property="stepperOut" destination="VLm-FQ-xPN" id="rv5-5J-x9b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KHr-2r-1nW" userLabel="First Responder" sceneMemberID="firstResponder"/>

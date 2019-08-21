@@ -21,9 +21,6 @@ class Crayon {
     self.blue = blue
     self.hex = hex
     }
-
-    
-  
   static let allTheCrayons = [
     Crayon(name: "Almond", red: 239, green: 222, blue: 205, hex: "#EFDECD"),
     Crayon(name: "Antique Brass", red: 205, green: 149, blue: 117, hex: "#CD9575"),
@@ -42,7 +39,11 @@ class Crayon {
     Crayon(name: "Blue Green", red: 13, green: 152, blue: 186, hex: "#0D98BA"),
     Crayon(name: "Blue Violet", red: 115, green: 102, blue: 189, hex: "#7366BD")
   ]
-     func changeValue()-> UIColor{
+    func changeValue()-> UIColor{
         return UIColor.init(displayP3Red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: CGFloat(1))
     }
+    func updateWithAlpha(alpha: CGFloat) -> UIColor {
+        return UIColor.init(displayP3Red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: CGFloat(alpha))
+    }
+ 
 }

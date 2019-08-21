@@ -71,8 +71,6 @@ class CrayonDetailViewController: UIViewController {
     
     
     @IBAction func resetButtonPressed(_ sender: UIButton) {
-        sender.backgroundColor = .purple
-        sender.setTitleColor(.white, for: .normal)
         defaultValues()
     }
     

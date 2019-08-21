@@ -25,6 +25,7 @@ class ColorCellViewController: UIViewController, ColorChangeDelegate {
         super.viewDidLoad()
         crayonTableView.delegate = self
         crayonTableView.dataSource = self
+        
         // Do any additional setup after loading the view.
     }
     
@@ -58,6 +59,11 @@ extension ColorCellViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let crayonVC = segue.destination as? ColorDetailViewController {
+            crayonVC.delegate = self
+        }
+    }
     
 }
 

@@ -8,7 +8,11 @@
 
 import UIKit
 
+
 class ColorDetailViewController: UIViewController {
+    var crayonBox = Crayon.allTheCrayons
+    var delegate: ColorChangeDelegate?
+    
     @IBOutlet weak var crayonColorLabel: UILabel!
     
     @IBAction func redSlider(_ sender: UISlider) {

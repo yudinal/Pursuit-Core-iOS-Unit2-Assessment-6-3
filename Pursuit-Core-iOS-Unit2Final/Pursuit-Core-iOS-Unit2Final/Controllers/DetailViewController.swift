@@ -33,6 +33,8 @@ class DetailViewController: UIViewController {
         
         crayonName.text = crayon.name
         
+        view.backgroundColor = UIColor(red: CGFloat(crayon.red/255), green: CGFloat(crayon.green/255), blue: CGFloat(crayon.blue/255), alpha: 1.0)
+        
     }
 
 }

@@ -13,10 +13,19 @@ class ColorDetailViewController: UIViewController {
     var crayon: Crayon!
     var delegate: ColorChangeDelegate?
     
+    
     @IBOutlet weak var crayonColorLabel: UILabel!
+    @IBOutlet weak var redSliderLabel: UILabel!
+    @IBOutlet weak var greenSliderLabel: UILabel!
+    @IBOutlet weak var blueSliderLabel: UILabel!
+    @IBOutlet weak var alphaStepperLabel: UILabel!
+    
+    
+    
     
     
     @IBAction func redSlider(_ sender: UISlider) {
+        
         crayon.changeRed(red: CGFloat(sender.value))
         updateColor()
         
@@ -40,10 +49,16 @@ class ColorDetailViewController: UIViewController {
         
     }
     
+    @IBAction func resetButton(_ sender: UIButton) {
+        resetSettings()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setLabelTextColor()
         crayonColorLabel.text = crayon.name
         view.backgroundColor = UIColor(red: crayon.red, green: crayon.green, blue: crayon.blue, alpha: 1.0)
+        
 
         // Do any additional setup after loading the view.
     }
@@ -53,6 +68,24 @@ class ColorDetailViewController: UIViewController {
         view.backgroundColor = crayon.getColor()
     }
     
+    private func resetSettings() {
+        view.backgroundColor = UIColor(red: crayon.red, green: crayon.green, blue: crayon.blue, alpha: crayon.alpha)
+        
+    }
+    
+    private func setLabelTextColor() {
+        if crayon.name == "Black" {
+            redSliderLabel.textColor = .white
+            greenSliderLabel.textColor = .white
+            blueSliderLabel.textColor = .white
+            alphaStepperLabel.textColor = .white
+        } else {
+            redSliderLabel.textColor = .black
+            greenSliderLabel.textColor = .black
+            blueSliderLabel.textColor = .black
+            alphaStepperLabel.textColor = .black
+        }
+    }
 
     /*
     // MARK: - Navigation

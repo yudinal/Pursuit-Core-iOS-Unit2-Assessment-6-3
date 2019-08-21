@@ -81,12 +81,24 @@
                                     <action selector="alphaStepper:" destination="52H-YS-Nde" eventType="valueChanged" id="YLQ-93-qWA"/>
                                 </connections>
                             </stepper>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sff-Sq-Oqi">
+                                <rect key="frame" x="188" y="759" width="39" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetButton:" destination="52H-YS-Nde" eventType="touchUpInside" id="dWh-nH-nIT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="TTD-BY-rcy"/>
                     </view>
                     <connections>
+                        <outlet property="alphaStepperLabel" destination="qAX-VN-QzB" id="fOR-go-OGo"/>
+                        <outlet property="blueSliderLabel" destination="2J2-SS-vLN" id="7Uq-zW-Gbg"/>
                         <outlet property="crayonColorLabel" destination="XJq-3v-Ox5" id="qN6-D2-7iY"/>
+                        <outlet property="greenSliderLabel" destination="pnu-G3-Puw" id="gSb-cM-MCM"/>
+                        <outlet property="redSliderLabel" destination="5gm-pf-XxY" id="Fb1-DE-2cy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YXA-PV-DVI" userLabel="First Responder" sceneMemberID="firstResponder"/>

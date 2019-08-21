@@ -153,7 +153,7 @@
                     <connections>
                         <outlet property="alphaLabel" destination="3Yf-Ke-puW" id="qyG-xC-M18"/>
                         <outlet property="alphaStepper" destination="MtH-Fb-8VA" id="7b2-l1-ZL1"/>
-                        <outlet property="blueLabel" destination="3Yf-Ke-puW" id="TFh-rL-7ji"/>
+                        <outlet property="blueLabel" destination="PA8-kM-6lv" id="4De-MC-KC5"/>
                         <outlet property="blueSlider" destination="xla-EL-e3i" id="zt9-7V-jUg"/>
                         <outlet property="greenLabel" destination="7pS-Tj-A1T" id="7vG-pU-zcK"/>
                         <outlet property="greenSlider" destination="CjH-zC-mjv" id="oZz-D9-Npx"/>

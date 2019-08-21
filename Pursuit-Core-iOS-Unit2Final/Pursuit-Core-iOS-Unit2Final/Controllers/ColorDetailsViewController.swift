@@ -9,7 +9,18 @@
 import UIKit
 
 class ColorDetailsViewController: UIViewController {
+
+    var currentRed: CGFloat = 0.5
+    var currentGreen: CGFloat = 0.5
+    var currentBlue: CGFloat = 0.5
+    var Alpha: CGFloat = 1
     
+    
+//    let red = CGFloat(redSlider.value)
+//    let blue = CGFloat(blueSlider.value)
+//    let green = CGFloat(greenSlider.value)
+//
+//
     var colorSelectedDetail: Crayon!
     
     @IBOutlet weak var colorSelected: UILabel!
@@ -30,7 +41,22 @@ class ColorDetailsViewController: UIViewController {
     
     @IBOutlet weak var currentAlpha: UILabel!
     
+    
+    @IBAction func resetButton(_ sender: UIButton) {
+    }
+    
     @IBAction func colorRedSlider(_ sender: UISlider) {
+        currentRed = CGFloat(sender.value)
+        
+    }
+    
+    @IBAction func colorGreenSlider(_ sender: UISlider) {
+        currentGreen = CGFloat(sender.value)
+    }
+    
+    @IBAction func colorBlueSlider(_ sender: UISlider) {
+        currentBlue = CGFloat(sender.value)
+        
     }
     
     
@@ -56,28 +82,8 @@ class ColorDetailsViewController: UIViewController {
     }
     */
 
+
+    // Do any additional setup after loading the view.
 }
-//
-//@IBAction func sliderAction(_ sender: UISlider) {
-//    currentFontSize = CGFloat(sender.value)
-//    updateLabel()
-//    stepperOutlet.value = Double(sender.value)
-//
-//}
-//
-//@IBAction func stepperAction(_ sender: UIStepper) {
-//    currentFontSize = CGFloat(sender.value)
-//    updateLabel()
-//    sliderOutlet.value = Float(sender.value)
-//}
-//
-//
-//override func viewDidLoad() {
-//    super.viewDidLoad()
-//
-//    // Do any additional setup after loading the view.
-//}
-//
-//private func updateLabel() {
-//    changeFontSize.font = UIFont.systemFont(ofSize: currentFontSize)
-//}
+
+

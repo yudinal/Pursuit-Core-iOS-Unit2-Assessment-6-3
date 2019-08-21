@@ -31,7 +31,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return Crayon.allTheCrayons.count
     }
     
-   
+    // prepares the segue to the DetailVC
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destination = segue.destination as? DetailViewController else {return}
+        if segue.identifier == "detailSegue" {
+            guard let indexPath = tableView.indexPathForSelectedRow else {return}
+            let crayon = Crayon.allTheCrayons[indexPath.row]
+//            destination.detCrayonLabel = crayon
+        }
+    }
+    
+    
     
     // populate cells
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -44,15 +54,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             cell.crayonHexLabel.text = Crayon.allTheCrayons[indexPath.row].hex
             
             // This converts 255 RGB value to scaling 0.0 to 1.0 value
-                let cellRed = (Crayon.allTheCrayons[indexPath.row].red)/255
-                let cellGreen = (Crayon.allTheCrayons[indexPath.row].green)/255
-                let cellBlue = (Crayon.allTheCrayons[indexPath.row].blue)/255
+                let cellRed = Double((Crayon.allTheCrayons[indexPath.row].red)/255)
+                let cellGreen = Double((Crayon.allTheCrayons[indexPath.row].green)/255)
+                let cellBlue = Double((Crayon.allTheCrayons[indexPath.row].blue)/255)
             
             // This converts 255 RGB value to scaling 0.0 to 1.0 value
             
             // cell background color
             cell.crayonLabel.backgroundColor = UIColor.init(red: CGFloat(cellRed), green: CGFloat(cellGreen), blue: CGFloat(cellBlue), alpha: 1)
             cell.crayonHexLabel.backgroundColor = UIColor.init(red: CGFloat(cellRed), green: CGFloat(cellGreen), blue: CGFloat(cellBlue), alpha: 1)
+            
+//          attempted to change label to visible colors if it was too dark
+//            switch cellRed && cellGreen && cellBlue < 0.21 {
+//            case true:
+//                cell.crayonLabel.textColor = UIColor.white
+//            default:
+//                print("Okay")
+//                }
+            
             
             return cell
         }

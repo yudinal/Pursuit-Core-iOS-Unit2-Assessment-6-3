@@ -55,6 +55,7 @@ extension DetailViewController: UIColorable {
     var defaultAlpha: Double {return 1}
 
     func resetValues() {
+        nameLabel.text = crayon.name
         redSlider.value = defaultRed
         greenSlider.value = defaultGreen
         blueSlider.value = defaultBlue

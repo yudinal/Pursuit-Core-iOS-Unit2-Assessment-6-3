@@ -120,6 +120,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yPq-f5-NRK">
                                 <rect key="frame" x="167" y="722" width="80" height="30"/>
                                 <state key="normal" title="Reset Color"/>
+                                <connections>
+                                    <action selector="resetColor:" destination="1Zs-NY-WOD" eventType="touchUpInside" id="Dzs-mq-6Zi"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

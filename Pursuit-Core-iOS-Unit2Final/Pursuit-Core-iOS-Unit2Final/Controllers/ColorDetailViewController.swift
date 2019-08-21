@@ -42,6 +42,15 @@ class ColorDetailViewController: UIViewController {
         }
     }
     
+    @IBAction func resetColor(_ sender: UIButton) {
+        redSlider.value = Float(color.red)/255
+        greenSlider.value = Float(color.green)/255
+        blueSlider.value = Float(color.blue)/255
+        colorSlider.changeRed(red: CGFloat(color.red)/255)
+        colorSlider.changeGreen(green: CGFloat(color.green)/255)
+        colorSlider.changeBlue(blue: CGFloat(color.blue)/255)
+        background.backgroundColor = UIColor(red: CGFloat(color.red)/255, green: CGFloat(color.green)/255, blue: CGFloat(color.blue)/255, alpha: 1.0)
+    }
     
     @IBAction func alphaChanged(_ sender: UIStepper) {
         colorSlider.changeAlpha(alpha: CGFloat(sender.value))

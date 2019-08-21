@@ -21,10 +21,11 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var alphaStepper: UIStepper!
     
     @IBAction func sliderSlides(_ sender: UISlider) {
+        updateViewBackground()
     }
     @IBAction func stepperTapped(_ sender: UIStepper) {
+        updateViewBackground()
     }
-    
     @IBAction func resetButtonTapped(_ sender: UIButton) {
         resetValues()
     }

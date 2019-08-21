@@ -5,7 +5,7 @@
 - Add and commit your changes as you work on the assessment
 - Complete the assessment and push up on your own branch
 - Create a pull request to the repo here
-- Paste the link of your fork into Canvas
+- Paste the link of your PR into Canvas
 
 # The Assessment
 

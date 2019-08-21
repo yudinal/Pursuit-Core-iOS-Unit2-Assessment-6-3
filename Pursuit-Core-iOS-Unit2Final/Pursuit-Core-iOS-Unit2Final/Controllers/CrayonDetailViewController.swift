@@ -33,16 +33,18 @@ class CrayonDetailViewController: UIViewController {
     }
     
     
+    
     @IBAction func redSlider(_ sender: UISlider) {
-        redValueLabel.text = "Red: \(sender.value)"
+        
+        redValueLabel.text = "Red:   \(String(format: "%.3f", sender.value))"
     }
     
     @IBAction func greenSlider(_ sender: UISlider) {
-        greenValueLabel.text = "Green: \(sender.value)"
+        greenValueLabel.text = "Green:   \(String(format: "%.3f", sender.value))"
     }
     
     @IBAction func blueSlider(_ sender: UISlider) {
-        blueValueLabel.text = "Blue: \(sender.value)"
+        blueValueLabel.text = "Blue:   \(String(format: "%.3f", sender.value))"
     }
     
     

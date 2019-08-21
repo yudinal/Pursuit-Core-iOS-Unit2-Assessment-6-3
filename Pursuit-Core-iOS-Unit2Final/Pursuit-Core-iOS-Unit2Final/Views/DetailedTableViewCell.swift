@@ -10,26 +10,23 @@ import UIKit
 
 class DetailedTableViewCell: UITableViewCell {
     
-    @IBAction func sliderOne(_ sender: UISlider) {
-      
+    @IBAction func sliderOne(_ sender: Any) {
     }
     
-    @IBAction func sliderTwo(_ sender: UISlider) {
-        
+    @IBAction func sliderThree(_ sender: Any) {
     }
-    
-    @IBAction func sliderThree(_ sender: UISlider) {
-    
-        func awakeFromNib() {
+    @IBAction func sliderTwo(_ sender: Any) {
+    }
+    override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-        func setSelected(_ selected: Bool, animated: Bool) {
+     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
 
 }
-}
+

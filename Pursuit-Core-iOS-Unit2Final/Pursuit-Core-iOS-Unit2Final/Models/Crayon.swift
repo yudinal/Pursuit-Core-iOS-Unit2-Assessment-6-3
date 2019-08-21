@@ -40,3 +40,11 @@ class Crayon {
     Crayon(name: "Blue Violet", red: 115, green: 102, blue: 189, hex: "#7366BD")
   ]
 }
+
+let color1 = Crayon.allTheCrayons.filter({$0.red == 1 })
+let color2 = Crayon.allTheCrayons.filter({$0.green == 1 })
+let color3 = Crayon.allTheCrayons.filter({$0.blue == 1 })
+
+
+let theColors = [color1, color2, color3]
+

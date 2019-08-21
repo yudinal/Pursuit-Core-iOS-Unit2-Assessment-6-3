@@ -9,7 +9,10 @@
 import UIKit
 
 class colorsTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var nameOfColorLabel: UILabel!
+    
+    @IBOutlet weak var hexLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

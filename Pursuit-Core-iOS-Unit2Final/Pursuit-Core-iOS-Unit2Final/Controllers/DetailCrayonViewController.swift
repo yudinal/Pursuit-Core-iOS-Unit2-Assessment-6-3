@@ -55,6 +55,7 @@ class DetailCrayonViewController: UIViewController {
     //MARK: -- LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        nameLabel.text = crayon.name
         setUpViews()
     }
 
@@ -65,7 +66,6 @@ class DetailCrayonViewController: UIViewController {
         greenSlider.value = Float(crayon.green / 255)
         blueSlider.value = Float(crayon.blue / 255)
         alphaStepper.value = 1
-        nameLabel.text = crayon.name
         //call custom private functions
         updateBackgroundColor()
         changeLabelTexts()

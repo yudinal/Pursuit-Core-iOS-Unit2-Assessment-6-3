@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ColorCellViewController: UIViewController {
+class ColorCellViewController: UIViewController, ColorChangeDelegate {
     
     let crayonBox = Crayon.allTheCrayons
     
@@ -16,6 +16,10 @@ class ColorCellViewController: UIViewController {
     
     
     @IBOutlet weak var crayonTableView: UITableView!
+    
+    func getNewColor(red: CGFloat, blue: CGFloat, green: CGFloat) {
+        <#code#>
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,3 +60,4 @@ extension ColorCellViewController: UITableViewDelegate, UITableViewDataSource {
     
     
 }
+

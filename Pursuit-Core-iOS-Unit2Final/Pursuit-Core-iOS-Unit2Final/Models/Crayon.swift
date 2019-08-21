@@ -26,32 +26,85 @@ class Crayon {
   var hex: String
   var delegate: UIColorable?
 
-  init(name: String, red: Double, green: Double, blue: Double, hex: String) {
+    private init(name: String,red:Double,green:Double,blue:Double,hex: String) {
     self.name = name
     self.red = red
     self.green = green
     self.blue = blue
     self.hex = hex
   }
+    convenience init(name:String,hex:String) {
+        self.init(name: name, red: 0, green: 0, blue: 0, hex: hex)
+        let hexDict = makeHexIntoDict(hex: hex)
+        self.red = getValueFromHex(dict: hexDict, first: 1, second: 2)
+        self.green = getValueFromHex(dict: hexDict, first: 3, second: 4)
+        self.blue = getValueFromHex(dict: hexDict, first: 5, second: 6)
+    }
   static let allTheCrayons = [
-    Crayon(name: "Almond", red: 239, green: 222, blue: 205, hex: "#EFDECD"),
-    Crayon(name: "Antique Brass", red: 205, green: 149, blue: 117, hex: "#CD9575"),
-    Crayon(name: "Apricot", red: 253, green: 217, blue: 181, hex: "#FDD9B5"),
-    Crayon(name: "Aquamarine", red: 120, green: 219, blue: 226, hex: "#78DBE2"),
-    Crayon(name: "Asparagus", red: 135, green:  169, blue: 107, hex: "#87A96B"),
-    Crayon(name: "Atomic Tangerine", red: 255, green: 164, blue: 116, hex: "#FFA474"),
-    Crayon(name: "Banana Mania", red: 250, green: 231, blue: 181, hex: "#FAE7B5"),
-    Crayon(name: "Beaver", red: 159, green: 129, blue:  112, hex: "#9F8170"),
-    Crayon(name: "Bittersweet", red: 253, green: 124, blue: 110, hex: "#FD7C6E"),
-    Crayon(name: "Black", red: 0, green: 0, blue: 0, hex: "#000000"),
-    Crayon(name: "Blizzard Blue", red: 172, green: 229, blue: 238, hex: "#ACE5EE"),
-    Crayon(name: "Blue", red: 31, green: 117, blue: 254, hex: "#1F75FE"),
-    Crayon(name: "Blue Bell", red: 162, green: 162, blue: 208, hex: "#A2A2D0"),
-    Crayon(name: "Blue Gray", red: 102, green: 153, blue: 204, hex: "#6699CC"),
-    Crayon(name: "Blue Green", red: 13, green: 152, blue: 186, hex: "#0D98BA"),
-    Crayon(name: "Blue Violet", red: 115, green: 102, blue: 189, hex: "#7366BD")
+    Crayon(name: "Almond", hex: "#EFDECD"),
+    Crayon(name: "Antique Brass", hex: "#CD9575"),
+    Crayon(name: "Apricot", hex: "#FDD9B5"),
+    Crayon(name: "Aquamarine", hex: "#78DBE2"),
+    Crayon(name: "Asparagus",hex: "#87A96B"),
+    Crayon(name: "Atomic Tangerine", hex: "#FFA474"),
+    Crayon(name: "Banana Mania", hex: "#FAE7B5"),
+    Crayon(name: "Beaver",hex: "#9F8170"),
+    Crayon(name: "Bittersweet",hex: "#FD7C6E"),
+    Crayon(name: "Black", hex: "#000000"),
+    Crayon(name: "Blizzard Blue", hex: "#ACE5EE"),
+    Crayon(name: "Blue",hex: "#1F75FE"),
+    Crayon(name: "Blue Bell",hex: "#A2A2D0"),
+    Crayon(name: "Blue Gray",hex: "#6699CC"),
+    Crayon(name: "Blue Green", hex: "#0D98BA"),
+    Crayon(name: "Blue Violet", hex: "#7366BD")
   ]
     func getUIColor() -> UIColor {
        return UIColor(displayP3Red: CGFloat(self.red/255), green: CGFloat(self.green/255), blue: CGFloat(self.blue/255), alpha: 1)
+    }
+    func makeHexIntoDict(hex: String) -> [Int:Character] {
+        var dict: [Int:Character] = [:]
+        for (index,i) in hex.enumerated() {
+            dict[index] = i
+        }
+        return dict
+    }
+    func getValueFromHex(dict: [Int:Character], first: Int, second: Int) -> Double {
+        guard let firstDigit = dict[first], let secondDigit = dict[second] else {
+            return Double()
+        }
+        if let firstNum = Int("\(firstDigit)") {
+            if let secondNum = Int("\(secondDigit)") {
+                return Double((firstNum * 16) + secondNum)
+            } else {
+                let secondLetterValue = getValue(from: secondDigit)
+                return Double(firstNum * 16) + secondLetterValue
+            }
+        } else {
+            let firstLetterValue = getValue(from: firstDigit)
+            if let secondNum = Int("\(secondDigit)") {
+                return (firstLetterValue * 16) + Double(secondNum)
+            } else {
+                let secondLetterValue = getValue(from: secondDigit)
+                return (firstLetterValue * 16) + secondLetterValue
+            }
+        }
+    }
+    func getValue(from letter: Character) -> Double {
+        switch letter {
+        case "A":
+            return 10
+        case "B":
+            return 11
+        case "C":
+            return 12
+        case "D":
+            return 13
+        case "E":
+            return 14
+        case "F":
+            return 15
+        default:
+            return Double()
+        }
     }
 }

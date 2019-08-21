@@ -59,7 +59,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         switch segueIdentifier {
             
-        case "ColorDetail":
+        case "CrayonDetail":
             
             guard let crayonDetail = segue.destination as? DetailViewController else {
                 fatalError("Unexpected segue VC")

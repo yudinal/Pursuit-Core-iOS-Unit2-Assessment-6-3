@@ -12,6 +12,7 @@
 		57AFE735219E136F0024A541 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57AFE734219E136F0024A541 /* Assets.xcassets */; };
 		57AFE738219E136F0024A541 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57AFE736219E136F0024A541 /* LaunchScreen.storyboard */; };
 		57AFE742219E139C0024A541 /* Crayon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AFE741219E139C0024A541 /* Crayon.swift */; };
+		58247A85230D9BB3003E2E12 /* CrayonsDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58247A84230D9BB3003E2E12 /* CrayonsDetailedViewController.swift */; };
 		58674C06230D8E21004D3873 /* CrayonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58674C05230D8E21004D3873 /* CrayonsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 		57AFE737219E136F0024A541 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57AFE739219E136F0024A541 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57AFE741219E139C0024A541 /* Crayon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crayon.swift; sourceTree = "<group>"; };
+		58247A84230D9BB3003E2E12 /* CrayonsDetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrayonsDetailedViewController.swift; sourceTree = "<group>"; };
 		58674C05230D8E21004D3873 /* CrayonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrayonsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +80,7 @@
 		57AFE744219E13B90024A541 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				58247A84230D9BB3003E2E12 /* CrayonsDetailedViewController.swift */,
 				58674C05230D8E21004D3873 /* CrayonsViewController.swift */,
 			);
 			path = Controllers;
@@ -170,6 +173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58247A85230D9BB3003E2E12 /* CrayonsDetailedViewController.swift in Sources */,
 				58674C06230D8E21004D3873 /* CrayonsViewController.swift in Sources */,
 				57AFE742219E139C0024A541 /* Crayon.swift in Sources */,
 				57AFE72E219E136D0024A541 /* AppDelegate.swift in Sources */,

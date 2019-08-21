@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class DetailColorViewController: UIViewController {
+    @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var colorName: UILabel!
     @IBOutlet weak var blueSliderLabel: UILabel!
     @IBOutlet weak var greenSliderLabel: UILabel!
@@ -27,6 +28,7 @@ class DetailColorViewController: UIViewController {
         blueSliderLabel.text = "Blue"
         greenSliderLabel.text = "Green"
         alphaSliderLabel.text = "Alpha"
+        resetButton.setTitle("Reset Button", for: .normal) 
     }
     
 }

@@ -110,6 +110,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="PGY-U8-2IJ"/>
                     </view>
+                    <connections>
+                        <outlet property="blueLabel" destination="mwW-a4-8Mz" id="Wzb-gH-occ"/>
+                        <outlet property="blueSlider" destination="t3g-2e-5yU" id="qO0-fJ-nsg"/>
+                        <outlet property="greenLabel" destination="tn5-Xs-f40" id="zn0-3q-gc6"/>
+                        <outlet property="greenSlider" destination="543-4L-HH8" id="kSP-uZ-gNi"/>
+                        <outlet property="redLabel" destination="rQE-uv-9EB" id="GlF-Pd-njh"/>
+                        <outlet property="redSlider" destination="SAO-16-Iz3" id="R4R-C7-Eu7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QHl-hq-Rld" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

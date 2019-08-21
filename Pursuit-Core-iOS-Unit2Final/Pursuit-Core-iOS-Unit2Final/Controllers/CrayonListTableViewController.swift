@@ -9,6 +9,8 @@
 import UIKit
 
 class CrayonListTableViewController: UITableViewController {
+    
+    let crayonList = Crayon.allTheCrayons
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,14 +26,21 @@ class CrayonListTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return crayonList.count
     }
 
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "crayonCell", for: indexPath)
+        cell.textLabel?.text = crayonList[indexPath.row].name
+        cell.detailTextLabel?.text = crayonList[indexPath.row].hex
+//        cell.backgroundView?.backgroundColor = UIColor(displayP3Red: <#T##CGFloat#>, green: <#T##CGFloat#>, blue: <#T##CGFloat#>, alpha: <#T##CGFloat#>)
+        return cell
+    }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

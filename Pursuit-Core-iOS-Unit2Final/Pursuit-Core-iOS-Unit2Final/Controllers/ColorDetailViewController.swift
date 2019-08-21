@@ -9,11 +9,23 @@
 import UIKit
 
 class ColorDetailViewController: UIViewController {
-
+    
+      var color: Crayon!
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet var background: UIView!
+    
+    
+    
+    func setUpView() {
+        nameLabel.text = color.name
+        background.backgroundColor = UIColor(red: CGFloat(color.red)/255, green: CGFloat(color.green)/255, blue: CGFloat(color.blue)/255, alpha: 1.0)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setUpView()
     }
     
 

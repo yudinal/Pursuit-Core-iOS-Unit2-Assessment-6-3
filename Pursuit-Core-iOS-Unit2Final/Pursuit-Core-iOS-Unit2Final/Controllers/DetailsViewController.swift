@@ -86,6 +86,12 @@ class DetailsViewController: UIViewController {
         }
     }
     
+    
+    @IBAction func pressButtonReset(_ sender: UIButton) {
+        setInitialDetails()
+    }
+    
+    
     // MARK: - Backend functions
     
     // Func to set initial details based on the selected crayon
@@ -108,6 +114,7 @@ class DetailsViewController: UIViewController {
             currentBlueText = currentCrayon.roundValuesForLabel(value: currentBlueValue)
             blueLabel?.text = "Blue Value: \(currentBlueText)"
             
+            currentAlpha = defaultAlpha
             currentAlphaText = currentCrayon.roundValuesForLabel(value: currentAlpha)
             alphaLabel?.text = "Alpha Value: \(currentAlphaText)"
             

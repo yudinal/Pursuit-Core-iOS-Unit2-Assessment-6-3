@@ -82,59 +82,66 @@
                                 <rect key="frame" x="50" y="138" width="314" height="674"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbX-rc-10o">
-                                        <rect key="frame" x="0.0" y="0.0" width="314" height="66"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="58.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red Value:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfD-BY-rvC">
-                                        <rect key="frame" x="0.0" y="76" width="314" height="66"/>
+                                        <rect key="frame" x="0.0" y="68.5" width="314" height="58.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="1Rk-aS-j1M">
-                                        <rect key="frame" x="-2" y="152" width="318" height="67"/>
+                                        <rect key="frame" x="-2" y="137" width="318" height="59"/>
                                         <connections>
                                             <action selector="sliderChangeValue:" destination="aR8-2H-Iha" eventType="valueChanged" id="StE-oN-YcX"/>
                                         </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green Value:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7pS-Tj-A1T">
-                                        <rect key="frame" x="0.0" y="228" width="314" height="66"/>
+                                        <rect key="frame" x="0.0" y="205" width="314" height="58.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <slider opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="CjH-zC-mjv">
-                                        <rect key="frame" x="-2" y="304" width="318" height="67"/>
+                                        <rect key="frame" x="-2" y="273.5" width="318" height="59.5"/>
                                         <connections>
                                             <action selector="sliderChangeValue:" destination="aR8-2H-Iha" eventType="valueChanged" id="kh5-bV-nBC"/>
                                         </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blue Value:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PA8-kM-6lv">
-                                        <rect key="frame" x="0.0" y="380" width="314" height="66"/>
+                                        <rect key="frame" x="0.0" y="342" width="314" height="58.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <slider opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xla-EL-e3i">
-                                        <rect key="frame" x="-2" y="456" width="318" height="67"/>
+                                        <rect key="frame" x="-2" y="410.5" width="318" height="59.5"/>
                                         <connections>
                                             <action selector="sliderChangeValue:" destination="aR8-2H-Iha" eventType="valueChanged" id="Pyp-wY-goM"/>
                                         </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alpha Value:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Yf-Ke-puW">
-                                        <rect key="frame" x="0.0" y="532" width="314" height="66"/>
+                                        <rect key="frame" x="0.0" y="479" width="314" height="58"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" maximumValue="1" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="MtH-Fb-8VA">
-                                        <rect key="frame" x="0.0" y="608" width="94" height="29"/>
+                                        <rect key="frame" x="0.0" y="547" width="94" height="29"/>
                                         <connections>
                                             <action selector="stepperChangeValue:" destination="aR8-2H-Iha" eventType="valueChanged" id="MK1-qj-Uu2"/>
                                         </connections>
                                     </stepper>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkW-4v-Qxx">
+                                        <rect key="frame" x="0.0" y="615.5" width="314" height="58.5"/>
+                                        <state key="normal" title="Reset"/>
+                                        <connections>
+                                            <action selector="pressButtonReset:" destination="aR8-2H-Iha" eventType="touchUpInside" id="WP3-fB-QAi"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="MtH-Fb-8VA" firstAttribute="centerX" secondItem="LJ9-Bk-UWJ" secondAttribute="centerX" id="Jnh-Ha-Otg"/>

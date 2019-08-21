@@ -24,7 +24,7 @@ class DetailsViewController: UIViewController {
     
     var currentCrayon: Crayon?
     let defaultAlpha = Crayon.defaultAlpha
-    var currentAlpha: CGFloat = 1.0
+    var currentAlpha: CGFloat = 1.0 //Change this? didset?
     
     
     override func viewDidLoad() {
@@ -36,18 +36,21 @@ class DetailsViewController: UIViewController {
     func setInitialDetails() {
 
         if let currentCrayon = currentCrayon {
+            
             let currentRedValue = currentCrayon.convertCrayonValue(value: currentCrayon.red)
+            let currentGreenValue = currentCrayon.convertCrayonValue(value: currentCrayon.green)
+            let currentBlueValue = currentCrayon.convertCrayonValue(value: currentCrayon.blue)
             
             self.nameLabel?.text = currentCrayon.name
             redLabel?.text = "Red Value: \(currentRedValue)"
-            greenLabel?.text = "Green Value: \(currentCrayon.green/255)"
-            blueLabel?.text = "Blue Value: \(currentCrayon.blue/255)"
-            alphaLabel?.text = "Alpha Value: \(defaultAlpha)"
-            redSlider.value = Float(currentCrayon.red/255)
-            greenSlider.value = Float(currentCrayon.green/255)
-            blueSlider.value = Float(currentCrayon.blue/255)
+            greenLabel?.text = "Green Value: \(currentGreenValue)"
+            blueLabel?.text = "Blue Value: \(currentBlueValue)"
+            alphaLabel?.text = "Alpha Value: \(currentAlpha)"
+            redSlider.value = Float(currentRedValue)
+            greenSlider.value = Float(currentGreenValue)
+            blueSlider.value = Float(currentBlueValue)
             
-            self.view.backgroundColor = UIColor(red: CGFloat(currentCrayon.red/255), green: CGFloat(currentCrayon.green/255), blue: CGFloat(currentCrayon.blue/255), alpha: defaultAlpha)
+            self.view.backgroundColor = UIColor(red: currentRedValue, green: currentGreenValue, blue: currentBlueValue, alpha: currentAlpha)
         }
     }
     
@@ -55,16 +58,24 @@ class DetailsViewController: UIViewController {
     
     @IBAction func sliderChangeValue(_ sender: UISlider) {
         if let currentCrayon = currentCrayon {
+            
+            var currentRedValue = currentCrayon.convertCrayonValue(value: currentCrayon.red)
+            var currentGreenValue = currentCrayon.convertCrayonValue(value: currentCrayon.green)
+            var currentBlueValue = currentCrayon.convertCrayonValue(value: currentCrayon.blue)
+            
             switch sender.tag {
             case 0:
-                self.view.backgroundColor = UIColor(red: CGFloat(sender.value), green: CGFloat(currentCrayon.green/255), blue: CGFloat(currentCrayon.blue/255), alpha: currentAlpha)
+                currentRedValue = CGFloat(sender.value)
                 redLabel?.text = "Red Value: \(sender.value)"
+                self.view.backgroundColor = UIColor(red: currentRedValue, green: currentGreenValue, blue: currentBlueValue, alpha: currentAlpha)
             case 1:
-                self.view.backgroundColor = UIColor(red: CGFloat(currentCrayon.red/255), green: CGFloat(sender.value), blue: CGFloat(currentCrayon.blue/255), alpha: currentAlpha)
+                currentGreenValue = CGFloat(sender.value)
                 greenLabel?.text = "Green Value: \(sender.value)"
+                self.view.backgroundColor = UIColor(red: currentRedValue, green: currentGreenValue, blue: currentBlueValue, alpha: currentAlpha)
             case 2:
-                self.view.backgroundColor = UIColor(red: CGFloat(currentCrayon.red/255), green: CGFloat(currentCrayon.green/255), blue: CGFloat(sender.value), alpha: currentAlpha)
+                currentBlueValue = CGFloat(sender.value)
                 blueLabel?.text = "Blue Value: \(sender.value)"
+                self.view.backgroundColor = UIColor(red: currentRedValue, green: currentGreenValue, blue: currentBlueValue, alpha: currentAlpha)
             default:
                 fatalError("No slider was used")
             }
@@ -73,10 +84,15 @@ class DetailsViewController: UIViewController {
     
   
     @IBAction func stepperChangeValue(_ sender: UIStepper) {
-        currentAlpha = CGFloat(sender.value)
         if let currentCrayon = currentCrayon {
-            self.view.backgroundColor = UIColor(red: CGFloat(currentCrayon.red/255), green: CGFloat(currentCrayon.green/255), blue: CGFloat(currentCrayon.blue/255), alpha: currentAlpha)
-        alphaLabel?.text = "Alpha Value: \(sender.value)"
+            currentAlpha = CGFloat(sender.value)
+            
+            let currentRedValue = currentCrayon.convertCrayonValue(value: currentCrayon.red)
+            let currentGreenValue = currentCrayon.convertCrayonValue(value: currentCrayon.green)
+            let currentBlueValue = currentCrayon.convertCrayonValue(value: currentCrayon.blue)
+            
+            self.view.backgroundColor = UIColor(red: currentRedValue, green: currentGreenValue, blue: currentBlueValue, alpha: currentAlpha)
+        alphaLabel?.text = "Alpha Value: \(currentAlpha)"
         }
     }
 

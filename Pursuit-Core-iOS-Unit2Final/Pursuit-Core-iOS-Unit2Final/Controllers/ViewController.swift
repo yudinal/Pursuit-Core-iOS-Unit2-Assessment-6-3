@@ -69,3 +69,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
 }
 
+
+
+///extraCredit sudo:
+
+//if greenSlider && redSlider && blueSlider values are below 0.35 change textlabels to white or lighter color, create a function to do so.
+//
+ 
+
+ 
+

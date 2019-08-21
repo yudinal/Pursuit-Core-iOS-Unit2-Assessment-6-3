@@ -29,6 +29,10 @@ class ColorChangeViewController: UIViewController {
     @IBOutlet weak var colorNameLabel: UILabel!
     
     
+    
+    @IBOutlet var labelCollection: [UILabel]!
+    
+    
     //MARK: - Actions
     
     @IBAction func resetButton(_ sender: UIButton) {
@@ -45,19 +49,23 @@ class ColorChangeViewController: UIViewController {
     @IBAction func redSliderAct(_ sender: UISlider) {
         redLabelOut.text = "Red: \(Float(sender.value))"
    viewOut.backgroundColor = UIColor(displayP3Red: CGFloat(sender.value), green:  CGFloat(greenSliderOut.value), blue:  CGFloat(blueSliderOut.value), alpha: CGFloat(stepperOut.value))
+        changeTextColor()
     }
     @IBAction func greenSliderAct(_ sender: UISlider) {
         greenLabelOut.text = "Green: \(Float(sender.value))"
     viewOut.backgroundColor = UIColor(displayP3Red: CGFloat(sender.value), green:  CGFloat(greenSliderOut.value), blue:  CGFloat(blueSliderOut.value), alpha: CGFloat(stepperOut.value))
+        changeTextColor()
 
     }
     @IBAction func blueSliderAct(_ sender: UISlider) {
         blueLabelOut.text = "Blue: \(Float(sender.value))"
     viewOut.backgroundColor = UIColor(displayP3Red: CGFloat(sender.value), green:  CGFloat(greenSliderOut.value), blue:  CGFloat(blueSliderOut.value), alpha: CGFloat(stepperOut.value))
+        changeTextColor()
     }
     @IBAction func stepperAct(_ sender: UIStepper) {
         alphaLabel.text = "Alpha: \(Float(sender.value))"
       viewOut.backgroundColor = UIColor(displayP3Red: CGFloat(sender.value), green:  CGFloat(greenSliderOut.value), blue:  CGFloat(blueSliderOut.value), alpha: CGFloat(sender.value))
+        changeTextColor()
     }
     
     //MARK: - Outlets
@@ -67,6 +75,18 @@ class ColorChangeViewController: UIViewController {
     @IBOutlet weak var stepperOut: UIStepper!
     
     
+    
+    func changeTextColor(){
+        if redSliderOut.value < 0.3 && blueSliderOut.value < 0.3 || greenSliderOut.value < 0.3  || stepperOut.value < 0.9 {
+            for i in labelCollection {
+                i.textColor = UIColor.white
+            }
+        } else if redSliderOut.value > 0.3 && blueSliderOut.value > 0.3 && greenSliderOut.value > 0.3 || stepperOut.value >= 0.9 {
+            for i in labelCollection {
+                i.textColor = UIColor.darkGray
+            }
+        }
+    }
     
     
     

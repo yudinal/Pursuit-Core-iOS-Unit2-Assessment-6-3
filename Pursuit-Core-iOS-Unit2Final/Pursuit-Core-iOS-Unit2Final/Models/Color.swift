@@ -14,10 +14,11 @@ struct Color {
     var red: CGFloat
     var green: CGFloat
     var blue: CGFloat
+    var alpha: CGFloat
     
     
     func getColor() -> UIColor {
-        return UIColor(red: red, green: green, blue: blue, alpha: 1)
+        return UIColor(red: red, green: green, blue: blue, alpha: alpha)
     }
     
     
@@ -32,6 +33,10 @@ struct Color {
     
     mutating func changeGreen(green: CGFloat) {
         self.green = green
+    }
+    
+    mutating func changeAlpha(alpha: CGFloat) {
+        self.alpha = alpha
     }
     
 }

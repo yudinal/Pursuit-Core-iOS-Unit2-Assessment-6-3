@@ -20,10 +20,57 @@ class ColorViewController: UIViewController {
     @IBOutlet weak var alphaStepper: UIStepper!
     @IBOutlet weak var reset: UIButton!
     
+    var newColor = ColorOption()
+    
+    @IBAction func sliderValues(_ sender: UISlider) {
+        switch  sender.tag {
+        case 0:
+            newColor.changeRed(red: CGFloat(sender.value))
+            updateBackgroundColor()
+            redValue.text? = "Red: \(redSlide.value)"
+        case 1:
+            newColor.changeGreen(green: CGFloat(sender.value))
+            updateBackgroundColor()
+            greenValue.text? = "Green: \(greenSlide.value)"
+        case 2:
+            newColor.changeBlue(blue: CGFloat(sender.value))
+            updateBackgroundColor()
+            blueValue.text? = "Blue: \(blueSlide.value)"
+            
+        default:
+            print("Nice Try")
+        }
+        //redValue.val = Double((sender.value))
+        //delegate?.textFont(fontSize: CGFloat(sender.value))
+        //fontSize.text = "Font Size: \(sender.value)"
+    }
+    
+    @IBAction func step(_ sender: UIStepper) {
+        newColor.changeAlpha(alpha: CGFloat(sender.value))
+        updateBackgroundColor()
+        alphaValue.text? = "Alpha: \(alphaStepper.value)"
+        //slide.value = Float(sender.value)
+        //delegate?.textFont(fontSize: CGFloat(sender.value))
+        //fontSize.text = "Font Size: \(sender.value)"
+    }
+    
+    @IBAction func refresh(_ sender: UIButton) {
+    }
+    
+    
+    func updateBackgroundColor() {
+        self.view.backgroundColor = newColor.getColor()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = newColor.getColor()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        selectedCrayon.text? = "test"
     }
     
 

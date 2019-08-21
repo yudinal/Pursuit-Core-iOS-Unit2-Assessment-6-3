@@ -14,7 +14,6 @@
 		57AFE738219E136F0024A541 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57AFE736219E136F0024A541 /* LaunchScreen.storyboard */; };
 		57AFE742219E139C0024A541 /* Crayon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AFE741219E139C0024A541 /* Crayon.swift */; };
 		850143B3230D90CB0041448C /* ColorDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850143B2230D90CB0041448C /* ColorDetailViewController.swift */; };
-		850143B5230D9EFD0041448C /* Protocall File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850143B4230D9EFD0041448C /* Protocall File.swift */; };
 		850143B7230DA21A0041448C /* Color Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850143B6230DA21A0041448C /* Color Generator.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +27,6 @@
 		57AFE739219E136F0024A541 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57AFE741219E139C0024A541 /* Crayon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crayon.swift; sourceTree = "<group>"; };
 		850143B2230D90CB0041448C /* ColorDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDetailViewController.swift; sourceTree = "<group>"; };
-		850143B4230D9EFD0041448C /* Protocall File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Protocall File.swift"; sourceTree = "<group>"; };
 		850143B6230DA21A0041448C /* Color Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color Generator.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,7 +100,6 @@
 			children = (
 				57AFE731219E136D0024A541 /* Main.storyboard */,
 				850143B2230D90CB0041448C /* ColorDetailViewController.swift */,
-				850143B4230D9EFD0041448C /* Protocall File.swift */,
 				850143B6230DA21A0041448C /* Color Generator.swift */,
 			);
 			path = Views;
@@ -184,7 +181,6 @@
 				57AFE72E219E136D0024A541 /* AppDelegate.swift in Sources */,
 				850143B3230D90CB0041448C /* ColorDetailViewController.swift in Sources */,
 				850143B7230DA21A0041448C /* Color Generator.swift in Sources */,
-				850143B5230D9EFD0041448C /* Protocall File.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

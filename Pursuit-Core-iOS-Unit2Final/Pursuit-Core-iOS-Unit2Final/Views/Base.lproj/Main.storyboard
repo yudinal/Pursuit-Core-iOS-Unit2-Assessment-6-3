@@ -45,6 +45,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="ABs-5n-1rG" kind="show" id="Mp3-ka-ayV"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -64,12 +67,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="199" y="29"/>
         </scene>
-        <!--View Controller-->
+        <!--Color Details View Controller-->
         <scene sceneID="oIl-Jc-BOw">
             <objects>
-                <viewController id="ABs-5n-1rG" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="nc1-Md-j3m">
+                <viewController id="ABs-5n-1rG" customClass="ColorDetailsViewController" customModule="Pursuit_Core_iOS_Unit2Final" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nc1-Md-j3m" customClass="color">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -128,10 +132,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="BWj-uZ-9X4"/>
                     </view>
+                    <connections>
+                        <outlet property="colorSelected" destination="anH-5d-M6s" id="aW1-z6-zmJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pqI-Ey-3Ct" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="831.88405797101461" y="28.794642857142854"/>
+            <point key="canvasLocation" x="1114" y="29"/>
         </scene>
     </scenes>
 </document>

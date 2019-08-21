@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0B03BBA8230D90E100FE827B /* MainColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B03BBA7230D90E100FE827B /* MainColorViewController.swift */; };
+		0B03BBAA230DBD2500FE827B /* ColorDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B03BBA9230DBD2500FE827B /* ColorDetailsViewController.swift */; };
 		57AFE72E219E136D0024A541 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AFE72D219E136D0024A541 /* AppDelegate.swift */; };
 		57AFE733219E136D0024A541 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57AFE731219E136D0024A541 /* Main.storyboard */; };
 		57AFE735219E136F0024A541 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57AFE734219E136F0024A541 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		0B03BBA7230D90E100FE827B /* MainColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainColorViewController.swift; sourceTree = "<group>"; };
+		0B03BBA9230DBD2500FE827B /* ColorDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDetailsViewController.swift; sourceTree = "<group>"; };
 		57AFE72A219E136D0024A541 /* Pursuit-Core-iOS-Unit2Final.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pursuit-Core-iOS-Unit2Final.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57AFE72D219E136D0024A541 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57AFE732219E136D0024A541 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 		57AFE744219E13B90024A541 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0B03BBA9230DBD2500FE827B /* ColorDetailsViewController.swift */,
 				0B03BBA7230D90E100FE827B /* MainColorViewController.swift */,
 			);
 			path = Controllers;
@@ -172,6 +175,7 @@
 			files = (
 				57AFE742219E139C0024A541 /* Crayon.swift in Sources */,
 				57AFE72E219E136D0024A541 /* AppDelegate.swift in Sources */,
+				0B03BBAA230DBD2500FE827B /* ColorDetailsViewController.swift in Sources */,
 				0B03BBA8230D90E100FE827B /* MainColorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -22,6 +22,8 @@ class Crayon {
         self.blue = blue
         self.hex = hex
     }
+    
+    ///Sets crayon color based on hex value
     convenience init(name: String, hex: String) {
         let hexValue = hex.replacingOccurrences(of: "#", with: "")
         var rgb: UInt32 = 0
@@ -68,5 +70,6 @@ class Crayon {
         Crayon(name: "Lemon Zest", hex: "#fdd017"),
         Crayon(name: "Purple Mountain's Majesty", hex: "#9678b6"),
         Crayon(name: "Anthony's Skintone", hex: "#CF9D86")
+        
     ]
 }

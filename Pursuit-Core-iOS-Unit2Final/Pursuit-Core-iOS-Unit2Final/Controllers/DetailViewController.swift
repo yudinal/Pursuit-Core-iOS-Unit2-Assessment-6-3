@@ -19,7 +19,7 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var alphaStepper: UIStepper!
     @IBOutlet weak var alphaValueLabel: UILabel!
-  
+    
     @IBOutlet weak var redTextField: UITextField!
     @IBOutlet weak var greenTextField: UITextField!
     @IBOutlet weak var blueTextField: UITextField!
@@ -31,19 +31,19 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var resetButton: UIButton!
     
     //MARK: -- Properties
-    var currentCrayon: Crayon!
+    var currentCrayon: Crayon! //Passed from VC Segue
     
     //MARK: --IBActions
     @IBAction func slidersAdjusted(_ sender: UISlider) {
         setLabelTextValues()
         setBackgroundColor()
-        checkColorReadability()
+        checkReadability()
     }
     
     @IBAction func alphaStepperPressed(_ sender: UIStepper) {
         setLabelTextValues()
         setBackgroundColor()
-        checkColorReadability()
+        checkReadability()
     }
     
     @IBAction func resetButtonPressed(_ sender: UIButton) {
@@ -94,14 +94,14 @@ class DetailViewController: UIViewController {
         resetButton.layer.borderWidth = 1.0
     }
     
-    private func checkColorReadability() {
+    private func checkReadability() {
         let bgRedValue = redSlider.value
         let bgGreenValue = greenSlider.value
         let bgBlueValue = blueSlider.value
         let bgAlphaValue = alphaStepper.value
         
         var alphaIsTooDark = false
-        var colorIsTooDark = false
+        var colorMakesTextUnreadable = false
         
         if bgAlphaValue < 0.5 {
             alphaIsTooDark = true
@@ -110,18 +110,21 @@ class DetailViewController: UIViewController {
         }
         
         if bgRedValue < 0.3 && bgBlueValue < 0.3 || bgRedValue < 0.3 && bgGreenValue < 0.3 || bgBlueValue < 0.3 && bgGreenValue < 0.3 {
-            colorIsTooDark = true
+            colorMakesTextUnreadable = true
         } else {
-            colorIsTooDark = false
+            colorMakesTextUnreadable = false
         }
         
         switch alphaIsTooDark {
-        case true: return darkMode()
+        case true: darkMode()
         case false:
-            switch colorIsTooDark {
-            case true: return darkMode()
-            case false: return lightMode()
+            switch colorMakesTextUnreadable {
+            case true: darkMode()
+            case false: lightMode()
             }
+        }
+        if bgRedValue < 0.3 && bgBlueValue < 0.3 && bgGreenValue > 0.7 {
+            lightMode()
         }
     }
     
@@ -137,7 +140,7 @@ class DetailViewController: UIViewController {
         setDefaultColorValues()
         setLabelTextValues()
         setBackgroundColor()
-        checkColorReadability()
+        checkReadability()
         configureViewDelegates()
     }
 }
@@ -147,36 +150,27 @@ extension DetailViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField.tag {
         case 0:
-            if let redTextFieldString = textField.text {
-                let redTextFieldDouble = redTextFieldString.toDouble()
-                if let redTextFieldDouble = redTextFieldDouble {
-                    let currentCrayonBackgroundColor = UIColor(displayP3Red: CGFloat(redTextFieldDouble), green: CGFloat(greenSlider.value) , blue: CGFloat(blueSlider.value), alpha: CGFloat(Float(alphaStepper.value)))
-                    view.backgroundColor = currentCrayonBackgroundColor
-                    redSlider.value = Float(redTextFieldDouble)
-                    checkColorReadability()
-                }
+            if let redTextFieldDouble = textField.text?.toDouble() {
+                let currentCrayonBackgroundColor = UIColor(displayP3Red: CGFloat(redTextFieldDouble), green: CGFloat(greenSlider.value) , blue: CGFloat(blueSlider.value), alpha: CGFloat(Float(alphaStepper.value)))
+                view.backgroundColor = currentCrayonBackgroundColor
+                redSlider.value = Float(redTextFieldDouble)
+                checkReadability()
             }
             
         case 1:
-            if let greenTextFieldString = textField.text {
-                let greenTextFieldDouble = greenTextFieldString.toDouble()
-                if let greenTextFieldDouble = greenTextFieldDouble {
-                    let currentCrayonBackgroundColor = UIColor(displayP3Red: CGFloat(redSlider.value), green: CGFloat(greenTextFieldDouble) , blue: CGFloat(blueSlider.value), alpha: CGFloat(Float(alphaStepper.value)))
-                    view.backgroundColor = currentCrayonBackgroundColor
-                    greenSlider.value = Float(greenTextFieldDouble)
-                    checkColorReadability()
-                }
+            if let greenTextFieldDouble = textField.text?.toDouble() {
+                let currentCrayonBackgroundColor = UIColor(displayP3Red: CGFloat(redSlider.value), green: CGFloat(greenTextFieldDouble) , blue: CGFloat(blueSlider.value), alpha: CGFloat(Float(alphaStepper.value)))
+                view.backgroundColor = currentCrayonBackgroundColor
+                greenSlider.value = Float(greenTextFieldDouble)
+                checkReadability()
             }
             
         case 2:
-            if let blueTextFieldString = textField.text {
-                let blueTextFieldDouble = blueTextFieldString.toDouble()
-                if let blueTextFieldDouble = blueTextFieldDouble {
-                    let currentCrayonBackgroundColor = UIColor(displayP3Red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value) , blue: CGFloat(blueTextFieldDouble), alpha: CGFloat(Float(alphaStepper.value)))
-                    view.backgroundColor = currentCrayonBackgroundColor
-                    blueSlider.value = Float(blueTextFieldDouble)
-                    checkColorReadability()
-                }
+            if let blueTextFieldDouble = textField.text?.toDouble() {
+                let currentCrayonBackgroundColor = UIColor(displayP3Red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value) , blue: CGFloat(blueTextFieldDouble), alpha: CGFloat(Float(alphaStepper.value)))
+                view.backgroundColor = currentCrayonBackgroundColor
+                blueSlider.value = Float(blueTextFieldDouble)
+                checkReadability()
             }
             
         default: ()

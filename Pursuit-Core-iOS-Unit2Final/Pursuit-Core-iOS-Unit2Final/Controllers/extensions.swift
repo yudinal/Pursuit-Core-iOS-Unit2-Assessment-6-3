@@ -30,6 +30,7 @@ extension String {
 }
 
 
+
 //Extracts r/g/b/a values from a given UIColor and places them into individual variables as a CGFloat.
 //extension UIColor {
 //    var rgba: (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) {

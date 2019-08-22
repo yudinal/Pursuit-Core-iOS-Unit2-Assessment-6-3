@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     
     //MARK: -- Segue method
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let segueIdentifer = segue.identifier else {fatalError("No indentifier in segue")}
+        guard let segueIdentifer = segue.identifier else {fatalError("No identifier in segue")}
         
         switch segueIdentifer {
         case "segueToDetail":
@@ -30,7 +30,7 @@ class ViewController: UIViewController {
             destVC.currentCrayon = crayonToSegue
             
         default:
-            fatalError("unexpected segue identifies")
+            fatalError("unexpected segue identifier")
         }
     }
     

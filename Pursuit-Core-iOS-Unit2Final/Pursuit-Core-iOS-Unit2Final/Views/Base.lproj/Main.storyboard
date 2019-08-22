@@ -61,7 +61,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Colors" largeTitleDisplayMode="always" id="sBV-e0-E43"/>
+                    <navigationItem key="navigationItem" title="Colors" largeTitleDisplayMode="always" id="sBV-e0-E43">
+                        <barButtonItem key="rightBarButtonItem" title="Sort Descending" id="Uc5-Ui-piT">
+                            <connections>
+                                <action selector="sortedButtonPressed:" destination="BYZ-38-t0r" id="mg9-9c-abO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="WaC-vn-1oK" id="ud9-za-0pD"/>
                     </connections>
@@ -98,7 +104,7 @@
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Red Value..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1tK-ln-oFQ">
                                                 <rect key="frame" x="48.5" y="0.0" width="275.5" height="30"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.51818065068493147" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.4670783390410958" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="light" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
@@ -122,7 +128,7 @@
                                             </label>
                                             <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Green Value..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yyO-j2-aqA">
                                                 <rect key="frame" x="48.5" y="0.0" width="275.5" height="30"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.52000000000000002" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.46913848458904112" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="light" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
@@ -146,7 +152,7 @@
                                             </label>
                                             <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Blue Value..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BD2-ax-slX">
                                                 <rect key="frame" x="48.5" y="0.0" width="275.5" height="30"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.51800620719178081" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.47399400684931509" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="light" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>

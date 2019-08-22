@@ -9,11 +9,30 @@
 import UIKit
 
 class ViewController: UIViewController {
+    //MARK: -- Properties
+    var crayonList = Crayon.allTheCrayons
     //MARK: -- Outlets
     @IBOutlet weak var tableView: UITableView!
+
+ 
     
-    //MARK: -- Properties
-    let crayonList = Crayon.allTheCrayons
+    @IBAction func sortedButtonPressed(_ sender: UIBarButtonItem) {
+        switch sender.title{
+        case "Sort Ascending":
+            crayonList = sortByNameAscending(crayonArrayToSort: crayonList)
+            sender.title = "Sort Descending"
+            tableView.reloadData()
+        case "Sort Descending":
+            crayonList = sortByNameDescending(crayonArrayToSort: crayonList)
+            sender.title = "Sort Ascending"
+            tableView.reloadData()
+            
+        default: ()
+        }
+    }
+    
+
+    
     
     //MARK: -- Segue method
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -64,7 +83,7 @@ extension ViewController: UITableViewDataSource {
         cell.detailTextLabel?.text = currentCrayon.hex
         cell.backgroundColor = UIColor(displayP3Red: currentCrayonRedValue, green: currentCrayonGreenValue, blue: currentCrayonBlueValue, alpha: 1.0)
         
-        if cell.detailTextLabel?.text == "#000000" {
+        if cell.detailTextLabel?.text == "#000000" || cell.detailTextLabel?.text == "#990012" {
             cell.textLabel?.textColor = .white
             cell.detailTextLabel?.textColor = .white
         } else {

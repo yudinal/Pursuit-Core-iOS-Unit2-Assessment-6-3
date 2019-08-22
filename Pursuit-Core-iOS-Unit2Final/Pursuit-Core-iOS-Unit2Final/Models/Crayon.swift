@@ -70,6 +70,5 @@ class Crayon {
         Crayon(name: "Lemon Zest", hex: "#fdd017"),
         Crayon(name: "Purple Mountain's Majesty", hex: "#9678b6"),
         Crayon(name: "Anthony's Skintone", hex: "#CF9D86")
-        
     ]
 }

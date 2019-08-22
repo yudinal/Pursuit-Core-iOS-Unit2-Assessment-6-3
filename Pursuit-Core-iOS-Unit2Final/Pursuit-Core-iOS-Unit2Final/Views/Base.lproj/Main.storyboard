@@ -79,9 +79,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80k-0t-Isa">
-                                <rect key="frame" x="163" y="805" width="89" height="30"/>
+                                <rect key="frame" x="188" y="805" width="39" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Reset Button"/>
+                                <state key="normal" title="Reset"/>
                                 <connections>
                                     <action selector="resetButton:" destination="dW2-ac-PQ3" eventType="touchUpInside" id="J6W-Wh-CcW"/>
                                 </connections>
@@ -96,7 +96,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Red Value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rwd-VQ-F89">
                                 <rect key="frame" x="20" y="225" width="374" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -110,7 +110,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Green Value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vzP-qI-pvX">
                                 <rect key="frame" x="20" y="369" width="374" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -124,7 +124,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Blue Value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mup-Fo-3KF">
                                 <rect key="frame" x="20" y="518" width="374" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -142,7 +142,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" maximumValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Aa0-jv-eWa">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="Aa0-jv-eWa">
                                 <rect key="frame" x="160" y="671" width="94" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
@@ -154,9 +154,13 @@
                         <viewLayoutGuide key="safeArea" id="QcC-su-WfG"/>
                     </view>
                     <connections>
+                        <outlet property="alphaLabel" destination="oJs-0W-Xtd" id="z6r-bE-ph8"/>
+                        <outlet property="blueLabel" destination="Mup-Fo-3KF" id="Xsw-P7-Onw"/>
                         <outlet property="blueSlider" destination="EFB-lj-Ysj" id="FCQ-qv-IJu"/>
                         <outlet property="colorName" destination="LXd-KG-byi" id="4j6-4y-9wz"/>
+                        <outlet property="greenLabel" destination="vzP-qI-pvX" id="9cN-jP-Kuu"/>
                         <outlet property="greenSlider" destination="U7p-GC-EE6" id="uEJ-ht-40g"/>
+                        <outlet property="redLabel" destination="rwd-VQ-F89" id="FsH-zV-Uyj"/>
                         <outlet property="redSlider" destination="AdK-gw-KUI" id="5dx-4Z-dhY"/>
                     </connections>
                 </viewController>

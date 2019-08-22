@@ -48,13 +48,22 @@ extension ColorTableViewController: UITableViewDataSource, UITableViewDelegate{
         cell.detailTextLabel?.text = chosenCrayon.hex
         
         cell.contentView.backgroundColor = color
-       
         
+        if (redVal + greenVal + blueVal) / 3.0 < 0.5 {
+            cell.textLabel?.textColor = UIColor.white
+            cell.detailTextLabel?.textColor = UIColor.white
+        }
+        else{
+            cell.textLabel?.textColor = UIColor.black
+            cell.detailTextLabel?.textColor = UIColor.black
+        }
+    
         return cell
+    
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 50
     }
     
     

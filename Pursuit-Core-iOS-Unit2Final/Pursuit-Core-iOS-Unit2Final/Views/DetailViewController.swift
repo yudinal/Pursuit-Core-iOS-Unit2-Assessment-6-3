@@ -49,6 +49,9 @@ class DetailViewController: UIViewController {
     }
     @IBAction func AlphaStepper(_ sender: Any) {
         updateBackgroundColor()
+        redLabel.text = "💀☠️💀☠️💀☠️"
+        greenLabel.text = "💀☠️💀☠️💀☠️"
+        blueLabel.text = "💀☠️💀☠️💀☠️"
     }
     
     @IBAction func resetValue(_ sender: Any) {
@@ -63,6 +66,13 @@ class DetailViewController: UIViewController {
         detCrayonLabel.text = daCrayons.name
     }
     
+    func ogValues() {
+        redSlider.value = Float(daCrayons.red)/255
+        greenSlider.value = Float(daCrayons.green)/255
+        blueSlider.value = Float(daCrayons.blue)/255
+        AlphaStepper.value = 1
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpViews()
@@ -75,10 +85,13 @@ class DetailViewController: UIViewController {
         // this reflects the current value of colors from the segue
         view.backgroundColor = UIColor(displayP3Red: CGFloat((daCrayons.red)/255), green: CGFloat((daCrayons.green)/255), blue: CGFloat((daCrayons.blue)/255), alpha: 1)
         // this reflects the current slider value of the color selected
-        redSlider.value = Float(daCrayons.red)/255
-        greenSlider.value = Float(daCrayons.green)/255
-        blueSlider.value = Float(daCrayons.blue)/255
-        AlphaStepper.value = 1
+        ogValues()
+        updateLabelText()
+    }
+    
+  
+    
+    func updateLabelText() {
         // this reflects the proper label of values of the sliders
         redLabel.text = "Red \(String(format: "%.2f", redSlider.value))"
         greenLabel.text = "Green \(String(format: "%.2f", greenSlider.value))"

@@ -8,11 +8,13 @@
 
 import UIKit
 
+//Create DetailVC and a variable
+
 class CrayonsDetailViewController: UIViewController {
     
     var crayons: Crayon!
     
-    
+//Created and connected Outlets to show the users
     @IBOutlet weak var CrayonColorName: UILabel!
     
     @IBOutlet weak var RedSlider: UISlider!
@@ -31,7 +33,7 @@ class CrayonsDetailViewController: UIViewController {
     
     @IBOutlet weak var ResetButton: UIButton!
     
-    
+//App at default state, created functions to adapt on UserInputs
     override func viewDidLoad() {
         super.viewDidLoad()
         defaultBackgroundColor(ResetButton)
@@ -61,7 +63,8 @@ class CrayonsDetailViewController: UIViewController {
         view.backgroundColor = color
         updateLabels()
     }
-    
+
+//IBActions -- reacted with UserInput
     @IBAction func sliderChanged(_ slider: UISlider) {
         updateColor()
     }

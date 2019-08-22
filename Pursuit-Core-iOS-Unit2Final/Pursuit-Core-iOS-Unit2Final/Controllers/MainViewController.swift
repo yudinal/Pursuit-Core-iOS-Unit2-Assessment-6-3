@@ -8,6 +8,8 @@
 
 import UIKit
 
+//Changed VC's name, declared Variable, connected IBOutlet, conforming datasource for TableView
+
 class MainViewController: UIViewController {
     
     private var crayonPalettes = Crayon.allTheCrayons
@@ -18,7 +20,8 @@ class MainViewController: UIViewController {
     super.viewDidLoad()
     firstTableView.dataSource = self
     }
-    
+
+//Created a segue with a constant variable, to pass data to detail VC
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = firstTableView.indexPathForSelectedRow, let CrayonsDetailViewController = segue.destination as? CrayonsDetailViewController else {return}
         
@@ -27,10 +30,12 @@ class MainViewController: UIViewController {
     }
 }
 
+//DataSource
 extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return crayonPalettes.count
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         

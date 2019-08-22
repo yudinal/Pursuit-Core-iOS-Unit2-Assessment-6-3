@@ -21,24 +21,10 @@ class MainColorViewController: UIViewController, UITableViewDataSource {
         let color = crayons[indexPath.row]
         cell.textLabel?.text = color.name
         cell.detailTextLabel?.text = color.hex
-        //cell.backgroundColor = UIColor(red: 239/255, green: 222/255, blue: 205/255, alpha: 1)
-       //find a way to do it individually for each cell ...
-       // cell.imageView = UIImage(cg)
-        //cell.backgroundView = UIImage
-        
-       // cell.backgroundColor = UIColor(displayP3Red: self, green: self, blue: self, alpha: 1)
-        //cell.backgroundView = UIView.init()
-       // cell.backgroundColor = UIColor.init(displayP3Red: Double(value), green: Double(value), blue: Double(value), alpha: 1)
-      //  cell.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1)
-        
-       // cell.imageView?.image = UIImage(named: String(crayons[indexPath.section][indexPath.row].))
-        
         cell.backgroundColor = UIColor(displayP3Red: CGFloat(color.red/255), green: CGFloat(color.green/255), blue: CGFloat(color.blue/255), alpha: 1)
     
         return cell
     }
-    
-    
     
     @IBOutlet weak var colorsTableView: UITableView!
     
@@ -46,7 +32,6 @@ class MainColorViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         
        colorsTableView.dataSource = self
-
 
         // Do any additional setup after loading the view.
     }
@@ -73,3 +58,15 @@ class MainColorViewController: UIViewController, UITableViewDataSource {
 }
 
 
+
+//cell.backgroundColor = UIColor(red: 239/255, green: 222/255, blue: 205/255, alpha: 1)
+//find a way to do it individually for each cell ...
+// cell.imageView = UIImage(cg)
+//cell.backgroundView = UIImage
+
+// cell.backgroundColor = UIColor(displayP3Red: self, green: self, blue: self, alpha: 1)
+//cell.backgroundView = UIView.init()
+// cell.backgroundColor = UIColor.init(displayP3Red: Double(value), green: Double(value), blue: Double(value), alpha: 1)
+//  cell.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1)
+
+// cell.imageView?.image = UIImage(named: String(crayons[indexPath.section][indexPath.row].))

@@ -17,8 +17,7 @@ class ColorDetailsViewController: UIViewController {
     var blue: CGFloat = 0.5
     var Alpha: CGFloat = 1
 
-    
-func colorDisplay () {
+/*func colorDisplay () {
     
     let red = CGFloat(redSlider.value)
     let blue = CGFloat(blueSlider.value)
@@ -29,17 +28,11 @@ func colorDisplay () {
         blue: blue,
         alpha: 1.0)
     if view.backgroundColor == UIColor(displayP3Red: CGFloat(colorSelectedDetail.red/255), green: CGFloat(colorSelectedDetail.green/255), blue: CGFloat(colorSelectedDetail.blue/255), alpha: 1){
+       // redValueLabel.text = redSlider.
+      //  redSlider.self = redValueLabel.text
         
-        //redSlider.self = redValueLabel.text
-        
-    }
-//
-//    if backgroundTextSegment.selectedSegmentIndex == 0 {
-//        mySampleColorButton.backgroundColor = color
-//        mySampleColorLabel.backgroundColor = color
-//
-    
-    }
+        }
+}*/
 
 //
     @IBOutlet weak var colorSelected: UILabel!
@@ -65,17 +58,20 @@ func colorDisplay () {
     }
     
     @IBAction func colorRedSlider(_ sender: UISlider) {
+        let currentRedValue = Double(sender.value)
+        redValueLabel.text = "\(currentRedValue)"
         red = CGFloat(sender.value)
-        //if redSlider ==
         view.backgroundColor = UIColor(
                 red: red,
                 green: 0.0,
                 blue: 0.0,
                 alpha: 1.0)
-    }
+        }
     
     @IBAction func colorGreenSlider(_ sender: UISlider) {
         green = CGFloat(sender.value)
+        let currentGreenValue = Double(sender.value)
+        greenValueLabel.text = "\(currentGreenValue)"
         view.backgroundColor = UIColor(
             red: 0.0,
             green: green,
@@ -85,6 +81,8 @@ func colorDisplay () {
     
     @IBAction func colorBlueSlider(_ sender: UISlider) {
         blue = CGFloat(sender.value)
+        let currentBlueValue = Double(sender.value)
+        blueValueLabel.text = "\(currentBlueValue)"
         view.backgroundColor = UIColor(
             red: 0.0,
             green: 0.0,
@@ -125,8 +123,12 @@ func colorDisplay () {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        colorSelected.text = colorSelectedDetail.name
         
+//        blueValueLabel.text = UIColor(blue:)
+//        blueValueLabel.text = UIColor(blue: CGFloat(colorSelectedDetail.blue/255))
+
+        
+        colorSelected.text = colorSelectedDetail.name
         view.backgroundColor = UIColor(displayP3Red: CGFloat(colorSelectedDetail.red/255), green: CGFloat(colorSelectedDetail.green/255), blue: CGFloat(colorSelectedDetail.blue/255), alpha: 1)
         
 

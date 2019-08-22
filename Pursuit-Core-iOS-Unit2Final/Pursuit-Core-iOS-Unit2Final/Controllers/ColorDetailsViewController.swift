@@ -9,20 +9,39 @@
 import UIKit
 
 class ColorDetailsViewController: UIViewController {
+    
+    var colorSelectedDetail: Crayon!
 
     var red: CGFloat = 0.5
     var green: CGFloat = 0.5
     var blue: CGFloat = 0.5
     var Alpha: CGFloat = 1
+
     
+func colorDisplay () {
     
-//    let red = CGFloat(redSlider.value)
-//    let blue = CGFloat(blueSlider.value)
-//    let green = CGFloat(greenSlider.value)
+    let red = CGFloat(redSlider.value)
+    let blue = CGFloat(blueSlider.value)
+    let green = CGFloat(greenSlider.value)
+    let color = UIColor(
+        red: red,
+        green: green,
+        blue: blue,
+        alpha: 1.0)
+    if view.backgroundColor == UIColor(displayP3Red: CGFloat(colorSelectedDetail.red/255), green: CGFloat(colorSelectedDetail.green/255), blue: CGFloat(colorSelectedDetail.blue/255), alpha: 1){
+        
+        //redSlider.self = redValueLabel.text
+        
+    }
 //
+//    if backgroundTextSegment.selectedSegmentIndex == 0 {
+//        mySampleColorButton.backgroundColor = color
+//        mySampleColorLabel.backgroundColor = color
 //
-    var colorSelectedDetail: Crayon!
     
+    }
+
+//
     @IBOutlet weak var colorSelected: UILabel!
     
     @IBOutlet weak var redValueLabel: UILabel!
@@ -47,15 +66,30 @@ class ColorDetailsViewController: UIViewController {
     
     @IBAction func colorRedSlider(_ sender: UISlider) {
         red = CGFloat(sender.value)
-        
+        //if redSlider ==
+        view.backgroundColor = UIColor(
+                red: red,
+                green: 0.0,
+                blue: 0.0,
+                alpha: 1.0)
     }
     
     @IBAction func colorGreenSlider(_ sender: UISlider) {
         green = CGFloat(sender.value)
+        view.backgroundColor = UIColor(
+            red: 0.0,
+            green: green,
+            blue: 0.0,
+            alpha: 1.0)
     }
     
     @IBAction func colorBlueSlider(_ sender: UISlider) {
         blue = CGFloat(sender.value)
+        view.backgroundColor = UIColor(
+            red: 0.0,
+            green: 0.0,
+            blue: blue,
+            alpha: 1.0)
         
     }
 
@@ -73,10 +107,12 @@ class ColorDetailsViewController: UIViewController {
         self.green = green
     }
     
- //   private func updateRedValue() {
-       // redValueLabel.text = UIColor(CGFloat(currentRed.red/255))
-       // redValueLabel.text = currentRed.
- //           }
+//    private func updateRedValue() {
+//        redValueLabel.text = UIColor(CGFloat(red/255))
+//
+//         }
+//
+//
 //
 //    private func updateGreenValue() {
 //        greenValueLabel.

@@ -2,7 +2,7 @@
 //  DetailViewController.swift
 //  Pursuit-Core-iOS-Unit2Final
 //
-//  Created by Anthony Gonzalez on 8/21/19.
+//  Created by Anthony on 8/21/19.
 //  Copyright © 2019 Alex Paul. All rights reserved.
 //
 

@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Pursuit-Core-iOS-Unit2Final
 //
-//  Created by Alex Paul on 11/15/18.
+//  Created by Anthony on 08/21/19.
 //  Copyright © 2018 Alex Paul. All rights reserved.
 //
 
@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     var crayonList = Crayon.allTheCrayons
     //MARK: -- Outlets
     @IBOutlet weak var tableView: UITableView!
-
+    
     //MARK: --IBActions
     @IBAction func sortedButtonPressed(_ sender: UIBarButtonItem) {
         switch sender.title{
@@ -39,10 +39,14 @@ class ViewController: UIViewController {
             guard let destVC = segue.destination as? DetailViewController else {
                 fatalError("Unexpected segue VC")
             }
+            
             guard let selectedIndexPath = tableView.indexPathForSelectedRow else {fatalError("No row selected")
             }
             let crayonToSegue = crayonList[selectedIndexPath.row]
             destVC.currentCrayon = crayonToSegue
+            
+            
+        case "segueToAdd": ()
             
         default:
             fatalError("unexpected segue identifier")
@@ -59,6 +63,21 @@ class ViewController: UIViewController {
     private func configureTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    @IBAction func unwind(segue: UIStoryboardSegue) {
+        guard let createCrayonVC = segue.source as? CreateCrayonColorViewController else {
+            fatalError("Unknown segue source")
+        }
+        
+        if let crayonName = createCrayonVC.nameTextField.text,
+            let hexStr = createCrayonVC.hexTextField.text {
+            let newCrayon = Crayon(name: crayonName, hex: hexStr)
+            crayonList.append(newCrayon)
+            let lastRow = tableView.numberOfRows(inSection: 0)
+            let lastIndexPath = IndexPath(row: lastRow, section: 0)
+            tableView.insertRows(at: [lastIndexPath], with: .automatic)
+        }
     }
 }
 

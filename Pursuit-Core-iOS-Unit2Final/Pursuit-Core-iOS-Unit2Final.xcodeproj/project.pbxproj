@@ -16,6 +16,7 @@
 		977DB62F230D91DD0008138B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977DB62E230D91DD0008138B /* DetailViewController.swift */; };
 		97944C58230DCF140062B265 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97944C57230DCF140062B265 /* extensions.swift */; };
 		97944C5A230E48AD0062B265 /* sortByName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97944C59230E48AD0062B265 /* sortByName.swift */; };
+		97944C5C230F2A7F0062B265 /* CreateCrayonColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97944C5B230F2A7F0062B265 /* CreateCrayonColorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		977DB62E230D91DD0008138B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		97944C57230DCF140062B265 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		97944C59230E48AD0062B265 /* sortByName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sortByName.swift; sourceTree = "<group>"; };
+		97944C5B230F2A7F0062B265 /* CreateCrayonColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCrayonColorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				97944C59230E48AD0062B265 /* sortByName.swift */,
 				57AFE72F219E136D0024A541 /* ViewController.swift */,
 				977DB62E230D91DD0008138B /* DetailViewController.swift */,
+				97944C5B230F2A7F0062B265 /* CreateCrayonColorViewController.swift */,
 				97944C57230DCF140062B265 /* extensions.swift */,
 			);
 			path = Controllers;
@@ -185,6 +188,7 @@
 				97944C5A230E48AD0062B265 /* sortByName.swift in Sources */,
 				57AFE72E219E136D0024A541 /* AppDelegate.swift in Sources */,
 				977DB62F230D91DD0008138B /* DetailViewController.swift in Sources */,
+				97944C5C230F2A7F0062B265 /* CreateCrayonColorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

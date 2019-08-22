@@ -19,7 +19,19 @@ class DetailViewController: UIViewController {
   @IBOutlet weak var blueSlider: UISlider!
   
   @IBAction func sliderAction(_ sender: UISlider) {
-    
+    switch sender.tag {
+    case 0:
+      redRGB = CGFloat(sender.value)
+      setBackground()
+    case 1:
+      greenRGB = CGFloat(sender.value)
+      setBackground()
+    case 2:
+      blueRGB = CGFloat(sender.value)
+      setBackground()
+    default:
+      "superman's cape is red"
+    }
   }
   
   @IBAction func alphaStepper(_ sender: UIStepper) {}

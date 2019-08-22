@@ -12,9 +12,11 @@ class DetailViewController: UIViewController {
     
     //MARK: -- IBOutlets
     @IBOutlet weak var colorNameLabel: UILabel!
+    
     @IBOutlet weak var redSlider: UISlider!
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
+    
     @IBOutlet weak var alphaStepper: UIStepper!
     @IBOutlet weak var alphaValueLabel: UILabel!
   
@@ -27,26 +29,15 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var blueLabel: UILabel!
     
     @IBOutlet weak var resetButton: UIButton!
+    
     //MARK: -- Properties
     var currentCrayon: Crayon!
     
     //MARK: --IBActions
     @IBAction func slidersAdjusted(_ sender: UISlider) {
-        switch sender.tag {
-        case 0: //Red Slider
-            setLabelTextValues()
-            setBackgroundColor()
-            checkColorReadability()
-        case 1: //Green Slider
-            setLabelTextValues()
-            setBackgroundColor()
-            checkColorReadability()
-        case 2: //Blue Slider
-            setLabelTextValues()
-            setBackgroundColor()
-            checkColorReadability()
-        default: ()
-        }
+        setLabelTextValues()
+        setBackgroundColor()
+        checkColorReadability()
     }
     
     @IBAction func alphaStepperPressed(_ sender: UIStepper) {
@@ -60,16 +51,18 @@ class DetailViewController: UIViewController {
     }
     
     //MARK: -- Methods
-    private func setBackgroundColor() {
-        let currentCrayonBackgroundColor = UIColor(displayP3Red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value) , blue: CGFloat(blueSlider.value), alpha: CGFloat(Float(alphaStepper.value)))
-        view.backgroundColor = currentCrayonBackgroundColor
-    }
-    
     private func setMinMaxColorValues() {
         [redSlider, blueSlider, greenSlider].forEach({$0?.minimumValue = 0.0})
         [redSlider, blueSlider, greenSlider].forEach({$0?.maximumValue = 1.0})
         alphaStepper.minimumValue = 0.0
         alphaStepper.maximumValue = 1.0
+    }
+    
+    private func setDefaultColorValues() {
+        redSlider.value = Float(currentCrayon.red/255)
+        greenSlider.value = Float(currentCrayon.green/255)
+        blueSlider.value = Float(currentCrayon.blue/255)
+        alphaStepper.value = 1.0
     }
     
     private func setLabelTextValues(){
@@ -80,12 +73,17 @@ class DetailViewController: UIViewController {
         alphaValueLabel.text = "Alpha: \(alphaStepper.value.roundTo(places: 2))"
     }
     
+    private func setBackgroundColor() {
+        let currentCrayonBackgroundColor = UIColor(displayP3Red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value) , blue: CGFloat(blueSlider.value), alpha: CGFloat(Float(alphaStepper.value)))
+        view.backgroundColor = currentCrayonBackgroundColor
+    }
+    
     private func darkMode() {
         [colorNameLabel, alphaValueLabel, redLabel, greenLabel, blueLabel].forEach({$0?.textColor = .white})
         [alphaStepper, resetButton, redSlider, greenSlider, blueSlider].forEach({$0?.tintColor = .white})
         resetButton.layer.cornerRadius = resetButton.frame.height / 2
         resetButton.layer.borderColor = UIColor.white.cgColor
-        resetButton.layer.borderWidth = 2.0
+        resetButton.layer.borderWidth = 1.0
     }
     
     private func lightMode() {
@@ -93,14 +91,14 @@ class DetailViewController: UIViewController {
         [alphaStepper, resetButton, redSlider, greenSlider, blueSlider].forEach({$0?.tintColor = .black})
         resetButton.layer.cornerRadius = resetButton.frame.height / 2
         resetButton.layer.borderColor = UIColor.black.cgColor
-        resetButton.layer.borderWidth = 2.0
+        resetButton.layer.borderWidth = 1.0
     }
     
     private func checkColorReadability() {
-        let bgRedValue = view.backgroundColor!.rgba.red
-        let bgGreenValue = view.backgroundColor!.rgba.green
-        let bgBlueValue = view.backgroundColor!.rgba.blue
-        let bgAlphaValue = view.backgroundColor!.rgba.alpha
+        let bgRedValue = redSlider.value
+        let bgGreenValue = greenSlider.value
+        let bgBlueValue = blueSlider.value
+        let bgAlphaValue = alphaStepper.value
         
         var alphaIsTooDark = false
         var colorIsTooDark = false
@@ -123,24 +121,14 @@ class DetailViewController: UIViewController {
             switch colorIsTooDark {
             case true: return darkMode()
             case false: return lightMode()
-            default: ()
             }
-        default: ()
         }
     }
     
-    private func setDefaultColorValues() {
-        redSlider.value = Float(currentCrayon.red/255)
-        greenSlider.value = Float(currentCrayon.green/255)
-        blueSlider.value = Float(currentCrayon.blue/255)
-        alphaStepper.value = 1.0
-    }
-    
-    private func setResetButtonColor() {
-        resetButton.tintColor = .black
-        resetButton.layer.cornerRadius = resetButton.frame.height / 2
-        resetButton.layer.borderColor = UIColor.black.cgColor
-        resetButton.layer.borderWidth = 2.0
+    private func configureViewDelegates() {
+        redTextField.delegate = self
+        blueTextField.delegate = self
+        greenTextField.delegate = self
     }
     
     override func viewDidLoad() {
@@ -149,11 +137,8 @@ class DetailViewController: UIViewController {
         setDefaultColorValues()
         setLabelTextValues()
         setBackgroundColor()
-        setResetButtonColor()
         checkColorReadability()
-        redTextField.delegate = self
-        blueTextField.delegate = self
-        greenTextField.delegate = self
+        configureViewDelegates()
     }
 }
 
@@ -196,6 +181,7 @@ extension DetailViewController: UITextFieldDelegate {
             
         default: ()
         }
+        textField.resignFirstResponder()
         return true
     }
     

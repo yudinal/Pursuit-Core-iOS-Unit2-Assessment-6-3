@@ -82,6 +82,6 @@ extension ViewController: UITableViewDataSource {
 //MARK: -- Table Delegate Methods
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 90
     }
 }

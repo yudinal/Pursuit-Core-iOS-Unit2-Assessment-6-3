@@ -79,10 +79,10 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="114.50892857142857"/>
         </scene>
-        <!--DetailViewController-->
+        <!--Detail View Controller-->
         <scene sceneID="AVG-XR-i1D">
             <objects>
-                <viewController title="DetailViewController" id="A0u-RH-VMk" customClass="DetailViewController" customModule="Pursuit_Core_iOS_Unit2Final" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="A0u-RH-VMk" customClass="DetailViewController" customModule="Pursuit_Core_iOS_Unit2Final" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tTf-r9-d26" userLabel="blueSlider">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -143,6 +143,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetValue:" destination="A0u-RH-VMk" eventType="touchUpInside" id="iOf-Dc-Dzx"/>
+                                </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ort-Tz-HI6" userLabel="redSlider">
                                 <rect key="frame" x="28" y="307" width="358" height="30"/>
@@ -154,6 +157,9 @@
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="F2P-Td-cxR" userLabel="AlphaStepper">
                                 <rect key="frame" x="160" y="706" width="94" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="AlphaStepper:" destination="A0u-RH-VMk" eventType="valueChanged" id="I4b-qB-pg9"/>
+                                </connections>
                             </stepper>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -168,6 +174,7 @@
                         <outlet property="greenSlider" destination="dPj-SH-IPP" id="6mg-q6-t0r"/>
                         <outlet property="redLabel" destination="IG6-Mh-heF" id="yVz-6h-Zgw"/>
                         <outlet property="redSlider" destination="ort-Tz-HI6" id="LBi-Zy-jc2"/>
+                        <outlet property="resetValue" destination="7H0-AC-0Nl" id="gbd-fh-OXA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lWr-YE-8lo" userLabel="First Responder" sceneMemberID="firstResponder"/>

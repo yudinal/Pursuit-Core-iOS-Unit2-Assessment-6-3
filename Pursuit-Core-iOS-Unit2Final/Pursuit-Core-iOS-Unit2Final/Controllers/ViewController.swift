@@ -10,17 +10,11 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-   
-
-   
-    
-    
     let theCrayons = Crayon.allTheCrayons
-    
     
     @IBOutlet weak var tableView: UITableView!
     
-    
+    // this loads the view
   override func viewDidLoad() {
     super.viewDidLoad()
   
@@ -51,7 +45,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // populate cells
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
         if let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as? TableViewCell {
            
             // cell label
@@ -63,7 +56,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 let cellGreen = Double((Crayon.allTheCrayons[indexPath.row].green)/255)
                 let cellBlue = Double((Crayon.allTheCrayons[indexPath.row].blue)/255)
             
-            // This converts 255 RGB value to scaling 0.0 to 1.0 value
+         
             
             // cell background color
             cell.crayonLabel.backgroundColor = UIColor.init(red: CGFloat(cellRed), green: CGFloat(cellGreen), blue: CGFloat(cellBlue), alpha: 1)
@@ -83,6 +76,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return UITableViewCell()
     }
     
+    // this sets the height of the cell to a solid 80 pixels
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }

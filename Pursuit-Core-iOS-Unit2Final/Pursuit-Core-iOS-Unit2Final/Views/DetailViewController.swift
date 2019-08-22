@@ -34,57 +34,49 @@ class DetailViewController: UIViewController {
     
     @IBAction func redSlider(_ sender: Any) {
         updateBackgroundColor()
+        redLabel.text = "Red \(redSlider.value)"
     }
     @IBAction func greenSlider(_ sender: Any) {
         updateBackgroundColor()
+        greenLabel.text = "Green \(greenSlider.value)"
     }
     @IBAction func blueSlider(_ sender: Any) {
         updateBackgroundColor()
+        blueLabel.text = "Blue \(blueSlider.value)"
     }
     @IBAction func AlphaStepper(_ sender: Any) {
         updateBackgroundColor()
     }
     
     @IBAction func resetValue(_ sender: Any) {
-//        redSlider.value = originalValueRed
-//        greenSlider.value = originalValueGreen
-//        blueSlider.value = originalValueBlue
+        // this resets the background color
         view.backgroundColor = UIColor(displayP3Red: CGFloat((daCrayons.red)/255), green: CGFloat((daCrayons.green)/255), blue: CGFloat((daCrayons.blue)/255), alpha: 1)
-        
+        // this resets the slider positions and stepper
         redSlider.value = Float(daCrayons.red)/255
         greenSlider.value = Float(daCrayons.green)/255
         blueSlider.value = Float(daCrayons.blue)/255
         AlphaStepper.value = 1
-       // updateBackgroundColor()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpViews()
-    // this reflects
-        view.backgroundColor = UIColor(displayP3Red: CGFloat((daCrayons.red)/255), green: CGFloat((daCrayons.green)/255), blue: CGFloat((daCrayons.blue)/255), alpha: 1)
-    // this reflects the current slider value of the color selected
-       redSlider.value = Float(daCrayons.red)/255
-       greenSlider.value = Float(daCrayons.green)/255
-       blueSlider.value = Float(daCrayons.blue)/255
-        AlphaStepper.value = 1
-        
-//        let originalValueRed = Float(daCrayons.red)/255
-//        let originalValueGreen = Float(daCrayons.green)/255
-//        let originalValueBlue = Float(daCrayons.blue)/255
-        
     }
     
     
      private func setUpViews() {
+        // this sets up the intended view
         detCrayonLabel.text = daCrayons.name
- //       redSlider.value = Float(daCrayons.red)/255)
-//        greenSlider.value = Float((daCrayons.green)/255)
-//        blueSlider.value = Float((daCrayons.blue)/255)
-        
-     //   updateColor()
-        
-
+        redLabel.text = "Red \(redSlider.value)"
+        greenLabel.text = "Green \(greenSlider.value)"
+        blueLabel.text = "Blue \(blueSlider.value)"
+        // this reflects the current value of colors from the segue
+        view.backgroundColor = UIColor(displayP3Red: CGFloat((daCrayons.red)/255), green: CGFloat((daCrayons.green)/255), blue: CGFloat((daCrayons.blue)/255), alpha: 1)
+        // this reflects the current slider value of the color selected
+        redSlider.value = Float(daCrayons.red)/255
+        greenSlider.value = Float(daCrayons.green)/255
+        blueSlider.value = Float(daCrayons.blue)/255
+        AlphaStepper.value = 1
     }
     
     // updates the background color based on slider

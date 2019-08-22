@@ -76,6 +76,8 @@ class ViewController: UIViewController {
             let lastRow = tableView.numberOfRows(inSection: 0)
             let lastIndexPath = IndexPath(row: lastRow, section: 0)
             tableView.insertRows(at: [lastIndexPath], with: .automatic)
+            crayonList = sortByNameAscending(crayonArrayToSort: crayonList)
+            tableView.reloadData()
         }
     }
 }

@@ -17,6 +17,9 @@ class CreateCrayonColorViewController: UIViewController {
     @IBOutlet weak var hexTextField: UITextField!
     @IBOutlet weak var colorPreviewView: UIView!
     
+    @IBOutlet weak var submitButton: UIButton!
+    
+    
     @IBAction func cancelButtonPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -26,6 +29,9 @@ class CreateCrayonColorViewController: UIViewController {
         super.viewDidLoad()
         nameTextField.delegate = self
         hexTextField.delegate = self
+        submitButton.layer.cornerRadius = submitButton.frame.height / 2
+        submitButton.layer.borderColor = UIColor.black.cgColor
+        submitButton.layer.borderWidth = 1.0
     }
 }
 
@@ -35,16 +41,19 @@ extension CreateCrayonColorViewController: UITextFieldDelegate {
         switch textField.tag {
         case 0: colorNamePreview?.text = textField.text
         case 1:
-            colorPreviewView.backgroundColor = UIColor(hex: hexTextField.text!)
+            colorPreviewView.backgroundColor = UIColor(hex: textField.text!)
         default:()
         }
+        textField.resignFirstResponder()
         return true
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         switch textField.tag {
-        case 0: ()
-        case 1: let aSet = NSCharacterSet(charactersIn:"abcdefABCDEF0123456789").inverted
+        case 0:
+            if range.location == 0 && (string == " ") { return false }
+        case 1:
+            let aSet = NSCharacterSet(charactersIn:"abcdefABCDEF0123456789").inverted
         let compSepByCharInSet = string.components(separatedBy: aSet)
         let numberFiltered = compSepByCharInSet.joined(separator: "")
         

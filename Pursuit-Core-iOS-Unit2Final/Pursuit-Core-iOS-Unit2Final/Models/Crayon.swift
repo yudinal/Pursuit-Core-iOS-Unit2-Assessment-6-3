@@ -43,8 +43,17 @@ class Crayon {
     Crayon(name: "Blue Violet", red: 115, green: 102, blue: 189, hex: "#7366BD")
   ]
     
+    func getUIColor()-> UIColor {
+        return UIColor(displayP3Red: CGFloat(self.red/255), green: CGFloat(self.green/255), blue: CGFloat(self.blue/255), alpha: 1)
+    }
   
-  
+    static func getBlack() -> UIColor {
+        return UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+    }
+    
+    func getColor() -> Color {
+        return Color(red: CGFloat(self.red/255), green: CGFloat(self.green/255), blue: CGFloat(self.blue/255), alpha: 1)
+    }
     
   
 }

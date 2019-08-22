@@ -38,7 +38,7 @@ class CrayonListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "crayonCell", for: indexPath)
         cell.textLabel?.text = crayonList[indexPath.row].name
         cell.detailTextLabel?.text = crayonList[indexPath.row].hex
-        cell.contentView.backgroundColor = UIColor(displayP3Red: crayonList[indexPath.row].convertRedToCGFloatNumber(red: crayonList[indexPath.row].red), green: crayonList[indexPath.row].convertGreenToCGFloatNumber(green: crayonList[indexPath.row].green), blue: crayonList[indexPath.row].convertBlueToCGFloatNumber(blue: crayonList[indexPath.row].blue), alpha: 1.0)
+        cell.backgroundColor = UIColor(red:crayonList[indexPath.row].convertRedToCGFloatNumber(red: crayonList[indexPath.row].red), green: crayonList[indexPath.row].convertGreenToCGFloatNumber(green: crayonList[indexPath.row].green), blue: crayonList[indexPath.row].convertBlueToCGFloatNumber(blue: crayonList[indexPath.row].blue), alpha: 1.0)
         return cell
     }
     

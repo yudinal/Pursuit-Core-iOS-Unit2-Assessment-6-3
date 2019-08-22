@@ -70,8 +70,6 @@ class Crayon {
         self.blue = Double(blue)
     }
     
-    func getColor() -> UIColor {
-        return UIColor(red: CGFloat(red), green: CGFloat(green), blue: CGFloat(blue), alpha: 1.0)
-    }
+    
     
 }

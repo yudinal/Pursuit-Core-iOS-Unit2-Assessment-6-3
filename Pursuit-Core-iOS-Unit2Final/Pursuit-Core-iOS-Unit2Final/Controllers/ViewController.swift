@@ -14,8 +14,7 @@ class ViewController: UIViewController {
     //MARK: -- Outlets
     @IBOutlet weak var tableView: UITableView!
 
- 
-    
+    //MARK: --IBActions
     @IBAction func sortedButtonPressed(_ sender: UIBarButtonItem) {
         switch sender.title{
         case "Sort Ascending":
@@ -30,9 +29,6 @@ class ViewController: UIViewController {
         default: ()
         }
     }
-    
-
-    
     
     //MARK: -- Segue method
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

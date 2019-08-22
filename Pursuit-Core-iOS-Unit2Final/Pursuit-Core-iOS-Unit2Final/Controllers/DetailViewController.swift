@@ -19,23 +19,22 @@ class DetailViewController: UIViewController {
   @IBOutlet weak var blueSlider: UISlider!
   
   @IBAction func sliderAction(_ sender: UISlider) {
+    
   }
   
   @IBAction func alphaStepper(_ sender: UIStepper) {}
   
-  @IBAction func resetButton(_ sender: UIButton) {}
+  @IBAction func resetButton(_ sender: UIButton) {
+    resetSliders()
+  }
   
   var originalColor: Crayon!
-
-  
-
-  
   
   override func viewDidLoad() {
     super.viewDidLoad()
     setRGB()
     setColorName()
-    setBackground()
+//    setBackground()
     redSlider.value = Float(redRGB)
     greenSlider.value = Float(greenRGB)
     blueSlider.value = Float(blueRGB)
@@ -57,6 +56,15 @@ class DetailViewController: UIViewController {
      greenRGB = CGFloat(originalColor.green/255)
      blueRGB = CGFloat(originalColor.blue/255)
      alphaRGB = CGFloat(1.0)
+    setBackground()
+  }
+  
+  func resetSliders() {
+    setRGB()
+    redSlider.value = Float(redRGB)
+    greenSlider.value = Float(greenRGB)
+    blueSlider.value = Float(blueRGB)
+    setBackground()
   }
   
   func setBackground() {

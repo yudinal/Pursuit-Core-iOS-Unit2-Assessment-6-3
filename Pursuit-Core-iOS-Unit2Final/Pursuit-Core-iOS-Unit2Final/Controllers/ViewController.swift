@@ -57,6 +57,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+        crayonList = sortByNameAscending(crayonArrayToSort: crayonList)
     }
     
     private func configureTableView() {

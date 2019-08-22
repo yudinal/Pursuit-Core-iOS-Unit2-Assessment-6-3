@@ -32,7 +32,7 @@ class Crayon {
         self.init(name: name, red: redValue, green: greenValue, blue: blueValue, hex: hex)
     }
     
-    static var allTheCrayons = [
+    static let allTheCrayons = [
         Crayon(name: "Almond", red: 239, green: 222, blue: 205, hex: "#EFDECD"),
         Crayon(name: "Antique Brass", red: 205, green: 149, blue: 117, hex: "#CD9575"),
         Crayon(name: "Apricot", red: 253, green: 217, blue: 181, hex: "#FDD9B5"),
@@ -57,6 +57,16 @@ class Crayon {
         Crayon(name: "Pikachu Yellow", hex: "#DCE73C"),
         Crayon(name: "Piña Colada", hex: "#f2d5a9"),
         Crayon(name: "Popcorn Ball", hex: "#fceacd"),
-        Crayon(name: "Red Wine", hex: "#990012")
+        Crayon(name: "Red Wine", hex: "#990012"),
+        Crayon(name: "Ghost White", hex: "#f8f8ff"),
+        Crayon(name: "Flamingo Pink", hex: "#F9A7B0"),
+        Crayon(name: "Sunrise Orange", hex: "#e67451"),
+        Crayon(name: "Shamrock Green", hex: "#347C17"),
+        Crayon(name: "Pearl", hex: "#fdeef4"),
+        Crayon(name: "Seashell", hex: "#fff5ee"),
+        Crayon(name: "Milk White", hex: "#fefcff"),
+        Crayon(name: "Lemon Zest", hex: "#fdd017"),
+        Crayon(name: "Purple Mountain's Majesty", hex: "#9678b6"),
+        Crayon(name: "Anthony's Skintone", hex: "#CF9D86")
     ]
 }

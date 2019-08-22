@@ -13,3 +13,7 @@ func btnCSS(_ button: UIButton){
     button.layer.cornerRadius = 8
 }
 
+func thumbTintCSS(_ slider: UISlider){
+    slider.layer.borderWidth = 4.0
+    slider.layer.borderColor = UIColor.black.cgColor
+}

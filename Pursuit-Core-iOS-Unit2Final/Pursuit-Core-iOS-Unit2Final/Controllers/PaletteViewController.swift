@@ -56,6 +56,9 @@ class PaletteViewController: UIViewController {
         greenTextField.delegate = self
         blueTextField.delegate = self
         btnCSS(resetButton)
+//        redSlider.thumbTintColor = .red
+//        greenSlider.thumbTintColor = .green
+//        blueSlider.thumbTintColor = .blue
         setUp()
     }
     

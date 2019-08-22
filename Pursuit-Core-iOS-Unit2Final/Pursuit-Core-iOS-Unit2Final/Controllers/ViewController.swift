@@ -17,13 +17,13 @@ class ViewController: UIViewController {
     //MARK: --IBActions
     @IBAction func sortedButtonPressed(_ sender: UIBarButtonItem) {
         switch sender.title{
-        case "Sort Ascending":
+        case "Sort A-Z":
             crayonList = sortByNameAscending(crayonArrayToSort: crayonList)
-            sender.title = "Sort Descending"
+            sender.title = "Sort Z-A"
             tableView.reloadData()
-        case "Sort Descending":
+        case "Sort Z-A":
             crayonList = sortByNameDescending(crayonArrayToSort: crayonList)
-            sender.title = "Sort Ascending"
+            sender.title = "Sort A-Z"
             tableView.reloadData()
             
         default: ()
@@ -44,7 +44,6 @@ class ViewController: UIViewController {
             }
             let crayonToSegue = crayonList[selectedIndexPath.row]
             destVC.currentCrayon = crayonToSegue
-            
             
         case "segueToAdd": ()
             

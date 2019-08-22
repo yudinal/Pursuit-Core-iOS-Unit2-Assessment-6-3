@@ -61,6 +61,11 @@ class ColorDetailViewController: UIViewController {
     
     private func setColorLabel() {
         crayonColorLabel.text = crayon.name
+        if crayon.name == "Black" {
+            crayonColorLabel.textColor = .white
+        } else {
+            crayonColorLabel.textColor = .black
+        }
     }
     
     private func updateColor() {

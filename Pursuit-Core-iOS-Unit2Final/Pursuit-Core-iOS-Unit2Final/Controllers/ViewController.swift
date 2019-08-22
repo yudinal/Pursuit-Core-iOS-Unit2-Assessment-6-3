@@ -96,10 +96,6 @@ func hexToRGB (hex:String) -> UIColor {
     hexString.remove(at: hexString.startIndex)
   }
   
-  //  if ((hexString.count) != 6) {
-  //    return UIColor.gray
-  //  }
-  
   var rgbValue:UInt64 = 0
   Scanner(string: hexString).scanHexInt64(&rgbValue)
   

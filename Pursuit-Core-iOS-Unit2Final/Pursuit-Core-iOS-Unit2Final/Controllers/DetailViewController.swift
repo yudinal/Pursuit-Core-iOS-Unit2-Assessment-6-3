@@ -13,10 +13,13 @@ class DetailViewController: UIViewController {
   
   
   @IBOutlet weak var colorName: UILabel!
+ 
+  @IBOutlet weak var redSlider: UISlider!
+  @IBOutlet weak var greenSlider: UISlider!
+  @IBOutlet weak var blueSlider: UISlider!
   
-  @IBAction func redSlider(_ sender: UISlider) {}
-  @IBAction func greenSlider(_ sender: UISlider) {}
-  @IBAction func blueSlider(_ sender: UISlider) {}
+  @IBAction func sliderAction(_ sender: UISlider) {
+  }
   
   @IBAction func alphaStepper(_ sender: UIStepper) {}
   
@@ -25,20 +28,50 @@ class DetailViewController: UIViewController {
   var originalColor: Crayon!
 
   
+
+  
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    setDetails()
+    setRGB()
+    setColorName()
+    setBackground()
+    redSlider.value = Float(redRGB)
+    greenSlider.value = Float(greenRGB)
+    blueSlider.value = Float(blueRGB)
   }
   
-  func setDetails() {
+  func setColorName() {
     colorName.text = originalColor.name
-    self.view.backgroundColor = hexToRGB(hex: originalColor.hex)
+//    self.view.backgroundColor = hexToRGB(hex: originalColor.hex)
   }
   
+  var redRGB = CGFloat()
+  var greenRGB = CGFloat()
+  var blueRGB = CGFloat()
+  var alphaRGB = CGFloat()
   
   
+  func setRGB() {
+     redRGB = CGFloat(originalColor.red/255)
+     greenRGB = CGFloat(originalColor.green/255)
+     blueRGB = CGFloat(originalColor.blue/255)
+     alphaRGB = CGFloat(1.0)
+  }
   
+  func setBackground() {
+    var background = UIColor(red: redRGB, green: greenRGB, blue: blueRGB, alpha: alphaRGB)
+    self.view.backgroundColor = background
+  }
+
+  
+//  func updateUI(){
+//    if let originalColor = originalColor {
+//      redSlider.value = 1
+//      self.alertSwitch?.on = dsettings.alert
+//    }
+//  }
+//  red: 239, green: 222, blue: 205
   
 //  class Crayon
 //    var name: String

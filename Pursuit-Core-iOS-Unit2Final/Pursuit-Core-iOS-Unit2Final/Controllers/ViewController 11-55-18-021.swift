@@ -29,6 +29,8 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "colorCell") as? colorsTableViewCell else { return UITableViewCell()}
             let currentColor = color[indexPath.row]
+        cell.nameOfColorLabel.text = currentColor.name
+        cell.hexLabel.text = currentColor.hex
         cell.backgroundColor = UIColor.init(red: CGFloat(currentColor.red)/255, green: CGFloat(currentColor.green)/255, blue: CGFloat(currentColor.blue)/255, alpha: 1)
         return cell
                 
@@ -47,42 +49,25 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
   }
     }
 
-extension UIColor {
-    convenience init(red: Int, green: Int, blue: Int) {
-        assert(red >= 0 && red <= 255, "Invalid red component")
-        assert(green >= 0 && green <= 255, "Invalid green component")
-        assert(blue >= 0 && blue <= 255, "Invalid blue component")
-        
-        self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
-    }
+
+
+func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     
-    convenience init(rgb: Int) {
-        self.init(
-            red: (rgb >> 16) & 0xFF,
-            green: (rgb >> 8) & 0xFF,
-            blue: rgb & 0xFF
-        )
+    guard let segueIdentifer = segue.identifier else {fatalError("No indentifier in segue")}
+    
+    switch segueIdentifer {
+        
+    case "SegToDescription":
+        guard let destVC = segue.destination as? DetailedViewController else {
+            fatalError("Unexpected segue VC")
+        }
+       
+        
+    default:
+        fatalError("unexpected segue identifies")
+        
     }
 }
 
-//func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
-//    guard let segueIdentifer = segue.identifier else {fatalError("No indentifier in segue")}
-//
-//    switch segueIdentifer {
-//
-//    case "segToDescription":
-//        guard segue.destination is DetailedTableViewCell else {
-//            fatalError("Unexpected segue VC")
-//        }
-//        guard let selectedIndexPath = UITableView.indexPathForSelectedRow else {fatalError("No row selected")
-//        }
-//        let currentColors = theColors[selectedIndexPath.section][selectedIndexPath.row]
-//        destVC.currentColors = currentColors
-//
-//    default:
-//        fatalError("unexpected segue identifies")
-//
-//    }
-//}
+
 

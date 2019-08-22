@@ -29,15 +29,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="224.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSp-Aq-wqz">
-                                                    <rect key="frame" x="35" y="25" width="42" height="27"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hex" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vcj-D9-FfV">
+                                                    <rect key="frame" x="259" y="11" width="135" height="37"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vcj-D9-FfV">
-                                                    <rect key="frame" x="35" y="83" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSp-Aq-wqz">
+                                                    <rect key="frame" x="40" y="11" width="196" height="53"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -48,7 +48,7 @@
                                         <connections>
                                             <outlet property="hexLabel" destination="Vcj-D9-FfV" id="eiw-s7-b60"/>
                                             <outlet property="nameOfColorLabel" destination="WSp-Aq-wqz" id="1tY-Kp-HHn"/>
-                                            <segue destination="YVJ-gf-BG4" kind="show" id="KVY-M7-sf2"/>
+                                            <segue destination="YVJ-gf-BG4" kind="show" identifier="SegToDescription" id="KVY-M7-sf2"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -70,46 +70,71 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1139" y="-1131"/>
+            <point key="canvasLocation" x="-365.21739130434787" y="-1260.2678571428571"/>
         </scene>
-        <!--View Controller-->
+        <!--Detailed View Controller-->
         <scene sceneID="eZl-UQ-jNx">
             <objects>
-                <viewController id="YVJ-gf-BG4" sceneMemberID="viewController">
+                <viewController id="YVJ-gf-BG4" customClass="DetailedViewController" customModule="Pursuit_Core_iOS_Unit2Final" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="onX-8y-P1J">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="HoB-wt-0sz">
-                                <rect key="frame" x="116" y="240" width="118" height="30"/>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="ieg-7B-2jA">
+                                <rect key="frame" x="148" y="199" width="118" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="sliderOne:" destination="nwt-4h-gv9" eventType="valueChanged" id="3gG-jH-zCg"/>
+                                    <action selector="sliderAction:" destination="YVJ-gf-BG4" eventType="valueChanged" id="iup-F3-enS"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="WRU-98-0yU">
-                                <rect key="frame" x="118" y="357" width="118" height="30"/>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="1Qf-lM-2oG">
+                                <rect key="frame" x="148" y="260" width="118" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="sliderTwo:" destination="nwt-4h-gv9" eventType="valueChanged" id="mYe-i2-1Vq"/>
+                                    <action selector="sliderTwo:" destination="YVJ-gf-BG4" eventType="valueChanged" id="pJu-86-uEJ"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="QGx-Mx-itb">
-                                <rect key="frame" x="120" y="502" width="118" height="30"/>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="tx1-5w-L7O">
+                                <rect key="frame" x="148" y="326" width="118" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="sliderThree:" destination="nwt-4h-gv9" eventType="valueChanged" id="32z-FV-HCj"/>
-                                </connections>
                             </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="red" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FgV-J7-6m7">
+                                <rect key="frame" x="167" y="447" width="42" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="blue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wih-Lp-6yB">
+                                <rect key="frame" x="167" y="559" width="42" height="102"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="green" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ovU-GQ-ZtA">
+                                <rect key="frame" x="167" y="520" width="44" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Skj-FN-T6n"/>
                     </view>
+                    <connections>
+                        <outlet property="label1" destination="FgV-J7-6m7" id="uOG-g5-M6E"/>
+                        <outlet property="label2" destination="ovU-GQ-ZtA" id="FSZ-XU-0vK"/>
+                        <outlet property="label3" destination="Wih-Lp-6yB" id="aSi-PA-1cG"/>
+                        <outlet property="sliderOne" destination="ieg-7B-2jA" id="c6u-qh-I5H"/>
+                        <outlet property="sliderThree" destination="tx1-5w-L7O" id="HnQ-bC-A6n"/>
+                        <outlet property="sliderTwo" destination="1Qf-lM-2oG" id="u4h-Vo-AAg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pCr-8U-F33" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="nwt-4h-gv9" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-328" y="-799"/>
+            <point key="canvasLocation" x="305.79710144927537" y="-1193.3035714285713"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gBJ-CV-2XP">
@@ -127,7 +152,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mh8-8X-1nY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1970" y="-952"/>
+            <point key="canvasLocation" x="-3038" y="-960"/>
         </scene>
     </scenes>
 </document>

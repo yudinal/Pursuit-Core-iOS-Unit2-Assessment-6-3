@@ -31,15 +31,15 @@ class CrayonsDetailedViewController: UIViewController {
         switch sender.tag {
         case 0:
             crayon.red = Double(CGFloat(sender.value * 255))
-            currentRedValueLabel.text = String("Current value of red: \(sender.value)")
+            changeLabeltext(label: currentRedValueLabel, color: "red", value: sender.value)
             viewBackgroundColor()
         case 1:
             crayon.green = Double(CGFloat(sender.value * 255))
-            currentGreenValueLabel.text = String("Current value of green: \(sender.value)")
+            changeLabeltext(label: currentGreenValueLabel, color: "green", value: sender.value)
             viewBackgroundColor()
         case 2:
             crayon.blue = Double(CGFloat(sender.value * 255))
-            currentBlueValueLabel.text = String("Current value of blue: \(sender.value)")
+            changeLabeltext(label: currentBlueValueLabel, color: "blue", value: sender.value)
             viewBackgroundColor()
         default:
             print("")
@@ -77,6 +77,13 @@ class CrayonsDetailedViewController: UIViewController {
         blueSlider.value = Float(originalBlue)/255
     }
     
+    //    private func changeLabelMessage(color: String, value: Float) {
+    //      disconnect labels from outlets and create one outlet for all labels.
+    //        labelText.text = String("Current value of \(color): \(value)")
+    //    }
+    private func changeLabeltext(label: UILabel, color: String, value: Float) -> Void {
+    label.text = String("Current value of \(color): \(value)")
+    }
     
     override func viewDidLoad() {
         viewBackgroundColor()

@@ -31,9 +31,9 @@ class CrayonDetailViewController: UIViewController {
     }
     
     private func updateLabels () {
-        redValueLabel.text = "Red:  \(String(format: "%.3f", redSlider.value))"
-        greenValueLabel.text = "Green:  \(String(format: "%.3f", greenSlider.value))"
-        blueValueLabel.text = "Blue:  \(String(format: "%.3f", blueSlider.value))"
+        redValueLabel.text = "R: \(String(format: "%.3f", redSlider.value))"
+        greenValueLabel.text = "G: \(String(format: "%.3f", greenSlider.value))"
+        blueValueLabel.text = "B: \(String(format: "%.3f", blueSlider.value))"
     }
     
     private func updateColor() {

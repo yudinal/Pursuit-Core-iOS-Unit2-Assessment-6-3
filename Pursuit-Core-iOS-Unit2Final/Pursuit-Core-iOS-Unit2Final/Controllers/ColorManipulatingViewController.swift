@@ -36,29 +36,16 @@ class ColorManipulatingViewController: UIViewController {
         switch sender.tag {
         case 0:
            color.updateRed(red: CGFloat(sender.value))
-           updateBackgroundColor(red: CGFloat(sender.value), green: color.convertGreenToCGFloatNumber(green: color.green), blue: color.convertBlueToCGFloatNumber(blue: color.blue))
+           updateBackgroundColor()
             liveRedSliderValue.text = String(sender.value)
-            print(sender.value)
-           print("I am \(color.red) at REDSLIDER")
-           print("I am \(color.green) at REDSLIDER")
-            print("I am \(color.blue) at REDSLIDER")
-            
         case 1:
             color.updateGreen(green: CGFloat(sender.value))
-            updateBackgroundColor(red: color.convertRedToCGFloatNumber(red: color.red), green: CGFloat(sender.value), blue: color.convertBlueToCGFloatNumber(blue: color.blue))
+            updateBackgroundColor()
             liveGreenSliderValue.text = String(sender.value)
-            print(sender.value)
-            print("I am \(color.red) at GREENSLIDER")
-            print("I am \(color.green) at GREENSLIDER")
-            print("I am \(color.blue) at GREENSLIDER")
         case 2:
             color.updateBlue(blue: CGFloat(sender.value))
-            updateBackgroundColor(red: color.convertRedToCGFloatNumber(red: color.red), green: color.convertGreenToCGFloatNumber(green: color.green), blue: CGFloat(sender.value))
+            updateBackgroundColor()
             liveBlueSliderValue.text = String(sender.value)
-            print(sender.value)
-            print("I am \(color.red) at BLUESLIDER")
-            print("I am \(color.green) at BLUESLIDER")
-            print("I am \(color.blue) at BLUESLIDER")
         default:
             print("Something happened")
         }
@@ -67,16 +54,11 @@ class ColorManipulatingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpViews()
-        print("I am the red slider value \(redSlider.value)")
-        print("I am the green slider value \(greenSlider.value)")
-        print("I am the blue slider value \(blueSlider.value)")
-
-        // Do any additional setup after loading the view.
     }
     
     
-    func updateBackgroundColor(red: CGFloat, green: CGFloat, blue: CGFloat) {
-        self.view.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: 1.0)
+    func updateBackgroundColor() {
+        self.view.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1.0)
     }
     
     func setUpViews() {

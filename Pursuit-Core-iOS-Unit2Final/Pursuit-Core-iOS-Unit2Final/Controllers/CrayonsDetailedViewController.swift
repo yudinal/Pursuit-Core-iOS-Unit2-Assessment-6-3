@@ -53,8 +53,8 @@ class CrayonsDetailedViewController: UIViewController {
     private func viewBackgroundColor() -> Void {
         self.view.backgroundColor = UIColor(displayP3Red: CGFloat(crayon.red/255), green: CGFloat(crayon.green/255), blue: CGFloat(crayon.blue/255), alpha: 1.0)
     }
-//
-//    private func updateBackground() {
+
+//    private func updateBackgroundColor() {
 //        let backgroundColor = UIColor(displayP3Red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(stepper.value))
 //    }
  
@@ -72,9 +72,9 @@ class CrayonsDetailedViewController: UIViewController {
     }
     
     private func resetSliders() {
-        redSlider.value = Float(originalRed)/255
-        greenSlider.value = Float(originalGreen)/255
-        blueSlider.value = Float(originalBlue)/255
+        redSlider.value = Float(originalRed/255)
+        greenSlider.value = Float(originalGreen/255)
+        blueSlider.value = Float(originalBlue/255)
     }
     
     private func changeLabeltext(label: UILabel, color: String, value: Float) -> Void {
@@ -83,8 +83,11 @@ class CrayonsDetailedViewController: UIViewController {
     
     private func setSliders() -> Void {
         redSlider.value = Float(crayon.red/255)
+        print(redSlider)
         greenSlider.value = Float(crayon.green/255)
+        print(greenSlider)
         blueSlider.value = Float(crayon.blue/255)
+        print(blueSlider)
     }
     
     private func setsValuesofOriginalColorVariables() -> Void {

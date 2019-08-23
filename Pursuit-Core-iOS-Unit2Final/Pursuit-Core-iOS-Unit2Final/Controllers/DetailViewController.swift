@@ -56,18 +56,34 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func typedInValue(_ sender: UITextField) {
-        guard let unwrap = sender.text?.uppercased(), let value = Float(unwrap) else {return print("not going through")}
-        switch sender.tag {
-        case 0:
-            redSlider.value = value
-        case 1:
-            greenSlider.value = value
-        case 2:
-            blueSlider.value = value
-        default:
-            updateViewBackground()
+        guard let unwrap = sender.text?.uppercased() else {return print("not going through")}
+        if unwrap != "01", let value = Float(unwrap), value <= 1 {
+            switch sender.tag {
+            case 0:
+                redSlider.value = value
+            case 1:
+                greenSlider.value = value
+            case 2:
+                blueSlider.value = value
+            default:
+                updateViewBackground()
+            }
+        } else {
+            let hexDict = makeHexIntoDict(hex: unwrap)
+            let senderValue = getValueFromHex(dict: hexDict, first: 0, second: 1) / 255
+            switch sender.tag {
+            case 0:
+                redSlider.value = Float(senderValue)
+            case 1:
+                greenSlider.value = Float(senderValue)
+            case 2:
+                blueSlider.value = Float(senderValue)
+            default:
+                updateViewBackground()
+            }
         }
         updateViewBackground()
+        sender.text = ""
     }
     @IBAction func segControlTapped(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
@@ -114,7 +130,7 @@ class DetailViewController: UIViewController {
         blueTextField.delegate = self
         crayon.delegate?.resetValues()
         self.view.backgroundColor = crayon.getUIColor()
-
+        
         // Do any additional setup after loading the view.
     }
 }
@@ -128,7 +144,7 @@ extension DetailViewController: UIColorable {
     var hexRed: String {return getHex(from: Double(redSlider.value) * 255)}
     var hexGreen: String {return getHex(from: Double(greenSlider.value) * 255)}
     var hexBlue: String {return getHex(from: Double(blueSlider.value) * 255)}
-
+    
     func resetValues() {
         nameLabel.text = crayon.name
         redSlider.value = defaultRed

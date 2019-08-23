@@ -13,6 +13,9 @@ class DetailViewController: UIViewController {
     var backgroundColor: Color!{
         didSet {
             self.updateBackgroundColor()
+            if self.view.backgroundColor == Crayon.getBlack() {
+                changeColor(color: UIColor.white)
+            }
         }
     }
 
@@ -73,6 +76,7 @@ class DetailViewController: UIViewController {
         self.view.backgroundColor = backgroundColor.getColor()
     }
     
+    
     func updateLabelColors() {
         let colorChoice = istooDark() ? UIColor.white : UIColor.black
         changeColor(color: colorChoice)
@@ -85,7 +89,7 @@ class DetailViewController: UIViewController {
     func istooDark() -> Bool {
         if alphaStepper.value < 0.5 {
             return true
-        } else if redSlider.value < 0.3 && blueSlider.value < 0.5 && greenSlider.value < 0.4 {
+        } else if redSlider.value < 0.4 && blueSlider.value < 0.5 && greenSlider.value < 0.4 {
             return true
         }
         
@@ -102,21 +106,22 @@ class DetailViewController: UIViewController {
     
     func setInitialValues() {
         backgroundColor = crayon.getColor()
-        
-        if self.view.backgroundColor == Crayon.getBlack() {
-            changeColor(color: UIColor.white)
-        }
-        
-        colorNameLabel.text = crayon.name
-        redValueLabel.text = "Red Value: \((crayon.red/255).roundTo(places: 2))"
-        blueValueLabel.text = "Green Value: \((crayon.blue/255).roundTo(places: 2))"
-        greenValueLabel.text = "Blue Value: \((crayon.green/255).roundTo(places: 2))"
-        alphaValueLabel.text = "Alpha Value: 1"
-        redSlider.value = Float(crayon.red/255).roundTo(places: 2)
-        greenSlider.value = Float(crayon.green/255).roundTo(places: 2)
-        blueSlider.value = Float(crayon.blue/255).roundTo(places: 2)
-       
-        
+        setInitialLabelValues()
+        setInitialSliderValues()
     }
-
+    
+    func setInitialLabelValues() {
+        redValueLabel.text = crayon.redValueInString()
+        blueValueLabel.text = crayon.blueValueInString()
+        greenValueLabel.text = crayon.blueValueInString()
+        colorNameLabel.text = crayon.name
+        alphaValueLabel.text = "Alpha Value: 1"
+    }
+    
+    func setInitialSliderValues() {
+        redSlider.value = crayon.redValueInFloat()
+        greenSlider.value = crayon.greenValueInFloat()
+        blueSlider.value = crayon.blueValueInFloat()
+    }
+    
 }

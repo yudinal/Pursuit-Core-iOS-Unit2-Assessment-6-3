@@ -91,6 +91,30 @@ class Crayon {
     func getColor() -> Color {
         return Color(red: CGFloat(self.red/255), green: CGFloat(self.green/255), blue: CGFloat(self.blue/255), alpha: 1)
     }
+    
+    func redValueInString() -> String {
+        return "Red Value: \((self.red/255).roundTo(places: 2))"
+    }
+    
+    func greenValueInString() -> String {
+        return "Red Value: \((self.green/255).roundTo(places: 2))"
+    }
+    
+    func blueValueInString() -> String {
+        return "Red Value: \((self.blue/255).roundTo(places: 2))"
+    }
+    
+    func redValueInFloat() -> Float {
+        return Float(self.red/255).roundTo(places: 2)
+    }
+    
+    func greenValueInFloat() -> Float {
+        return Float(self.green/255).roundTo(places: 2)
+    }
+    
+    func blueValueInFloat() -> Float {
+        return Float(self.blue/255).roundTo(places: 2)
+    }
 }
 
 

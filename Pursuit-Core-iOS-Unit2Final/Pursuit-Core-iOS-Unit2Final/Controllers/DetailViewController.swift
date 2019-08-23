@@ -51,10 +51,8 @@ class DetailViewController: UIViewController {
     }
     
     //MARK: -- Methods
-    private func setMinMaxColorValues() {
-        [redSlider, blueSlider, greenSlider].forEach({$0?.minimumValue = 0.0})
+    private func setMaxUIControlValues() {
         [redSlider, blueSlider, greenSlider].forEach({$0?.maximumValue = 1.0})
-        alphaStepper.minimumValue = 0.0
         alphaStepper.maximumValue = 1.0
     }
     
@@ -136,7 +134,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setMinMaxColorValues()
+        setMaxUIControlValues()
         setDefaultColorValues()
         setLabelTextValues()
         setBackgroundColor()

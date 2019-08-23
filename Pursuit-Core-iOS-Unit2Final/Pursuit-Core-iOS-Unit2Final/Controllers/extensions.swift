@@ -24,19 +24,16 @@ extension Float {
 }
 
 extension String {
-    func toDouble() -> Double? {
-        return NumberFormatter().number(from: self)?.doubleValue
-    }
-    
     func toFloat() -> Float? {
         return NumberFormatter().number(from: self)?.floatValue
+    }
+    
+    func toDouble() -> Double? {
+        return NumberFormatter().number(from: self)?.doubleValue
     }
 }
 
 extension UIColor {
-    
-    // MARK: - Initialization
-    
     convenience init?(hex: String) {
         var hexSanitized = hex.trimmingCharacters(in: .whitespacesAndNewlines)
         hexSanitized = hexSanitized.replacingOccurrences(of: "#", with: "")

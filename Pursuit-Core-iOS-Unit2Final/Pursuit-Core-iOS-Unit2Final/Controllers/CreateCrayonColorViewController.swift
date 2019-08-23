@@ -35,6 +35,7 @@ class CreateCrayonColorViewController: UIViewController {
         submitButton.layer.borderColor = UIColor.black.cgColor
         submitButton.layer.borderWidth = 1.0
     }
+    
     private func setDelegates () {
         nameTextField.delegate = self
         hexTextField.delegate = self

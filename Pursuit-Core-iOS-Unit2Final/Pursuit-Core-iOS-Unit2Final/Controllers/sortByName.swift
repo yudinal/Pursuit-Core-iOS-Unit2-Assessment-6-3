@@ -11,16 +11,16 @@ import UIKit
 
 
 func sortByNameAscending(crayonArrayToSort: [Crayon]) -> [Crayon] {
-    var sortedCrayonsInFunction = crayonArrayToSort
-    sortedCrayonsInFunction = crayonArrayToSort.sorted(by: {$0.name < $1.name})
-    return sortedCrayonsInFunction
+    var sortedCrayons = crayonArrayToSort
+    sortedCrayons = crayonArrayToSort.sorted(by: {$0.name < $1.name})
+    return sortedCrayons
 }
 
 
 func sortByNameDescending(crayonArrayToSort: [Crayon]) -> [Crayon] {
-    var sortedCrayonsInFunction = crayonArrayToSort
-    sortedCrayonsInFunction = crayonArrayToSort.sorted(by: {$0.name > $1.name})
-    return sortedCrayonsInFunction
+    var sortedCrayons = crayonArrayToSort
+    sortedCrayons = crayonArrayToSort.sorted(by: {$0.name > $1.name})
+    return sortedCrayons
 }
 
 

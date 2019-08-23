@@ -39,7 +39,7 @@ class ViewController: UIViewController {
         }
         
         if let crayonName = createCrayonVC.nameTextField.text?.capitalized,
-            let hexStr = createCrayonVC.hexTextField.text?.uppercased(){
+            let hexStr = createCrayonVC.hexTextField.text?.uppercased() {
             let newCrayon = Crayon(name: crayonName, hex: "#\(hexStr)")
             crayonList.append(newCrayon)
             let lastRow = tableView.numberOfRows(inSection: 0)
@@ -124,4 +124,14 @@ extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 105
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        switch editingStyle {
+        case .delete:
+            crayonList.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        default: break
+        }
+    }
 }
+

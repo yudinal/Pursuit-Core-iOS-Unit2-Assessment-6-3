@@ -50,7 +50,6 @@ class CrayonsDetailedViewController: UIViewController {
         currentAlphaValueLabel.text = String("Current value of alpha: \(sender.value)")
     }
     
-    
     private func viewBackgroundColor() -> Void {
         view.backgroundColor = UIColor(displayP3Red: CGFloat(crayon.red/255), green: CGFloat(crayon.green/255), blue: CGFloat(crayon.blue/255), alpha: 1.0)
     }
@@ -58,9 +57,6 @@ class CrayonsDetailedViewController: UIViewController {
     private func updateBackgroundColor() -> Void {
         view.backgroundColor = UIColor(displayP3Red: CGFloat(originalRed/255), green: CGFloat(originalGreen/255), blue: CGFloat(originalBlue/255), alpha: 1.0)
     }
-//    private func BackgroundColor() {
-//        view.backgroundColor = UIColor(displayP3Red: CGFloat(crayon.red), green: CGFloat(crayon.green), blue: CGFloat(crayon.blue), alpha: CGFloat(1.0))
-//    }
  
     @IBAction func resetViewToOriginal(_ sender: UIButton) {
         viewBackgroundColor()
@@ -96,7 +92,6 @@ class CrayonsDetailedViewController: UIViewController {
         originalGreen = crayon.green
         originalBlue = crayon.blue
     }
-    
     
     override func viewDidLoad() {
         selectedCrayonNameLabel.text = crayon.name

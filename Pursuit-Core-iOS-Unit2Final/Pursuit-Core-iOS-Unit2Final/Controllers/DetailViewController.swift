@@ -10,8 +10,10 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    //MARK: -- Properties
     var crayon: Crayon!
     
+    //MARK: -- IBOutlets
     @IBOutlet weak var redTextField: UITextField!
     @IBOutlet weak var greenTextField: UITextField!
     @IBOutlet weak var blueTextField: UITextField!
@@ -27,6 +29,9 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var blueSlider: UISlider!
     @IBOutlet weak var alphaStepper: UIStepper!
     
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    
+    //MARK: -- IBActions
     @IBAction func sliderSlides(_ sender: UISlider) {
         switch sender.tag {
         case 0:
@@ -48,11 +53,10 @@ class DetailViewController: UIViewController {
         greenTextField.text = ""
         blueTextField.text = ""
         resetValues()
-        
     }
     
     @IBAction func typedInValue(_ sender: UITextField) {
-        guard let unwrap = sender.text, let value = Float(unwrap) else {return print("not going through")}
+        guard let unwrap = sender.text?.uppercased(), let value = Float(unwrap) else {return print("not going through")}
         switch sender.tag {
         case 0:
             redSlider.value = value
@@ -65,7 +69,19 @@ class DetailViewController: UIViewController {
         }
         updateViewBackground()
     }
+    @IBAction func segControlTapped(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            updateViewBackground()
+        case 1:
+            updateViewBackground()
+        default:
+            updateViewBackground()
+        }
+        updateViewBackground()
+    }
     
+    //MARK: -- Functions
     private func updateViewBackground() {
         let newColor = UIColor(displayP3Red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaStepper.value))
         updateLabelValues()
@@ -73,15 +89,23 @@ class DetailViewController: UIViewController {
     }
     
     private func updateLabelValues() {
-        redValueLabel.text = "Red: \(redSlider.value)"
-        greenValueLabel.text = "Green: \(greenSlider.value)"
-        blueValueLabel.text = "Blue: \(blueSlider.value)"
-        redTextField.placeholder = "Red: \(redSlider.value)"
-        greenTextField.placeholder = "Green: \(greenSlider.value)"
-        blueTextField.placeholder = "Blue: \(blueSlider.value)"
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            redValueLabel.text = "Red: \(redSlider.value)"
+            greenValueLabel.text = "Green: \(greenSlider.value)"
+            blueValueLabel.text = "Blue: \(blueSlider.value)"
+            redTextField.placeholder = "Red: \(redSlider.value)"
+            greenTextField.placeholder = "Green: \(greenSlider.value)"
+            blueTextField.placeholder = "Blue: \(blueSlider.value)"
+        case 1:
+            updateLabelWithHex()
+        default:
+            print("something Wrong")
+        }
         alphaValueLabel.text = "Alpha: \(alphaStepper.value)"
     }
     
+    //MARK: -- ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         crayon.delegate = self
@@ -94,12 +118,16 @@ class DetailViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 }
-
+//MARK: -- Extensions
 extension DetailViewController: UIColorable {
     var defaultRed: Float {return Float(crayon.red/255)}
     var defaultGreen: Float {return Float(crayon.green/255)}
     var defaultBlue: Float {return Float(crayon.blue/255)}
     var defaultAlpha: Double {return 1}
+    
+    var hexRed: String {return getHex(from: Double(redSlider.value) * 255)}
+    var hexGreen: String {return getHex(from: Double(greenSlider.value) * 255)}
+    var hexBlue: String {return getHex(from: Double(blueSlider.value) * 255)}
 
     func resetValues() {
         nameLabel.text = crayon.name
@@ -108,6 +136,14 @@ extension DetailViewController: UIColorable {
         blueSlider.value = defaultBlue
         alphaStepper.value = 1
         updateViewBackground()
+    }
+    func updateLabelWithHex() {
+        redValueLabel.text = "Red: \(hexRed)"
+        greenValueLabel.text = "Green: \(hexGreen)"
+        blueValueLabel.text = "Blue: \(hexBlue)"
+        redTextField.placeholder = "Red: \(hexRed)"
+        greenTextField.placeholder = "Green: \(hexGreen)"
+        blueTextField.placeholder = "Blue: \(hexBlue)"
     }
 }
 

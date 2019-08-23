@@ -14,8 +14,13 @@ protocol UIColorable {
     var defaultGreen: Float {get}
     var defaultBlue: Float {get}
     var defaultAlpha: Double {get}
-    func resetValues()
     
+    var hexRed: String {get}
+    var hexGreen: String {get}
+    var hexBlue: String {get}
+    
+    func resetValues()
+    func updateLabelWithHex()
 }
 
 class Crayon {

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4D902D08230D916500CAD2D5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D902D07230D916500CAD2D5 /* DetailViewController.swift */; };
 		4D902D0A230DDB7500CAD2D5 /* hexCalculationFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D902D09230DDB7500CAD2D5 /* hexCalculationFunc.swift */; };
+		4D902D0D23103AAE00CAD2D5 /* notWorking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D902D0C23103AAE00CAD2D5 /* notWorking.swift */; };
 		57AFE72E219E136D0024A541 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AFE72D219E136D0024A541 /* AppDelegate.swift */; };
 		57AFE730219E136D0024A541 /* CrayonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AFE72F219E136D0024A541 /* CrayonViewController.swift */; };
 		57AFE733219E136D0024A541 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57AFE731219E136D0024A541 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		4D902D07230D916500CAD2D5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		4D902D09230DDB7500CAD2D5 /* hexCalculationFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hexCalculationFunc.swift; sourceTree = "<group>"; };
+		4D902D0C23103AAE00CAD2D5 /* notWorking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notWorking.swift; sourceTree = "<group>"; };
 		57AFE72A219E136D0024A541 /* Pursuit-Core-iOS-Unit2Final.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pursuit-Core-iOS-Unit2Final.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57AFE72D219E136D0024A541 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57AFE72F219E136D0024A541 /* CrayonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrayonViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +43,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D902D0B23103A8700CAD2D5 /* TrialAndError */ = {
+			isa = PBXGroup;
+			children = (
+				4D902D0C23103AAE00CAD2D5 /* notWorking.swift */,
+			);
+			path = TrialAndError;
+			sourceTree = "<group>";
+		};
 		57AFE721219E136D0024A541 = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +70,7 @@
 		57AFE72C219E136D0024A541 /* Pursuit-Core-iOS-Unit2Final */ = {
 			isa = PBXGroup;
 			children = (
+				4D902D0B23103A8700CAD2D5 /* TrialAndError */,
 				57AFE745219E13C00024A541 /* Models */,
 				57AFE746219E13CC0024A541 /* Views */,
 				57AFE744219E13B90024A541 /* Controllers */,
@@ -177,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D902D0A230DDB7500CAD2D5 /* hexCalculationFunc.swift in Sources */,
+				4D902D0D23103AAE00CAD2D5 /* notWorking.swift in Sources */,
 				57AFE742219E139C0024A541 /* Crayon.swift in Sources */,
 				57AFE730219E136D0024A541 /* CrayonViewController.swift in Sources */,
 				57AFE72E219E136D0024A541 /* AppDelegate.swift in Sources */,

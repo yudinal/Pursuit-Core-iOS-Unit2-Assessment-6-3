@@ -55,3 +55,35 @@ func getValue(from letter: Character) -> Double {
         return Double()
     }
 }
+
+func getHex(from decimal: Double) -> String {
+    let dividedBy16 = decimal / 16
+    let firstStep = Int(dividedBy16)
+    var firstDigit = String()
+    firstDigit = getPartOfHex(from: firstStep)
+    let secondStep = dividedBy16.truncatingRemainder(dividingBy: 1) * 16
+    let intSecondStep = Int(secondStep)
+    let secondDigit = getPartOfHex(from: intSecondStep)
+    return firstDigit + secondDigit
+}
+
+func getPartOfHex(from decimal: Int) -> String {
+    var str = String()
+    switch decimal {
+    case 10:
+        str = "A"
+    case 11:
+        str = "B"
+    case 12:
+        str = "C"
+    case 13:
+        str = "D"
+    case 14:
+        str = "E"
+    case 15:
+        str = "F"
+    default:
+        str = "\(decimal)"
+    }
+    return str
+}

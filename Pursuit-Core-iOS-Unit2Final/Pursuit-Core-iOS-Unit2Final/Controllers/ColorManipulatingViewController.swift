@@ -26,7 +26,6 @@ class ColorManipulatingViewController: UIViewController {
     @IBOutlet weak var iAmBlue: UILabel!
     
     @IBAction func resetColorsButton(_ sender: Any) {
-        
 //        redSlider.value = Float(color.convertRedToCGFloatNumber(red: color.red))
 //        greenSlider.value = Float(color.convertGreenToCGFloatNumber(green: color.green))
 //        blueSlider.value = Float(color.convertBlueToCGFloatNumber(blue: color.blue))

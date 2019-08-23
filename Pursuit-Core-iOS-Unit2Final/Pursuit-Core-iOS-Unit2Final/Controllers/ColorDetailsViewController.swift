@@ -58,6 +58,17 @@ class ColorDetailsViewController: UIViewController {
         colorSelected.text = colorSelectedDetail.name
         view.backgroundColor = UIColor(displayP3Red: CGFloat(colorSelectedDetail.red/255), green: CGFloat(colorSelectedDetail.green/255), blue: CGFloat(colorSelectedDetail.blue/255), alpha: 1)
         
+        
+        redSlider.value = Float(colorSelectedDetail.red/255)
+        redValueLabel.text = String(format: "Red Value: %.2f", redSlider.value)
+        
+        blueSlider.value = Float(colorSelectedDetail.blue/255)
+        blueValueLabel.text = String(format: "Blue Value: %.2f", blueSlider.value)
+        
+        greenSlider.value = Float(colorSelectedDetail.green/255)
+        greenValueLabel.text = String(format: "Green Value: %.2f", greenSlider.value)
+
+        
     }
     
     @IBAction func colorRedSlider(_ sender: UISlider) {
@@ -130,6 +141,10 @@ class ColorDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        colorSelected.text = colorSelectedDetail.name
+        
+        view.backgroundColor = UIColor(displayP3Red: CGFloat(colorSelectedDetail.red/255), green: CGFloat(colorSelectedDetail.green/255), blue: CGFloat(colorSelectedDetail.blue/255), alpha: 1)
+        
         redSlider.value = Float(colorSelectedDetail.red/255)
         redValueLabel.text = String(format: "Red Value: %.2f", redSlider.value)
         
@@ -140,9 +155,6 @@ class ColorDetailsViewController: UIViewController {
         greenValueLabel.text = String(format: "Green Value: %.2f", greenSlider.value)
 
         
-        colorSelected.text = colorSelectedDetail.name
-        
-        view.backgroundColor = UIColor(displayP3Red: CGFloat(colorSelectedDetail.red/255), green: CGFloat(colorSelectedDetail.green/255), blue: CGFloat(colorSelectedDetail.blue/255), alpha: 1)
         
 //        blueValueLabel.text = "\(blueSlider.value)"
 //        blueSlider.value = Float(colorSelectedDetail.blue/255)

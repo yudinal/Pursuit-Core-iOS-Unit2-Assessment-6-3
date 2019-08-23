@@ -14,7 +14,7 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     
     
     
-    let color = Crayon.allTheCrayons
+    var color = Crayon.allTheCrayons
     
     
     
@@ -23,51 +23,55 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     }
     
     
-
+    
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "colorCell") as? colorsTableViewCell else { return UITableViewCell()}
-            let currentColor = color[indexPath.row]
+        let currentColor = color[indexPath.row]
         cell.nameOfColorLabel.text = currentColor.name
         cell.hexLabel.text = currentColor.hex
         cell.backgroundColor = UIColor.init(red: CGFloat(currentColor.red)/255, green: CGFloat(currentColor.green)/255, blue: CGFloat(currentColor.blue)/255, alpha: 1)
         return cell
-                
-    
+        
+        
         
     }
     
     
-
+    
     override func viewDidLoad() {
-    super.viewDidLoad()
+        super.viewDidLoad()
         
-    tableView.delegate = self
-    tableView.dataSource = self
- 
-  }
+        tableView.delegate = self
+        tableView.dataSource = self
+        
     }
-
-
-
-func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     
-    guard let segueIdentifer = segue.identifier else {fatalError("No indentifier in segue")}
     
-    switch segueIdentifer {
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-    case "SegToDescription":
-        guard let destVC = segue.destination as? DetailedViewController else {
-            fatalError("Unexpected segue VC")
+        guard let segueIdentifer = segue.identifier else {fatalError("No indentifier in segue")}
+        
+        switch segueIdentifer {
+            
+        case "SegToDescription":
+            guard let destVC = segue.destination as? DetailedViewController else {
+                fatalError("Unexpected segue VC")
+            }
+            guard let selectedIndexPath = tableView.indexPathForSelectedRow else {fatalError("No row selected")
+            }
+            let currentCrayon = color[selectedIndexPath.row]
+            destVC.currentCrayon = currentCrayon
+            
+            
+        default:
+            fatalError("unexpected segue identifies")
+            
         }
-       
-        
-    default:
-        fatalError("unexpected segue identifies")
-        
     }
 }
-
 
 

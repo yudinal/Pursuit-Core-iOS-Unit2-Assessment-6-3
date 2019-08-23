@@ -10,45 +10,94 @@ import UIKit
 
 class DetailedViewController: UIViewController  {
     
-    var backgroundColor = theColors
-
-    @IBOutlet weak var sliderOne: UISlider!
+    var currentCrayon: Crayon!
+    @IBOutlet weak var sliderOne: UISlider! //red
+    @IBOutlet weak var nameOfCrayon: UILabel!
+    
     @IBOutlet weak var label1: UILabel!
     
+    @IBOutlet weak var steperOutlet: UIStepper!
     
-    @IBOutlet weak var sliderTwo: UISlider!
+    @IBOutlet weak var sliderTwo: UISlider! //green
     
     @IBOutlet weak var label2: UILabel!
     
+    @IBOutlet weak var alphaLabel: UILabel!
     
     
-    @IBOutlet weak var sliderThree: UISlider!
+    @IBOutlet weak var sliderThree: UISlider! //blue
     
     @IBOutlet weak var label3: UILabel!
+    @IBOutlet weak var resetButtonOutlet: UIButton!
+    
+    @IBAction func resetButton(_ sender: Any) {
+        ResetButton()
+        
+    }
+    
+    
+    @IBAction func mySteper(_ sender: Any) {
+        changeBackgroundColor()
+    }
     
     
     @IBAction func sliderAction(_ sender: Any) {
-        self.view.backgroundColor = UIColor (red:CGFloat(sliderOne.value)/225,green:CGFloat(sliderTwo.value)/225,blue:CGFloat(sliderThree.value)/255,alpha: 1)
+       changeBackgroundColor()
+        setLabelWhenSliderMoves()
         
+    
+    }
+    
+    
+    func changeBackgroundColor() {
+        self.view.backgroundColor = UIColor(displayP3Red: CGFloat(sliderOne.value), green: CGFloat(sliderTwo.value), blue: CGFloat(sliderThree.value), alpha: CGFloat(steperOutlet.value))
+    }
+    
+   
+    
+    func setLabelWhenSliderMoves () {
         label1.text = String(sliderOne.value)
         label2.text = String(sliderTwo.value)
         label3.text = String(sliderThree.value)
     }
     
-
-    
-    
- 
-    
-    
-    override func viewDidLoad() {
-       super.viewDidLoad()
-     
-      
+    func setdefaultControlValues() {
+        sliderOne.value = Float(currentCrayon.red/255)
+        sliderTwo.value = Float(currentCrayon.green/255)
+        sliderThree.value = Float(currentCrayon.blue/255)
+        steperOutlet.value = 1.0
     }
     
+    func setDefaultBackgroundColor () {
+        let convertedRedValue = currentCrayon.red/255
+        let convertedBlueValue = currentCrayon.blue/255
+        let convertedGreenValue = currentCrayon.green/255
+        
+        view.backgroundColor = UIColor(displayP3Red: CGFloat(convertedRedValue), green: CGFloat(convertedGreenValue), blue: CGFloat(convertedBlueValue), alpha: 1.0)
+    }
+    
+    func setSliderMaxValues () {
+        sliderOne.maximumValue = 1
+        sliderTwo.maximumValue = 1
+        sliderThree.maximumValue = 1
+    }
+    
+    func ResetButton () {
+        self.setDefaultBackgroundColor()
+        self.setdefaultControlValues()
+ 
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setSliderMaxValues()
+        setDefaultBackgroundColor()
+        nameOfCrayon.text = currentCrayon.name
+        setdefaultControlValues()
+        
     }
 }
         // Do any additional setup after loading the view.

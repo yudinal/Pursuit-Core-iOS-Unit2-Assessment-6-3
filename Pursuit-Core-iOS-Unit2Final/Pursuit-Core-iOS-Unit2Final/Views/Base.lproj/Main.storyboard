@@ -100,7 +100,7 @@
                                 <color key="minimumTrackTintColor" red="0.205913439" green="1" blue="0.001635324071" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="maximumTrackTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <action selector="greenSlider:" destination="A0u-RH-VMk" eventType="valueChanged" id="NJg-aw-gWE"/>
+                                    <action selector="daSlider:" destination="A0u-RH-VMk" eventType="valueChanged" id="dFI-DW-Nhf"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Green" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OrF-Y8-N9e">
@@ -130,7 +130,7 @@
                                 <color key="minimumTrackTintColor" red="0.38146940629999998" green="0.66152911849999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="maximumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <action selector="blueSlider:" destination="A0u-RH-VMk" eventType="valueChanged" id="u41-90-UjQ"/>
+                                    <action selector="daSlider:" destination="A0u-RH-VMk" eventType="valueChanged" id="KdR-CG-HYl"/>
                                 </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7H0-AC-0Nl">
@@ -150,7 +150,7 @@
                                 <color key="minimumTrackTintColor" red="0.89813512559999997" green="0.0084081214910000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="maximumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <action selector="redSlider:" destination="A0u-RH-VMk" eventType="valueChanged" id="mnv-F8-fOG"/>
+                                    <action selector="daSlider:" destination="A0u-RH-VMk" eventType="valueChanged" id="bxr-5J-TlD"/>
                                 </connections>
                             </slider>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="F2P-Td-cxR" userLabel="AlphaStepper">
@@ -174,10 +174,10 @@
                     <connections>
                         <outlet property="AlphaStepper" destination="F2P-Td-cxR" id="byj-hI-z00"/>
                         <outlet property="blueLabel" destination="8M2-0s-Sep" id="DGd-g5-Zcs"/>
-                        <outlet property="blueSlider" destination="TwH-0Z-noR" id="vbz-cY-8iH"/>
+                        <outlet property="blueSlider" destination="TwH-0Z-noR" id="HNG-h7-gL7"/>
                         <outlet property="detCrayonLabel" destination="KWF-KB-2DP" id="hKo-Vu-eoc"/>
                         <outlet property="greenLabel" destination="OrF-Y8-N9e" id="Vj3-TK-weJ"/>
-                        <outlet property="greenSlider" destination="dPj-SH-IPP" id="6mg-q6-t0r"/>
+                        <outlet property="greenSlider" destination="dPj-SH-IPP" id="ORi-Sr-Dl7"/>
                         <outlet property="redLabel" destination="IG6-Mh-heF" id="yVz-6h-Zgw"/>
                         <outlet property="redSlider" destination="ort-Tz-HI6" id="LBi-Zy-jc2"/>
                         <outlet property="resetValue" destination="7H0-AC-0Nl" id="gbd-fh-OXA"/>

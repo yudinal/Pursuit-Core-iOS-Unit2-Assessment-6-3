@@ -17,7 +17,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // this loads the view
   override func viewDidLoad() {
     super.viewDidLoad()
-  
   }
     
     // number of sections
@@ -30,46 +29,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         guard let destination = segue.destination as? DetailViewController else {return}
         if segue.identifier == "detailSegue" {
             guard let indexPath = tableView.indexPathForSelectedRow else {return}
-            let crayon = Crayon.allTheCrayons[indexPath.row]
+            let crayon = theCrayons[indexPath.row]
             destination.daCrayons = crayon
-
+                }
     }
-
-    //let crayon = theCrayons[indexPath.row]
-    
-        }
-    
-    
-    
     
     // populate cells
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         if let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as? TableViewCell {
            
             // cell label
-            cell.crayonLabel.text = Crayon.allTheCrayons[indexPath.row].name
-            cell.crayonHexLabel.text = Crayon.allTheCrayons[indexPath.row].hex
+            cell.crayonLabel.text = theCrayons[indexPath.row].name
+            cell.crayonHexLabel.text = theCrayons[indexPath.row].hex
             
             // This converts 255 RGB value to scaling 0.0 to 1.0 value
-                let cellRed = Double((Crayon.allTheCrayons[indexPath.row].red)/255)
-                let cellGreen = Double((Crayon.allTheCrayons[indexPath.row].green)/255)
-                let cellBlue = Double((Crayon.allTheCrayons[indexPath.row].blue)/255)
-            
-         
+                let cellRed = Double((theCrayons[indexPath.row].red)/255)
+                let cellGreen = Double((theCrayons[indexPath.row].green)/255)
+                let cellBlue = Double((theCrayons[indexPath.row].blue)/255)
             
             // cell background color
             cell.crayonLabel.backgroundColor = UIColor.init(red: CGFloat(cellRed), green: CGFloat(cellGreen), blue: CGFloat(cellBlue), alpha: 1)
             cell.crayonHexLabel.backgroundColor = UIColor.init(red: CGFloat(cellRed), green: CGFloat(cellGreen), blue: CGFloat(cellBlue), alpha: 1)
-            
-//          attempted to change label to visible colors if it was too dark
-//            switch cellRed && cellGreen && cellBlue < 0.21 {
-//            case true:
-//                cell.crayonLabel.textColor = UIColor.white
-//            default:
-//                print("Okay")
-//                }
-            
             
             return cell
         }
@@ -83,4 +63,4 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
 
 
-}
+} // class closing squiggly bracket

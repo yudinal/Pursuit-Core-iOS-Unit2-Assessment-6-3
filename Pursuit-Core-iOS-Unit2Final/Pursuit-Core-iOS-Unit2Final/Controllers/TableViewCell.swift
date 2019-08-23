@@ -14,7 +14,7 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var crayonLabel: UILabel!
     @IBOutlet weak var crayonHexLabel: UILabel!
     
-    
+    // never really used...
    
 
 }

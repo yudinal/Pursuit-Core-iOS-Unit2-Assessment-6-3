@@ -28,31 +28,31 @@ class DetailViewController: UIViewController {
     
     //String(format: "%.02f", whateverYourvalueIS)
     
-    @IBAction func redSlider(_ sender: Any) {
+    @IBAction func daSlider(_ sender: Any) {
         updateBackgroundColor()
         redLabel.text = "Red \(String(format: "%.2f", redSlider.value))"
-        detCrayonLabel.text = "😱\(daCrayons.name)😳"
-        }
-    @IBAction func greenSlider(_ sender: Any) {
-        updateBackgroundColor()
         greenLabel.text = "Green \(String(format: "%.2f", greenSlider.value))"
-        detCrayonLabel.text = "😱\(daCrayons.name)😳"
-        }
-    @IBAction func blueSlider(_ sender: Any) {
-        updateBackgroundColor()
         blueLabel.text = "Blue \(String(format: "%.2f", blueSlider.value))"
         detCrayonLabel.text = "😱\(daCrayons.name)😳"
-        }
+    }
+    
     @IBAction func AlphaStepper(_ sender: Any) {
         updateBackgroundColor()
+        if AlphaStepper.value == Double(0) {
+        AlphaStepper.value = 0
         redLabel.text = "💀☠️💀☠️💀☠️"
         greenLabel.text = "💀☠️💀☠️💀☠️"
         blueLabel.text = "💀☠️💀☠️💀☠️"
+        } else if AlphaStepper.value == Double(1) {
+            updateLabelText()
         }
+    }
     
     @IBAction func resetValue(_ sender: Any) {
         // this resets the background color
-        view.backgroundColor = UIColor(displayP3Red: CGFloat((daCrayons.red)/255), green: CGFloat((daCrayons.green)/255), blue: CGFloat((daCrayons.blue)/255), alpha: 1)
+        view.backgroundColor = UIColor(displayP3Red: CGFloat((daCrayons.red)/255), green:
+        // ((color.red)/255)
+        CGFloat((daCrayons.green)/255), blue: CGFloat((daCrayons.blue)/255), alpha: 1)
         // this resets the slider positions and stepper
         ogValues()
         // this resets the color label

@@ -87,12 +87,16 @@ class CrayonsDetailedViewController: UIViewController {
         blueSlider.value = Float(crayon.blue/255)
     }
     
-    override func viewDidLoad() {
-        viewBackgroundColor()
-        selectedCrayonNameLabel.text = crayon.name
+    private func setsValuesofOriginalColorVariables() -> Void {
         originalRed = crayon.red
         originalGreen = crayon.green
         originalBlue = crayon.blue
+    }
+    
+    override func viewDidLoad() {
+        viewBackgroundColor()
+        selectedCrayonNameLabel.text = crayon.name
+        setsValuesofOriginalColorVariables()
         setSliders()
         setLabels()
     }

@@ -94,8 +94,8 @@ class CrayonsDetailedViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        viewBackgroundColor()
         selectedCrayonNameLabel.text = crayon.name
+        viewBackgroundColor()
         setsValuesofOriginalColorVariables()
         setSliders()
         setLabels()

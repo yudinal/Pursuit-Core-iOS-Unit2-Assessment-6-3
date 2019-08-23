@@ -27,11 +27,14 @@ class CreateCrayonColorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameTextField.delegate = self
-        hexTextField.delegate = self
+        setDelegates() 
         submitButton.layer.cornerRadius = submitButton.frame.height / 2
         submitButton.layer.borderColor = UIColor.black.cgColor
         submitButton.layer.borderWidth = 1.0
+    }
+    private func setDelegates () {
+        nameTextField.delegate = self
+        hexTextField.delegate = self
     }
 }
 
@@ -39,7 +42,8 @@ extension CreateCrayonColorViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField.tag {
-        case 0: colorNamePreview?.text = textField.text
+        case 0:
+            colorNamePreview?.text = textField.text?.capitalized
         case 1:
             colorPreviewView.backgroundColor = UIColor(hex: textField.text!)
         default:()
@@ -54,16 +58,16 @@ extension CreateCrayonColorViewController: UITextFieldDelegate {
             if range.location == 0 && (string == " ") { return false }
         case 1:
             let aSet = NSCharacterSet(charactersIn:"abcdefABCDEF0123456789").inverted
-        let compSepByCharInSet = string.components(separatedBy: aSet)
-        let numberFiltered = compSepByCharInSet.joined(separator: "")
-        
-        if string == numberFiltered {
-            let currentText = textField.text ?? ""
-            guard let stringRange = Range(range, in: currentText) else { return false }
-            let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
-            return updatedText.count <= 6
-        } else {
-            return false
+            let compSepByCharInSet = string.components(separatedBy: aSet)
+            let numberFiltered = compSepByCharInSet.joined(separator: "")
+            
+            if string == numberFiltered {
+                let currentText = textField.text ?? ""
+                guard let stringRange = Range(range, in: currentText) else { return false }
+                let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+                return updatedText.count <= 6
+            } else {
+                return false
             }
         default: ()
         }

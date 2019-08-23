@@ -30,6 +30,23 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func unwind(segue: UIStoryboardSegue) {
+        guard let createCrayonVC = segue.source as? CreateCrayonColorViewController else {
+            fatalError("Unknown segue source")
+        }
+        
+        if let crayonName = createCrayonVC.nameTextField.text?.capitalized,
+            let hexStr = createCrayonVC.hexTextField.text?.uppercased(){
+            let newCrayon = Crayon(name: crayonName, hex: "#\(hexStr)")
+            crayonList.append(newCrayon)
+            let lastRow = tableView.numberOfRows(inSection: 0)
+            let lastIndexPath = IndexPath(row: lastRow, section: 0)
+            tableView.insertRows(at: [lastIndexPath], with: .automatic)
+            crayonList = sortByNameAscending(crayonArrayToSort: crayonList)
+            tableView.reloadData()
+        }
+    }
+    
     //MARK: -- Segue method
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let segueIdentifer = segue.identifier else {fatalError("No identifier in segue")}
@@ -52,6 +69,7 @@ class ViewController: UIViewController {
         }
     }
     
+    
     //MARK: -- ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,22 +82,6 @@ class ViewController: UIViewController {
         tableView.dataSource = self
     }
     
-    @IBAction func unwind(segue: UIStoryboardSegue) {
-        guard let createCrayonVC = segue.source as? CreateCrayonColorViewController else {
-            fatalError("Unknown segue source")
-        }
-        
-        if let crayonName = createCrayonVC.nameTextField.text,
-            let hexStr = createCrayonVC.hexTextField.text {
-            let newCrayon = Crayon(name: crayonName, hex: hexStr)
-            crayonList.append(newCrayon)
-            let lastRow = tableView.numberOfRows(inSection: 0)
-            let lastIndexPath = IndexPath(row: lastRow, section: 0)
-            tableView.insertRows(at: [lastIndexPath], with: .automatic)
-            crayonList = sortByNameAscending(crayonArrayToSort: crayonList)
-            tableView.reloadData()
-        }
-    }
 }
 
 //MARK: -- Table Datasource Methods
@@ -91,13 +93,11 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let currentCrayon = crayonList[indexPath.row]
         let currentCrayonRedValue = CGFloat(currentCrayon.red/255)
-        let currentCrayonBlueValue = CGFloat(currentCrayon.blue/255)
         let currentCrayonGreenValue = CGFloat(currentCrayon.green/255)
-        
-        
+        let currentCrayonBlueValue = CGFloat(currentCrayon.blue/255)
+       
         let cell = tableView.dequeueReusableCell(withIdentifier: "colorCell", for: indexPath)
-        cell.textLabel?.text = currentCrayon.name
-        cell.detailTextLabel?.text = currentCrayon.hex
+        cell.textLabel?.text = currentCrayon.name; cell.detailTextLabel?.text = currentCrayon.hex
         cell.backgroundColor = UIColor(displayP3Red: currentCrayonRedValue, green: currentCrayonGreenValue, blue: currentCrayonBlueValue, alpha: 1.0)
         
         if cell.detailTextLabel?.text == "#000000" || cell.detailTextLabel?.text == "#990012" {
@@ -118,6 +118,6 @@ extension ViewController: UITableViewDataSource {
 //MARK: -- Table Delegate Methods
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
+        return 100
     }
 }

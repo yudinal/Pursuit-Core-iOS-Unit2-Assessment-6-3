@@ -150,31 +150,32 @@ extension DetailViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField.tag {
         case 0:
-            if let redTextFieldDouble = textField.text?.toDouble() {
-                let currentCrayonBackgroundColor = UIColor(displayP3Red: CGFloat(redTextFieldDouble), green: CGFloat(greenSlider.value) , blue: CGFloat(blueSlider.value), alpha: CGFloat(Float(alphaStepper.value)))
-                view.backgroundColor = currentCrayonBackgroundColor
-                redSlider.value = Float(redTextFieldDouble)
+            if let redTextFieldFloat = textField.text?.toFloat() {
+                let currentColor = UIColor(displayP3Red: CGFloat(redTextFieldFloat), green: CGFloat(greenSlider.value) , blue: CGFloat(blueSlider.value), alpha: CGFloat(Float(alphaStepper.value)))
+                view.backgroundColor = currentColor
+                redSlider.value = redTextFieldFloat
                 checkReadability()
             }
             
         case 1:
-            if let greenTextFieldDouble = textField.text?.toDouble() {
-                let currentCrayonBackgroundColor = UIColor(displayP3Red: CGFloat(redSlider.value), green: CGFloat(greenTextFieldDouble) , blue: CGFloat(blueSlider.value), alpha: CGFloat(Float(alphaStepper.value)))
-                view.backgroundColor = currentCrayonBackgroundColor
-                greenSlider.value = Float(greenTextFieldDouble)
+            if let greenTextFieldFloat = textField.text?.toFloat() {
+                let currentColor = UIColor(displayP3Red: CGFloat(redSlider.value), green: CGFloat(greenTextFieldFloat) , blue: CGFloat(blueSlider.value), alpha: CGFloat(Float(alphaStepper.value)))
+                view.backgroundColor = currentColor
+                greenSlider.value = greenTextFieldFloat
                 checkReadability()
             }
             
         case 2:
-            if let blueTextFieldDouble = textField.text?.toDouble() {
-                let currentCrayonBackgroundColor = UIColor(displayP3Red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value) , blue: CGFloat(blueTextFieldDouble), alpha: CGFloat(Float(alphaStepper.value)))
-                view.backgroundColor = currentCrayonBackgroundColor
-                blueSlider.value = Float(blueTextFieldDouble)
+            if let blueTextFieldFloat = textField.text?.toFloat() {
+                let currentColor = UIColor(displayP3Red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value) , blue: CGFloat(blueTextFieldFloat), alpha: CGFloat(Float(alphaStepper.value)))
+                view.backgroundColor = currentColor
+                blueSlider.value = Float(blueTextFieldFloat)
                 checkReadability()
             }
             
         default: ()
         }
+        
         textField.resignFirstResponder()
         return true
     }

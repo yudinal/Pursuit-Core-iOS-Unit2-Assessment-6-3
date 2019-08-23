@@ -66,6 +66,7 @@ class ColorDetailsViewController: UIViewController {
                 green: 0.0,
                 blue: 0.0,
                 alpha: 1.0)
+         view.backgroundColor = UIColor(displayP3Red: red, green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1.0)
         }
     
     @IBAction func colorGreenSlider(_ sender: UISlider) {
@@ -77,6 +78,7 @@ class ColorDetailsViewController: UIViewController {
             green: green,
             blue: 0.0,
             alpha: 1.0)
+        view.backgroundColor = UIColor(displayP3Red: CGFloat(redSlider.value), green: green, blue: CGFloat(blueSlider.value) , alpha: 1.0)
     }
     
     @IBAction func colorBlueSlider(_ sender: UISlider) {
@@ -88,8 +90,9 @@ class ColorDetailsViewController: UIViewController {
             green: 0.0,
             blue: blue,
             alpha: 1.0)
-        
+        view.backgroundColor = UIColor(displayP3Red: CGFloat(redSlider.value), green:CGFloat(greenSlider.value), blue: blue, alpha: 1.0)
     }
+
 
     func changeRed(red: CGFloat) {
         self.red = red

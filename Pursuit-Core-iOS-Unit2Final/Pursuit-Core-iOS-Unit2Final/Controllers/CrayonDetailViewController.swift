@@ -45,12 +45,15 @@ class CrayonDetailViewController: UIViewController {
         let color = UIColor(displayP3Red: red, green: green, blue: blue, alpha: alpha)
         view.backgroundColor = color
         updateLabels()
-        
     }
     
     private func defaultValues() {
+        let red = CGFloat(crayon.red/255)
+        let green = CGFloat(crayon.green/255)
+        let blue = CGFloat(crayon.blue/255)
+        
         colorNameLabel.text = crayon.name
-        view.backgroundColor = UIColor(displayP3Red: CGFloat(crayon.red/255), green: CGFloat(crayon.green/255), blue: CGFloat(crayon.blue/255), alpha: 1)
+        view.backgroundColor = UIColor(displayP3Red: red, green: green, blue: blue, alpha: 1)
         
         redSlider.value = Float(crayon.red/255)
         greenSlider.value = Float(crayon.green/255)

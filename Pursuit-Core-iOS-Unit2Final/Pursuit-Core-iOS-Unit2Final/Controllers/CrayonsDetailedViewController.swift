@@ -29,17 +29,17 @@ class CrayonsDetailedViewController: UIViewController {
     @IBAction func sliderChanged(_ sender: UISlider) {
         switch sender.tag {
         case 0:
-            crayon.red = Double(CGFloat(sender.value * 255))
+            originalRed = Double(CGFloat(sender.value * 255))
             changeLabeltext(label: currentRedValueLabel, color: "red", value: sender.value)
-            viewBackgroundColor()
+            updateBackgroundColor()
         case 1:
-            crayon.green = Double(CGFloat(sender.value * 255))
+            originalGreen = Double(CGFloat(sender.value * 255))
             changeLabeltext(label: currentGreenValueLabel, color: "green", value: sender.value)
-            viewBackgroundColor()
+            updateBackgroundColor()
         case 2:
-            crayon.blue = Double(CGFloat(sender.value * 255))
+            originalBlue = Double(CGFloat(sender.value * 255))
             changeLabeltext(label: currentBlueValueLabel, color: "blue", value: sender.value)
-            viewBackgroundColor()
+            updateBackgroundColor()
         default:
             print("")
         }
@@ -50,16 +50,20 @@ class CrayonsDetailedViewController: UIViewController {
         currentAlphaValueLabel.text = String("Current value of alpha: \(sender.value)")
     }
     
+    
     private func viewBackgroundColor() -> Void {
-        self.view.backgroundColor = UIColor(displayP3Red: CGFloat(crayon.red/255), green: CGFloat(crayon.green/255), blue: CGFloat(crayon.blue/255), alpha: 1.0)
+        view.backgroundColor = UIColor(displayP3Red: CGFloat(crayon.red/255), green: CGFloat(crayon.green/255), blue: CGFloat(crayon.blue/255), alpha: 1.0)
     }
 
-//    private func updateBackgroundColor() {
-//        let backgroundColor = UIColor(displayP3Red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(stepper.value))
+    private func updateBackgroundColor() -> Void {
+        view.backgroundColor = UIColor(displayP3Red: CGFloat(originalRed/255), green: CGFloat(originalGreen/255), blue: CGFloat(originalBlue/255), alpha: 1.0)
+    }
+//    private func BackgroundColor() {
+//        view.backgroundColor = UIColor(displayP3Red: CGFloat(crayon.red), green: CGFloat(crayon.green), blue: CGFloat(crayon.blue), alpha: CGFloat(1.0))
 //    }
  
     @IBAction func resetViewToOriginal(_ sender: UIButton) {
-        self.view.backgroundColor = UIColor(displayP3Red: CGFloat(originalRed/255), green: CGFloat(originalGreen/255), blue: CGFloat(originalBlue/255), alpha: 1.0)
+        viewBackgroundColor()
         resetSliders()
         setLabels()
     }
@@ -92,6 +96,7 @@ class CrayonsDetailedViewController: UIViewController {
         originalGreen = crayon.green
         originalBlue = crayon.blue
     }
+    
     
     override func viewDidLoad() {
         selectedCrayonNameLabel.text = crayon.name

@@ -26,7 +26,6 @@ class CrayonsDetailedViewController: UIViewController {
     var originalGreen = 0.0
     var originalBlue = 0.0
     
-    
     @IBAction func sliderChanged(_ sender: UISlider) {
         switch sender.tag {
         case 0:
@@ -62,7 +61,6 @@ class CrayonsDetailedViewController: UIViewController {
         setLabels()
     }
     
-
     private func setLabels() {
         currentRedValueLabel.text = String("Current value of red: \(originalRed/255)")
         currentGreenValueLabel.text = String("Current value of green: \(originalGreen/255)")
@@ -70,17 +68,12 @@ class CrayonsDetailedViewController: UIViewController {
         currentAlphaValueLabel.text = "Current value of alpha is 1"
     }
     
-
     private func resetSliders() {
         redSlider.value = Float(originalRed)/255
         greenSlider.value = Float(originalGreen)/255
         blueSlider.value = Float(originalBlue)/255
     }
     
-    //    private func changeLabelMessage(color: String, value: Float) {
-    //      disconnect labels from outlets and create one outlet for all labels.
-    //        labelText.text = String("Current value of \(color): \(value)")
-    //    }
     private func changeLabeltext(label: UILabel, color: String, value: Float) -> Void {
     label.text = String("Current value of \(color): \(value)")
     }

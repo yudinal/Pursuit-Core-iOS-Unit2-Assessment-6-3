@@ -29,69 +29,64 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var b: UILabel!
     @IBOutlet weak var a: UILabel!
     
-    // CHANGE RGB VALUES
+    
+    // CHANGE RGB VALUES VIA SLIDERS
     @IBAction func sliderChanged(_ sender: UISlider) {
+        
         switch sender.tag {
         case 0:
             model.changeRed(red: CGFloat(sender.value))
-            updateBackgroundColor()
+            changeRGB()
             rval.text = "\(sender.value)"
         case 1:
             model.changeGreen(green: CGFloat(sender.value))
-            updateBackgroundColor()
+            changeRGB()
             gval.text = "\(sender.value)"
         case 2:
             model.changeBlue(blue: CGFloat(sender.value))
-            updateBackgroundColor()
+            changeRGB()
             bval.text = "\(sender.value)"
         default:
             print("Never gonna happen")
         }
     }
     
-    // CHANGES BGCOLOR
-    func updateBackgroundColor() {
-        self.view.backgroundColor = model.getColor()
-    }
-    
-    // CHANGE ALPHA
+    // CHANGE BG ALPHA
     @IBAction func alphaStepper(_ sender: UIStepper) {
         model.changeAlpha(alpha: CGFloat(sender.value))
-        updateBackgroundColor()
+        changeRGB()
         aval.text = "\(sender.value)"
     }
     
     // RESET BUTTON
     @IBAction func resetPressed(_ sender: UIButton) {
-        model.changeRed(red: CGFloat(crayon.red/255))
-        model.changeGreen(green: CGFloat(crayon.green/255))
-        model.changeBlue(blue: CGFloat(crayon.blue/255))
-        model.changeAlpha(alpha: 1.0)
-        updateBackgroundColor()
         
-        redSlider.value = Float(crayon.red/255)
-        greenSlider.value = Float(crayon.green/255)
-        blueSlider.value = Float(crayon.blue/255)
-        alphaStepper.value = Double(model.alpha)
-        
-        
-        rval.text = "\(CGFloat(crayon.red/255))"
-        gval.text = "\(CGFloat(crayon.green/255))"
-        bval.text = "\(CGFloat(crayon.blue/255))"
-        aval.text = "1.0"
+        model.changeRed(red: crayon.getRedColor())
+        model.changeGreen(green: crayon.getGreenColor())
+        model.changeBlue(blue: crayon.getBlueColor())
+        model.changeAlpha(alpha: crayon.getAlpha())
+        setBGColor()
+        setDVC()
     }
     
     // DO ALL THIS STUFF BEFORE LOADING
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // STORING RGB VALUES
-        let red = crayon.red/255
-        let green = crayon.green/255
-        let blue = crayon.blue/255
-        
-        
-        // CHANGE FONT COLORS ACCORDING TO BGCOLOR
+        setBGColor()
+       
+        changeFontColor()
+        setDVC()
+        changeRGB()
+    }
+    
+    // SET BGCOLOR
+    private func setBGColor() {
+        self.view.backgroundColor = crayon.getColor()
+    }
+    
+    // CHANGE FONT COLORS ACCORDING TO BGCOLOR
+    private func changeFontColor() {
         if crayon.hex == "#000000" {
             crayonName.textColor = .white
             rval.textColor = .white
@@ -103,24 +98,31 @@ class DetailViewController: UIViewController {
             b.textColor = .white
             a.textColor = .white
         }
-        
-        // SETTING SLIDER VALUES
+    }
+    
+    // SETTING DVC OUTLET VALUES
+    private func setDVC() {
         crayonName.text = crayon.name
-        redSlider.value = Float(red)
-        rval.text = "\(Float(red))"
-        greenSlider.value = Float(green)
-        gval.text = "\(Float(green))"
-        blueSlider.value = Float(blue)
-        bval.text = "\(Float(blue))"
+        
+        redSlider.value = Float(crayon.getRedColor())
+        rval.text = "\(Float(crayon.getRedColor()))"
+        
+        greenSlider.value = Float(crayon.getGreenColor())
+        gval.text = "\(Float(crayon.getGreenColor()))"
+        
+        blueSlider.value = Float(crayon.getBlueColor())
+        bval.text = "\(Float(crayon.getBlueColor()))"
+        
         aval.text = "1.0"
-        
-        // SETTING BACKGROUND COLOR
-        self.view.backgroundColor = UIColor(red: CGFloat(red), green: CGFloat(green), blue: CGFloat(blue), alpha: 1.0)
-        
-        // UPDATING THE VALUES THE MODEL INSTANCE
-        model.changeRed(red: CGFloat(red))
-        model.changeGreen(green: CGFloat(green))
-        model.changeBlue(blue: CGFloat(blue))
+    }
+    
+    // UPDATING  VALUES OF COLOR MODEL
+    private func changeRGB() {
+        let red = CGFloat(redSlider.value)
+        let green = CGFloat(greenSlider.value)
+        let blue = CGFloat(blueSlider.value)
+        let alpha = CGFloat(alphaStepper.value)
+        self.view.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: alpha)
     }
     
 }

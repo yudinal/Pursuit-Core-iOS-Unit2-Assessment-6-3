@@ -7,8 +7,10 @@
 //
 
 import Foundation
+import UIKit
 
 class Crayon {
+    
   var name: String
   var red: Double
   var green: Double
@@ -39,4 +41,30 @@ class Crayon {
     Crayon(name: "Blue Green", red: 13, green: 152, blue: 186, hex: "#0D98BA"),
     Crayon(name: "Blue Violet", red: 115, green: 102, blue: 189, hex: "#7366BD")
   ]
+    
+    // GENERATE RGB COLOR
+    func getColor() -> UIColor {
+        return UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1.0)
+    }
+    
+    // GENERATE RED COLOR
+    func getRedColor() -> CGFloat {
+        return CGFloat(red/255)
+    }
+    
+    // GENERATE GREEN COLOR
+    func getGreenColor() -> CGFloat {
+        return CGFloat(green/255)
+    }
+    
+    // GENERATE BLUE COLOR
+    func getBlueColor() -> CGFloat {
+        return CGFloat(blue/255)
+    }
+    
+    func getAlpha() -> CGFloat {
+        return 1.0
+    }
+    
+    
 }

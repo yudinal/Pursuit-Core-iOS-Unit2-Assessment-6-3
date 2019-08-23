@@ -53,8 +53,16 @@ class ColorDetailsViewController: UIViewController {
     
     @IBOutlet weak var currentAlpha: UILabel!
     
+    @IBAction func alphaStepper(_ sender: UIStepper) {
+        
+        currentAlpha.text = String(format: "Current Alpha Value: %.2f", alphaStepperOutlet.value)
+       //  let currentAlphaValue = Double(sender.value)
+        view.backgroundColor = UIColor(displayP3Red: red, green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaStepperOutlet!.value))
+    }
     
     @IBAction func resetButton(_ sender: UIButton) {
+        alphaStepperOutlet.value = 1
+         currentAlpha.text = "Current Alpha: \(alphaStepperOutlet.value)"
         colorSelected.text = colorSelectedDetail.name
         view.backgroundColor = UIColor(displayP3Red: CGFloat(colorSelectedDetail.red/255), green: CGFloat(colorSelectedDetail.green/255), blue: CGFloat(colorSelectedDetail.blue/255), alpha: 1)
         
@@ -75,36 +83,37 @@ class ColorDetailsViewController: UIViewController {
         let currentRedValue = Double(sender.value)
         redValueLabel.text = "Red Value: \(currentRedValue)"
         red = CGFloat(sender.value)
-        view.backgroundColor = UIColor(
-                red: red,
-                green: 0.0,
-                blue: 0.0,
-                alpha: 1.0)
-         view.backgroundColor = UIColor(displayP3Red: red, green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1.0)
+//        view.backgroundColor = UIColor(
+//                red: red,
+//                green: 0.0,
+//                blue: 0.0,
+//                alpha: 1.0)
+        view.backgroundColor = UIColor(displayP3Red: red, green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaStepperOutlet!.value))
+      //  currentAlpha.text = "Alpha: \()"
         }
     
     @IBAction func colorGreenSlider(_ sender: UISlider) {
         green = CGFloat(sender.value)
         let currentGreenValue = Double(sender.value)
         greenValueLabel.text = "Green Value: \(currentGreenValue)"
-        view.backgroundColor = UIColor(
-            red: 0.0,
-            green: green,
-            blue: 0.0,
-            alpha: 1.0)
-        view.backgroundColor = UIColor(displayP3Red: CGFloat(redSlider.value), green: green, blue: CGFloat(blueSlider.value) , alpha: 1.0)
+//        view.backgroundColor = UIColor(
+//            red: 0.0,
+//            green: green,
+//            blue: 0.0,
+//            alpha: 1.0)
+        view.backgroundColor = UIColor(displayP3Red: CGFloat(redSlider.value), green: green, blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaStepperOutlet!.value))
     }
     
     @IBAction func colorBlueSlider(_ sender: UISlider) {
         blue = CGFloat(sender.value)
         let currentBlueValue = Double(sender.value)
         blueValueLabel.text = "Blue Value: \(currentBlueValue)"
-        view.backgroundColor = UIColor(
-            red: 0.0,
-            green: 0.0,
-            blue: blue,
-            alpha: 1.0)
-        view.backgroundColor = UIColor(displayP3Red: CGFloat(redSlider.value), green:CGFloat(greenSlider.value), blue: blue, alpha: 1.0)
+//        view.backgroundColor = UIColor(
+//            red: 0.0,
+//            green: 0.0,
+//            blue: blue,
+//            alpha: 1.0)
+        view.backgroundColor = UIColor(displayP3Red: CGFloat(redSlider.value), green:CGFloat(greenSlider.value), blue: blue, alpha: CGFloat(alphaStepperOutlet!.value))
     }
 
 
@@ -154,6 +163,8 @@ class ColorDetailsViewController: UIViewController {
         greenSlider.value = Float(colorSelectedDetail.green/255)
         greenValueLabel.text = String(format: "Green Value: %.2f", greenSlider.value)
 
+        currentAlpha.text = "Current Alpha: \(alphaStepperOutlet.value)"
+        
         
         
 //        blueValueLabel.text = "\(blueSlider.value)"

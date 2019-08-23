@@ -8,12 +8,16 @@
 
 import UIKit
 
-class MainColorViewController: UIViewController, UITableViewDataSource {
+class MainColorViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
      var crayons = Crayon.allTheCrayons
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return crayons.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 130
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -30,7 +34,7 @@ class MainColorViewController: UIViewController, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        colorsTableView.delegate = self
        colorsTableView.dataSource = self
 
         // Do any additional setup after loading the view.

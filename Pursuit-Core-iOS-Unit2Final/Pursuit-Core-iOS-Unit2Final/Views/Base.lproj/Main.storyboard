@@ -131,9 +131,8 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ColorName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCh-aV-ae7" userLabel="colorNameLabel">
-                                <rect key="frame" x="82" y="128" width="251" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ColorName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCh-aV-ae7" userLabel="colorNameLabel">
+                                <rect key="frame" x="62" y="97.5" width="290" height="90"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -155,6 +154,12 @@
                             </stepper>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vCh-aV-ae7" firstAttribute="centerX" secondItem="0Pj-QT-vjy" secondAttribute="centerX" id="6On-N9-zM7"/>
+                            <constraint firstItem="vCh-aV-ae7" firstAttribute="width" secondItem="44B-aG-lr7" secondAttribute="width" multiplier="0.7" id="7W5-2f-cyb"/>
+                            <constraint firstItem="vCh-aV-ae7" firstAttribute="centerY" secondItem="0Pj-QT-vjy" secondAttribute="centerY" multiplier="0.3" id="GUe-wd-Rqh"/>
+                            <constraint firstItem="vCh-aV-ae7" firstAttribute="height" secondItem="44B-aG-lr7" secondAttribute="height" multiplier="0.1" id="S0u-B9-6tf"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="0Pj-QT-vjy"/>
                     </view>
                     <connections>
@@ -167,7 +172,6 @@
                         <outlet property="redLabelOut" destination="CMs-Fi-dxH" id="cOY-r4-sfU"/>
                         <outlet property="redSliderOut" destination="4J4-LQ-af3" id="P17-rT-QVS"/>
                         <outlet property="stepperOut" destination="fdB-QW-eAx" id="1zc-C1-hHG"/>
-                        <outlet property="viewOut" destination="44B-aG-lr7" id="rqv-sl-J0c"/>
                         <outletCollection property="labelCollection" destination="vCh-aV-ae7" collectionClass="NSMutableArray" id="XTa-6x-SMP"/>
                         <outletCollection property="labelCollection" destination="CMs-Fi-dxH" collectionClass="NSMutableArray" id="1er-U1-gXn"/>
                         <outletCollection property="labelCollection" destination="Pnt-Aq-ZoN" collectionClass="NSMutableArray" id="f9M-42-bFx"/>

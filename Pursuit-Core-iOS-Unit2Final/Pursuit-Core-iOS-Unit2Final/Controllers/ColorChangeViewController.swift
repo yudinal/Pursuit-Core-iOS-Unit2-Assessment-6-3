@@ -10,25 +10,15 @@ import UIKit
 
 class ColorChangeViewController: UIViewController {
 
-//    var colorFromVC: Crayon!
-    
-    var red: Double!
-    var green: Double!
-    var blue: Double!
-    var currentColorName: String!
-    
-    @IBOutlet var viewOut: UIView!
+    var colorFromVC: Crayon!
+
     
     //MARK: - Label Outlets
     @IBOutlet weak var redLabelOut: UILabel!
     @IBOutlet weak var greenLabelOut: UILabel!
     @IBOutlet weak var blueLabelOut: UILabel!
-    
     @IBOutlet weak var alphaLabel: UILabel!
-    
     @IBOutlet weak var colorNameLabel: UILabel!
-    
-    
     
     @IBOutlet var labelCollection: [UILabel]!
     
@@ -36,37 +26,30 @@ class ColorChangeViewController: UIViewController {
     //MARK: - Actions
     
     @IBAction func resetButton(_ sender: UIButton) {
-    redLabelOut.text = "Red: \(Float(red))"
-    greenLabelOut.text = "Green: \(Float(green))"
-    blueLabelOut.text = "Blue: \(Float(blue))"
-    alphaLabel.text = "Alpha: 1.0"
-    viewOut.backgroundColor = UIColor(displayP3Red: CGFloat(red), green:  CGFloat(green), blue:  CGFloat(blue), alpha: 1.0)
-    redSliderOut.value = Float(red)
-    greenSliderOut.value = Float(green)
-    blueSliderOut.value = Float(blue)
+        setBGColor()
     }
     
     @IBAction func redSliderAct(_ sender: UISlider) {
         redLabelOut.text = "Red: \(Float(sender.value))"
-   viewOut.backgroundColor = UIColor(displayP3Red: CGFloat(sender.value), green:  CGFloat(greenSliderOut.value), blue:  CGFloat(blueSliderOut.value), alpha: CGFloat(stepperOut.value))
-        changeTextColor()
+        updateBGColor()
+
     }
     @IBAction func greenSliderAct(_ sender: UISlider) {
         greenLabelOut.text = "Green: \(Float(sender.value))"
-    viewOut.backgroundColor = UIColor(displayP3Red: CGFloat(sender.value), green:  CGFloat(greenSliderOut.value), blue:  CGFloat(blueSliderOut.value), alpha: CGFloat(stepperOut.value))
-        changeTextColor()
+        updateBGColor()
+
 
     }
     @IBAction func blueSliderAct(_ sender: UISlider) {
         blueLabelOut.text = "Blue: \(Float(sender.value))"
-    viewOut.backgroundColor = UIColor(displayP3Red: CGFloat(sender.value), green:  CGFloat(greenSliderOut.value), blue:  CGFloat(blueSliderOut.value), alpha: CGFloat(stepperOut.value))
-        changeTextColor()
+        updateBGColor()
+
     }
     @IBAction func stepperAct(_ sender: UIStepper) {
         alphaLabel.text = "Alpha: \(Float(sender.value))"
-      viewOut.backgroundColor = UIColor(displayP3Red: CGFloat(sender.value), green:  CGFloat(greenSliderOut.value), blue:  CGFloat(blueSliderOut.value), alpha: CGFloat(sender.value))
-        changeTextColor()
+        updateBGColor()
     }
+    
     
     //MARK: - Outlets
     @IBOutlet weak var redSliderOut: UISlider!
@@ -75,33 +58,56 @@ class ColorChangeViewController: UIViewController {
     @IBOutlet weak var stepperOut: UIStepper!
     
     
+    //MARK: - Background Color Methods
+    private func setBGColor(){
+    view.backgroundColor = colorFromVC.getColor()
+    print(colorFromVC.blue)
+    colorNameLabel.text = colorFromVC.name
+    redSliderOut.value = Float(colorFromVC.red)
+    greenSliderOut.value = Float(colorFromVC.green)
+    stepperOut.value = 1.0
+    blueSliderOut.value = Float(colorFromVC.blue)
+    redLabelOut.text = "Red: \(Float(colorFromVC.red))"
+    blueLabelOut.text = "Blue: \(Float(colorFromVC.blue))"
+    greenLabelOut.text = "Green: \(Float(colorFromVC.green))"
+    alphaLabel.text = "Alpha: 1.0"
     
-    func changeTextColor(){
-        if redSliderOut.value < 0.3 && blueSliderOut.value < 0.3 || greenSliderOut.value < 0.3  || stepperOut.value < 0.9 {
-            for i in labelCollection {
-                i.textColor = UIColor.white
-            }
-        } else if redSliderOut.value > 0.3 && blueSliderOut.value > 0.3 && greenSliderOut.value > 0.3 || stepperOut.value >= 0.9 {
-            for i in labelCollection {
-                i.textColor = UIColor.darkGray
-            }
-        }
+    
     }
     
+    private func updateBGColor() {
+        let redSliderVal = CGFloat(redSliderOut.value)
+        let blueSliderVal = CGFloat(blueSliderOut.value)
+        let greenSliderVal = CGFloat(greenSliderOut.value)
+        let alphaVal = CGFloat(stepperOut.value)
+        view.backgroundColor = UIColor(displayP3Red: redSliderVal, green: greenSliderVal, blue: blueSliderVal, alpha: alphaVal)
+    }
+
     
     
     //MARK: - LifeCycle Methods
     override func viewDidLoad() {
-    viewOut.backgroundColor = UIColor(displayP3Red: CGFloat(red), green:  CGFloat(green), blue:  CGFloat(blue), alpha: 1.0)
-    colorNameLabel.text = currentColorName
-    redSliderOut.value = Float(red)
-    greenSliderOut.value = Float(green)
-    blueSliderOut.value = Float(blue)
-    redLabelOut.text = "Red: \(Float(red))"
-    blueLabelOut.text = "Blue: \(Float(blue))"
-    greenLabelOut.text = "Green: \(Float(green))"
-    alphaLabel.text = "Alpha: 1.0"
+    setBGColor()
     super.viewDidLoad()
     }
 
 }
+
+
+
+// Extra Credit function:
+//    func changeTextColor(){
+//        if redSliderOut.value < 0.3 && blueSliderOut.value < 0.3 || greenSliderOut.value < 0.3  || stepperOut.value < 0.9 {
+//            for i in labelCollection {
+//                i.textColor = UIColor.white
+//            }
+//        } else if redSliderOut.value > 0.3 && blueSliderOut.value > 0.3 && greenSliderOut.value > 0.3 || stepperOut.value >= 0.9 {
+//            for i in labelCollection {
+//                i.textColor = UIColor.darkGray
+//            }
+//        }
+//    }
+
+
+
+

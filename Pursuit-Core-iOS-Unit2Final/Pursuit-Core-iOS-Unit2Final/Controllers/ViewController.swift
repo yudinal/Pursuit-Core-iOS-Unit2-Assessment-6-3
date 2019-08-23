@@ -14,7 +14,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //MARK: Outlets & Variables
     
     @IBOutlet weak var tableViewOut: UITableView!
-    var crayons: [Crayon]!
+    var crayons = Crayon.allTheCrayons
     
     
     //MARK: TableView Methods
@@ -24,9 +24,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        let cell = tableView.dequeueReusableCell(withIdentifier: "crayonCell", for: indexPath)
-        cell.textLabel?.text = crayons[indexPath.row].name
-        cell.detailTextLabel?.text = crayons[indexPath.row].hex
-        cell.backgroundColor = UIColor(displayP3Red: CGFloat(crayons[indexPath.row].red), green: CGFloat(crayons[indexPath.row].green), blue: CGFloat(crayons[indexPath.row].blue), alpha: 1.0)
+        let crayon = crayons[indexPath.row]
+        cell.textLabel?.text = crayon.name
+        cell.detailTextLabel?.text = crayon.hex
+        cell.backgroundColor = crayon.getColor()
         return cell }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -44,10 +45,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             else { fatalError("Unexpected segue")}
         guard let selectedIndexPath = tableViewOut.indexPathForSelectedRow
             else { fatalError("No row selected") }
-        ColorChangeVC.blue = crayons[selectedIndexPath.row].blue
-        ColorChangeVC.green = crayons[selectedIndexPath.row].green
-        ColorChangeVC.red = crayons[selectedIndexPath.row].red
-        ColorChangeVC.currentColorName = crayons[selectedIndexPath.row].name
+        ColorChangeVC.colorFromVC = crayons[selectedIndexPath.row]
 
     }
     
@@ -60,21 +58,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   override func viewDidLoad() {
     tableViewOut.delegate = self
     tableViewOut.dataSource = self
-    crayons = Crayon.convertToCG()
-//    print(crayons)
+    Crayon.converted()
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
   }
 
 
 }
 
-
-
-///extraCredit sudo:
-
-//if greenSlider && redSlider && blueSlider values are below 0.35 change textlabels to white or lighter color, create a function to do so.
-//
  
 
  

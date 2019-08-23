@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Crayon {
   var name: String
@@ -40,21 +41,32 @@ class Crayon {
     Crayon(name: "Blue Violet", red: 115, green: 102, blue: 189, hex: "#7366BD")
   ]
     
-    static var convertedCrayons: [Crayon] = []
+    func getColor() -> UIColor {
+        let redValue = CGFloat(self.red)
+        let blueValue = CGFloat(self.blue)
+        let greenValue = CGFloat(self.green)
+        let alphaValue = CGFloat(1.0)
+        return UIColor(displayP3Red: redValue, green: greenValue, blue: blueValue, alpha: alphaValue)
+    }
     
     
-    
-    static func convertToCG() -> [Crayon]{
-        var converted: [Crayon] = []
+    static func converted() {
         for i in allTheCrayons {
-            if i.blue > 0 && i.red > 0 && i.green > 0 {
         i.red = Double(i.red / 225)
         i.blue = Double(i.blue / 255)
         i.green = Double(i.green / 225)
-        converted.append(i)
-        }
     }
-        return converted
-}
+    }
     
 }
+
+    
+
+
+
+    
+    
+    
+
+
+

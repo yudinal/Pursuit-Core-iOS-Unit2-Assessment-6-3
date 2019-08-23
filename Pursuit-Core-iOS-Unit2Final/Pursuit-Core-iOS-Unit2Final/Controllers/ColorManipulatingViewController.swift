@@ -26,7 +26,7 @@ class ColorManipulatingViewController: UIViewController {
     @IBOutlet weak var iAmBlue: UILabel!
     
     @IBAction func resetColorsButton(_ sender: Any) {
-        setUpViews()
+        
 //        redSlider.value = Float(color.convertRedToCGFloatNumber(red: color.red))
 //        greenSlider.value = Float(color.convertGreenToCGFloatNumber(green: color.green))
 //        blueSlider.value = Float(color.convertBlueToCGFloatNumber(blue: color.blue))
@@ -54,6 +54,7 @@ class ColorManipulatingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpViews()
+
     }
     
     
@@ -63,13 +64,13 @@ class ColorManipulatingViewController: UIViewController {
     
     func setUpViews() {
         colorName.text = color.name
-        redSlider.value = Float(color.convertRedToCGFloatNumber(red: color.red))
-        greenSlider.value = Float(color.convertGreenToCGFloatNumber(green: color.green))
-        blueSlider.value = Float(color.convertBlueToCGFloatNumber(blue: color.blue))
-        view.backgroundColor = UIColor(red: color.convertRedToCGFloatNumber(red: color.red), green: color.convertGreenToCGFloatNumber(green: color.green), blue: color.convertBlueToCGFloatNumber(blue: color.blue), alpha: 1.0)
-        liveRedSliderValue.text = color.convertRedToCGFloatNumber(red: color.red).description
-        liveGreenSliderValue.text = color.convertGreenToCGFloatNumber(green: color.green).description
-        liveBlueSliderValue.text = color.convertBlueToCGFloatNumber(blue: color.blue).description
+        redSlider.value = Float(color.convertHexToCGFloatNumber(color: color.red))
+        greenSlider.value = Float(color.convertHexToCGFloatNumber(color: color.green))
+        blueSlider.value = Float(color.convertHexToCGFloatNumber(color: color.blue))
+        view.backgroundColor = UIColor(red: color.convertHexToCGFloatNumber(color: color.red), green: color.convertHexToCGFloatNumber(color: color.green), blue: color.convertHexToCGFloatNumber(color: color.blue), alpha: 1.0)
+        liveRedSliderValue.text = color.convertHexToCGFloatNumber(color: color.red).description
+        liveGreenSliderValue.text = color.convertHexToCGFloatNumber(color: color.green).description
+        liveBlueSliderValue.text = color.convertHexToCGFloatNumber(color: color.blue).description
     }
     
 

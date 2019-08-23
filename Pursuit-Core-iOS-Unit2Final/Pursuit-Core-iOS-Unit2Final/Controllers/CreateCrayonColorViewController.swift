@@ -9,22 +9,25 @@
 import UIKit
 
 class CreateCrayonColorViewController: UIViewController {
+    
+    //MARK: -- Outlets
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var hexLabel: UILabel!
-    
     @IBOutlet weak var colorNamePreview: UILabel!
+    @IBOutlet weak var hexPreviewLabel: UILabel!
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var hexTextField: UITextField!
     @IBOutlet weak var colorPreviewView: UIView!
     
     @IBOutlet weak var submitButton: UIButton!
     
-    
+    //MARK: -- IBActions
     @IBAction func cancelButtonPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
-    
+    //MARK: -- Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setDelegates() 
@@ -38,15 +41,21 @@ class CreateCrayonColorViewController: UIViewController {
     }
 }
 
+
+//MARK: -- TextField Delegate Methods
 extension CreateCrayonColorViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField.tag {
         case 0:
             colorNamePreview?.text = textField.text?.capitalized
+            
         case 1:
+            hexPreviewLabel?.text =  "#\(textField.text!)"
             colorPreviewView.backgroundColor = UIColor(hex: textField.text!)
+            
         default:()
+            
         }
         textField.resignFirstResponder()
         return true
@@ -56,6 +65,7 @@ extension CreateCrayonColorViewController: UITextFieldDelegate {
         switch textField.tag {
         case 0:
             if range.location == 0 && (string == " ") { return false }
+            
         case 1:
             let aSet = NSCharacterSet(charactersIn:"abcdefABCDEF0123456789").inverted
             let compSepByCharInSet = string.components(separatedBy: aSet)
@@ -69,6 +79,7 @@ extension CreateCrayonColorViewController: UITextFieldDelegate {
             } else {
                 return false
             }
+            
         default: ()
         }
         return true

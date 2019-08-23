@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
     //MARK: -- Properties
     var crayonList = Crayon.allTheCrayons
     //MARK: -- Outlets
@@ -21,12 +22,14 @@ class ViewController: UIViewController {
             crayonList = sortByNameAscending(crayonArrayToSort: crayonList)
             sender.title = "Sort Z-A"
             tableView.reloadData()
+            
         case "Sort Z-A":
             crayonList = sortByNameDescending(crayonArrayToSort: crayonList)
             sender.title = "Sort A-Z"
             tableView.reloadData()
             
         default: ()
+            
         }
     }
     
@@ -47,6 +50,7 @@ class ViewController: UIViewController {
         }
     }
     
+    
     //MARK: -- Segue method
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let segueIdentifer = segue.identifier else {fatalError("No identifier in segue")}
@@ -59,6 +63,7 @@ class ViewController: UIViewController {
             
             guard let selectedIndexPath = tableView.indexPathForSelectedRow else {fatalError("No row selected")
             }
+            
             let crayonToSegue = crayonList[selectedIndexPath.row]
             destVC.currentCrayon = crayonToSegue
             
@@ -81,7 +86,6 @@ class ViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
-    
 }
 
 //MARK: -- Table Datasource Methods
@@ -118,6 +122,6 @@ extension ViewController: UITableViewDataSource {
 //MARK: -- Table Delegate Methods
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 105
     }
 }

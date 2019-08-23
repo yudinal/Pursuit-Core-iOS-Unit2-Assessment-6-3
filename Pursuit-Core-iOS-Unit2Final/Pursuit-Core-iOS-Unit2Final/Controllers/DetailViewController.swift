@@ -40,7 +40,7 @@ class DetailViewController: UIViewController {
         
         alphaLabel.text = String(sender.value)
         
-        self.view.backgroundColor = UIColor(red: CGFloat(crayon!.red/255), green: CGFloat(crayon!.green/255), blue: CGFloat(crayon!.blue/255), alpha: CGFloat(1.0))
+        self.view.backgroundColor = UIColor(red: CGFloat(crayon!.red/255), green: CGFloat(crayon!.green/255), blue: CGFloat(crayon!.blue/255), alpha: CGFloat(sender.value))
         
     }
     

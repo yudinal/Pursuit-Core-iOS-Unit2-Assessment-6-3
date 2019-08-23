@@ -55,11 +55,14 @@ class ColorDetailsViewController: UIViewController {
     
     
     @IBAction func resetButton(_ sender: UIButton) {
+        colorSelected.text = colorSelectedDetail.name
+        view.backgroundColor = UIColor(displayP3Red: CGFloat(colorSelectedDetail.red/255), green: CGFloat(colorSelectedDetail.green/255), blue: CGFloat(colorSelectedDetail.blue/255), alpha: 1)
+        
     }
     
     @IBAction func colorRedSlider(_ sender: UISlider) {
         let currentRedValue = Double(sender.value)
-        redValueLabel.text = "\(currentRedValue)"
+        redValueLabel.text = "Red Value: \(currentRedValue)"
         red = CGFloat(sender.value)
         view.backgroundColor = UIColor(
                 red: red,
@@ -72,7 +75,7 @@ class ColorDetailsViewController: UIViewController {
     @IBAction func colorGreenSlider(_ sender: UISlider) {
         green = CGFloat(sender.value)
         let currentGreenValue = Double(sender.value)
-        greenValueLabel.text = "\(currentGreenValue)"
+        greenValueLabel.text = "Green Value: \(currentGreenValue)"
         view.backgroundColor = UIColor(
             red: 0.0,
             green: green,
@@ -84,7 +87,7 @@ class ColorDetailsViewController: UIViewController {
     @IBAction func colorBlueSlider(_ sender: UISlider) {
         blue = CGFloat(sender.value)
         let currentBlueValue = Double(sender.value)
-        blueValueLabel.text = "\(currentBlueValue)"
+        blueValueLabel.text = "Blue Value: \(currentBlueValue)"
         view.backgroundColor = UIColor(
             red: 0.0,
             green: 0.0,
@@ -127,13 +130,28 @@ class ColorDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        blueValueLabel.text = UIColor(blue:)
-//        blueValueLabel.text = UIColor(blue: CGFloat(colorSelectedDetail.blue/255))
+        redSlider.value = Float(colorSelectedDetail.red/255)
+        redValueLabel.text = String(format: "Red Value: %.2f", redSlider.value)
+        
+        blueSlider.value = Float(colorSelectedDetail.blue/255)
+        blueValueLabel.text = String(format: "Blue Value: %.2f", blueSlider.value)
+        
+        greenSlider.value = Float(colorSelectedDetail.green/255)
+        greenValueLabel.text = String(format: "Green Value: %.2f", greenSlider.value)
 
         
         colorSelected.text = colorSelectedDetail.name
+        
         view.backgroundColor = UIColor(displayP3Red: CGFloat(colorSelectedDetail.red/255), green: CGFloat(colorSelectedDetail.green/255), blue: CGFloat(colorSelectedDetail.blue/255), alpha: 1)
         
+//        blueValueLabel.text = "\(blueSlider.value)"
+//        blueSlider.value = Float(colorSelectedDetail.blue/255)
+//        greenValueLabel.text = "\(greenSlider.value)"
+//        greenSlider.value = Float(colorSelectedDetail.green/255)
+        
+        
+        //        blueValueLabel.text = UIColor(blue:)
+        //        blueValueLabel.text = UIColor(blue: CGFloat(colorSelectedDetail.blue/255))
 
         // Do any additional setup after loading the view.
     }

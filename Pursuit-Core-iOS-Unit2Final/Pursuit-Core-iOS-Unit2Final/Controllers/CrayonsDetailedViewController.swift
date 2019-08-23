@@ -83,11 +83,8 @@ class CrayonsDetailedViewController: UIViewController {
     
     private func setSliders() -> Void {
         redSlider.value = Float(crayon.red/255)
-        print(redSlider)
         greenSlider.value = Float(crayon.green/255)
-        print(greenSlider)
         blueSlider.value = Float(crayon.blue/255)
-        print(blueSlider)
     }
     
     private func setsValuesofOriginalColorVariables() -> Void {

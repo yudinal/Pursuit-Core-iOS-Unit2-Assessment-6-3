@@ -25,6 +25,7 @@ class CrayonsDetailedViewController: UIViewController {
     var originalRed = 0.0
     var originalGreen = 0.0
     var originalBlue = 0.0
+    var alpha = 1.0
     
     @IBAction func sliderChanged(_ sender: UISlider) {
         switch sender.tag {
@@ -46,19 +47,21 @@ class CrayonsDetailedViewController: UIViewController {
     }
     
     @IBAction func stepperChanged(_ sender: UIStepper) {
-        self.view.backgroundColor = UIColor(displayP3Red: CGFloat(crayon.red/255), green: CGFloat(crayon.green/255), blue: CGFloat(crayon.blue/255), alpha: CGFloat(sender.value))
-        currentAlphaValueLabel.text = String("Current value of alpha: \(sender.value)")
+        alpha = sender.value
+        updateBackgroundColor()
+        changeLabeltext(label: currentAlphaValueLabel, color: "alpha", value: Float(sender.value))
     }
     
     private func viewBackgroundColor() -> Void {
-        view.backgroundColor = UIColor(displayP3Red: CGFloat(crayon.red/255), green: CGFloat(crayon.green/255), blue: CGFloat(crayon.blue/255), alpha: 1.0)
+        view.backgroundColor = UIColor(displayP3Red: CGFloat(crayon.red/255), green: CGFloat(crayon.green/255), blue: CGFloat(crayon.blue/255), alpha: CGFloat(alpha))
     }
 
     private func updateBackgroundColor() -> Void {
-        view.backgroundColor = UIColor(displayP3Red: CGFloat(originalRed/255), green: CGFloat(originalGreen/255), blue: CGFloat(originalBlue/255), alpha: 1.0)
+        view.backgroundColor = UIColor(displayP3Red: CGFloat(originalRed/255), green: CGFloat(originalGreen/255), blue: CGFloat(originalBlue/255), alpha: CGFloat(alpha))
     }
  
     @IBAction func resetViewToOriginal(_ sender: UIButton) {
+        alpha = 1.0
         viewBackgroundColor()
         resetSliders()
         setLabels()

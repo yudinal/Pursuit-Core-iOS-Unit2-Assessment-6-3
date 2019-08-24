@@ -27,27 +27,18 @@ class ColorManipulatingViewController: UIViewController {
     @IBOutlet weak var iAmBlue: UILabel!
     
     @IBAction func resetColorsButton(_ sender: Any) {
-//        setUpViews()
-//        print("I am red value \(color.red)")
-//        print("I am green value \(color.green)")
-//        print("I am blue value \(color.blue)")
-//        redSlider.value = Float(color.convertRedToCGFloatNumber(red: color.red))
-//        greenSlider.value = Float(color.convertGreenToCGFloatNumber(green: color.green))
-//        blueSlider.value = Float(color.convertBlueToCGFloatNumber(blue: color.blue))
+        setUpViews()
     }
     
     @IBAction func sliderColorChange(_ sender: UISlider) {
         switch sender.tag {
         case 0:
-           color.updateRed(red: CGFloat(sender.value))
            updateBackgroundColor()
             liveRedSliderValue.text = String(sender.value)
         case 1:
-            color.updateGreen(green: CGFloat(sender.value))
             updateBackgroundColor()
             liveGreenSliderValue.text = String(sender.value)
         case 2:
-            color.updateBlue(blue: CGFloat(sender.value))
             updateBackgroundColor()
             liveBlueSliderValue.text = String(sender.value)
         default:
@@ -58,7 +49,6 @@ class ColorManipulatingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpViews()
-
     }
     
     

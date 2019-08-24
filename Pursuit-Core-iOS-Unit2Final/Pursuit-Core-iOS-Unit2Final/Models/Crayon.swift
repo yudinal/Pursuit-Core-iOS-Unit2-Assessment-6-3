@@ -41,25 +41,26 @@ class Crayon {
     Crayon(name: "Blue Violet", red: 115, green: 102, blue: 189, hex: "#7366BD")
   ]
     
-//    func getNonManipulatedColor() -> UIColor {
-//    }
-    
     func convertHexToCGFloatNumber(color: Double) -> CGFloat {
         let convertedColor = CGFloat(color) / CGFloat(255)
         return convertedColor
     }
     
-    func updateRed(red: CGFloat) {
-        self.red = Double(red)
-    }
     
-    func updateGreen(green: CGFloat) {
-        self.green = Double(green)
-    }
+//    I ORIGINALLY HAD THESE FUNCTION IN HERE BUT THEY ARE NOT NEEDED
     
-    func updateBlue(blue: CGFloat) {
-        self.blue = Double(blue)
-    }
+    
+//    func updateRed(red: CGFloat) {
+//        self.red = Double(red)
+//    }
+//
+//    func updateGreen(green: CGFloat) {
+//        self.green = Double(green)
+//    }
+//
+//    func updateBlue(blue: CGFloat) {
+//        self.blue = Double(blue)
+//    }
     
     
     

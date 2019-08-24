@@ -81,7 +81,7 @@ class CrayonsDetailedViewController: UIViewController {
     }
     
     private func changeLabeltext(label: UILabel, color: String, value: Float) -> Void {
-    label.text = String("Current value of \(color): \(value)")
+        label.text = String("Current value of \(color): \(value)")
     }
     
     private func setSliders() -> Void {

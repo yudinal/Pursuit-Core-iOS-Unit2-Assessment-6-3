@@ -22,8 +22,8 @@ class CrayonsViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let crayonDetailedViewController = segue.destination as? CrayonsDetailedViewController else {fatalError()}
         guard let selectedIndexPath = CrayonsTableVIew.indexPathForSelectedRow else {fatalError()}
-        let crayon = Crayon.allTheCrayons
-        crayonDetailedViewController.crayon = crayon[selectedIndexPath.row]
+
+        crayonDetailedViewController.crayon = crayons[selectedIndexPath.row]
 
     }
 }

@@ -53,7 +53,7 @@ class CrayonsDetailedViewController: UIViewController {
     }
     
     private func viewBackgroundColor() -> Void {
-        view.backgroundColor = UIColor(displayP3Red: CGFloat(crayon.red/255), green: CGFloat(crayon.green/255), blue: CGFloat(crayon.blue/255), alpha: CGFloat(alpha))
+        view.backgroundColor = crayon.uiColor
     }
 
     private func updateBackgroundColor() -> Void {

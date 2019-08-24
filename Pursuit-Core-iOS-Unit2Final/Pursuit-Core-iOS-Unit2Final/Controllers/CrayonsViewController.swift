@@ -39,7 +39,8 @@ extension CrayonsViewController: UITableViewDataSource {
         let crayon = crayons[indexPath.row]
         cell.textLabel?.text = crayon.name
         cell.detailTextLabel?.text = crayon.hex
-        cell.backgroundColor = UIColor(displayP3Red: CGFloat(crayon.red/255), green: CGFloat(crayon.green/255), blue: CGFloat(crayon.blue/255), alpha: 1.0)
+        
+        cell.backgroundColor = crayon.uiColor
         
          return cell
     }

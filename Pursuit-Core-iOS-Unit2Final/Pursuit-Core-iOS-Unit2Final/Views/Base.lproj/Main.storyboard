@@ -96,12 +96,15 @@
                                     <action selector="sliderColorChange:" destination="GjN-pp-R2M" eventType="valueChanged" id="5Mh-t1-5qm"/>
                                 </connections>
                             </slider>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="yWg-Pt-wZI">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="1" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="yWg-Pt-wZI">
                                 <rect key="frame" x="160" y="625" width="94" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="94" id="EXb-QR-4Zi"/>
                                     <constraint firstAttribute="height" constant="29" id="OpB-3x-554"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="alphaStepperChanged:" destination="GjN-pp-R2M" eventType="touchUpInside" id="mKJ-LV-RPj"/>
+                                </connections>
                             </stepper>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTL-VD-tCB">
                                 <rect key="frame" x="128" y="735" width="158" height="30"/>

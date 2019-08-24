@@ -30,6 +30,12 @@ class ColorManipulatingViewController: UIViewController {
         setUpViews()
     }
     
+    
+    @IBAction func alphaStepperChanged(_ sender: Any) {
+        updateBackgroundColor()
+        print(alphaStepper.value)
+    }
+    
     @IBAction func sliderColorChange(_ sender: UISlider) {
         switch sender.tag {
         case 0:
@@ -53,7 +59,7 @@ class ColorManipulatingViewController: UIViewController {
     
     
     func updateBackgroundColor() {
-        self.view.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1.0)
+        self.view.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaStepper.value))
     }
     
     func setUpViews() {

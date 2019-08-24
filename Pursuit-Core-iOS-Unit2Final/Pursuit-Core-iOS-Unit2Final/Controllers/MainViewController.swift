@@ -45,7 +45,8 @@ extension MainViewController: UITableViewDataSource {
         
         cell.textLabel?.text = crayonInCell.name
         cell.detailTextLabel?.text = crayonInCell.hex
-        cell.backgroundColor = UIColor (displayP3Red: CGFloat(crayonInCell.red/255), green: CGFloat(crayonInCell.green/255), blue: CGFloat(crayonInCell.blue/255), alpha: 1)
+        cell.backgroundColor = crayonInCell.color()
+        
         return cell
     }
     

@@ -49,10 +49,10 @@ class CrayonsDetailViewController: UIViewController {
     }
 
     private func updateLabels() {
-        RedLabel.text = RedSlider.value.description
-        GreenLabel.text = GreenSlider.value.description
-        BlueLabel.text = BlueSlider.value.description
-        AlphaLabel.text = AlphaStepper.value.description
+        RedLabel.text = "\(String(format: "%.3f", RedSlider.value))"
+        GreenLabel.text = "\(String(format: "%.3f", GreenSlider.value))"
+        BlueLabel.text = "\(String(format: "%.3f", BlueSlider.value))"
+        AlphaLabel.text = "\(String(format: "%.1f", AlphaStepper.value))"
         CrayonColorName.text = crayons!.name
         
     }

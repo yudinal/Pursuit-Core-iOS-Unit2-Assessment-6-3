@@ -146,6 +146,7 @@
                         <outlet property="alphaStepperLabel" destination="2rB-nc-eSY" id="G1g-Wb-d8G"/>
                         <outlet property="blueColorLabel" destination="RsA-px-QCg" id="rsQ-sa-QyL"/>
                         <outlet property="blueSlider" destination="cdw-89-wgh" id="Uev-3S-Tpd"/>
+                        <outlet property="colorNameLabel" destination="e7z-eq-bpY" id="PKc-n3-H04"/>
                         <outlet property="greenColorLabel" destination="vyF-tS-ixw" id="Yyd-Xg-8Um"/>
                         <outlet property="greenSlider" destination="WGU-ez-cz1" id="uDk-ZL-7Y7"/>
                         <outlet property="redColorLabel" destination="8WX-7S-sIB" id="FXp-96-tiU"/>

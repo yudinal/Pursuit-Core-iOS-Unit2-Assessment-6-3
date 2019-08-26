@@ -28,6 +28,7 @@ class ColorManipulatingViewController: UIViewController {
     
     @IBAction func resetColorsButton(_ sender: Any) {
         setUpViews()
+        print(alphaStepper.value)
     }
     
     

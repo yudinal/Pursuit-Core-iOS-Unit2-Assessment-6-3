@@ -19,8 +19,16 @@ class ViewController: UIViewController {
         colorTableView.delegate = self
         colorTableView.dataSource = self
   }
-
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let detailedViewController = segue.destination as? DetailedColorViewController else {fatalError()}
+        // this is going to show if the view controller is there or not.
+        
+        guard let selectedIndexPath = colorTableView.indexPathForSelectedRow else {fatalError()}
+        // this is what will happen when the user selects on the row.
+        
+        detailedViewController.color = crayola[selectedIndexPath.row]
+        // this transfers the data over to the detailed view controller. 
+    }
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
@@ -38,6 +46,5 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
         // this is populating the cell by identifying it also it is filling the cell with the name of the color as the title and the hex value as the subtitle. this is happening due to diving the color by 255. 
     }
-    
     
 }

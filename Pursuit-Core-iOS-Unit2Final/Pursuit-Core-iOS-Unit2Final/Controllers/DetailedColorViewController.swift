@@ -10,6 +10,8 @@ import UIKit
 
 class DetailedColorViewController: UIViewController {
     
+    var color: Crayon!
+    // this is the instance of the model that we are annotating
     
     @IBOutlet weak var redSlider: UISlider!
     @IBOutlet weak var redColorLabel: UILabel!
@@ -31,27 +33,10 @@ class DetailedColorViewController: UIViewController {
     
     @IBAction func resetRGBvalue(_ sender: UIButton) {
     }
-    
     // this is the function to reset the default color values.
-    
-    var color: Crayon!
-    // this is the instance of the model that we are annotating
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

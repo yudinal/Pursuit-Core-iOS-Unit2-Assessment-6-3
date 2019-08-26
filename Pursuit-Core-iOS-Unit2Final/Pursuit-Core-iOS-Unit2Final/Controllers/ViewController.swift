@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController {
+    
     var crayola = Crayon.allTheCrayons
     
     @IBOutlet weak var colorTableView: UITableView!
@@ -17,20 +18,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     super.viewDidLoad()
         colorTableView.delegate = self
         colorTableView.dataSource = self
-    
   }
 
 
 }
 
-extension ViewController {
+extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Crayon.allTheCrayons.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let crayola = Crayon.allTheCrayons
+        let color = crayola[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "colorCell", for: indexPath)
+        cell.textLabel?.text = color.name
+        cell.detailTextLabel?.text = color.hex
+        cell.backgroundColor = UIColor(displayP3Red: CGFloat(color.red/255), green: CGFloat(color.green/255), blue: CGFloat(color.blue/255), alpha: 1)
         return cell
     }
     

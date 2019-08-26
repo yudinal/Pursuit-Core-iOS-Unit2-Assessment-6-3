@@ -133,11 +133,24 @@
                                 <rect key="frame" x="188" y="557" width="39" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetRGBvalue:" destination="IZP-w3-vvK" eventType="touchUpInside" id="mZi-A7-6FZ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="MtX-h2-jPs"/>
                     </view>
+                    <connections>
+                        <outlet property="alphaStepperChanger" destination="Gkp-cP-vek" id="E6A-6O-bch"/>
+                        <outlet property="alphaStepperLabel" destination="2rB-nc-eSY" id="G1g-Wb-d8G"/>
+                        <outlet property="blueColorLabel" destination="RsA-px-QCg" id="rsQ-sa-QyL"/>
+                        <outlet property="blueSlider" destination="cdw-89-wgh" id="Uev-3S-Tpd"/>
+                        <outlet property="greenColorLabel" destination="vyF-tS-ixw" id="Yyd-Xg-8Um"/>
+                        <outlet property="greenSlider" destination="WGU-ez-cz1" id="uDk-ZL-7Y7"/>
+                        <outlet property="redColorLabel" destination="8WX-7S-sIB" id="FXp-96-tiU"/>
+                        <outlet property="redSlider" destination="6Zy-NK-k7s" id="aOo-iK-2hb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vu7-CH-2Kw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

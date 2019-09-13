@@ -28,19 +28,49 @@ class DetailedColorViewController: UIViewController {
     @IBOutlet weak var alphaStepperChanger: UIStepper!
     @IBOutlet weak var alphaStepperLabel: UILabel!
     
+    @IBAction func stepperChanger(_ sender: Any) {
+        view.backgroundColor = UIColor(displayP3Red: (CGFloat(redSlider.value)), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaStepperChanger!.value))
+        print(alphaStepperChanger!.value)
+        
+    
+    }
     // these are the outlets and labels that are used for the sliders and stepper
     
     @IBAction func resetRGBvalue(_ sender: UIButton) {
+        
+        redSlider.value = Float(color.red/255)
+        blueSlider.value = Float(color.blue/255)
+        greenSlider.value = Float(color.green/255)
+        alphaStepperChanger.value = 1
+        
+        defaultColorBackground()
+        
     }
     // this is the function to reset the default color values.
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         colorNameLabel.text = color.name
         // this is to update the label that I have for the Color Name label to display when it is selected.
+        redSlider.value = Float(color.red/255)
+        blueSlider.value = Float(color.blue/255)
+        greenSlider.value = Float(color.green/255)
+        alphaStepperChanger.value = 1
         
-        view.backgroundColor = UIColor(displayP3Red: (CGFloat(color.red/255)), green: CGFloat(color.green/255), blue: CGFloat(color.blue/255), alpha: 1)
+        defaultColorBackground()
+    }
+    func defaultColorBackground() {
+        view.backgroundColor = UIColor(displayP3Red: (CGFloat(redSlider.value)), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1)
         // this is to display the color as the background when it is selected from the view controller.
     }
-
+    @IBAction func steppersDidChange(_ sender: UISlider) {
+        
+//          view.backgroundColor = UIColor(displayP3Red: (CGFloat(sender.value/255)), green: CGFloat(sender.value/255), blue: CGFloat(sender.value/255), alpha: 1)
+//        print(sender.value)
+        view.backgroundColor = UIColor(displayP3Red: (CGFloat(redSlider.value)), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaStepperChanger!.value))
+        print(alphaStepperChanger!.value)
+    }
+    
+    
 }

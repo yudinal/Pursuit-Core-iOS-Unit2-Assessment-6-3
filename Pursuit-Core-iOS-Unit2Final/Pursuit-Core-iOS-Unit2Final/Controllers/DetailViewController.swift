@@ -30,10 +30,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(displayP3Red: CGFloat(crayons!.red / 255), green: CGFloat(crayons!.green / 255), blue: CGFloat(crayons!.blue / 255), alpha: CGFloat(1.0))
-        configureRedSlider()
-        configureGreenSlider()
-        configureBlueSlider()
-        configureStepper()
+
         updateUI()
         
     }
@@ -71,7 +68,11 @@ class DetailViewController: UIViewController {
         redLabel.text = "\(theCrayon.red.description)"
         greenLabel.text = "\(theCrayon.green.description)"
         blueLabel.text = "\(theCrayon.blue.description)"
-        stepperLabel.text = "\(alphaStepper.value.description)"
+        configureRedSlider()
+        configureGreenSlider()
+        configureBlueSlider()
+        configureStepper()
+        stepperLabel.text = "\(String(format: "%.1f", alphaStepper.value))"
     }
     @IBAction func redSliderChanged(_ sender: UISlider) {
         view.backgroundColor = UIColor(displayP3Red: CGFloat(sender.value), green: CGFloat(crayons!.green / 255), blue: CGFloat(crayons!.blue / 255), alpha: CGFloat(1.0))
@@ -87,7 +88,8 @@ class DetailViewController: UIViewController {
     }
     @IBAction func stepperChanged(_ sender: UIStepper) {
         view.backgroundColor = UIColor(displayP3Red: CGFloat(crayons!.red / 255), green: CGFloat(crayons!.green / 255), blue: CGFloat(crayons!.blue / 255), alpha: CGFloat(sender.value))
-          stepperLabel.text = "\(sender.value.description)"
+        alphaStepper.value = sender.value
+        stepperLabel.text = "\(String(format: "%.1f", alphaStepper.value))"
             }
     @IBAction func resetColorButton(_ sender: UIButton) {
     view.backgroundColor = UIColor(displayP3Red: CGFloat(crayons!.red / 255), green: CGFloat(crayons!.green / 255), blue: CGFloat(crayons!.blue / 255), alpha: CGFloat(1.0))
